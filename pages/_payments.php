@@ -1,13 +1,13 @@
 <?PHP
-$_OPTIMIZATION["title"] = "Последние выплаты";
-$_OPTIMIZATION["description"] = "Список последних выплат";
-$_OPTIMIZATION["keywords"] = "Последние выплаты";
+$_OPTIMIZATION["title"] = "РџРѕСЃР»РµРґРЅРёРµ РІС‹РїР»Р°С‚С‹";
+$_OPTIMIZATION["description"] = "РЎРїРёСЃРѕРє РїРѕСЃР»РµРґРЅРёС… РІС‹РїР»Р°С‚";
+$_OPTIMIZATION["keywords"] = "РџРѕСЃР»РµРґРЅРёРµ РІС‹РїР»Р°С‚С‹";
 ?>
 <div class="s-bk-lf">
-	<div class="acc-title">Последние выплаты</div>
+	<div class="acc-title">РџРѕСЃР»РµРґРЅРёРµ РІС‹РїР»Р°С‚С‹</div>
 </div>
 <div class="silver-bk">
-<center><b>Отображены выплаты за последние 48 часов</b></center>
+<center><b>РћС‚РѕР±СЂР°Р¶РµРЅС‹ РІС‹РїР»Р°С‚С‹ Р·Р° РїРѕСЃР»РµРґРЅРёРµ 48 С‡Р°СЃРѕРІ</b></center>
 <BR />
 <?PHP
 $dt = time() - 60*60*48;
@@ -18,10 +18,10 @@ if($db->NumRows() > 0){
 ?>
 	<table cellpadding='3' cellspacing='0' border='0' bordercolor='#336633' align='center' width="99%">
 		<tr bgcolor="#efefef">
-			<td align="center" width="50" class="m-tb">Пользователь</td>
-			<td align="center" width="50" class="m-tb">Сумма</td>
-			<td align="center" width="50" class="m-tb">Кошелек</td>
-			<td align="center" width="50" class="m-tb">Дата</td>
+			<td align="center" width="50" class="m-tb">РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ</td>
+			<td align="center" width="50" class="m-tb">РЎСѓРјРјР°</td>
+			<td align="center" width="50" class="m-tb">РљРѕС€РµР»РµРє</td>
+			<td align="center" width="50" class="m-tb">Р”Р°С‚Р°</td>
 		</tr>
 <?PHP
 	while($data = $db->FetchArray()){
@@ -38,13 +38,13 @@ if($db->NumRows() > 0){
 	}
 ?>
 	<tr bgcolor="#efefef">
-		<td align="center" width="50" class="m-tb" colspan=2>Всего выплат: <?=$all_pay; ?> шт.</td>
-		<td align="center" width="50" class="m-tb" colspan=2>На сумму: <?=sprintf("%.2f",$all_pay_sum); ?> RUB</td>
+		<td align="center" width="50" class="m-tb" colspan=2>Р’СЃРµРіРѕ РІС‹РїР»Р°С‚: <?=$all_pay; ?> С€С‚.</td>
+		<td align="center" width="50" class="m-tb" colspan=2>РќР° СЃСѓРјРјСѓ: <?=sprintf("%.2f",$all_pay_sum); ?> RUB</td>
 	</tr>
 </table>
 <BR />
 <?PHP
-}else echo "<center><b>Выплат нет :(</b></center><BR />";
+}else echo "<center><b>Р’С‹РїР»Р°С‚ РЅРµС‚ :(</b></center><BR />";
 ?>
 </div>
 <div class="clr"></div>	

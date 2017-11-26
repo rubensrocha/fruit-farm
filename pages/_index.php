@@ -1,36 +1,36 @@
-<div class="wim">Как это работает?</div>
+<div class="wim">РљР°Рє СЌС‚Рѕ СЂР°Р±РѕС‚Р°РµС‚?</div>
 <div class="wim-block">
 	<div class="wim-lf"></div>
 	<div class="wim-ctr">
-		Закупаете фрукты
+		Р—Р°РєСѓРїР°РµС‚Рµ С„СЂСѓРєС‚С‹
 		<div class="wim-ctr-in"></div>
-		Получаете прибыль
+		РџРѕР»СѓС‡Р°РµС‚Рµ РїСЂРёР±С‹Р»СЊ
 	</div>
 	<div class="wim-rg"></div>
 </div>
 <div class="clr"><br /></div>	
-<div class="wim">Гарантии?</div>
+<div class="wim">Р“Р°СЂР°РЅС‚РёРё?</div>
 <div class="garant-bk">
 	<i style="background-position:top left;"></i>
-	Резервный фонд
+	Р РµР·РµСЂРІРЅС‹Р№ С„РѕРЅРґ
 </div>
 <div class="garant-bk">
 	<i style="background-position:top center;"></i>
-	Окупаемость
+	РћРєСѓРїР°РµРјРѕСЃС‚СЊ
 </div>
 <div class="garant-bk">
 	<i style="background-position:top right;"></i>
-	Выгодные условия
+	Р’С‹РіРѕРґРЅС‹Рµ СѓСЃР»РѕРІРёСЏ
 </div>
 <div class="garant-bk">
 	<i style="background-position:left bottom;"></i>
-	Cтабильность
+	CС‚Р°Р±РёР»СЊРЅРѕСЃС‚СЊ
 </div>
 <div class="garant-bk">
 	<i style="background-position:bottom center;"></i>
-	Тех. поддержка
+	РўРµС…. РїРѕРґРґРµСЂР¶РєР°
 </div>
 <div class="garant-bk">
 	<i style="background-position:right bottom;"></i>
-	Прозрачность системы
+	РџСЂРѕР·СЂР°С‡РЅРѕСЃС‚СЊ СЃРёСЃС‚РµРјС‹
 </div>

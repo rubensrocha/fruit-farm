@@ -1,14 +1,14 @@
 <?PHP
-$_OPTIMIZATION["title"] = "Пополнение баланса";
+$_OPTIMIZATION["title"] = "РџРѕРїРѕР»РЅРµРЅРёРµ Р±Р°Р»Р°РЅСЃР°";
 ?>
 <div class="s-bk-lf">
-	<div class="acc-title">Заказ выплаты</div>
+	<div class="acc-title">Р—Р°РєР°Р· РІС‹РїР»Р°С‚С‹</div>
 </div>
 <div class="silver-bk">
 <center>
 <img src="/img/xpti.png" height="50">
 </center>
 <center>
-<font color="red" height="60"><b>Пополнение баланса было отменено !</b></font>
+<font color="red" height="60"><b>РџРѕРїРѕР»РЅРµРЅРёРµ Р±Р°Р»Р°РЅСЃР° Р±С‹Р»Рѕ РѕС‚РјРµРЅРµРЅРѕ !</b></font>
 </center>
 </div>

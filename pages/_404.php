@@ -1,13 +1,13 @@
 <?PHP
-$_OPTIMIZATION["title"] = "Ошибка";
-$_OPTIMIZATION["description"] = "Указанная страница отсутствует на сервере";
-$_OPTIMIZATION["keywords"] = "Ошибка, error, 404, Not Found";
+$_OPTIMIZATION["title"] = "СњС€РёР±РєР°";
+$_OPTIMIZATION["description"] = "вЂќРєР°Р·Р°РЅРЅР°В¤ СЃС‚СЂР°РЅРёС†Р° РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚ РЅР° СЃРµСЂРІРµСЂРµ";
+$_OPTIMIZATION["keywords"] = "СњС€РёР±РєР°, error, 404, Not Found";
 ?>
 <div class="s-bk-lf">
-	<div class="acc-title">404 ошибка</div>
+	<div class="acc-title">404 РѕС€РёР±РєР°</div>
 </div>
 <div class="silver-bk"><div class="clr"></div>	
 <BR />
-<center><b>Указанная страница отсутствует на сервере</b></center>
+<center><b>вЂќРєР°Р·Р°РЅРЅР°В¤ СЃС‚СЂР°РЅРёС†Р° РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚ РЅР° СЃРµСЂРІРµСЂРµ</b></center>
 </div>
 <div class="clr"></div>	

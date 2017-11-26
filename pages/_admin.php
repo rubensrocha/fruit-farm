@@ -1,28 +1,28 @@
 <?PHP
-$_OPTIMIZATION["title"] = "Àäìèíèñòðàòèâíàÿ ïàíåëü";
-$_OPTIMIZATION["description"] = "Àêêàóíò ïîëüçîâàòåëÿ";
-$_OPTIMIZATION["keywords"] = "Àêêàóíò, ëè÷íûé êàáèíåò, ïîëüçîâàòåëü";
+$_OPTIMIZATION["title"] = "ÐÐ´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¸Ð²Ð½Ð°Ñ Ð¿Ð°Ð½ÐµÐ»ÑŒ";
+$_OPTIMIZATION["description"] = "ÐÐºÐºÐ°ÑƒÐ½Ñ‚ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ";
+$_OPTIMIZATION["keywords"] = "ÐÐºÐºÐ°ÑƒÐ½Ñ‚, Ð»Ð¸Ñ‡Ð½Ñ‹Ð¹ ÐºÐ°Ð±Ð¸Ð½ÐµÑ‚, Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒ";
 $not_counters = true;
-# Áëîêèðîâêà ñåññèè
+# Ð‘Ð»Ð¾ÐºÐ¸Ñ€Ð¾Ð²ÐºÐ° ÑÐµÑÑÐ¸Ð¸
 if(!isset($_SESSION["admin"])){ include("pages/_account.php"); return; }
 if(isset($_GET["sel"])){
 	$smenu = strval($_GET["sel"]);
 	switch($smenu){
-		case "404": include("pages/_404.php"); break; // Ñòðàíèöà îøèáêè
-		case "stats": include("pages/admin/_stats.php"); break; // Ñòàòèñòèêà
-		case "story_buy": include("pages/admin/_story_buy.php"); break; // Èñòîðèÿ ïîêóïîê äåðåâüåâ
-		case "story_swap": include("pages/admin/_story_swap.php"); break; // Èñòîðèÿ îáìåíà â îáìåííèêå
-		case "story_insert": include("pages/admin/_story_insert.php"); break; // Èñòîðèÿ ïîïîëíåíèé áàëàíñà
-		case "story_sell": include("pages/admin/_story_sell.php"); break; // Èñòîðèÿ ðûíêà
-		case "news": include("pages/admin/_news.php"); break; // Íîâîñòè
-		case "about": include("pages/admin/_about.php"); break; // î ôåðìå
-		case "rules": include("pages/admin/_rules.php"); break; // Ïðàâèëà
-		case "contacts": include("pages/admin/_contacts.php"); break; // Êîíòàêòû
-		case "users": include("pages/admin/_users.php"); break; // Ñïèñîê ïîëüçîâàòåëåé
-		case "sender": include("pages/admin/_sender.php"); break; // Ðàññûëêà ïîëüçîâàòåëÿì
-		case "payments": include("pages/admin/_payments.php"); break; // Ñïèñîê âûïëàò
-		case "config": include("pages/admin/_config.php"); break; // Íàñòðîéêè
-	# Ñòðàíèöà îøèáêè
+		case "404": include("pages/_404.php"); break; // Ð¡Ñ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° Ð¾ÑˆÐ¸Ð±ÐºÐ¸
+		case "stats": include("pages/admin/_stats.php"); break; // Ð¡Ñ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ°
+		case "story_buy": include("pages/admin/_story_buy.php"); break; // Ð˜ÑÑ‚Ð¾Ñ€Ð¸Ñ Ð¿Ð¾ÐºÑƒÐ¿Ð¾Ðº Ð´ÐµÑ€ÐµÐ²ÑŒÐµÐ²
+		case "story_swap": include("pages/admin/_story_swap.php"); break; // Ð˜ÑÑ‚Ð¾Ñ€Ð¸Ñ Ð¾Ð±Ð¼ÐµÐ½Ð° Ð² Ð¾Ð±Ð¼ÐµÐ½Ð½Ð¸ÐºÐµ
+		case "story_insert": include("pages/admin/_story_insert.php"); break; // Ð˜ÑÑ‚Ð¾Ñ€Ð¸Ñ Ð¿Ð¾Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ð¹ Ð±Ð°Ð»Ð°Ð½ÑÐ°
+		case "story_sell": include("pages/admin/_story_sell.php"); break; // Ð˜ÑÑ‚Ð¾Ñ€Ð¸Ñ Ñ€Ñ‹Ð½ÐºÐ°
+		case "news": include("pages/admin/_news.php"); break; // ÐÐ¾Ð²Ð¾ÑÑ‚Ð¸
+		case "about": include("pages/admin/_about.php"); break; // Ð¾ Ñ„ÐµÑ€Ð¼Ðµ
+		case "rules": include("pages/admin/_rules.php"); break; // ÐŸÑ€Ð°Ð²Ð¸Ð»Ð°
+		case "contacts": include("pages/admin/_contacts.php"); break; // ÐšÐ¾Ð½Ñ‚Ð°ÐºÑ‚Ñ‹
+		case "users": include("pages/admin/_users.php"); break; // Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÐµÐ¹
+		case "sender": include("pages/admin/_sender.php"); break; // Ð Ð°ÑÑÑ‹Ð»ÐºÐ° Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑÐ¼
+		case "payments": include("pages/admin/_payments.php"); break; // Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð²Ñ‹Ð¿Ð»Ð°Ñ‚
+		case "config": include("pages/admin/_config.php"); break; // ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸
+	# Ð¡Ñ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° Ð¾ÑˆÐ¸Ð±ÐºÐ¸
 	default: @include("pages/_404.php"); break;		
 	}		
 }else @include("pages/admin/_stats.php");

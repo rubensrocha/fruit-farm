@@ -1,10 +1,10 @@
 <?PHP
-$_OPTIMIZATION["title"] = "Новости";
-$_OPTIMIZATION["description"] = "Новости проекта";
-$_OPTIMIZATION["keywords"] = "Новости нашего проекта";
+$_OPTIMIZATION["title"] = "РќРѕРІРѕСЃС‚Рё";
+$_OPTIMIZATION["description"] = "РќРѕРІРѕСЃС‚Рё РїСЂРѕРµРєС‚Р°";
+$_OPTIMIZATION["keywords"] = "РќРѕРІРѕСЃС‚Рё РЅР°С€РµРіРѕ РїСЂРѕРµРєС‚Р°";
 ?>
 <div class="s-bk-lf">
-	<div class="acc-title">Новости</div>
+	<div class="acc-title">РќРѕРІРѕСЃС‚Рё</div>
 </div>
 <div class="silver-bk"><div class="clr"></div>	
 <?PHP
@@ -24,7 +24,7 @@ if($db->NumRows() > 0){
 	<BR />
 	<?PHP
 	}
-}else echo "<center>Новостей нет :(</center>";
+}else echo "<center>РќРѕРІРѕСЃС‚РµР№ РЅРµС‚ :(</center>";
 
 ?>
 </div>

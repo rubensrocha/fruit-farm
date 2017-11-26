@@ -1,10 +1,10 @@
 <div class="s-bk-lf">
-	<div class="acc-title">Игроки</div>
+	<div class="acc-title">РРіСЂРѕРєРё</div>
 </div>
 <div class="silver-bk">
 	<div class="clr"></div>
 	<?PHP
-	$_OPTIMIZATION["title"] = "Аккаунт - Список пользователей";
+	$_OPTIMIZATION["title"] = "РђРєРєР°СѓРЅС‚ - РЎРїРёСЃРѕРє РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№";
 	$num_p = (isset($_GET["page"]) AND intval($_GET["page"]) < 1000 AND intval($_GET["page"]) >= 1) ? (intval($_GET["page"]) -1) : 0;
 	$lim = $num_p * 100;
 	$db->Query("SELECT * FROM db_users_a ORDER BY id LIMIT {$lim}, 100");
@@ -13,7 +13,7 @@
 	<table width="100%" border="0">
 		<tr bgcolor="#efefef">
 			<td align="center" width="75">ID</td>
-			<td align="center">Пользователь</td>
+			<td align="center">РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ</td>
 			<td align="center">Email</td>
 		</tr>
 	<?PHP
@@ -30,7 +30,7 @@
 	</table>
 	<BR />
 	<?PHP
-	}else echo "<center><b>На данной странице нет записей</b></center><BR />";
+	}else echo "<center><b>РќР° РґР°РЅРЅРѕР№ СЃС‚СЂР°РЅРёС†Рµ РЅРµС‚ Р·Р°РїРёСЃРµР№</b></center><BR />";
 	$db->Query("SELECT COUNT(*) FROM db_users_a");
 	$all_pages = $db->FetchRow();
 	if($all_pages > 100){

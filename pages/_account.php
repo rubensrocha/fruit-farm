@@ -1,25 +1,25 @@
 <?PHP
-$_OPTIMIZATION["title"] = "Àêêàóíò";
-$_OPTIMIZATION["description"] = "Àêêàóíò ïîëüçîâàòåëÿ";
-$_OPTIMIZATION["keywords"] = "Àêêàóíò, ëè÷íûé êàáèíåò, ïîëüçîâàòåëü";
-# Áëîêèðîâêà ñåññèè
+$_OPTIMIZATION["title"] = "ÐÐºÐºÐ°ÑƒÐ½Ñ‚";
+$_OPTIMIZATION["description"] = "ÐÐºÐºÐ°ÑƒÐ½Ñ‚ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ";
+$_OPTIMIZATION["keywords"] = "ÐÐºÐºÐ°ÑƒÐ½Ñ‚, Ð»Ð¸Ñ‡Ð½Ñ‹Ð¹ ÐºÐ°Ð±Ð¸Ð½ÐµÑ‚, Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒ";
+# Ð‘Ð»Ð¾ÐºÐ¸Ñ€Ð¾Ð²ÐºÐ° ÑÐµÑÑÐ¸Ð¸
 if(!isset($_SESSION["user_id"])){ Header("Location: /"); return; }
 if(isset($_GET["sel"])){	
 	$smenu = strval($_GET["sel"]);		
 	switch($smenu){
-		case "404": include("pages/_404.php"); break; // Ñòðàíèöà îøèáêè
-		case "farm": include("pages/account/_farm.php"); break; // Ìîÿ ôåðìà
-		case "store": include("pages/account/_store.php"); break; // Ñêëàä
-		case "market": include("pages/account/_market.php"); break; // Ðûíîê
-		case "bonus": include("pages/account/_bonus.php"); break; // Åæåäíåâíûé áîíóñ
-		case "lottery": include("pages/account/_lottery.php"); break; // Ëîòåðåÿ
-		case "swap": include("pages/account/_swap.php"); break; // Îáìåííûé ïóíêò
-		case "referals": include("pages/account/_referals.php"); break; // Ðåôåðàëû
-		case "insert": include("pages/account/_insert.php"); break; // Ïîïîëíåíèå áàëàíñà
-		case "payment": include("pages/account/_payment.php"); break; // Âûïëàòà WM
-		case "config": include("pages/account/_config.php"); break; // Íàñòðîéêè
-		case "exit": @session_destroy(); Header("Location: /"); return; break; // Âûõîä	
-	# Ñòðàíèöà îøèáêè
+		case "404": include("pages/_404.php"); break; // Ð¡Ñ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° Ð¾ÑˆÐ¸Ð±ÐºÐ¸
+		case "farm": include("pages/account/_farm.php"); break; // ÐœÐ¾Ñ Ñ„ÐµÑ€Ð¼Ð°
+		case "store": include("pages/account/_store.php"); break; // Ð¡ÐºÐ»Ð°Ð´
+		case "market": include("pages/account/_market.php"); break; // Ð Ñ‹Ð½Ð¾Ðº
+		case "bonus": include("pages/account/_bonus.php"); break; // Ð•Ð¶ÐµÐ´Ð½ÐµÐ²Ð½Ñ‹Ð¹ Ð±Ð¾Ð½ÑƒÑ
+		case "lottery": include("pages/account/_lottery.php"); break; // Ð›Ð¾Ñ‚ÐµÑ€ÐµÑ
+		case "swap": include("pages/account/_swap.php"); break; // ÐžÐ±Ð¼ÐµÐ½Ð½Ñ‹Ð¹ Ð¿ÑƒÐ½ÐºÑ‚
+		case "referals": include("pages/account/_referals.php"); break; // Ð ÐµÑ„ÐµÑ€Ð°Ð»Ñ‹
+		case "insert": include("pages/account/_insert.php"); break; // ÐŸÐ¾Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ðµ Ð±Ð°Ð»Ð°Ð½ÑÐ°
+		case "payment": include("pages/account/_payment.php"); break; // Ð’Ñ‹Ð¿Ð»Ð°Ñ‚Ð° WM
+		case "config": include("pages/account/_config.php"); break; // ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸
+		case "exit": @session_destroy(); Header("Location: /"); return; break; // Ð’Ñ‹Ñ…Ð¾Ð´	
+	# Ð¡Ñ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° Ð¾ÑˆÐ¸Ð±ÐºÐ¸
 	default: @include("pages/_404.php"); break;	
 	}	
 }else @include("pages/account/_user_account.php");

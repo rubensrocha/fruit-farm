@@ -1,11 +1,11 @@
 <?PHP
-$_OPTIMIZATION["title"] = "Восстановление пароля";
-$_OPTIMIZATION["description"] = "Восстановление забытого пароля";
-$_OPTIMIZATION["keywords"] = "Восстановление забытого пароля";
+$_OPTIMIZATION["title"] = "Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїР°СЂРѕР»СЏ";
+$_OPTIMIZATION["description"] = "Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ Р·Р°Р±С‹С‚РѕРіРѕ РїР°СЂРѕР»СЏ";
+$_OPTIMIZATION["keywords"] = "Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ Р·Р°Р±С‹С‚РѕРіРѕ РїР°СЂРѕР»СЏ";
 if(isset($_SESSION["user_id"])){ Header("Location: /account"); return; }
 ?>
 <div class="s-bk-lf">
-	<div class="acc-title">Восстановление пароля</div>
+	<div class="acc-title">Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїР°СЂРѕР»СЏ</div>
 </div>
 <div class="silver-bk"><div class="clr"></div>	
 <?PHP
@@ -22,21 +22,21 @@ if(isset($_POST["email"])){
 				$db->Query("SELECT id, user, email, pass FROM db_users_a WHERE email = '$email'");
 				if($db->NumRows() == 1){
 					$data = $db->FetchArray();
-					# Вносим запись в БД
+					# Р’РЅРѕСЃРёРј Р·Р°РїРёСЃСЊ РІ Р‘Р”
 					$db->Query("INSERT INTO db_recovery (email, ip, date_add, date_del) VALUES ('$email',INET_ATON('".$func->UserIP."'),'$time','$tdel')");
-					# Отправляем пароль
+					# РћС‚РїСЂР°РІР»СЏРµРј РїР°СЂРѕР»СЊ
 					$sender = new isender;
 					$sender -> RecoveryPassword($data["email"], $data["pass"], $data["email"]);
-					echo "<center><font color = 'green'><b>Данные для входа отправлены на Email</b></font></center>";
+					echo "<center><font color = 'green'><b>Р”Р°РЅРЅС‹Рµ РґР»СЏ РІС…РѕРґР° РѕС‚РїСЂР°РІР»РµРЅС‹ РЅР° Email</b></font></center>";
 					?>
 					</div>
 					<div class="clr"></div>	
 					<?PHP
 					return; 
-				}else echo "<center><font color = 'red'><b>Пользователь с таким Email не зарегистрирован</b></font></center>";
-			}else echo "<center><font color = 'red'><b>На Ваш Email или IP уже был отправлен пароль за последние 15 минут</b></font></center>";	
-		}else echo "<center><font color = 'red'><b>Email указан неверно</b></font></center>";
-	}else echo "<center><font color = 'red'><b>Символы с картинки введены неверно</b></font></center>";	
+				}else echo "<center><font color = 'red'><b>РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ СЃ С‚Р°РєРёРј Email РЅРµ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅ</b></font></center>";
+			}else echo "<center><font color = 'red'><b>РќР° Р’Р°С€ Email РёР»Рё IP СѓР¶Рµ Р±С‹Р» РѕС‚РїСЂР°РІР»РµРЅ РїР°СЂРѕР»СЊ Р·Р° РїРѕСЃР»РµРґРЅРёРµ 15 РјРёРЅСѓС‚</b></font></center>";	
+		}else echo "<center><font color = 'red'><b>Email СѓРєР°Р·Р°РЅ РЅРµРІРµСЂРЅРѕ</b></font></center>";
+	}else echo "<center><font color = 'red'><b>РЎРёРјРІРѕР»С‹ СЃ РєР°СЂС‚РёРЅРєРё РІРІРµРґРµРЅС‹ РЅРµРІРµСЂРЅРѕ</b></font></center>";	
 }
 ?>
 
@@ -44,17 +44,17 @@ if(isset($_POST["email"])){
 <form action="" method="post">
 	<table width="550" border="0" cellspacing="0" cellpadding="0">
 		<tr>
-			<td align="left" width="250">Email (На него будет выслан пароль):</td>
+			<td align="left" width="250">Email (РќР° РЅРµРіРѕ Р±СѓРґРµС‚ РІС‹СЃР»Р°РЅ РїР°СЂРѕР»СЊ):</td>
 			<td align="left" width="250"><input name="email" type="text" size="25" maxlength="50" value="<?=(isset($_POST["email"])) ? $_POST["email"] : false; ?>"/></td>
 		</tr>
 		<tr>
 			<td align="left" width="250" style="padding-top:20px;">
 				<a href="#" onclick="ResetCaptcha(this);"><img src="/captcha.php?rnd=<?=rand(1,10000); ?>"  border="0" style="margin:0;"/></a>
 			</td>
-			<td align="left" width="250" style="padding-top:20px;">Введите символы с картинки<input name="captcha" type="text" size="25" maxlength="50" /></td>
+			<td align="left" width="250" style="padding-top:20px;">Р’РІРµРґРёС‚Рµ СЃРёРјРІРѕР»С‹ СЃ РєР°СЂС‚РёРЅРєРё<input name="captcha" type="text" size="25" maxlength="50" /></td>
 		</tr>
 		<tr>
-			<td colspan="2" align="center"><BR /><input type="submit" value="Восстановить" style="height: 30px;"></td>
+			<td colspan="2" align="center"><BR /><input type="submit" value="Р’РѕСЃСЃС‚Р°РЅРѕРІРёС‚СЊ" style="height: 30px;"></td>
 		</tr>
 	</table>
 </form>

@@ -1,10 +1,10 @@
 <?PHP
-$_OPTIMIZATION["title"] = "Правила";
-$_OPTIMIZATION["description"] = "Общие правила проекта";
-$_OPTIMIZATION["keywords"] = "Правила, помятка пользователя, правила проекта";
+$_OPTIMIZATION["title"] = "РџСЂР°РІРёР»Р°";
+$_OPTIMIZATION["description"] = "РћР±С‰РёРµ РїСЂР°РІРёР»Р° РїСЂРѕРµРєС‚Р°";
+$_OPTIMIZATION["keywords"] = "РџСЂР°РІРёР»Р°, РїРѕРјСЏС‚РєР° РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ, РїСЂР°РІРёР»Р° РїСЂРѕРµРєС‚Р°";
 ?>
 <div class="s-bk-lf">
-	<div class="acc-title">Правила проекта</div>
+	<div class="acc-title">РџСЂР°РІРёР»Р° РїСЂРѕРµРєС‚Р°</div>
 </div>
 <div class="silver-bk"><div class="clr"></div>	
 <?PHP
