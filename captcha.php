@@ -1,10 +1,4 @@
 <?php
-######################################
-# Скрипт Fruit Farm
-# Автор Rufus
-# ICQ: 819-374
-# Skype: Rufus272
-######################################
 @error_reporting(E_ALL ^ E_NOTICE);
 @ini_set('display_errors', true);
 @ini_set('html_errors', false);
