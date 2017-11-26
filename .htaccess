@@ -1,0 +1,70 @@
+DirectoryIndex index.php
+RewriteEngine On
+
+# Основной домен
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+# Главная
+RewriteRule ^index.html$ index.php [L]
+# Правила
+RewriteRule ^rules(/?)+$ index.php?menu=rules [L]
+# Контакты
+RewriteRule ^contacts(/?)+$ index.php?menu=contacts [L]
+# Новости
+RewriteRule ^news(/?)+$ index.php?menu=news [L]
+# О нас
+RewriteRule ^about(/?)+$ index.php?menu=about [L]
+# Регистрация
+RewriteRule ^signup(/?)+$ index.php?menu=signup [L]
+# Восстановление пароля
+RewriteRule ^recovery(/?)+$ index.php?menu=recovery [L]
+# Последние выплаты
+RewriteRule ^payments(/?)+$ index.php?menu=payments [L]
+# Пользователи
+RewriteRule ^users/([0-9]+)(/?)+$ index.php?menu=users&page=$1 [L]
+RewriteRule ^users(/?)+$ index.php?menu=users [L]
+#Оплата
+RewriteRule ^payment/success(/?)+$ index.php?menu=success [L]
+RewriteRule ^payment/fail(/?)+$ index.php?menu=fail [L]
+
+# Аккаунт
+RewriteRule ^account(/?)+$ index.php?menu=account [L]
+RewriteRule ^account/farm(/?)+$ index.php?menu=account&sel=farm [L]
+RewriteRule ^account/store(/?)+$ index.php?menu=account&sel=store [L]
+RewriteRule ^account/market(/?)+$ index.php?menu=account&sel=market [L]
+RewriteRule ^account/bonus(/?)+$ index.php?menu=account&sel=bonus [L]
+RewriteRule ^account/lottery(/?)+$ index.php?menu=account&sel=lottery [L]
+RewriteRule ^account/lottery/winners(/?)+$ index.php?menu=account&sel=lottery&winners [L]
+RewriteRule ^account/swap(/?)+$ index.php?menu=account&sel=swap [L]
+RewriteRule ^account/referals(/?)+$ index.php?menu=account&sel=referals [L]
+RewriteRule ^account/insert(/?)+$ index.php?menu=account&sel=insert [L]
+RewriteRule ^account/payment(/?)+$ index.php?menu=account&sel=payment [L]
+RewriteRule ^account/config(/?)+$ index.php?menu=account&sel=config [L]
+RewriteRule ^account/exit(/?)+$ index.php?menu=account&sel=exit [L]
+
+#Админка
+RewriteRule ^admin(/?)+$ index.php?menu=admin [L]
+RewriteRule ^admin/stats(/?)+$ index.php?menu=admin&sel=stats [L]
+RewriteRule ^admin/story_buy(/?)+$ index.php?menu=admin&sel=story_buy [L]
+RewriteRule ^admin/story_swap(/?)+$ index.php?menu=admin&sel=story_swap [L]
+RewriteRule ^admin/story_insert(/?)+$ index.php?menu=admin&sel=story_insert [L]
+RewriteRule ^admin/story_insert/day(/?)+$ index.php?menu=admin&sel=story_insert&day [L]
+RewriteRule ^admin/story_insert/month(/?)+$ index.php?menu=admin&sel=story_insert&month [L]
+RewriteRule ^admin/story_sell(/?)+$ index.php?menu=admin&sel=story_sell [L]
+RewriteRule ^admin/news(/?)+$ index.php?menu=admin&sel=news [L]
+RewriteRule ^admin/news/add(/?)+$ index.php?menu=admin&sel=news&add [L]
+RewriteRule ^admin/news/edit/([0-9]+)(/?)+$ index.php?menu=admin&sel=news&edit=$1 [L]
+RewriteRule ^admin/about(/?)+$ index.php?menu=admin&sel=about [L]
+RewriteRule ^admin/rules(/?)+$ index.php?menu=admin&sel=rules [L]
+RewriteRule ^admin/contacts(/?)+$ index.php?menu=admin&sel=contacts [L]
+RewriteRule ^admin/users(/?)+$ index.php?menu=admin&sel=users [L]
+RewriteRule ^admin/users/edit/([0-9]+)(/?)+$ index.php?menu=admin&sel=users&edit=$1 [L]
+RewriteRule ^admin/users/sort/([0-9]+)(/?)+$ index.php?menu=admin&sel=users&sort=$1 [L]
+RewriteRule ^admin/sender(/?)+$ index.php?menu=admin&sel=sender [L]
+RewriteRule ^admin/sender/add(/?)+$ index.php?menu=admin&sel=sender&add [L]
+RewriteRule ^admin/payments(/?)+$ index.php?menu=admin&sel=payments [L]
+RewriteRule ^admin/payments/balance(/?)+$ index.php?menu=admin&sel=payments&balance [L]
+RewriteRule ^admin/payments/list_day(/?)+$ index.php?menu=admin&sel=payments&list_day [L]
+RewriteRule ^admin/payments/last_31(/?)+$ index.php?menu=admin&sel=payments&last_31[L]
+RewriteRule ^admin/config(/?)+$ index.php?menu=admin&sel=config [L]
