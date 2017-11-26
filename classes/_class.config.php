@@ -1,8 +1,4 @@
 <?PHP
-######################################
-# Ñêðèïò Fruit Farm Classic
-# Àâòîð PSWeb.ru
-######################################
 class config{
 
 	public $HostDB = 'localhost';
@@ -11,16 +7,16 @@ class config{
 	public $BaseDB = 'psweb_ff';
 	
 	public $SYSTEM_START_TIME = 1357338458;
-	public $VAL = 'Ðóá.';
+	public $VAL = 'Ð ÑƒÐ±.';
 	
-	# PAYEER íàñòðîéêè
+	# PAYEER Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸
 	public $AccountNumber = 'P111111';
 	public $apiId = '11111111';
 	public $apiKey = '11111111';
 	
 	public $shopID = '11111111';
 	public $secretW = '11111111';
-	# Íàñòðîéêè äëÿ îïëàòû êðåäèòà
+	# ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ Ð´Ð»Ñ Ð¾Ð¿Ð»Ð°Ñ‚Ñ‹ ÐºÑ€ÐµÐ´Ð¸Ñ‚Ð°
     public $kredit_shopID = 'ShopID';
 	public $kredit_secretW = 'SecretKEY';
 }

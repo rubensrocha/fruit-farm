@@ -1,15 +1,15 @@
 <?PHP
 class func{
 
-	public $UserIP = "Undefined"; # IP пользователя
-	public $UserCode = "Undefined"; # Код от IP
-	public $TableID = -1; # ID таблицы
-	public $UserAgent = "Undefined"; // Браузер пользователя
+	public $UserIP = "Undefined"; # IP РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+	public $UserCode = "Undefined"; # РљРѕРґ РѕС‚ IP
+	public $TableID = -1; # ID С‚Р°Р±Р»РёС†С‹
+	public $UserAgent = "Undefined"; // Р‘СЂР°СѓР·РµСЂ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 
 	/*======================================================================*\
 	Function:	__construct
-	Output:		Нет
-	Descriiption: Выполняется при создании экземпляра класса
+	Output:		РќРµС‚
+	Descriiption: Р’С‹РїРѕР»РЅСЏРµС‚СЃСЏ РїСЂРё СЃРѕР·РґР°РЅРёРё СЌРєР·РµРјРїР»СЏСЂР° РєР»Р°СЃСЃР°
 	\*======================================================================*/
 	public function __construct(){
 		$this->UserIP = $this->GetUserIp();
@@ -19,8 +19,8 @@ class func{
 	
 	/*======================================================================*\
 	Function:	__destruct
-	Output:		Нет
-	Descriiption: Уничтожение объекта
+	Output:		РќРµС‚
+	Descriiption: РЈРЅРёС‡С‚РѕР¶РµРЅРёРµ РѕР±СЉРµРєС‚Р°
 	\*======================================================================*/
 	public function __destruct(){
 	
@@ -31,7 +31,7 @@ class func{
 	Function:	IsMail
 	Output:		True / False
 	Input:		Email 
-	Descriiption: Проверяет правильность ввода email адреса
+	Descriiption: РџСЂРѕРІРµСЂСЏРµС‚ РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ РІРІРѕРґР° email Р°РґСЂРµСЃР°
 	\*======================================================================*/
 	public function IsMail($mail){
 		if(is_array($mail) && empty($mail) && strlen($mail) > 255 && strpos($mail,'@') > 64) return false;
@@ -41,8 +41,8 @@ class func{
 	/*======================================================================*\
 	Function:	IsPassword
 	Output:		True / False
-	Input:		Строка пароля, Маска, Длина ("10, 25") && ("10") 
-	Descriiption: Проверяет правильность ввода пароля
+	Input:		РЎС‚СЂРѕРєР° РїР°СЂРѕР»СЏ, РњР°СЃРєР°, Р”Р»РёРЅР° ("10, 25") && ("10") 
+	Descriiption: РџСЂРѕРІРµСЂСЏРµС‚ РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ РІРІРѕРґР° РїР°СЂРѕР»СЏ
 	\*======================================================================*/
 	public function IsPassword($password, $mask = "^[a-zA-Z0-9]", $len = "{4,20}"){
 		return (is_array($password)) ? false : (ereg("{$mask}{$len}$", $password)) ? $password : false;
@@ -52,8 +52,8 @@ class func{
 	/*======================================================================*\
 	Function:	IsLogin
 	Output:		True / False
-	Input:		Строка логина, Маска, Длина ("10, 25") && ("10") 
-	Descriiption: Проверяет правильность ввода логина
+	Input:		РЎС‚СЂРѕРєР° Р»РѕРіРёРЅР°, РњР°СЃРєР°, Р”Р»РёРЅР° ("10, 25") && ("10") 
+	Descriiption: РџСЂРѕРІРµСЂСЏРµС‚ РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ РІРІРѕРґР° Р»РѕРіРёРЅР°
 	\*======================================================================*/
 	public function IsLogin($login, $mask = "^[a-zA-Z0-9]", $len = "{4,10}"){
 		return (is_array($login)) ? false : (ereg("{$mask}{$len}$", $login)) ? $login : false;
@@ -62,7 +62,7 @@ class func{
 	/*======================================================================*\
 	Function:	GetUserIp
 	Output:		UserIp
-	Descriiption: Определяет IP пользователя
+	Descriiption: РћРїСЂРµРґРµР»СЏРµС‚ IP РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 	\*======================================================================*/
 	public function GetUserIp(){
 		if($this->UserIP == "Undefined"){
@@ -98,7 +98,7 @@ class func{
 	
 	/*======================================================================*\
 	Function:	SellItems
-	Descriiption: Выводит сумму и остаток
+	Descriiption: Р’С‹РІРѕРґРёС‚ СЃСѓРјРјСѓ Рё РѕСЃС‚Р°С‚РѕРє
 	\*======================================================================*/
 	public function SellItems($all_items, $for_one_coin){
 		if($all_items <= 0 OR $for_one_coin <= 0) return 0;
@@ -107,7 +107,7 @@ class func{
 	
 	/*======================================================================*\
 	Function:	IpToLong
-	Descriiption: Преобразует IP в целочисленное
+	Descriiption: РџСЂРµРѕР±СЂР°Р·СѓРµС‚ IP РІ С†РµР»РѕС‡РёСЃР»РµРЅРЅРѕРµ
 	\*======================================================================*/
 	public function IpToInt($ip){ 
 	
@@ -118,7 +118,7 @@ class func{
 	
 	/*======================================================================*\
 	Function:	IpToLong
-	Descriiption: Преобразует целочисленное в IP
+	Descriiption: РџСЂРµРѕР±СЂР°Р·СѓРµС‚ С†РµР»РѕС‡РёСЃР»РµРЅРЅРѕРµ РІ IP
 	\*======================================================================*/
 	public function IntToIP($int){ 
   		return long2ip($int);  
@@ -127,8 +127,8 @@ class func{
 	/*======================================================================*\
 	Function:	IsWM
 	Output:		True / False
-	Input:		Реквизит, TYPE: 0 - WMID, 1 - WMR, 2 - WMZ, 3 - WME, 4 - WMU 
-	Descriiption: Проверяет правильность ввода пароля
+	Input:		Р РµРєРІРёР·РёС‚, TYPE: 0 - WMID, 1 - WMR, 2 - WMZ, 3 - WME, 4 - WMU 
+	Descriiption: РџСЂРѕРІРµСЂСЏРµС‚ РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ РІРІРѕРґР° РїР°СЂРѕР»СЏ
 	\*======================================================================*/
 	public function IsWM($data, $type = 0){
 		
@@ -147,7 +147,7 @@ class func{
 	Function:	IpCode
 	Output:		String, Example 255025502550255
 	Input:		- 
-	Descriiption: Возвращает IP с замененными знаками "." на "0"
+	Descriiption: Р’РѕР·РІСЂР°С‰Р°РµС‚ IP СЃ Р·Р°РјРµРЅРµРЅРЅС‹РјРё Р·РЅР°РєР°РјРё "." РЅР° "0"
 	\*======================================================================*/
 	public function IpCode(){
 		$arr_mask = explode(".",$this->GetUserIp());
@@ -156,7 +156,7 @@ class func{
 	
 	/*======================================================================*\
 	Function:	GetTime
-	Descriiption: Возвращаер дату
+	Descriiption: Р’РѕР·РІСЂР°С‰Р°РµСЂ РґР°С‚Сѓ
 	\*======================================================================*/
 	public function GetTime($tis = 0, $unix = true, $template = "d.m.Y H:i:s"){
 		
@@ -167,7 +167,7 @@ class func{
 	
 	/*======================================================================*\
 	Function:	UserAgent
-	Descriiption: Возвращает браузер пользователя
+	Descriiption: Р’РѕР·РІСЂР°С‰Р°РµС‚ Р±СЂР°СѓР·РµСЂ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 	\*======================================================================*/
 	public function UserAgent(){
 		return $this->TextClean($_SERVER['HTTP_USER_AGENT']);
@@ -175,7 +175,7 @@ class func{
 	
 	/*======================================================================*\
 	Function:	TextClean
-	Descriiption: Очистка текста
+	Descriiption: РћС‡РёСЃС‚РєР° С‚РµРєСЃС‚Р°
 	\*======================================================================*/
 	public function TextClean($text){
 		$array_find = array("`", "<", ">", "^", '"', "~", "\\");
@@ -185,9 +185,9 @@ class func{
 	
 	/*======================================================================*\
 	Function:	ShowError
-	Descriiption: Выводит список ошибок строкой
+	Descriiption: Р’С‹РІРѕРґРёС‚ СЃРїРёСЃРѕРє РѕС€РёР±РѕРє СЃС‚СЂРѕРєРѕР№
 	\*======================================================================*/
-	public function ShowError($errorArray = array(), $title = "Исправьте следующие ошибки"){
+	public function ShowError($errorArray = array(), $title = "РСЃРїСЂР°РІСЊС‚Рµ СЃР»РµРґСѓСЋС‰РёРµ РѕС€РёР±РєРё"){
 		if(count($errorArray) > 0){
 		$string_a = "<div class='Error'><div class='ErrorTitle'>".$title."</div><ul>";
 			foreach($errorArray as $number => $value){
@@ -195,12 +195,12 @@ class func{
 			}
 		$string_a .= "</ul></div><BR />";
 		return $string_a;
-		}else return "Неизвестная ошибка :(";
+		}else return "РќРµРёР·РІРµСЃС‚РЅР°СЏ РѕС€РёР±РєР° :(";
 	}
 	
 	/*======================================================================*\
 	Function:	ComissionWm
-	Descriiption: Возвращает комиссию WM
+	Descriiption: Р’РѕР·РІСЂР°С‰Р°РµС‚ РєРѕРјРёСЃСЃРёСЋ WM
 	\*======================================================================*/
 	public function ComissionWm($sum, $com_payee, $com_payysys){
 		$a = ceil(ceil($sum * $com_payee * 100) / 10000*100) / 100;
@@ -210,7 +210,7 @@ class func{
 	
 	/*======================================================================*\
 	Function:	md5Password
-	Descriiption: Возвращает md5_пароля
+	Descriiption: Р’РѕР·РІСЂР°С‰Р°РµС‚ md5_РїР°СЂРѕР»СЏ
 	\*======================================================================*/
 	public function md5Password($pass){
 		$pass = strtolower($pass);
@@ -220,7 +220,7 @@ class func{
 	
 	/*======================================================================*\
 	Function:	ControlCode
-	Descriiption: Возвращает контрольное число
+	Descriiption: Р’РѕР·РІСЂР°С‰Р°РµС‚ РєРѕРЅС‚СЂРѕР»СЊРЅРѕРµ С‡РёСЃР»Рѕ
 	\*======================================================================*/
 	public function ControlCode($time = 0){
 		return ($time > 0) ? date("Ymd", $time) : date("Ymd");
@@ -228,7 +228,7 @@ class func{
 	
 	/*======================================================================*\
 	Function:	SumCalc
-	Descriiption: Возвращает сумму овощей
+	Descriiption: Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃСѓРјРјСѓ РѕРІРѕС‰РµР№
 	\*======================================================================*/
 	public function SumCalc($per_h, $sum_tree, $last_sbor){
 		if($last_sbor > 0){
