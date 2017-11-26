@@ -1,9 +1,9 @@
 <div class="s-bk-lf">
-	<div class="acc-title">Рассылка пользователям</div>
+	<div class="acc-title">Р Р°СЃСЃС‹Р»РєР° РїРѕР»СЊР·РѕРІР°С‚РµР»СЏРј</div>
 </div>
 <div class="silver-bk"><div class="clr"></div>	
 <center>
-	<a href = "/admin/sender" class="stn">Список рассылок</a> || <a href = "/admin/sender/add" class="stn">Добавить рассылку</a>
+	<a href = "/admin/sender" class="stn">РЎРїРёСЃРѕРє СЂР°СЃСЃС‹Р»РѕРє</a> || <a href = "/admin/sender/add" class="stn">Р”РѕР±Р°РІРёС‚СЊ СЂР°СЃСЃС‹Р»РєСѓ</a>
 </center>
 <BR />
 <?PHP
@@ -13,17 +13,17 @@ $mess = $func->TextClean($_POST["mess"]);
 	if(strlen($title) > 3){
 		if(strlen($mess) > 10){
 		$db->Query("INSERT INTO db_sender (name, mess, date_add) VALUES ('$title','$mess','".time()."')");
-		echo "<center><b>Рассылка поставлена в очередь на выполнение</b></center><BR />";
-		}else echo "<center><b>Сообщение должно быть больше 10 символов</b></center><BR />";
-	}else echo "<center><b>Заголовок должен быть больше 3х символов</b></center><BR />";
+		echo "<center><b>Р Р°СЃСЃС‹Р»РєР° РїРѕСЃС‚Р°РІР»РµРЅР° РІ РѕС‡РµСЂРµРґСЊ РЅР° РІС‹РїРѕР»РЅРµРЅРёРµ</b></center><BR />";
+		}else echo "<center><b>РЎРѕРѕР±С‰РµРЅРёРµ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ 10 СЃРёРјРІРѕР»РѕРІ</b></center><BR />";
+	}else echo "<center><b>Р—Р°РіРѕР»РѕРІРѕРє РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ 3С… СЃРёРјРІРѕР»РѕРІ</b></center><BR />";
 }
-# Добавление рассылки
+# Р”РѕР±Р°РІР»РµРЅРёРµ СЂР°СЃСЃС‹Р»РєРё
 if(isset($_GET["add"])){
 ?>
 <form action="" method="post">
 <table width="" border="0">
   <tr>
-    <td>Заголовок сообщения:</td>
+    <td>Р—Р°РіРѕР»РѕРІРѕРє СЃРѕРѕР±С‰РµРЅРёСЏ:</td>
     <td align="right"><input type="text" name="title" size="35"/></td>
   </tr>
   <tr>
@@ -32,28 +32,28 @@ if(isset($_GET["add"])){
 	</td>
   </tr>
   <tr>
-    <td align="center" colspan="2"><input type="submit" value="Добавить"/></td>
+    <td align="center" colspan="2"><input type="submit" value="Р”РѕР±Р°РІРёС‚СЊ"/></td>
   </tr>
 </table>
 </form>
 <BR /><BR />
-<b>Маркеры для замены:</b><BR />
-<font color = "red">{!USER!}</font> - Имя пользователя<BR />
-<font color = "red">{!PASS!}</font> - Текущий пароль<BR />
-<font color = "red">{!REFERER!}</font> - Реферер<BR />
-<font color = "red">{!REFERALS!}</font> - Кол-во рефералов<BR />
-<font color = "red">{!MONEY_B!}</font> - Баланс для покупок<BR />
-<font color = "red">{!MONEY_P!}</font> - Баланс на вывод<BR />
+<b>РњР°СЂРєРµСЂС‹ РґР»СЏ Р·Р°РјРµРЅС‹:</b><BR />
+<font color = "red">{!USER!}</font> - РРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ<BR />
+<font color = "red">{!PASS!}</font> - РўРµРєСѓС‰РёР№ РїР°СЂРѕР»СЊ<BR />
+<font color = "red">{!REFERER!}</font> - Р РµС„РµСЂРµСЂ<BR />
+<font color = "red">{!REFERALS!}</font> - РљРѕР»-РІРѕ СЂРµС„РµСЂР°Р»РѕРІ<BR />
+<font color = "red">{!MONEY_B!}</font> - Р‘Р°Р»Р°РЅСЃ РґР»СЏ РїРѕРєСѓРїРѕРє<BR />
+<font color = "red">{!MONEY_P!}</font> - Р‘Р°Р»Р°РЅСЃ РЅР° РІС‹РІРѕРґ<BR />
 <BR /><BR />
 </div>
 <div class="clr"></div>	
 <?PHP
 return;
 }
-# Удаление
+# РЈРґР°Р»РµРЅРёРµ
 if(isset($_POST["del"])){
 	$db->Query("DELETE FROM db_sender WHERE id = '".intval($_POST["del"])."'");	
-	echo "<center><b>Рассылка удалена</b></center><BR />";
+	echo "<center><b>Р Р°СЃСЃС‹Р»РєР° СѓРґР°Р»РµРЅР°</b></center><BR />";
 }
 $db->Query("SELECT * FROM db_sender ORDER BY id DESC");
 if($db->NumRows() > 0){
@@ -61,10 +61,10 @@ if($db->NumRows() > 0){
 <table cellpadding='3' cellspacing='0' border='0' bordercolor='#336633' align='center' width="99%">
   <tr bgcolor="#efefef">
     <td align="center" width="50" class="m-tb"><b>ID</b></td>
-    <td align="center" class="m-tb"><b>Название</b></td>
-    <td align="center" width="100" class="m-tb"><b>Отправлено</b></td>
-	<td align="center" width="100" class="m-tb"><b>Статус</b></td>
-	<td align="center" width="50" class="m-tb"><b>Удалить</b></td>
+    <td align="center" class="m-tb"><b>РќР°Р·РІР°РЅРёРµ</b></td>
+    <td align="center" width="100" class="m-tb"><b>РћС‚РїСЂР°РІР»РµРЅРѕ</b></td>
+	<td align="center" width="100" class="m-tb"><b>РЎС‚Р°С‚СѓСЃ</b></td>
+	<td align="center" width="50" class="m-tb"><b>РЈРґР°Р»РёС‚СЊ</b></td>
   </tr>
 <?PHP
 while($data = $db->FetchArray()){
@@ -72,12 +72,12 @@ while($data = $db->FetchArray()){
 	<tr>
     <td align="center"><?=$data["id"]; ?></td>
     <td align="center"><?=$data["name"]; ?></td>
-    <td align="center"><?=$data["sended"]; ?> шт.</td>
-	<td align="center"><?=$data["status"] == 0 ? "Отправка" : "Завершено"; ?></td>
+    <td align="center"><?=$data["sended"]; ?> С€С‚.</td>
+	<td align="center"><?=$data["status"] == 0 ? "РћС‚РїСЂР°РІРєР°" : "Р—Р°РІРµСЂС€РµРЅРѕ"; ?></td>
 	<td align="center">
 		<form action="" method="post">
 			<input type="hidden" name="del" value="<?=$data["id"]; ?>" />
-			<input type="submit" value="Удалить" />
+			<input type="submit" value="РЈРґР°Р»РёС‚СЊ" />
 		</form>
 	</td>
   	</tr>
@@ -87,7 +87,7 @@ while($data = $db->FetchArray()){
 </table>
 <BR />
 <?PHP
-}else echo "<center><b>Рассылок нет</b></center><BR />";
+}else echo "<center><b>Р Р°СЃСЃС‹Р»РѕРє РЅРµС‚</b></center><BR />";
 ?>
 </div>
 <div class="clr"></div>	

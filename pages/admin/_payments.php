@@ -1,11 +1,11 @@
 <div class="s-bk-lf">
-	<div class="acc-title">Список выплат на Payeer</div>
+	<div class="acc-title">РЎРїРёСЃРѕРє РІС‹РїР»Р°С‚ РЅР° Payeer</div>
 </div>
 <div class="silver-bk"><div class="clr"></div>	
-<center><a href="/admin/payments">Выплачено</a> || <a href="/admin/payments/balance">Баланс на Payeer</a> || 
-<a href="/admin/payments/list_day">По дням</a> || <a href="/admin/payments/last_31">График за 30 дней</a></center><BR />
+<center><a href="/admin/payments">Р’С‹РїР»Р°С‡РµРЅРѕ</a> || <a href="/admin/payments/balance">Р‘Р°Р»Р°РЅСЃ РЅР° Payeer</a> || 
+<a href="/admin/payments/list_day">РџРѕ РґРЅСЏРј</a> || <a href="/admin/payments/last_31">Р“СЂР°С„РёРє Р·Р° 30 РґРЅРµР№</a></center><BR />
 <?PHP
-# График
+# Р“СЂР°С„РёРє
 if(isset($_GET["last_31"])){
 	
 	$dlim = time() - 60*60*24*30;
@@ -24,7 +24,7 @@ if(isset($_GET["last_31"])){
 			
 		}
 	
-	# Вывод
+	# Р’С‹РІРѕРґ
 	if(count($days_money) > 0){
 		
 		$array_for_chart = array();
@@ -51,12 +51,12 @@ if(isset($_GET["last_31"])){
       google.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['День', 'Сумма'],
+          ['Р”РµРЅСЊ', 'РЎСѓРјРјР°'],
           <?=$retd; ?>
         ]);
 
         var options = {
-          title: 'История Выплат (Сумма)',
+          title: 'РСЃС‚РѕСЂРёСЏ Р’С‹РїР»Р°С‚ (РЎСѓРјРјР°)',
           hAxis: {title: 'Last 30 Days',  titleTextStyle: {color: 'green'}}
         };
 
@@ -71,12 +71,12 @@ if(isset($_GET["last_31"])){
       google.setOnLoadCallback(drawChart2);
       function drawChart2() {
         var data2 = google.visualization.arrayToDataTable([
-          ['День', 'Кол-во'],
+          ['Р”РµРЅСЊ', 'РљРѕР»-РІРѕ'],
           <?=$retd2; ?>
         ]);
 
         var options2 = {
-          title: 'История Выплат (Кол-во)',
+          title: 'РСЃС‚РѕСЂРёСЏ Р’С‹РїР»Р°С‚ (РљРѕР»-РІРѕ)',
           hAxis: {title: 'Last 30 Days',  titleTextStyle: {color: 'green'}}
         };
 
@@ -90,12 +90,12 @@ if(isset($_GET["last_31"])){
       google.setOnLoadCallback(drawChart3);
       function drawChart3() {
         var data3 = google.visualization.arrayToDataTable([
-          ['День', 'Сумма'],
+          ['Р”РµРЅСЊ', 'РЎСѓРјРјР°'],
           <?=$retd3; ?>
         ]);
 
         var options3 = {
-          title: 'AVG (Сумма / Кол-во)',
+          title: 'AVG (РЎСѓРјРјР° / РљРѕР»-РІРѕ)',
           hAxis: {title: 'Last 30 Days',  titleTextStyle: {color: 'green'}}
         };
 
@@ -110,7 +110,7 @@ if(isset($_GET["last_31"])){
 		
 	}
 	
-	}else echo "<center><b>Записей нет</b></center><BR />";
+	}else echo "<center><b>Р—Р°РїРёСЃРµР№ РЅРµС‚</b></center><BR />";
 	
 	
 	
@@ -119,7 +119,7 @@ return;
 }
 
 
-# Вывод статистики по дням
+# Р’С‹РІРѕРґ СЃС‚Р°С‚РёСЃС‚РёРєРё РїРѕ РґРЅСЏРј
 if(isset($_GET["list_day"])){
 
 	$db->Query("SELECT * FROM db_payment ORDER BY id DESC");
@@ -137,15 +137,15 @@ if(isset($_GET["list_day"])){
 			
 		}
 	
-	# Вывод
+	# Р’С‹РІРѕРґ
 	if(count($days_money) > 0){
 	
 		?>
 		<table cellpadding='3' cellspacing='0' border='0' bordercolor='#336633' align='center' width="99%">
 		  <tr bgcolor="#efefef">
-			<td align="center" class="m-tb">Дата</td>
-			<td align="center" class="m-tb">Выплат</td>
-			<td align="center" class="m-tb">На сумму</td>
+			<td align="center" class="m-tb">Р”Р°С‚Р°</td>
+			<td align="center" class="m-tb">Р’С‹РїР»Р°С‚</td>
+			<td align="center" class="m-tb">РќР° СЃСѓРјРјСѓ</td>
 			<td align="center" class="m-tb">AVG</td>
 		  </tr>
 		<?PHP
@@ -157,7 +157,7 @@ if(isset($_GET["list_day"])){
 				?>
 				<tr class="htt">
 					<td align="center"><b><?=$date; ?></b></td>
-					<td align="center"><?=$days_insert[$date]; ?> шт.</td>
+					<td align="center"><?=$days_insert[$date]; ?> С€С‚.</td>
 					<td align="center"><?=$sum; ?> <?=$config->VAL;?></td>
 					<td align="center"><?=round($sum/$days_insert[$date],2); ?> <?=$config->VAL;?></td>
 				</tr>
@@ -171,7 +171,7 @@ if(isset($_GET["list_day"])){
 		
 	}
 	
-	}else echo "<center><b>Записей нет</b></center><BR />";
+	}else echo "<center><b>Р—Р°РїРёСЃРµР№ РЅРµС‚</b></center><BR />";
 	
 	
 	
@@ -179,7 +179,7 @@ if(isset($_GET["list_day"])){
 return;
 }
 
-# Проверка баланса Payeer
+# РџСЂРѕРІРµСЂРєР° Р±Р°Р»Р°РЅСЃР° Payeer
 if(isset($_GET["balance"])){
 
 $payeer = new rfs_payeer($config->AccountNumber, $config->apiId, $config->apiKey);
@@ -248,7 +248,7 @@ if($db->NumRows() > 0){
 <?PHP
 
 
-}else echo "<center><b>На данной странице нет записей</b></center><BR />";
+}else echo "<center><b>РќР° РґР°РЅРЅРѕР№ СЃС‚СЂР°РЅРёС†Рµ РЅРµС‚ Р·Р°РїРёСЃРµР№</b></center><BR />";
 
 	
 $db->Query("SELECT COUNT(*) FROM db_payment");

@@ -1,10 +1,10 @@
 <div class="s-bk-lf">
-	<div class="acc-title">История пополнений</div>
+	<div class="acc-title">РСЃС‚РѕСЂРёСЏ РїРѕРїРѕР»РЅРµРЅРёР№</div>
 </div>
 <div class="silver-bk"><div class="clr"></div>	
-<center><a href="/admin/story_insert">Список пополнений</a> || <a href="/admin/story_insert/day">По дням</a> || <a href="/admin/story_insert/month">График за 30 дней</a></center><BR />
+<center><a href="/admin/story_insert">РЎРїРёСЃРѕРє РїРѕРїРѕР»РЅРµРЅРёР№</a> || <a href="/admin/story_insert/day">РџРѕ РґРЅСЏРј</a> || <a href="/admin/story_insert/month">Р“СЂР°С„РёРє Р·Р° 30 РґРЅРµР№</a></center><BR />
 <?PHP
-# График
+# Р“СЂР°С„РёРє
 if(isset($_GET["month"])){
 	$dlim = time() - 60*60*24*30;
 	$db->Query("SELECT * FROM db_insert_money WHERE date_add > $dlim ORDER BY id DESC");
@@ -16,7 +16,7 @@ if(isset($_GET["month"])){
 			$days_money[$index] = (isset($days_money[$index])) ? $days_money[$index] + $data["money"] : $data["money"];
 			$days_insert[$index] = (isset($days_insert[$index])) ? $days_insert[$index] + 1 : 1;
 		}
-	# Вывод
+	# Р’С‹РІРѕРґ
 	if(count($days_money) > 0){
 		$array_for_chart = array();
 		$array_for_chart2 = array();
@@ -36,11 +36,11 @@ if(isset($_GET["month"])){
       google.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['День', 'Сумма'],
+          ['Р”РµРЅСЊ', 'РЎСѓРјРјР°'],
           <?=$retd; ?>
         ]);
         var options = {
-          title: 'История пополнений (Сумма)',
+          title: 'РСЃС‚РѕСЂРёСЏ РїРѕРїРѕР»РЅРµРЅРёР№ (РЎСѓРјРјР°)',
           hAxis: {title: 'Last 30 Days',  titleTextStyle: {color: 'green'}}
         };
         var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
@@ -53,11 +53,11 @@ if(isset($_GET["month"])){
       google.setOnLoadCallback(drawChart2);
       function drawChart2() {
         var data2 = google.visualization.arrayToDataTable([
-          ['День', 'Кол-во'],
+          ['Р”РµРЅСЊ', 'РљРѕР»-РІРѕ'],
           <?=$retd2; ?>
         ]);
         var options2 = {
-          title: 'История пополнений (Кол-во)',
+          title: 'РСЃС‚РѕСЂРёСЏ РїРѕРїРѕР»РЅРµРЅРёР№ (РљРѕР»-РІРѕ)',
           hAxis: {title: 'Last 30 Days',  titleTextStyle: {color: 'green'}}
         };
         var chart2 = new google.visualization.SteppedAreaChart(document.getElementById('chart_div2'));
@@ -70,11 +70,11 @@ if(isset($_GET["month"])){
       google.setOnLoadCallback(drawChart3);
       function drawChart3() {
         var data3 = google.visualization.arrayToDataTable([
-          ['День', 'Сумма'],
+          ['Р”РµРЅСЊ', 'РЎСѓРјРјР°'],
           <?=$retd3; ?>
         ]);
         var options3 = {
-          title: 'AVG (Сумма / Кол-во)',
+          title: 'AVG (РЎСѓРјРјР° / РљРѕР»-РІРѕ)',
           hAxis: {title: 'Last 30 Days',  titleTextStyle: {color: 'green'}}
         };
         var chart3 = new google.visualization.SteppedAreaChart(document.getElementById('chart_div3'));
@@ -84,11 +84,11 @@ if(isset($_GET["month"])){
 	<div id="chart_div3" style="width: 100%; height: 500px;"></div>
 		<?PHP
 	}
-	}else echo "<center><b>Записей нет</b></center><BR />";
+	}else echo "<center><b>Р—Р°РїРёСЃРµР№ РЅРµС‚</b></center><BR />";
 ?></div><div class="clr"></div>	<?PHP
 return;
 }
-# Вывод статистики по дням
+# Р’С‹РІРѕРґ СЃС‚Р°С‚РёСЃС‚РёРєРё РїРѕ РґРЅСЏРј
 if(isset($_GET["day"])){
 	$db->Query("SELECT * FROM db_insert_money ORDER BY id DESC");
 	$days_money = array();
@@ -104,15 +104,15 @@ if(isset($_GET["day"])){
 			
 		}
 	
-	# Вывод
+	# Р’С‹РІРѕРґ
 	if(count($days_money) > 0){
 	
 		?>
 		<table cellpadding='3' cellspacing='0' border='0' bordercolor='#336633' align='center' width="99%">
 		  <tr bgcolor="#efefef">
-			<td align="center" class="m-tb">Дата</td>
-			<td align="center" class="m-tb">Пополнений</td>
-			<td align="center" class="m-tb">На сумму</td>
+			<td align="center" class="m-tb">Р”Р°С‚Р°</td>
+			<td align="center" class="m-tb">РџРѕРїРѕР»РЅРµРЅРёР№</td>
+			<td align="center" class="m-tb">РќР° СЃСѓРјРјСѓ</td>
 			<td align="center" class="m-tb">AVG</td>
 		  </tr>
 		<?PHP
@@ -124,7 +124,7 @@ if(isset($_GET["day"])){
 				?>
 				<tr class="htt">
 					<td align="center"><b><?=$date; ?></b></td>
-					<td align="center"><?=$days_insert[$date]; ?> шт.</td>
+					<td align="center"><?=$days_insert[$date]; ?> С€С‚.</td>
 					<td align="center"><?=$sum; ?> <?=$config->VAL;?></td>
 					<td align="center"><?=round($sum/$days_insert[$date],2); ?> <?=$config->VAL;?></td>
 				</tr>
@@ -138,7 +138,7 @@ if(isset($_GET["day"])){
 		
 	}
 	
-	}else echo "<center><b>Записей нет</b></center><BR />";
+	}else echo "<center><b>Р—Р°РїРёСЃРµР№ РЅРµС‚</b></center><BR />";
 	
 	
 	
@@ -150,7 +150,7 @@ $tdadd = time() - 5*60;
 	if(isset($_POST["clean"])){
 	
 		$db->Query("DELETE FROM db_insert_money WHERE date_add < '$tdadd'");
-		echo "<center><font color = 'green'><b>Очищено</b></font></center><BR />";
+		echo "<center><font color = 'green'><b>РћС‡РёС‰РµРЅРѕ</b></font></center><BR />";
 	}
 
 $db->Query("SELECT * FROM db_insert_money ORDER BY id DESC");
@@ -161,10 +161,10 @@ if($db->NumRows() > 0){
 <table cellpadding='3' cellspacing='0' border='0' bordercolor='#336633' align='center' width="99%">
   <tr bgcolor="#efefef">
     <td align="center" width="50" class="m-tb">ID</td>
-    <td align="center" class="m-tb">Пользователь</td>
+    <td align="center" class="m-tb">РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ</td>
     <td align="center" width="75" class="m-tb"><?=$config->VAL; ?></td>
-	<td align="center" width="75" class="m-tb">Серебро</td>
-	<td align="center" width="150" class="m-tb">Дата операции</td>
+	<td align="center" width="75" class="m-tb">РЎРµСЂРµР±СЂРѕ</td>
+	<td align="center" width="150" class="m-tb">Р”Р°С‚Р° РѕРїРµСЂР°С†РёРё</td>
   </tr>
 
 
@@ -178,7 +178,7 @@ if($db->NumRows() > 0){
     <td align="center"><?=$data["user"]; ?></td>
     <td align="center" width="75"><?=$data["money"]; ?></td>
 	<td align="center" width="75"><?=$data["serebro"]; ?></td>
-	<td align="center" width="150"><?=date("d.m.Y в H:i:s",$data["date_add"]); ?></td>
+	<td align="center" width="150"><?=date("d.m.Y РІ H:i:s",$data["date_add"]); ?></td>
   	</tr>
 	<?PHP
 	
@@ -189,11 +189,11 @@ if($db->NumRows() > 0){
 </table>
 <BR />
 <form action="" method="post">
-<center><input type="submit" name="clean" value="Очистить" /></center>
+<center><input type="submit" name="clean" value="РћС‡РёСЃС‚РёС‚СЊ" /></center>
 </form>
 <?PHP
 
-}else echo "<center><b>Записей нет</b></center><BR />";
+}else echo "<center><b>Р—Р°РїРёСЃРµР№ РЅРµС‚</b></center><BR />";
 ?>
 </div>
 <div class="clr"></div>	

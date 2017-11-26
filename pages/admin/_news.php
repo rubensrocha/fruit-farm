@@ -1,9 +1,9 @@
 <div class="s-bk-lf">
-	<div class="acc-title">Новости проекта</div>
+	<div class="acc-title">РќРѕРІРѕСЃС‚Рё РїСЂРѕРµРєС‚Р°</div>
 </div>
 <div class="silver-bk"><div class="clr"></div>	
 
-<center><a href = "/admin/news" class="stn">Список новостей</a> || <a href = "/admin/news/add" class="stn">Добавить новость</a></center>
+<center><a href = "/admin/news" class="stn">РЎРїРёСЃРѕРє РЅРѕРІРѕСЃС‚РµР№</a> || <a href = "/admin/news/add" class="stn">Р”РѕР±Р°РІРёС‚СЊ РЅРѕРІРѕСЃС‚СЊ</a></center>
 <BR />
 <script type="text/javascript" src="../../js/nicEdit.js"></script>
 <script type="text/javascript">
@@ -13,9 +13,9 @@
 if(isset($_POST["del"])){
 $ret_id = intval($_POST["del"]);
 $db->Query("DELETE FROM db_news WHERE id = '$ret_id'");
-	echo "<center><b>Новость удалена</b></center><BR />";
+	echo "<center><b>РќРѕРІРѕСЃС‚СЊ СѓРґР°Р»РµРЅР°</b></center><BR />";
 }
-# добавление новости
+# РґРѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕСЃС‚Рё
 if(isset($_GET["add"])){
 	if(isset($_POST["title"], $_SESSION["add_news"]) AND $_SESSION["add_news"] == $_POST["add_news"]){
 	unset($_SESSION["add_news"]);
@@ -23,17 +23,17 @@ if(isset($_GET["add"])){
 	$text = $_POST["ntext"];
 		if(strlen($title) >= 3){
 			$db->Query("INSERT INTO db_news (title, news, date_add) VALUES ('$title','$text','".time()."')");
-			echo "<center><b><font color = 'green'>Новость добавлена</font></b></center><BR />";	
-		}else echo "<center><b><font color = 'red'>Заголовк не может быть менее 3х символов</font></b></center><BR />";
+			echo "<center><b><font color = 'green'>РќРѕРІРѕСЃС‚СЊ РґРѕР±Р°РІР»РµРЅР°</font></b></center><BR />";	
+		}else echo "<center><b><font color = 'red'>Р—Р°РіРѕР»РѕРІРє РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РјРµРЅРµРµ 3С… СЃРёРјРІРѕР»РѕРІ</font></b></center><BR />";
 	}
 ?>
 
 <form action="" method="post">
-<b>Заголовок:</b><BR />
+<b>Р—Р°РіРѕР»РѕРІРѕРє:</b><BR />
 <input type="text" name="title" size="45" value="<?=(isset($_POST["title"])) ? $_POST["title"] : false; ?>" /><BR /><BR />
-<b>Новость:</b><BR />
+<b>РќРѕРІРѕСЃС‚СЊ:</b><BR />
 <textarea name="ntext" cols="78" rows="25"><?=(isset($_POST["ntext"])) ? $_POST["ntext"] : false; ?></textarea><BR />
-<center><input type="submit" value="Сохранить" /></center>
+<center><input type="submit" value="РЎРѕС…СЂР°РЅРёС‚СЊ" /></center>
 <?PHP
 $_SESSION["add_news"] = rand(1,1000);
 ?>
@@ -44,27 +44,27 @@ $_SESSION["add_news"] = rand(1,1000);
 <?PHP
 return;
 }
-# редактирование
+# СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ
 if(isset($_GET["edit"])){
 $idr = intval($_GET["edit"]);
 $db->Query("SELECT * FROM db_news WHERE id = '$idr' LIMIT 1");
-if($db->NumRows() != 1){ echo "<center><b>Новость с таким ID не найдена</b></center><BR />"; return;}
+if($db->NumRows() != 1){ echo "<center><b>РќРѕРІРѕСЃС‚СЊ СЃ С‚Р°РєРёРј ID РЅРµ РЅР°Р№РґРµРЅР°</b></center><BR />"; return;}
 	if(isset($_POST["title"])){
 	$title = $func->TextClean($_POST["title"]);
-	$title = (strlen($title) > 0) ? $title : "Без заголовка";
+	$title = (strlen($title) > 0) ? $title : "Р‘РµР· Р·Р°РіРѕР»РѕРІРєР°";
 	$text = $_POST["ntext"];
 	$db->Query("UPDATE db_news SET title = '$title', news = '$text' WHERE id = '$idr'");
 	$db->Query("SELECT * FROM db_news WHERE id = '$idr' LIMIT 1");
-	 echo "<center><b>Новость отредактирована</b></center><BR />";
+	 echo "<center><b>РќРѕРІРѕСЃС‚СЊ РѕС‚СЂРµРґР°РєС‚РёСЂРѕРІР°РЅР°</b></center><BR />";
 	}
 $news = $db->FetchArray();
 ?>
 <form action="" method="post">
-<b>Заголовок:</b><BR />
+<b>Р—Р°РіРѕР»РѕРІРѕРє:</b><BR />
 <input type="text" name="title" size="45" value="<?=$news["title"]; ?>" /><BR /><BR />
-<b>Новость:</b><BR />
+<b>РќРѕРІРѕСЃС‚СЊ:</b><BR />
 <textarea name="ntext" cols="78" rows="25"><?=$news["news"]; ?></textarea><BR />
-<center><input type="submit" value="Сохранить" /></center>
+<center><input type="submit" value="РЎРѕС…СЂР°РЅРёС‚СЊ" /></center>
 </form>
 </div>
 <div class="clr"></div>	
@@ -77,8 +77,8 @@ if($db->NumRows() > 0){
 <table cellpadding='3' cellspacing='0' border='0' bordercolor='#336633' align='center' width="99%">
   <tr bgcolor="#efefef">
     <td align="center" width="50" class="m-tb">ID</td>
-    <td align="center" class="m-tb">Название</td>
-	<td align="center" width="70" class="m-tb">Удалить</td>
+    <td align="center" class="m-tb">РќР°Р·РІР°РЅРёРµ</td>
+	<td align="center" width="70" class="m-tb">РЈРґР°Р»РёС‚СЊ</td>
   </tr>
 <?PHP
 	while($data = $db->FetchArray()){
@@ -89,7 +89,7 @@ if($db->NumRows() > 0){
 	<td align="center" width="70">
 	<form action="" method="post">
 	<input type="hidden" name="del" value="<?=$data["id"]; ?>" />
-	<input type="submit" value="Удалить" />
+	<input type="submit" value="РЈРґР°Р»РёС‚СЊ" />
 	</form>
 	</td>
   	</tr>
@@ -99,7 +99,7 @@ if($db->NumRows() > 0){
 
 </table>
 <?PHP
-}else echo "<center><b>Новостей нет</b></center><BR />";
+}else echo "<center><b>РќРѕРІРѕСЃС‚РµР№ РЅРµС‚</b></center><BR />";
 ?>
 </div>
 <div class="clr"></div>	

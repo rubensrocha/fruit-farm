@@ -1,37 +1,37 @@
 <div class="s-bk-lf">
-	<div class="acc-title">Пользователи</div>
+	<div class="acc-title">РџРѕР»СЊР·РѕРІР°С‚РµР»Рё</div>
 </div>
 <div class="silver-bk"><div class="clr"></div>	
 <?PHP
-# Редактирование пользователя
+# Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 if(isset($_GET["edit"])){
 $eid = intval($_GET["edit"]);
 $db->Query("SELECT *, INET_NTOA(db_users_a.ip) uip FROM db_users_a, db_users_b WHERE db_users_a.id = db_users_b.id AND db_users_b.id = '$eid' LIMIT 1");
-# Проверяем на существование
-if($db->NumRows() != 1){ echo "<center><b>Указанный пользователь не найден</b></center><BR />"; }
-# Добавляем дерево
+# РџСЂРѕРІРµСЂСЏРµРј РЅР° СЃСѓС‰РµСЃС‚РІРѕРІР°РЅРёРµ
+if($db->NumRows() != 1){ echo "<center><b>РЈРєР°Р·Р°РЅРЅС‹Р№ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РЅРµ РЅР°Р№РґРµРЅ</b></center><BR />"; }
+# Р”РѕР±Р°РІР»СЏРµРј РґРµСЂРµРІРѕ
 if(isset($_POST["set_tree"])){
 $tree = $_POST["set_tree"];
 $type = ($_POST["type"] == 1) ? "-1" : "+1";
 	$db->Query("UPDATE db_users_b SET {$tree} = {$tree} {$type} WHERE id = '$eid'");
 	$db->Query("SELECT *, INET_NTOA(db_users_a.ip) uip FROM db_users_a, db_users_b WHERE db_users_a.id = db_users_b.id AND db_users_b.id = '$eid' LIMIT 1");
-	echo "<center><b>Дерево добавлено</b></center><BR />";
+	echo "<center><b>Р”РµСЂРµРІРѕ РґРѕР±Р°РІР»РµРЅРѕ</b></center><BR />";
 }
-# Пополняем баланс
+# РџРѕРїРѕР»РЅСЏРµРј Р±Р°Р»Р°РЅСЃ
 if(isset($_POST["balance_set"])){
 $sum = intval($_POST["sum"]);
 $bal = $_POST["schet"];
 $type = ($_POST["balance_set"] == 1) ? "-" : "+";
-$string = ($type == "-") ? "У пользователя снято {$sum} серебра" : "Пользователю добавлено {$sum} серебра";
+$string = ($type == "-") ? "РЈ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ СЃРЅСЏС‚Рѕ {$sum} СЃРµСЂРµР±СЂР°" : "РџРѕР»СЊР·РѕРІР°С‚РµР»СЋ РґРѕР±Р°РІР»РµРЅРѕ {$sum} СЃРµСЂРµР±СЂР°";
 	$db->Query("UPDATE db_users_b SET {$bal} = {$bal} {$type} {$sum} WHERE id = '$eid'");
 	$db->Query("SELECT *, INET_NTOA(db_users_a.ip) uip FROM db_users_a, db_users_b WHERE db_users_a.id = db_users_b.id AND db_users_b.id = '$eid' LIMIT 1");
 	echo "<center><b>$string</b></center><BR />";	
 }
-# Забанить пользователя
+# Р—Р°Р±Р°РЅРёС‚СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 if(isset($_POST["banned"])){
 	$db->Query("UPDATE db_users_a SET banned = '".intval($_POST["banned"])."' WHERE id = '$eid'");
 	$db->Query("SELECT *, INET_NTOA(db_users_a.ip) uip FROM db_users_a, db_users_b WHERE db_users_a.id = db_users_b.id AND db_users_b.id = '$eid' LIMIT 1");
-	echo "<center><b>Пользователь ".($_POST["banned"] > 0 ? "забанен" : "разбанен")."</b></center><BR />";
+	echo "<center><b>РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ ".($_POST["banned"] > 0 ? "Р·Р°Р±Р°РЅРµРЅ" : "СЂР°Р·Р±Р°РЅРµРЅ")."</b></center><BR />";
 	
 }
 $data = $db->FetchArray();
@@ -42,7 +42,7 @@ $data = $db->FetchArray();
     <td width="200" align="center"><?=$data["id"]; ?></td>
   </tr>
   <tr>
-    <td style="padding-left:10px;">Логин:</td>
+    <td style="padding-left:10px;">Р›РѕРіРёРЅ:</td>
     <td width="200" align="center"><?=$data["user"]; ?></td>
   </tr>
   <tr bgcolor="#efefef">
@@ -50,42 +50,42 @@ $data = $db->FetchArray();
     <td width="200" align="center"><?=$data["email"]; ?></td>
   </tr>
   <tr>
-    <td style="padding-left:10px;">Пароль:</td>
+    <td style="padding-left:10px;">РџР°СЂРѕР»СЊ:</td>
     <td width="200" align="center"><?=$data["pass"]; ?></td>
   </tr>
   
   
   <tr bgcolor="#efefef">
-    <td style="padding-left:10px;">Серебро (Покупки):</td>
+    <td style="padding-left:10px;">РЎРµСЂРµР±СЂРѕ (РџРѕРєСѓРїРєРё):</td>
     <td width="200" align="center"><?=sprintf("%.2f",$data["money_b"]); ?></td>
   </tr>
   
   <tr>
-    <td style="padding-left:10px;">Серебро (Вывод):</td>
+    <td style="padding-left:10px;">РЎРµСЂРµР±СЂРѕ (Р’С‹РІРѕРґ):</td>
     <td width="200" align="center"><?=sprintf("%.2f",$data["money_p"]); ?></td>
   </tr>
   <tr bgcolor="#efefef">
-    <td style="padding-left:10px;">Овощей на балансе (Лайм):</td>
+    <td style="padding-left:10px;">РћРІРѕС‰РµР№ РЅР° Р±Р°Р»Р°РЅСЃРµ (Р›Р°Р№Рј):</td>
     <td width="200" align="center"><?=$data["a_b"]; ?></td>
   </tr>
   <tr>
-    <td style="padding-left:10px;">Овощей на балансе (Вишня):</td>
+    <td style="padding-left:10px;">РћРІРѕС‰РµР№ РЅР° Р±Р°Р»Р°РЅСЃРµ (Р’РёС€РЅСЏ):</td>
     <td width="200" align="center"><?=$data["b_b"]; ?></td>
   </tr>
   <tr bgcolor="#efefef">
-    <td style="padding-left:10px;">Овощей на балансе (Клубника):</td>
+    <td style="padding-left:10px;">РћРІРѕС‰РµР№ РЅР° Р±Р°Р»Р°РЅСЃРµ (РљР»СѓР±РЅРёРєР°):</td>
     <td width="200" align="center"><?=$data["c_b"]; ?></td>
   </tr>
   <tr>
-    <td style="padding-left:10px;">Овощей на балансе (Киви):</td>
+    <td style="padding-left:10px;">РћРІРѕС‰РµР№ РЅР° Р±Р°Р»Р°РЅСЃРµ (РљРёРІРё):</td>
     <td width="200" align="center"><?=$data["d_b"]; ?></td>
   </tr>
   <tr bgcolor="#efefef">
-    <td style="padding-left:10px;">Овощей на балансе (Апельсин):</td>
+    <td style="padding-left:10px;">РћРІРѕС‰РµР№ РЅР° Р±Р°Р»Р°РЅСЃРµ (РђРїРµР»СЊСЃРёРЅ):</td>
     <td width="200" align="center"><?=$data["e_b"]; ?></td>
   </tr>
   <tr>
-    <td style="padding-left:10px;">Деревьев (Лайм):</td>
+    <td style="padding-left:10px;">Р”РµСЂРµРІСЊРµРІ (Р›Р°Р№Рј):</td>
     <td width="200" align="center">
 	
 		<table width="100%" border="0">
@@ -97,7 +97,7 @@ $data = $db->FetchArray();
 				<input type="submit" value="-1" />
 			</form>
 			</td>
-			<td align="center"><?=$data["a_t"]; ?> шт.</td>
+			<td align="center"><?=$data["a_t"]; ?> С€С‚.</td>
 			<td>
 			<form action="" method="post">
 				<input type="hidden" name="set_tree" value="a_t" />
@@ -112,7 +112,7 @@ $data = $db->FetchArray();
   </tr>
 
   <tr bgcolor="#efefef">
-    <td style="padding-left:10px;">Деревьев (Вишня):</td>
+    <td style="padding-left:10px;">Р”РµСЂРµРІСЊРµРІ (Р’РёС€РЅСЏ):</td>
     <td width="200" align="center">
 	
 		<table width="100%" border="0">
@@ -124,7 +124,7 @@ $data = $db->FetchArray();
 				<input type="submit" value="-1" />
 			</form>
 			</td>
-			<td align="center"><?=$data["b_t"]; ?> шт.</td>
+			<td align="center"><?=$data["b_t"]; ?> С€С‚.</td>
 			<td>
 			<form action="" method="post">
 				<input type="hidden" name="set_tree" value="b_t" />
@@ -139,7 +139,7 @@ $data = $db->FetchArray();
   </tr>
 
   <tr>
-    <td style="padding-left:10px;">Деревьев (Клубника):</td>
+    <td style="padding-left:10px;">Р”РµСЂРµРІСЊРµРІ (РљР»СѓР±РЅРёРєР°):</td>
     <td width="200" align="center">
 	
 		<table width="100%" border="0">
@@ -151,7 +151,7 @@ $data = $db->FetchArray();
 				<input type="submit" value="-1" />
 			</form>
 			</td>
-			<td align="center"><?=$data["c_t"]; ?> шт.</td>
+			<td align="center"><?=$data["c_t"]; ?> С€С‚.</td>
 			<td>
 			<form action="" method="post">
 				<input type="hidden" name="set_tree" value="c_t" />
@@ -166,7 +166,7 @@ $data = $db->FetchArray();
   </tr>
 
   <tr bgcolor="#efefef">
-    <td style="padding-left:10px;">Деревьев (Киви):</td>
+    <td style="padding-left:10px;">Р”РµСЂРµРІСЊРµРІ (РљРёРІРё):</td>
     <td width="200" align="center">
 	
 		<table width="100%" border="0">
@@ -178,7 +178,7 @@ $data = $db->FetchArray();
 				<input type="submit" value="-1" />
 			</form>
 			</td>
-			<td align="center"><?=$data["d_t"]; ?> шт.</td>
+			<td align="center"><?=$data["d_t"]; ?> С€С‚.</td>
 			<td>
 			<form action="" method="post">
 				<input type="hidden" name="set_tree" value="d_t" />
@@ -193,7 +193,7 @@ $data = $db->FetchArray();
   </tr>
 
   <tr>
-    <td style="padding-left:10px;">Деревьев (Апельсин):</td>
+    <td style="padding-left:10px;">Р”РµСЂРµРІСЊРµРІ (РђРїРµР»СЊСЃРёРЅ):</td>
     <td width="200" align="center">
 	
 		<table width="100%" border="0">
@@ -205,7 +205,7 @@ $data = $db->FetchArray();
 				<input type="submit" value="-1" />
 			</form>
 			</td>
-			<td align="center"><?=$data["e_t"]; ?> шт.</td>
+			<td align="center"><?=$data["e_t"]; ?> С€С‚.</td>
 			<td>
 			<form action="" method="post">
 				<input type="hidden" name="set_tree" value="e_t" />
@@ -222,23 +222,23 @@ $data = $db->FetchArray();
   
   
   <tr bgcolor="#efefef">
-    <td style="padding-left:10px;">Собрано за все время (Томат):</td>
+    <td style="padding-left:10px;">РЎРѕР±СЂР°РЅРѕ Р·Р° РІСЃРµ РІСЂРµРјСЏ (РўРѕРјР°С‚):</td>
     <td width="200" align="center"><?=$data["all_time_a"]; ?></td>
   </tr>
   <tr>
-    <td style="padding-left:10px;">Собрано за все время (Клубника):</td>
+    <td style="padding-left:10px;">РЎРѕР±СЂР°РЅРѕ Р·Р° РІСЃРµ РІСЂРµРјСЏ (РљР»СѓР±РЅРёРєР°):</td>
     <td width="200" align="center"><?=$data["all_time_b"]; ?></td>
   </tr>
   <tr bgcolor="#efefef">
-    <td style="padding-left:10px;">Собрано за все время (Тыква):</td>
+    <td style="padding-left:10px;">РЎРѕР±СЂР°РЅРѕ Р·Р° РІСЃРµ РІСЂРµРјСЏ (РўС‹РєРІР°):</td>
     <td width="200" align="center"><?=$data["all_time_c"]; ?></td>
   </tr>
   <tr>
-    <td style="padding-left:10px;">Собрано за все время (Горох):</td>
+    <td style="padding-left:10px;">РЎРѕР±СЂР°РЅРѕ Р·Р° РІСЃРµ РІСЂРµРјСЏ (Р“РѕСЂРѕС…):</td>
     <td width="200" align="center"><?=$data["all_time_d"]; ?></td>
   </tr>
   <tr bgcolor="#efefef">
-    <td style="padding-left:10px;">Собрано за все время (Арахис):</td>
+    <td style="padding-left:10px;">РЎРѕР±СЂР°РЅРѕ Р·Р° РІСЃРµ РІСЂРµРјСЏ (РђСЂР°С…РёСЃ):</td>
     <td width="200" align="center"><?=$data["all_time_e"]; ?></td>
   </tr>
   
@@ -248,56 +248,56 @@ $data = $db->FetchArray();
     <td width="200" align="center">[<?=$data["referer_id"]; ?>]<?=$data["referer"]; ?></td>
   </tr>
   <tr bgcolor="#efefef">
-    <td style="padding-left:10px;">Рефералов:</td>
+    <td style="padding-left:10px;">Р РµС„РµСЂР°Р»РѕРІ:</td>
 	
 	<?PHP
 	$db->Query("SELECT COUNT(*) FROM db_users_a WHERE referer_id = '".$data["id"]."'");
 	$counter_res = $db->FetchRow();
 	?>
 	
-    <td width="200" align="center"><?=$data["referals"]; ?> [<?=$counter_res; ?>] чел.</td>
+    <td width="200" align="center"><?=$data["referals"]; ?> [<?=$counter_res; ?>] С‡РµР».</td>
   </tr>
   
   <tr>
-    <td style="padding-left:10px;">Заработал на рефералах:</td>
-    <td width="200" align="center"><?=sprintf("%.2f",$data["from_referals"]); ?> сер.</td>
+    <td style="padding-left:10px;">Р—Р°СЂР°Р±РѕС‚Р°Р» РЅР° СЂРµС„РµСЂР°Р»Р°С…:</td>
+    <td width="200" align="center"><?=sprintf("%.2f",$data["from_referals"]); ?> СЃРµСЂ.</td>
   </tr>
   <tr bgcolor="#efefef">
-    <td style="padding-left:10px;">Принес рефереру:</td>
-    <td width="200" align="center"><?=sprintf("%.2f",$data["to_referer"]); ?> сер.</td>
+    <td style="padding-left:10px;">РџСЂРёРЅРµСЃ СЂРµС„РµСЂРµСЂСѓ:</td>
+    <td width="200" align="center"><?=sprintf("%.2f",$data["to_referer"]); ?> СЃРµСЂ.</td>
   </tr>
   
   
   
   <tr>
-    <td style="padding-left:10px;">Зарегистрирован:</td>
-    <td width="200" align="center"><?=date("d.m.Y в H:i:s",$data["date_reg"]); ?></td>
+    <td style="padding-left:10px;">Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅ:</td>
+    <td width="200" align="center"><?=date("d.m.Y РІ H:i:s",$data["date_reg"]); ?></td>
   </tr>
   <tr bgcolor="#efefef">
-    <td style="padding-left:10px;">Последний вход:</td>
-    <td width="200" align="center"><?=date("d.m.Y в H:i:s",$data["date_login"]); ?></td>
+    <td style="padding-left:10px;">РџРѕСЃР»РµРґРЅРёР№ РІС…РѕРґ:</td>
+    <td width="200" align="center"><?=date("d.m.Y РІ H:i:s",$data["date_login"]); ?></td>
   </tr>
   <tr>
-    <td style="padding-left:10px;">Последний IP:</td>
+    <td style="padding-left:10px;">РџРѕСЃР»РµРґРЅРёР№ IP:</td>
     <td width="200" align="center"><?=$data["uip"]; ?></td>
   </tr>
   
   
   <tr bgcolor="#efefef">
-    <td style="padding-left:10px;">Пополнено на баланс:</td>
+    <td style="padding-left:10px;">РџРѕРїРѕР»РЅРµРЅРѕ РЅР° Р±Р°Р»Р°РЅСЃ:</td>
     <td width="200" align="center"><?=sprintf("%.2f",$data["insert_sum"]); ?> <?=$config->VAL; ?></td>
   </tr>
   <tr>
-    <td style="padding-left:10px;">Выплачено на кошелек:</td>
+    <td style="padding-left:10px;">Р’С‹РїР»Р°С‡РµРЅРѕ РЅР° РєРѕС€РµР»РµРє:</td>
     <td width="200" align="center"><?=sprintf("%.2f",$data["payment_sum"]); ?> <?=$config->VAL; ?></td>
   </tr>
   
   <tr bgcolor="#efefef">
-    <td style="padding-left:10px;">Забанен (<?=($data["banned"] > 0) ? '<font color = "red"><b>ДА</b></font>' : '<font color = "green"><b>НЕТ</b></font>'; ?>):</td>
+    <td style="padding-left:10px;">Р—Р°Р±Р°РЅРµРЅ (<?=($data["banned"] > 0) ? '<font color = "red"><b>Р”Рђ</b></font>' : '<font color = "green"><b>РќР•Рў</b></font>'; ?>):</td>
     <td width="200" align="center">
 	<form action="" method="post">
 	<input type="hidden" name="banned" value="<?=($data["banned"] > 0) ? 0 : 1 ;?>" />
-	<input type="submit" value="<?=($data["banned"] > 0) ? 'Разбанить' : 'Забанить'; ?>" />
+	<input type="submit" value="<?=($data["banned"] > 0) ? 'Р Р°Р·Р±Р°РЅРёС‚СЊ' : 'Р—Р°Р±Р°РЅРёС‚СЊ'; ?>" />
 	</form>
 	</td>
   </tr>
@@ -309,23 +309,23 @@ $data = $db->FetchArray();
 <form action="" method="post">
 <table width="100%" border="0">
   <tr bgcolor="#EFEFEF">
-    <td align="center" colspan="4"><b>Операции с балансом:</b></td>
+    <td align="center" colspan="4"><b>РћРїРµСЂР°С†РёРё СЃ Р±Р°Р»Р°РЅСЃРѕРј:</b></td>
   </tr>
   <tr>
     <td align="center">
 		<select name="balance_set">
-			<option value="2">Добавить на баланс</option>
-			<option value="1">Снять с баланса</option>
+			<option value="2">Р”РѕР±Р°РІРёС‚СЊ РЅР° Р±Р°Р»Р°РЅСЃ</option>
+			<option value="1">РЎРЅСЏС‚СЊ СЃ Р±Р°Р»Р°РЅСЃР°</option>
 		</select>
 	</td>
 	<td align="center">
 		<select name="schet">
-			<option value="money_b">Для покупок</option>
-			<option value="money_p">Для вывода</option>
+			<option value="money_b">Р”Р»СЏ РїРѕРєСѓРїРѕРє</option>
+			<option value="money_p">Р”Р»СЏ РІС‹РІРѕРґР°</option>
 		</select>
 	</td>
     <td align="center"><input type="text" name="sum" value="100" size="7"/></td>
-    <td align="center"><input type="submit" value="Выполнить" /></td>
+    <td align="center"><input type="submit" value="Р’С‹РїРѕР»РЅРёС‚СЊ" /></td>
   </tr>
 </table>
 </form>
@@ -340,9 +340,9 @@ return;
 <form action="/?menu=admin4ik&sel=users&search" method="post">
 <table width="250" border="0" align="center">
   <tr>
-    <td><b>Логин:</b></td>
+    <td><b>Р›РѕРіРёРЅ:</b></td>
     <td><input type="text" name="sear" /></td>
-	<td><input type="submit" value="Поиск" /></td>
+	<td><input type="submit" value="РџРѕРёСЃРє" /></td>
   </tr>
 </table>
 </form>
@@ -373,10 +373,10 @@ if($db->NumRows() > 0){
 <table cellpadding='3' cellspacing='0' border='0' bordercolor='#336633' align='center' width="99%">
   <tr bgcolor="#efefef">
     <td align="center" width="50" class="m-tb"><a href="/admin/users/sort/0" class="stn-sort">ID</a></td>
-    <td align="center" class="m-tb"><a href="/admin/users/sort/1" class="stn-sort">Пользователь</a></td>
-    <td align="center" width="90" class="m-tb"><a href="/admin/users/sort/2" class="stn-sort">Серебра</a></td>
-	<td align="center" width="75" class="m-tb"><a href="/admin/users/sort/3" class="stn-sort">Деревьев</a></td>
-	<td align="center" width="100" class="m-tb"><a href="/admin/users/sort/4" class="stn-sort">Зарегистрирован</a></td>
+    <td align="center" class="m-tb"><a href="/admin/users/sort/1" class="stn-sort">РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ</a></td>
+    <td align="center" width="90" class="m-tb"><a href="/admin/users/sort/2" class="stn-sort">РЎРµСЂРµР±СЂР°</a></td>
+	<td align="center" width="75" class="m-tb"><a href="/admin/users/sort/3" class="stn-sort">Р”РµСЂРµРІСЊРµРІ</a></td>
+	<td align="center" width="100" class="m-tb"><a href="/admin/users/sort/4" class="stn-sort">Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅ</a></td>
   </tr>
 <?PHP
 
@@ -401,7 +401,7 @@ if($db->NumRows() > 0){
 <?PHP
 
 
-}else echo "<center><b>На данной странице нет записей</b></center><BR />";
+}else echo "<center><b>РќР° РґР°РЅРЅРѕР№ СЃС‚СЂР°РЅРёС†Рµ РЅРµС‚ Р·Р°РїРёСЃРµР№</b></center><BR />";
 	if(isset($_GET["search"])){	
 	?>
 	</div>

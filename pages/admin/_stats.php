@@ -1,5 +1,5 @@
 <div class="s-bk-lf">
-	<div class="acc-title">Статистика проекта</div>
+	<div class="acc-title">РЎС‚Р°С‚РёСЃС‚РёРєР° РїСЂРѕРµРєС‚Р°</div>
 </div>
 <div class="silver-bk"><div class="clr"></div>	
 <?PHP
@@ -29,88 +29,88 @@ $data_stats = $db->FetchArray();
 ?>
 <table width="450" border="0" align="center">
   <tr class="htt">
-    <td><b>Зарегистрировано пользователей:</b></td>
-	<td width="100" align="center"><?=$data_stats["all_users"]; ?> чел.</td>
+    <td><b>Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№:</b></td>
+	<td width="100" align="center"><?=$data_stats["all_users"]; ?> С‡РµР».</td>
   </tr>
   <tr> <td colspan="2" align="center"><b>- - - - -</b></td> </tr>
   <tr class="htt">
-    <td><b>Серебра на счетах (Для покупок):</b></td>
+    <td><b>РЎРµСЂРµР±СЂР° РЅР° СЃС‡РµС‚Р°С… (Р”Р»СЏ РїРѕРєСѓРїРѕРє):</b></td>
 	<td width="100" align="center"><?=sprintf("%.0f",$data_stats["money_b"]); ?></td>
   </tr>
   <tr class="htt">
-    <td><b>Серебра на счетах (На вывод):</b></td>
+    <td><b>РЎРµСЂРµР±СЂР° РЅР° СЃС‡РµС‚Р°С… (РќР° РІС‹РІРѕРґ):</b></td>
 	<td width="100" align="center"><?=sprintf("%.0f",$data_stats["money_p"]); ?></td>
   </tr>
   <tr> <td colspan="2" align="center"><b>- - - - -</b></td> </tr>
   <tr class="htt">
-    <td><b>Куплено деревьев (Лайм):</b></td>
-	<td width="100" align="center"><?=intval($data_stats["a_t"]); ?> шт.</td>
+    <td><b>РљСѓРїР»РµРЅРѕ РґРµСЂРµРІСЊРµРІ (Р›Р°Р№Рј):</b></td>
+	<td width="100" align="center"><?=intval($data_stats["a_t"]); ?> С€С‚.</td>
   </tr>
   <tr class="htt">
-    <td><b>Куплено деревьев (Вишня):</b></td>
-	<td width="100" align="center"><?=intval($data_stats["b_t"]); ?> шт.</td>
+    <td><b>РљСѓРїР»РµРЅРѕ РґРµСЂРµРІСЊРµРІ (Р’РёС€РЅСЏ):</b></td>
+	<td width="100" align="center"><?=intval($data_stats["b_t"]); ?> С€С‚.</td>
   </tr>
   <tr class="htt">
-    <td><b>Куплено деревьев (Клубника):</b></td>
-	<td width="100" align="center"><?=intval($data_stats["c_t"]); ?> шт.</td>
+    <td><b>РљСѓРїР»РµРЅРѕ РґРµСЂРµРІСЊРµРІ (РљР»СѓР±РЅРёРєР°):</b></td>
+	<td width="100" align="center"><?=intval($data_stats["c_t"]); ?> С€С‚.</td>
   </tr>
   <tr class="htt">
-    <td><b>Куплено деревьев (Киви):</b></td>
-	<td width="100" align="center"><?=intval($data_stats["d_t"]); ?> шт.</td>
+    <td><b>РљСѓРїР»РµРЅРѕ РґРµСЂРµРІСЊРµРІ (РљРёРІРё):</b></td>
+	<td width="100" align="center"><?=intval($data_stats["d_t"]); ?> С€С‚.</td>
   </tr>
   <tr class="htt">
-    <td><b>Куплено деревьев (Апельсин):</b></td>
-	<td width="100" align="center"><?=intval($data_stats["e_t"]); ?> шт.</td>
-  </tr>
-  <tr> <td colspan="2" align="center"><b>- - - - -</b></td> </tr>
-  <tr class="htt">
-    <td><b>На складах (Лайм):</b></td>
-	<td width="100" align="center"><?=intval($data_stats["a_b"]); ?> шт.</td>
-  </tr>
-  <tr class="htt">
-    <td><b>На складах (Вишня):</b></td>
-	<td width="100" align="center"><?=intval($data_stats["b_b"]); ?> шт.</td>
-  </tr>
-  <tr class="htt">
-    <td><b>На складах (Клубника):</b></td>
-	<td width="100" align="center"><?=intval($data_stats["c_b"]); ?> шт.</td>
-  </tr>
-  <tr class="htt">
-    <td><b>На складах (Киви):</b></td>
-	<td width="100" align="center"><?=intval($data_stats["d_b"]); ?> шт.</td>
-  </tr>
-  <tr class="htt">
-    <td><b>На складах (Апельсин):</b></td>
-	<td width="100" align="center"><?=intval($data_stats["e_b"]); ?> шт.</td>
+    <td><b>РљСѓРїР»РµРЅРѕ РґРµСЂРµРІСЊРµРІ (РђРїРµР»СЊСЃРёРЅ):</b></td>
+	<td width="100" align="center"><?=intval($data_stats["e_t"]); ?> С€С‚.</td>
   </tr>
   <tr> <td colspan="2" align="center"><b>- - - - -</b></td> </tr>
   <tr class="htt">
-    <td><b>Собрано за все время (Лайм):</b></td>
-	<td width="100" align="center"><?=intval($data_stats["all_time_a"]); ?> шт.</td>
+    <td><b>РќР° СЃРєР»Р°РґР°С… (Р›Р°Р№Рј):</b></td>
+	<td width="100" align="center"><?=intval($data_stats["a_b"]); ?> С€С‚.</td>
   </tr>
   <tr class="htt">
-    <td><b>Собрано за все время (Вишня):</b></td>
-	<td width="100" align="center"><?=intval($data_stats["all_time_b"]); ?> шт.</td>
+    <td><b>РќР° СЃРєР»Р°РґР°С… (Р’РёС€РЅСЏ):</b></td>
+	<td width="100" align="center"><?=intval($data_stats["b_b"]); ?> С€С‚.</td>
   </tr>
   <tr class="htt">
-    <td><b>Собрано за все время (Клубника):</b></td>
-	<td width="100" align="center"><?=intval($data_stats["all_time_c"]); ?> шт.</td>
+    <td><b>РќР° СЃРєР»Р°РґР°С… (РљР»СѓР±РЅРёРєР°):</b></td>
+	<td width="100" align="center"><?=intval($data_stats["c_b"]); ?> С€С‚.</td>
   </tr>
   <tr class="htt">
-    <td><b>Собрано за все время (Киви):</b></td>
-	<td width="100" align="center"><?=intval($data_stats["all_time_d"]); ?> шт.</td>
+    <td><b>РќР° СЃРєР»Р°РґР°С… (РљРёРІРё):</b></td>
+	<td width="100" align="center"><?=intval($data_stats["d_b"]); ?> С€С‚.</td>
   </tr>
   <tr class="htt">
-    <td><b>Собрано за все время (Апельсин):</b></td>
-	<td width="100" align="center"><?=intval($data_stats["all_time_e"]); ?> шт.</td>
+    <td><b>РќР° СЃРєР»Р°РґР°С… (РђРїРµР»СЊСЃРёРЅ):</b></td>
+	<td width="100" align="center"><?=intval($data_stats["e_b"]); ?> С€С‚.</td>
   </tr>
   <tr> <td colspan="2" align="center"><b>- - - - -</b></td> </tr>
   <tr class="htt">
-    <td><b>Введено пользователями:</b></td>
+    <td><b>РЎРѕР±СЂР°РЅРѕ Р·Р° РІСЃРµ РІСЂРµРјСЏ (Р›Р°Р№Рј):</b></td>
+	<td width="100" align="center"><?=intval($data_stats["all_time_a"]); ?> С€С‚.</td>
+  </tr>
+  <tr class="htt">
+    <td><b>РЎРѕР±СЂР°РЅРѕ Р·Р° РІСЃРµ РІСЂРµРјСЏ (Р’РёС€РЅСЏ):</b></td>
+	<td width="100" align="center"><?=intval($data_stats["all_time_b"]); ?> С€С‚.</td>
+  </tr>
+  <tr class="htt">
+    <td><b>РЎРѕР±СЂР°РЅРѕ Р·Р° РІСЃРµ РІСЂРµРјСЏ (РљР»СѓР±РЅРёРєР°):</b></td>
+	<td width="100" align="center"><?=intval($data_stats["all_time_c"]); ?> С€С‚.</td>
+  </tr>
+  <tr class="htt">
+    <td><b>РЎРѕР±СЂР°РЅРѕ Р·Р° РІСЃРµ РІСЂРµРјСЏ (РљРёРІРё):</b></td>
+	<td width="100" align="center"><?=intval($data_stats["all_time_d"]); ?> С€С‚.</td>
+  </tr>
+  <tr class="htt">
+    <td><b>РЎРѕР±СЂР°РЅРѕ Р·Р° РІСЃРµ РІСЂРµРјСЏ (РђРїРµР»СЊСЃРёРЅ):</b></td>
+	<td width="100" align="center"><?=intval($data_stats["all_time_e"]); ?> С€С‚.</td>
+  </tr>
+  <tr> <td colspan="2" align="center"><b>- - - - -</b></td> </tr>
+  <tr class="htt">
+    <td><b>Р’РІРµРґРµРЅРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏРјРё:</b></td>
 	<td width="100" align="center"><?=sprintf("%.2f",$data_stats["insert_sum"]); ?> <?=$config->VAL; ?></td>
   </tr>
   <tr class="htt">
-    <td><b>Выплачено пользователям:</b></td>
+    <td><b>Р’С‹РїР»Р°С‡РµРЅРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏРј:</b></td>
 	<td width="100" align="center"><?=sprintf("%.2f",$data_stats["payment_sum"]); ?> <?=$config->VAL; ?></td>
   </tr>
 </table>
