@@ -1,34 +1,34 @@
 <div class="s-bk-lf">
-	<div class="acc-title">Пополнение баланса</div>
+	<div class="acc-title">РџРѕРїРѕР»РЅРµРЅРёРµ Р±Р°Р»Р°РЅСЃР°</div>
 </div>
 <?PHP
-$_OPTIMIZATION["title"] = "Аккаунт - Пополнение баланса";
+$_OPTIMIZATION["title"] = "РђРєРєР°СѓРЅС‚ - РџРѕРїРѕР»РЅРµРЅРёРµ Р±Р°Р»Р°РЅСЃР°";
 $usid = $_SESSION["user_id"];
 $usname = $_SESSION["user"];
 $db->Query("SELECT * FROM db_config WHERE id = '1' LIMIT 1");
 $sonfig_site = $db->FetchArray();
 /*
 if($_SESSION["user_id"] != 1){
-echo "<center><b><font color = red>Технические работы</font></b></center>";
+echo "<center><b><font color = red>РўРµС…РЅРёС‡РµСЃРєРёРµ СЂР°Р±РѕС‚С‹</font></b></center>";
 return;
 }
 */
 ?>
 <div class="silver-bk"> 
-Курс игровой валюты: 1 рубль (<?=$config->VAL; ?>) = <?=$sonfig_site["ser_per_wmr"]; ?> серебра.
-<p>Ввод средств позволяет автоматически приобрести игровое серебро с помощью различных платежных 
-систем: Yandex Деньги, банковских карт, SMS, терминалов, денежных переводов и т.д.</p>
-<p>Оплата и зачисление серебра на баланс производится в автоматическом режиме.</p> 
-<p>Введите сумму в РУБЛЯХ, которую вы хотите пополнить на баланс. <BR />
-После пополнения вам будет зачислено серебро.<br /></p>
+РљСѓСЂСЃ РёРіСЂРѕРІРѕР№ РІР°Р»СЋС‚С‹: 1 СЂСѓР±Р»СЊ (<?=$config->VAL; ?>) = <?=$sonfig_site["ser_per_wmr"]; ?> СЃРµСЂРµР±СЂР°.
+<p>Р’РІРѕРґ СЃСЂРµРґСЃС‚РІ РїРѕР·РІРѕР»СЏРµС‚ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё РїСЂРёРѕР±СЂРµСЃС‚Рё РёРіСЂРѕРІРѕРµ СЃРµСЂРµР±СЂРѕ СЃ РїРѕРјРѕС‰СЊСЋ СЂР°Р·Р»РёС‡РЅС‹С… РїР»Р°С‚РµР¶РЅС‹С… 
+СЃРёСЃС‚РµРј: Yandex Р”РµРЅСЊРіРё, Р±Р°РЅРєРѕРІСЃРєРёС… РєР°СЂС‚, SMS, С‚РµСЂРјРёРЅР°Р»РѕРІ, РґРµРЅРµР¶РЅС‹С… РїРµСЂРµРІРѕРґРѕРІ Рё С‚.Рґ.</p>
+<p>РћРїР»Р°С‚Р° Рё Р·Р°С‡РёСЃР»РµРЅРёРµ СЃРµСЂРµР±СЂР° РЅР° Р±Р°Р»Р°РЅСЃ РїСЂРѕРёР·РІРѕРґРёС‚СЃСЏ РІ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРј СЂРµР¶РёРјРµ.</p> 
+<p>Р’РІРµРґРёС‚Рµ СЃСѓРјРјСѓ РІ Р РЈР‘Р›РЇРҐ, РєРѕС‚РѕСЂСѓСЋ РІС‹ С…РѕС‚РёС‚Рµ РїРѕРїРѕР»РЅРёС‚СЊ РЅР° Р±Р°Р»Р°РЅСЃ. <BR />
+РџРѕСЃР»Рµ РїРѕРїРѕР»РЅРµРЅРёСЏ РІР°Рј Р±СѓРґРµС‚ Р·Р°С‡РёСЃР»РµРЅРѕ СЃРµСЂРµР±СЂРѕ.<br /></p>
 <?
 /// db_payeer_insert
 if(isset($_POST["sum"])){
 $sum = round(floatval($_POST["sum"]),2);
 if($sum >= 1){
-# Заносим в БД
+# Р—Р°РЅРѕСЃРёРј РІ Р‘Р”
 $db->Query("INSERT INTO db_payeer_insert (user_id, user, sum, date_add,description) VALUES ('".$_SESSION["user_id"]."','".$_SESSION["user"]."','$sum','".time()."','Payeer')");
-$desc = base64_encode("Пополнение баланса на проекте ".$_SERVER["HTTP_HOST"]." пользователем ".$_SESSION["user"]);
+$desc = base64_encode("РџРѕРїРѕР»РЅРµРЅРёРµ Р±Р°Р»Р°РЅСЃР° РЅР° РїСЂРѕРµРєС‚Рµ ".$_SERVER["HTTP_HOST"]." РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј ".$_SESSION["user"]);
 $m_shop = $config->shopID;
 $m_orderid = $db->LastInsert();
 $m_amount = number_format($sum, 2, ".", "");
@@ -53,14 +53,14 @@ $sign = strtoupper(hash('sha256', implode(":", $arHash)));
 	<input type="hidden" name="m_curr" value="RUB">
 	<input type="hidden" name="m_desc" value="<?=$desc; ?>">
 	<input type="hidden" name="m_sign" value="<?=$sign; ?>">
-	<input type="submit" name="m_process" value="Оплатить и получить серебро" />
+	<input type="submit" name="m_process" value="РћРїР»Р°С‚РёС‚СЊ Рё РїРѕР»СѓС‡РёС‚СЊ СЃРµСЂРµР±СЂРѕ" />
 </form>
 </center>
 <div class="clr"></div>		
 </div>
 <?PHP
 return;
-}else echo '<center><font color="red">Сумма не может быть меньше 1 руб</font></center>';
+}else echo '<center><font color="red">РЎСѓРјРјР° РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РјРµРЅСЊС€Рµ 1 СЂСѓР±</font></center>';
 }
 ?>
 <script type="text/javascript">
@@ -73,11 +73,11 @@ function calculate(st_q) {
 </script>
 <div id="error3"></div>
 <form method="POST" action="">
-	Введите сумму [<?=$config->VAL; ?>]:  
+	Р’РІРµРґРёС‚Рµ СЃСѓРјРјСѓ [<?=$config->VAL; ?>]:  
 	<input type="text" value="100" name="sum" size="7" id="psevdo" onchange="calculate(this.value)" onkeyup="calculate(this.value)" onfocusout="calculate(this.value)" onactivate="calculate(this.value)" ondeactivate="calculate(this.value)"> 
-    Вы получите <span id="res_sum">10000</span> серебра
+    Р’С‹ РїРѕР»СѓС‡РёС‚Рµ <span id="res_sum">10000</span> СЃРµСЂРµР±СЂР°
 	<BR /><BR />
-    <center><input type="submit" id="submit" value="Пополнить баланс" ></center>
+    <center><input type="submit" id="submit" value="РџРѕРїРѕР»РЅРёС‚СЊ Р±Р°Р»Р°РЅСЃ" ></center>
 </form>
 <script type="text/javascript">
 calculate(100);

@@ -1,33 +1,33 @@
 <div class="s-bk-lf">
-	<div class="acc-title">Заказ выплаты</div>
+	<div class="acc-title">Р—Р°РєР°Р· РІС‹РїР»Р°С‚С‹</div>
 </div>
 <div class="silver-bk">
 <BR />
 <?PHP
-$_OPTIMIZATION["title"] = "Аккаунт - Заказ выплаты";
+$_OPTIMIZATION["title"] = "РђРєРєР°СѓРЅС‚ - Р—Р°РєР°Р· РІС‹РїР»Р°С‚С‹";
 $usid = $_SESSION["user_id"];
 $usname = $_SESSION["user"];
 $db->Query("SELECT * FROM db_users_b WHERE id = '$usid' LIMIT 1");
 $user_data = $db->FetchArray();
 $db->Query("SELECT * FROM db_config WHERE id = '1' LIMIT 1");
 $sonfig_site = $db->FetchArray();
-$status_array = array( 0 => "Проверяется", 1 => "Выплачивается", 2 => "Отменена", 3 => "Выплачено");
-# Минималка серебром!
+$status_array = array( 0 => "РџСЂРѕРІРµСЂСЏРµС‚СЃСЏ", 1 => "Р’С‹РїР»Р°С‡РёРІР°РµС‚СЃСЏ", 2 => "РћС‚РјРµРЅРµРЅР°", 3 => "Р’С‹РїР»Р°С‡РµРЅРѕ");
+# РњРёРЅРёРјР°Р»РєР° СЃРµСЂРµР±СЂРѕРј!
 $minPay = $sonfig_site['min_pay']; 
 ?>
-<b>Выплаты осуществляются в автоматическом режиме и только на платежную систему <a href="https://payeer.com/0470864" target="_BLANK">PAYEER!</a> Процент при выводе составляет 0%</b> <BR /><BR />
-<b>Из платежной системы Payeer Вы можете вывести свои средства в автоматическом режиме на все известные платежные системы и международные банки.</b><BR /><BR />
-<b>Ссылки на учебные материалы:</b><BR />
- - <a href="https://payeer.com/0470864" target="_blank">Создание счета в Payeer</a> <BR />
- - <a href="https://payeer.com/0470864" target="_blank">Вывод средств из payeer</a> <BR /><BR />
-<center><b>Заказ выплаты:</b></center><BR />
+<b>Р’С‹РїР»Р°С‚С‹ РѕСЃСѓС‰РµСЃС‚РІР»СЏСЋС‚СЃСЏ РІ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРј СЂРµР¶РёРјРµ Рё С‚РѕР»СЊРєРѕ РЅР° РїР»Р°С‚РµР¶РЅСѓСЋ СЃРёСЃС‚РµРјСѓ <a href="https://payeer.com/0470864" target="_BLANK">PAYEER!</a> РџСЂРѕС†РµРЅС‚ РїСЂРё РІС‹РІРѕРґРµ СЃРѕСЃС‚Р°РІР»СЏРµС‚ 0%</b> <BR /><BR />
+<b>РР· РїР»Р°С‚РµР¶РЅРѕР№ СЃРёСЃС‚РµРјС‹ Payeer Р’С‹ РјРѕР¶РµС‚Рµ РІС‹РІРµСЃС‚Рё СЃРІРѕРё СЃСЂРµРґСЃС‚РІР° РІ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРј СЂРµР¶РёРјРµ РЅР° РІСЃРµ РёР·РІРµСЃС‚РЅС‹Рµ РїР»Р°С‚РµР¶РЅС‹Рµ СЃРёСЃС‚РµРјС‹ Рё РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Рµ Р±Р°РЅРєРё.</b><BR /><BR />
+<b>РЎСЃС‹Р»РєРё РЅР° СѓС‡РµР±РЅС‹Рµ РјР°С‚РµСЂРёР°Р»С‹:</b><BR />
+ - <a href="https://payeer.com/0470864" target="_blank">РЎРѕР·РґР°РЅРёРµ СЃС‡РµС‚Р° РІ Payeer</a> <BR />
+ - <a href="https://payeer.com/0470864" target="_blank">Р’С‹РІРѕРґ СЃСЂРµРґСЃС‚РІ РёР· payeer</a> <BR /><BR />
+<center><b>Р—Р°РєР°Р· РІС‹РїР»Р°С‚С‹:</b></center><BR />
 <?PHP
 	function ViewPurse($purse){
 		if( substr($purse,0,1) != "P" ) return false;
 		if( !ereg("^[0-9]{7,8}$", substr($purse,1)) ) return false;	
 		return $purse;
 	}
-	# Заносим выплату
+	# Р—Р°РЅРѕСЃРёРј РІС‹РїР»Р°С‚Сѓ
 	if(isset($_POST["purse"])){
 		$purse = ViewPurse($_POST["purse"]);
 		$sum = intval($_POST["sum"]);
@@ -35,10 +35,10 @@ $minPay = $sonfig_site['min_pay'];
 		if($purse !== false){
 			if($sum >= $minPay){
 				if($sum <= $user_data["money_p"]){
-					# Проверяем на существующие заявки
+					# РџСЂРѕРІРµСЂСЏРµРј РЅР° СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёРµ Р·Р°СЏРІРєРё
 					$db->Query("SELECT COUNT(*) FROM db_payment WHERE user_id = '$usid' AND (status = '0' OR status = '1')");
 					if($db->FetchRow() == 0){		
-						### Делаем выплату ###	
+						### Р”РµР»Р°РµРј РІС‹РїР»Р°С‚Сѓ ###	
 						$payeer = new rfs_payeer($config->AccountNumber, $config->apiId, $config->apiKey);
 						if ($payeer->isAuth())
 						{
@@ -49,50 +49,50 @@ $minPay = $sonfig_site['min_pay'];
 								$balance = $arBalance["balance"]["RUB"]["DOSTUPNO"];
 								if($balance >= $sum_pay){
 									$arTransfer = $payeer->transfer(array(
-									'curIn' => 'RUB', // счет списания
-									'sum' => $sum_pay, // сумма получения
-									'curOut' => 'RUB', // валюта получения
-									'to' => $purse, // получатель (email)
-									'comment' => iconv('windows-1251', 'utf-8', "Выплата пользователю {$usname} с проекта ".$_SERVER["HTTP_HOST"])
+									'curIn' => 'RUB', // СЃС‡РµС‚ СЃРїРёСЃР°РЅРёСЏ
+									'sum' => $sum_pay, // СЃСѓРјРјР° РїРѕР»СѓС‡РµРЅРёСЏ
+									'curOut' => 'RUB', // РІР°Р»СЋС‚Р° РїРѕР»СѓС‡РµРЅРёСЏ
+									'to' => $purse, // РїРѕР»СѓС‡Р°С‚РµР»СЊ (email)
+									'comment' => iconv('windows-1251', 'utf-8', "Р’С‹РїР»Р°С‚Р° РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ {$usname} СЃ РїСЂРѕРµРєС‚Р° ".$_SERVER["HTTP_HOST"])
 									));
 									if (!empty($arTransfer["historyId"]))
 									{	
-										# Снимаем с пользователя
+										# РЎРЅРёРјР°РµРј СЃ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 										$db->Query("UPDATE db_users_b SET money_p = money_p - '$sum' WHERE id = '$usid'");
-										# Вставляем запись в выплаты
+										# Р’СЃС‚Р°РІР»СЏРµРј Р·Р°РїРёСЃСЊ РІ РІС‹РїР»Р°С‚С‹
 										$da = time();
 										$dd = $da + 60*60*24*15;
 										$ppid = $arTransfer["historyId"];
 										$db->Query("INSERT INTO db_payment (user, user_id, purse, sum, valuta, serebro, payment_id, date_add, status) VALUES ('$usname','$usid','$purse','$sum_pay','RUB', '$sum','$ppid','".time()."', '3')");
 										$db->Query("UPDATE db_users_b SET payment_sum = payment_sum + '$sum_pay' WHERE id = '$usid'");
 										$db->Query("UPDATE db_stats SET all_payments = all_payments + '$sum_pay' WHERE id = '1'");
-										echo "<center><font color = 'green'><b>Выплачено!</b></font></center><BR />";	
+										echo "<center><font color = 'green'><b>Р’С‹РїР»Р°С‡РµРЅРѕ!</b></font></center><BR />";	
 									}
 									else
 									{
-										echo "<center><font color = 'red'><b>Внутреняя ошибка - сообщите о ней администратору!</b></font></center><BR />";	
+										echo "<center><font color = 'red'><b>Р’РЅСѓС‚СЂРµРЅСЏСЏ РѕС€РёР±РєР° - СЃРѕРѕР±С‰РёС‚Рµ Рѕ РЅРµР№ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂСѓ!</b></font></center><BR />";	
 									}
-								}else echo "<center><font color = 'red'><b>ОШИБКА 629. Сообщите о ней администратору!</b></font></center><BR />";	
-							}else echo "<center><font color = 'red'><b>Ошибка 630. Не удалось выплатить! Попробуйте позже</b></font></center><BR />";	
-						}else echo "<center><font color = 'red'><b>Ошибка 631. Не удалось выплатить! Попробуйте позже</b></font></center><BR />";	
-					}else echo "<center><font color = 'red'><b>У вас имеются необработанные заявки. Дождитесь их выполнения.</b></font></center><BR />";
-				}else echo "<center><font color = 'red'><b>Вы указали больше, чем имеется на вашем счету</b></font></center><BR />";
-			}else echo "<center><b><font color = 'red'>Минимальная сумма для выплаты составляет {$minPay} серебра!</font></b></center><BR />";
-		}else echo "<center><b><font color = 'red'>Кошелек Payeer указан неверно! Смотрите образец!</font></b></center><BR />";	
+								}else echo "<center><font color = 'red'><b>РћРЁРР‘РљРђ 629. РЎРѕРѕР±С‰РёС‚Рµ Рѕ РЅРµР№ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂСѓ!</b></font></center><BR />";	
+							}else echo "<center><font color = 'red'><b>РћС€РёР±РєР° 630. РќРµ СѓРґР°Р»РѕСЃСЊ РІС‹РїР»Р°С‚РёС‚СЊ! РџРѕРїСЂРѕР±СѓР№С‚Рµ РїРѕР·Р¶Рµ</b></font></center><BR />";	
+						}else echo "<center><font color = 'red'><b>РћС€РёР±РєР° 631. РќРµ СѓРґР°Р»РѕСЃСЊ РІС‹РїР»Р°С‚РёС‚СЊ! РџРѕРїСЂРѕР±СѓР№С‚Рµ РїРѕР·Р¶Рµ</b></font></center><BR />";	
+					}else echo "<center><font color = 'red'><b>РЈ РІР°СЃ РёРјРµСЋС‚СЃСЏ РЅРµРѕР±СЂР°Р±РѕС‚Р°РЅРЅС‹Рµ Р·Р°СЏРІРєРё. Р”РѕР¶РґРёС‚РµСЃСЊ РёС… РІС‹РїРѕР»РЅРµРЅРёСЏ.</b></font></center><BR />";
+				}else echo "<center><font color = 'red'><b>Р’С‹ СѓРєР°Р·Р°Р»Рё Р±РѕР»СЊС€Рµ, С‡РµРј РёРјРµРµС‚СЃСЏ РЅР° РІР°С€РµРј СЃС‡РµС‚Сѓ</b></font></center><BR />";
+			}else echo "<center><b><font color = 'red'>РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° РґР»СЏ РІС‹РїР»Р°С‚С‹ СЃРѕСЃС‚Р°РІР»СЏРµС‚ {$minPay} СЃРµСЂРµР±СЂР°!</font></b></center><BR />";
+		}else echo "<center><b><font color = 'red'>РљРѕС€РµР»РµРє Payeer СѓРєР°Р·Р°РЅ РЅРµРІРµСЂРЅРѕ! РЎРјРѕС‚СЂРёС‚Рµ РѕР±СЂР°Р·РµС†!</font></b></center><BR />";	
 	}
 ?>
 <form action="" method="post">
 <table width="99%" border="0" align="center">
   <tr>
-    <td><font color="#000;">Введите кошелек Payeer [Пример: P1304289]</font>: </td>
+    <td><font color="#000;">Р’РІРµРґРёС‚Рµ РєРѕС€РµР»РµРє Payeer [РџСЂРёРјРµСЂ: P1304289]</font>: </td>
 	<td><input type="text" name="purse" size="15"/></td>
   </tr>
   <tr>
-    <td><font color="#000;">Отдаете серебро для вывода</font> [Мин. <span id="res_min"></span>]<font color="#000;">:</font> </td>
+    <td><font color="#000;">РћС‚РґР°РµС‚Рµ СЃРµСЂРµР±СЂРѕ РґР»СЏ РІС‹РІРѕРґР°</font> [РњРёРЅ. <span id="res_min"></span>]<font color="#000;">:</font> </td>
 	<td><input type="text" name="sum" id="sum" value="<?=round($user_data["money_p"]); ?>" size="15" onkeyup="PaymentSum();" /></td>
   </tr>
   <tr>
-    <td><font color="#000;">Получаете <span id="res_val"></span></font><font color="#000;">:</font> </td>
+    <td><font color="#000;">РџРѕР»СѓС‡Р°РµС‚Рµ <span id="res_val"></span></font><font color="#000;">:</font> </td>
 	<td>
 	<input type="text" name="res" id="res_sum" value="0" size="15" disabled="disabled"/>
 	<input type="hidden" name="per" id="RUB" value="<?=$sonfig_site["ser_per_wmr"]; ?>" disabled="disabled"/>
@@ -101,21 +101,21 @@ $minPay = $sonfig_site['min_pay'];
 	</td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><input type="submit" name="swap" value="Заказать выплату" style="height: 30px; margin-top:10px;" /></td>
+    <td colspan="2" align="center"><input type="submit" name="swap" value="Р—Р°РєР°Р·Р°С‚СЊ РІС‹РїР»Р°С‚Сѓ" style="height: 30px; margin-top:10px;" /></td>
   </tr>
 </table>
 </form>
 <script language="javascript">PaymentSum(); SetVal();</script>
 <table cellpadding='3' cellspacing='0' border='0' bordercolor='#336633' align='center' width="99%">
   <tr>
-    <td colspan="5" align="center"><h4>Последние 10 выплат</h4></td>
+    <td colspan="5" align="center"><h4>РџРѕСЃР»РµРґРЅРёРµ 10 РІС‹РїР»Р°С‚</h4></td>
     </tr>
   <tr>
-    <td align="center" class="m-tb">Серебро</td>
-    <td align="center" class="m-tb">Получаете</td>
-	<td align="center" class="m-tb">Кошелек</td>
-	<td align="center" class="m-tb">Дата</td>
-	<td align="center" class="m-tb">Статус</td>
+    <td align="center" class="m-tb">РЎРµСЂРµР±СЂРѕ</td>
+    <td align="center" class="m-tb">РџРѕР»СѓС‡Р°РµС‚Рµ</td>
+	<td align="center" class="m-tb">РљРѕС€РµР»РµРє</td>
+	<td align="center" class="m-tb">Р”Р°С‚Р°</td>
+	<td align="center" class="m-tb">РЎС‚Р°С‚СѓСЃ</td>
   </tr>
   <?PHP
   $db->Query("SELECT * FROM db_payment WHERE user_id = '$usid' ORDER BY id DESC LIMIT 20");
@@ -131,7 +131,7 @@ $minPay = $sonfig_site['min_pay'];
   		</tr>
 		<?PHP
 		}
-	}else echo '<tr><td align="center" colspan="5">Нет записей</td></tr>'
+	}else echo '<tr><td align="center" colspan="5">РќРµС‚ Р·Р°РїРёСЃРµР№</td></tr>'
   ?>
 </table>
 <div class="clr"></div>		

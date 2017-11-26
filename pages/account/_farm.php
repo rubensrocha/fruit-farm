@@ -1,10 +1,10 @@
 <div class="s-bk-lf">
-	<div class="acc-title">Ферма</div>
+	<div class="acc-title">Р¤РµСЂРјР°</div>
 </div>
 <div class="silver-bk">
-	<p>В этом магазине Вы можете приобрести саженцы различных растений. Каждое растение приносит особые плоды которые можно потом продать на рынке и обменять на реальные деньги. Каждое растение даёт разное количество плодов, чем дороже оно тем больше плодоносит. Вы можете покупать любое их количество, растения не засыхают, не исчезают и будут плодоносить всегда. </p><p><font color="#808e04">Перед тем как докупить саженцы следует собрать урожай на складе!</font></p>
+	<p>Р’ СЌС‚РѕРј РјР°РіР°Р·РёРЅРµ Р’С‹ РјРѕР¶РµС‚Рµ РїСЂРёРѕР±СЂРµСЃС‚Рё СЃР°Р¶РµРЅС†С‹ СЂР°Р·Р»РёС‡РЅС‹С… СЂР°СЃС‚РµРЅРёР№. РљР°Р¶РґРѕРµ СЂР°СЃС‚РµРЅРёРµ РїСЂРёРЅРѕСЃРёС‚ РѕСЃРѕР±С‹Рµ РїР»РѕРґС‹ РєРѕС‚РѕСЂС‹Рµ РјРѕР¶РЅРѕ РїРѕС‚РѕРј РїСЂРѕРґР°С‚СЊ РЅР° СЂС‹РЅРєРµ Рё РѕР±РјРµРЅСЏС‚СЊ РЅР° СЂРµР°Р»СЊРЅС‹Рµ РґРµРЅСЊРіРё. РљР°Р¶РґРѕРµ СЂР°СЃС‚РµРЅРёРµ РґР°С‘С‚ СЂР°Р·РЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїР»РѕРґРѕРІ, С‡РµРј РґРѕСЂРѕР¶Рµ РѕРЅРѕ С‚РµРј Р±РѕР»СЊС€Рµ РїР»РѕРґРѕРЅРѕСЃРёС‚. Р’С‹ РјРѕР¶РµС‚Рµ РїРѕРєСѓРїР°С‚СЊ Р»СЋР±РѕРµ РёС… РєРѕР»РёС‡РµСЃС‚РІРѕ, СЂР°СЃС‚РµРЅРёСЏ РЅРµ Р·Р°СЃС‹С…Р°СЋС‚, РЅРµ РёСЃС‡РµР·Р°СЋС‚ Рё Р±СѓРґСѓС‚ РїР»РѕРґРѕРЅРѕСЃРёС‚СЊ РІСЃРµРіРґР°. </p><p><font color="#808e04">РџРµСЂРµРґ С‚РµРј РєР°Рє РґРѕРєСѓРїРёС‚СЊ СЃР°Р¶РµРЅС†С‹ СЃР»РµРґСѓРµС‚ СЃРѕР±СЂР°С‚СЊ СѓСЂРѕР¶Р°Р№ РЅР° СЃРєР»Р°РґРµ!</font></p>
 	<?PHP
-	$_OPTIMIZATION["title"] = "Аккаунт - Ферма";
+	$_OPTIMIZATION["title"] = "РђРєРєР°СѓРЅС‚ - Р¤РµСЂРјР°";
 	$usid = $_SESSION["user_id"];
 	$refid = $_SESSION["referer_id"];
 	$usname = $_SESSION["user"];
@@ -12,26 +12,26 @@
 	$user_data = $db->FetchArray();
 	$db->Query("SELECT * FROM db_config WHERE id = '1' LIMIT 1");
 	$sonfig_site = $db->FetchArray();
-	# Покупка нового дерева
+	# РџРѕРєСѓРїРєР° РЅРѕРІРѕРіРѕ РґРµСЂРµРІР°
 	if(isset($_POST["item"])){
 	$array_items = array(1 => "a_t", 2 => "b_t", 3 => "c_t", 4 => "d_t", 5 => "e_t");
-	$array_name = array(1 => "Лайм", 2 => "Вишня", 3 => "Клубника", 4 => "Киви", 5 => "Апельсин");
+	$array_name = array(1 => "Р›Р°Р№Рј", 2 => "Р’РёС€РЅСЏ", 3 => "РљР»СѓР±РЅРёРєР°", 4 => "РљРёРІРё", 5 => "РђРїРµР»СЊСЃРёРЅ");
 	$item = intval($_POST["item"]);
 	$citem = $array_items[$item];
 	if(strlen($citem) >= 3){
-		# Проверяем средства пользователя
+		# РџСЂРѕРІРµСЂСЏРµРј СЃСЂРµРґСЃС‚РІР° РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 		$need_money = $sonfig_site["amount_".$citem];
 		if($need_money <= $user_data["money_b"]){
 			if($user_data["last_sbor"] == 0 OR $user_data["last_sbor"] > ( time() - 60*20) ){	
-				# Добавляем дерево и списываем деньги
+				# Р”РѕР±Р°РІР»СЏРµРј РґРµСЂРµРІРѕ Рё СЃРїРёСЃС‹РІР°РµРј РґРµРЅСЊРіРё
 				$db->Query("UPDATE db_users_b SET money_b = money_b - $need_money, $citem = $citem + 1, last_sbor = IF(last_sbor > 0, last_sbor, '".time()."') WHERE id = '$usid'");
-				# Вносим запись о покупке
+				# Р’РЅРѕСЃРёРј Р·Р°РїРёСЃСЊ Рѕ РїРѕРєСѓРїРєРµ
 				$db->Query("INSERT INTO db_stats_btree (user_id, user, tree_name, amount, date_add, date_del) VALUES ('$usid','$usname','".$array_name[$item]."','$need_money','".time()."','".(time()+60*60*24*15)."')");
-				echo "<center><font color = 'green'><b>Вы успешно посадили саженец</b></font></center><BR />";
+				echo "<center><font color = 'green'><b>Р’С‹ СѓСЃРїРµС€РЅРѕ РїРѕСЃР°РґРёР»Рё СЃР°Р¶РµРЅРµС†</b></font></center><BR />";
 				$db->Query("SELECT * FROM db_users_b WHERE id = '$usid' LIMIT 1");
 				$user_data = $db->FetchArray();	
-			}else echo "<center><font color = 'red'><b>Перед тем как докупить саженцы следует собрать урожай на складе!</b></font></center><BR />";
-		}else echo "<center><font color = 'red'><b>Недостаточно серебра для покупки</b></font></center><BR />";
+			}else echo "<center><font color = 'red'><b>РџРµСЂРµРґ С‚РµРј РєР°Рє РґРѕРєСѓРїРёС‚СЊ СЃР°Р¶РµРЅС†С‹ СЃР»РµРґСѓРµС‚ СЃРѕР±СЂР°С‚СЊ СѓСЂРѕР¶Р°Р№ РЅР° СЃРєР»Р°РґРµ!</b></font></center><BR />";
+		}else echo "<center><font color = 'red'><b>РќРµРґРѕСЃС‚Р°С‚РѕС‡РЅРѕ СЃРµСЂРµР±СЂР° РґР»СЏ РїРѕРєСѓРїРєРё</b></font></center><BR />";
 	}else echo 222;
 }
 ?>
@@ -41,12 +41,12 @@
 			<img src="/img/fruit/lime.jpg" />
 		</div>
 		<div class="cl-fr-rg" style="padding-left:20px;">
-			<div class="fr-te-gr-title"><b>Лайм</b></div>
-			<div class="fr-te-gr">Плодовитость: <font color="#000000"><?=$sonfig_site["a_in_h"]; ?> в час</font></div>
-			<div class="fr-te-gr">Стоимость: <font color="#000000"><?=$sonfig_site["amount_a_t"]; ?> серебра</font></div>
-			<div class="fr-te-gr">Куплено: <font color="#000000"><?=$user_data["a_t"]; ?> шт.</font></div>
+			<div class="fr-te-gr-title"><b>Р›Р°Р№Рј</b></div>
+			<div class="fr-te-gr">РџР»РѕРґРѕРІРёС‚РѕСЃС‚СЊ: <font color="#000000"><?=$sonfig_site["a_in_h"]; ?> РІ С‡Р°СЃ</font></div>
+			<div class="fr-te-gr">РЎС‚РѕРёРјРѕСЃС‚СЊ: <font color="#000000"><?=$sonfig_site["amount_a_t"]; ?> СЃРµСЂРµР±СЂР°</font></div>
+			<div class="fr-te-gr">РљСѓРїР»РµРЅРѕ: <font color="#000000"><?=$user_data["a_t"]; ?> С€С‚.</font></div>
 			<input type="hidden" name="item" value="1" />
-			<input type="submit" value="Посадить" style="height: 30px; margin-top:10px;" />
+			<input type="submit" value="РџРѕСЃР°РґРёС‚СЊ" style="height: 30px; margin-top:10px;" />
 		</div>
 		</form>
 	</div>
@@ -56,12 +56,12 @@
 			<img src="/img/fruit/cherry.jpg" />
 		</div>
 		<div class="cl-fr-rg" style="padding-left:20px;">
-			<div class="fr-te-gr-title"><b>Вишня</b></div>
-			<div class="fr-te-gr">Плодовитость: <font color="#000000"><?=$sonfig_site["b_in_h"]; ?> в час</font></div>
-			<div class="fr-te-gr">Стоимость: <font color="#000000"><?=$sonfig_site["amount_b_t"]; ?> серебра</font></div>
-			<div class="fr-te-gr">Куплено: <font color="#000000"><?=$user_data["b_t"]; ?> шт.</font></div>
+			<div class="fr-te-gr-title"><b>Р’РёС€РЅСЏ</b></div>
+			<div class="fr-te-gr">РџР»РѕРґРѕРІРёС‚РѕСЃС‚СЊ: <font color="#000000"><?=$sonfig_site["b_in_h"]; ?> РІ С‡Р°СЃ</font></div>
+			<div class="fr-te-gr">РЎС‚РѕРёРјРѕСЃС‚СЊ: <font color="#000000"><?=$sonfig_site["amount_b_t"]; ?> СЃРµСЂРµР±СЂР°</font></div>
+			<div class="fr-te-gr">РљСѓРїР»РµРЅРѕ: <font color="#000000"><?=$user_data["b_t"]; ?> С€С‚.</font></div>
 			<input type="hidden" name="item" value="2" />
-			<input type="submit" value="Посадить" style="height: 30px; margin-top:10px;">
+			<input type="submit" value="РџРѕСЃР°РґРёС‚СЊ" style="height: 30px; margin-top:10px;">
 		</div>
 		</form>
 	</div>
@@ -71,12 +71,12 @@
 			<img src="/img/fruit/strawberries.jpg" />
 		</div>
 		<div class="cl-fr-rg" style="padding-left:20px;">
-			<div class="fr-te-gr-title"><b>Клубника</b></div>
-			<div class="fr-te-gr">Плодовитость: <font color="#000000"><?=$sonfig_site["c_in_h"]; ?> в час</font></div>
-			<div class="fr-te-gr">Стоимость: <font color="#000000"><?=$sonfig_site["amount_c_t"]; ?> серебра</font></div>
-			<div class="fr-te-gr">Куплено: <font color="#000000"><?=$user_data["c_t"]; ?> шт.</font></div>
+			<div class="fr-te-gr-title"><b>РљР»СѓР±РЅРёРєР°</b></div>
+			<div class="fr-te-gr">РџР»РѕРґРѕРІРёС‚РѕСЃС‚СЊ: <font color="#000000"><?=$sonfig_site["c_in_h"]; ?> РІ С‡Р°СЃ</font></div>
+			<div class="fr-te-gr">РЎС‚РѕРёРјРѕСЃС‚СЊ: <font color="#000000"><?=$sonfig_site["amount_c_t"]; ?> СЃРµСЂРµР±СЂР°</font></div>
+			<div class="fr-te-gr">РљСѓРїР»РµРЅРѕ: <font color="#000000"><?=$user_data["c_t"]; ?> С€С‚.</font></div>
 			<input type="hidden" name="item" value="3" />
-			<input type="submit" value="Посадить" style="height: 30px; margin-top:10px;">
+			<input type="submit" value="РџРѕСЃР°РґРёС‚СЊ" style="height: 30px; margin-top:10px;">
 		</div>
 		</form>
 	</div>
@@ -86,12 +86,12 @@
 			<img src="/img/fruit/kiwi.jpg" />
 		</div>
 		<div class="cl-fr-rg" style="padding-left:20px;">
-			<div class="fr-te-gr-title"><b>Киви</b></div>
-			<div class="fr-te-gr">Плодовитость: <font color="#000000"><?=$sonfig_site["d_in_h"]; ?> в час</font></div>
-			<div class="fr-te-gr">Стоимость: <font color="#000000"><?=$sonfig_site["amount_d_t"]; ?> серебра</font></div>
-			<div class="fr-te-gr">Куплено: <font color="#000000"><?=$user_data["d_t"]; ?> шт.</font></div>
+			<div class="fr-te-gr-title"><b>РљРёРІРё</b></div>
+			<div class="fr-te-gr">РџР»РѕРґРѕРІРёС‚РѕСЃС‚СЊ: <font color="#000000"><?=$sonfig_site["d_in_h"]; ?> РІ С‡Р°СЃ</font></div>
+			<div class="fr-te-gr">РЎС‚РѕРёРјРѕСЃС‚СЊ: <font color="#000000"><?=$sonfig_site["amount_d_t"]; ?> СЃРµСЂРµР±СЂР°</font></div>
+			<div class="fr-te-gr">РљСѓРїР»РµРЅРѕ: <font color="#000000"><?=$user_data["d_t"]; ?> С€С‚.</font></div>
 			<input type="hidden" name="item" value="4" />
-			<input type="submit" value="Посадить" style="height: 30px; margin-top:10px;">
+			<input type="submit" value="РџРѕСЃР°РґРёС‚СЊ" style="height: 30px; margin-top:10px;">
 		</div>
 		</form>
 	</div>
@@ -101,12 +101,12 @@
 			<img src="/img/fruit/orange.jpg" />
 		</div>
 		<div class="cl-fr-rg" style="padding-left:20px;">
-			<div class="fr-te-gr-title"><b>Апельсин</b></div>
-			<div class="fr-te-gr">Плодовитость: <font color="#000000"><?=$sonfig_site["e_in_h"]; ?> в час</font></div>
-			<div class="fr-te-gr">Стоимость: <font color="#000000"><?=$sonfig_site["amount_e_t"]; ?> серебра</font></div>
-			<div class="fr-te-gr">Куплено: <font color="#000000"><?=$user_data["e_t"]; ?> шт.</font></div>
+			<div class="fr-te-gr-title"><b>РђРїРµР»СЊСЃРёРЅ</b></div>
+			<div class="fr-te-gr">РџР»РѕРґРѕРІРёС‚РѕСЃС‚СЊ: <font color="#000000"><?=$sonfig_site["e_in_h"]; ?> РІ С‡Р°СЃ</font></div>
+			<div class="fr-te-gr">РЎС‚РѕРёРјРѕСЃС‚СЊ: <font color="#000000"><?=$sonfig_site["amount_e_t"]; ?> СЃРµСЂРµР±СЂР°</font></div>
+			<div class="fr-te-gr">РљСѓРїР»РµРЅРѕ: <font color="#000000"><?=$user_data["e_t"]; ?> С€С‚.</font></div>
 			<input type="hidden" name="item" value="5" />
-			<input type="submit" value="Посадить" style="height: 30px; margin-top:10px;">
+			<input type="submit" value="РџРѕСЃР°РґРёС‚СЊ" style="height: 30px; margin-top:10px;">
 		</div>
 		</form>
 	</div>

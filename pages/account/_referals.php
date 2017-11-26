@@ -1,24 +1,24 @@
 <?PHP
-$_OPTIMIZATION["title"] = "Аккаунт - Партнерская программа";
+$_OPTIMIZATION["title"] = "РђРєРєР°СѓРЅС‚ - РџР°СЂС‚РЅРµСЂСЃРєР°СЏ РїСЂРѕРіСЂР°РјРјР°";
 $user_id = $_SESSION["user_id"];
 $db->Query("SELECT COUNT(*) FROM db_users_a WHERE referer_id = '$user_id'");
 $refs = $db->FetchRow();
 ?> 
 <div class="s-bk-lf">
-	<div class="acc-title">Партнерская программа</div>
+	<div class="acc-title">РџР°СЂС‚РЅРµСЂСЃРєР°СЏ РїСЂРѕРіСЂР°РјРјР°</div>
 </div>
 <div class="silver-bk">
-Приглашайте в игру своих друзей и знакомых, Вы будете получать 10% от каждого пополнения баланса  
-приглашенным Вами человеком. Доход ни чем не ограничен. Даже несколько приглашенных могут 
-принести вам более 100 000 серебра. 
-Ниже представлена ссылка для привлечения и количество приглашенных Вами людей.<br /><br />
+РџСЂРёРіР»Р°С€Р°Р№С‚Рµ РІ РёРіСЂСѓ СЃРІРѕРёС… РґСЂСѓР·РµР№ Рё Р·РЅР°РєРѕРјС‹С…, Р’С‹ Р±СѓРґРµС‚Рµ РїРѕР»СѓС‡Р°С‚СЊ 10% РѕС‚ РєР°Р¶РґРѕРіРѕ РїРѕРїРѕР»РЅРµРЅРёСЏ Р±Р°Р»Р°РЅСЃР°  
+РїСЂРёРіР»Р°С€РµРЅРЅС‹Рј Р’Р°РјРё С‡РµР»РѕРІРµРєРѕРј. Р”РѕС…РѕРґ РЅРё С‡РµРј РЅРµ РѕРіСЂР°РЅРёС‡РµРЅ. Р”Р°Р¶Рµ РЅРµСЃРєРѕР»СЊРєРѕ РїСЂРёРіР»Р°С€РµРЅРЅС‹С… РјРѕРіСѓС‚ 
+РїСЂРёРЅРµСЃС‚Рё РІР°Рј Р±РѕР»РµРµ 100 000 СЃРµСЂРµР±СЂР°. 
+РќРёР¶Рµ РїСЂРµРґСЃС‚Р°РІР»РµРЅР° СЃСЃС‹Р»РєР° РґР»СЏ РїСЂРёРІР»РµС‡РµРЅРёСЏ Рё РєРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРёРіР»Р°С€РµРЅРЅС‹С… Р’Р°РјРё Р»СЋРґРµР№.<br /><br />
 <img src="/img/piar-link.png" style="vertical-align:-2px; margin-right:5px;" /><font color="#000;">http://<?=$_SERVER['HTTP_HOST']; ?>/?i=<?=$_SESSION["user_id"]; ?></font>
-<p><center>Количество ваших рефералов: <font color="#000;"><?=$refs; ?> чел.</font></center></p>
+<p><center>РљРѕР»РёС‡РµСЃС‚РІРѕ РІР°С€РёС… СЂРµС„РµСЂР°Р»РѕРІ: <font color="#000;"><?=$refs; ?> С‡РµР».</font></center></p>
 <table cellpadding='3' cellspacing='0' border='0' bordercolor='#336633' align='center' width='98%'>
 <tr height='25' valign=top align=center>
-	<td class="m-tb"> Логин </td>
-	<td class="m-tb"> Дата регистрации </td>
-	<td class="m-tb"> Доход от партнера </td>
+	<td class="m-tb"> Р›РѕРіРёРЅВ </td>
+	<td class="m-tb"> Р”Р°С‚Р° СЂРµРіРёСЃС‚СЂР°С†РёРёВ </td>
+	<td class="m-tb"> Р”РѕС…РѕРґ РѕС‚ РїР°СЂС‚РЅРµСЂР°В </td>
 </tr>
 <?PHP
   $all_money = 0;
@@ -28,14 +28,14 @@ $refs = $db->FetchRow();
   		while($ref = $db->FetchArray()){
 		?>
 		<tr height="25" class="htt" valign="top" align="center">
-			<td align="center"> <?=$ref["user"]; ?> </td>
-			<td align="center"> <?=date("d.m.Y в H:i:s",$ref["date_reg"]); ?> </td>
-			<td align="center"> <?=sprintf("%.2f",$ref["to_referer"]); ?> </td>
+			<td align="center"> <?=$ref["user"]; ?>В </td>
+			<td align="center"> <?=date("d.m.Y РІ H:i:s",$ref["date_reg"]); ?>В </td>
+			<td align="center"> <?=sprintf("%.2f",$ref["to_referer"]); ?>В </td>
 		</tr>
 		<?PHP
 		$all_money += $ref["to_referer"];
 		}
-	}else echo '<tr><td align="center" colspan="3">У вас нет рефералов</td></tr>'
+	}else echo '<tr><td align="center" colspan="3">РЈ РІР°СЃ РЅРµС‚ СЂРµС„РµСЂР°Р»РѕРІ</td></tr>'
   ?>
 </table>
 <div class="clr"></div>	

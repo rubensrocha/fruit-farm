@@ -1,20 +1,20 @@
 <?PHP
-$_OPTIMIZATION["title"] = "Аккаунт - Ежедневный бонус";
+$_OPTIMIZATION["title"] = "РђРєРєР°СѓРЅС‚ - Р•Р¶РµРґРЅРµРІРЅС‹Р№ Р±РѕРЅСѓСЃ";
 $usid = $_SESSION["user_id"];
 $uname = $_SESSION["user"];
-# Настройки бонусов
+# РќР°СЃС‚СЂРѕР№РєРё Р±РѕРЅСѓСЃРѕРІ
 $bonus_min = 10;
 $bonus_max = 100;
 ?>
 <div class="s-bk-lf">
-	<div class="acc-title">Ежедневный бонус</div>
+	<div class="acc-title">Р•Р¶РµРґРЅРµРІРЅС‹Р№ Р±РѕРЅСѓСЃ</div>
 </div>
 <div class="silver-bk">
 <div class="clr"></div>	
 <BR />
-Бонус выдется 1 раз в 24 часа. <BR />
-Бонус выдается серебром на счет для покупок. <BR />
-Сумма бонуса генерируется случайно от <b><?=$bonus_min;?></b> до <b><?=$bonus_max;?></b> серебра.
+Р‘РѕРЅСѓСЃ РІС‹РґРµС‚СЃСЏ 1 СЂР°Р· РІ 24 С‡Р°СЃР°. <BR />
+Р‘РѕРЅСѓСЃ РІС‹РґР°РµС‚СЃСЏ СЃРµСЂРµР±СЂРѕРј РЅР° СЃС‡РµС‚ РґР»СЏ РїРѕРєСѓРїРѕРє. <BR />
+РЎСѓРјРјР° Р±РѕРЅСѓСЃР° РіРµРЅРµСЂРёСЂСѓРµС‚СЃСЏ СЃР»СѓС‡Р°Р№РЅРѕ РѕС‚ <b><?=$bonus_min;?></b> РґРѕ <b><?=$bonus_max;?></b> СЃРµСЂРµР±СЂР°.
 <BR /><BR />
 <?PHP
 $ddel = time() + 60*60*24;
@@ -22,19 +22,19 @@ $dadd = time();
 $db->Query("SELECT COUNT(*) FROM db_bonus_list WHERE user_id = '$usid' AND date_del > '$dadd'");
 $hide_form = false;
 	if($db->FetchRow() == 0){
-		# Выдача бонуса
+		# Р’С‹РґР°С‡Р° Р±РѕРЅСѓСЃР°
 		if(isset($_POST["bonus"])){
 			$sum = rand($bonus_min, rand($bonus_min, $bonus_max) );
-			# Зачилсяем юзверю
+			# Р—Р°С‡РёР»СЃСЏРµРј СЋР·РІРµСЂСЋ
 			$db->Query("UPDATE db_users_b SET money_b = money_b + '$sum' WHERE id = '$usid'");
-			# Вносим запись в список бонусов
+			# Р’РЅРѕСЃРёРј Р·Р°РїРёСЃСЊ РІ СЃРїРёСЃРѕРє Р±РѕРЅСѓСЃРѕРІ
 			$db->Query("INSERT INTO db_bonus_list (user, user_id, sum, date_add, date_del) VALUES ('$uname','$usid','$sum','$dadd','$ddel')");
-			# Случайная очистка устаревших записей
+			# РЎР»СѓС‡Р°Р№РЅР°СЏ РѕС‡РёСЃС‚РєР° СѓСЃС‚Р°СЂРµРІС€РёС… Р·Р°РїРёСЃРµР№
 			$db->Query("DELETE FROM db_bonus_list WHERE date_del < '$dadd'");
-			echo "<center><font color = 'green'><b>На Ваш счет для покупок зачислен бонус в размере {$sum} серебра</b></font></center><BR />";
+			echo "<center><font color = 'green'><b>РќР° Р’Р°С€ СЃС‡РµС‚ РґР»СЏ РїРѕРєСѓРїРѕРє Р·Р°С‡РёСЃР»РµРЅ Р±РѕРЅСѓСЃ РІ СЂР°Р·РјРµСЂРµ {$sum} СЃРµСЂРµР±СЂР°</b></font></center><BR />";
 			$hide_form = true;
 		}
-		# Показывать или нет форму
+		# РџРѕРєР°Р·С‹РІР°С‚СЊ РёР»Рё РЅРµС‚ С„РѕСЂРјСѓ
 		if(!$hide_form){
 			?>
 			<form action="" method="post">
@@ -43,22 +43,22 @@ $hide_form = false;
 				<td align="center"></td>
 			  </tr>
 			  <tr>
-				<td align="center"><input type="submit" name="bonus" value="Получить бонус" style="height: 30px; margin-top:10px;"></td>
+				<td align="center"><input type="submit" name="bonus" value="РџРѕР»СѓС‡РёС‚СЊ Р±РѕРЅСѓСЃ" style="height: 30px; margin-top:10px;"></td>
 			  </tr>
 			</table>
 			</form>
 			<?PHP 
 		}
-	}else echo "<center><font color = 'red'><b>Вы уже получали бонус за последние 24 часа</b></font></center><BR />"; ?>
+	}else echo "<center><font color = 'red'><b>Р’С‹ СѓР¶Рµ РїРѕР»СѓС‡Р°Р»Рё Р±РѕРЅСѓСЃ Р·Р° РїРѕСЃР»РµРґРЅРёРµ 24 С‡Р°СЃР°</b></font></center><BR />"; ?>
 <table cellpadding='3' cellspacing='0' border='0' bordercolor='#336633' align='center' width="99%">
   <tr>
-    <td colspan="5" align="center"><h4>Последние 20 бонусов</h4></td>
+    <td colspan="5" align="center"><h4>РџРѕСЃР»РµРґРЅРёРµ 20 Р±РѕРЅСѓСЃРѕРІ</h4></td>
     </tr>
   <tr>
     <td align="center" class="m-tb">ID</td>
-    <td align="center" class="m-tb">Пользователь</td>
-	<td align="center" class="m-tb">Сумма</td>
-	<td align="center" class="m-tb">Дата</td>
+    <td align="center" class="m-tb">РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ</td>
+	<td align="center" class="m-tb">РЎСѓРјРјР°</td>
+	<td align="center" class="m-tb">Р”Р°С‚Р°</td>
   </tr>
   <?PHP
   $db->Query("SELECT * FROM db_bonus_list ORDER BY id DESC LIMIT 20");
@@ -73,7 +73,7 @@ $hide_form = false;
   		</tr>
 		<?PHP
 		}
-	}else echo '<tr><td align="center" colspan="5">Нет записей</td></tr>'
+	}else echo '<tr><td align="center" colspan="5">РќРµС‚ Р·Р°РїРёСЃРµР№</td></tr>'
   ?>
 </table>
 <div class="clr"></div>		

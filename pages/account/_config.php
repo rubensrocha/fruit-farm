@@ -1,15 +1,15 @@
 <?PHP
-$_OPTIMIZATION["title"] = "Аккаунт - Настройки";
+$_OPTIMIZATION["title"] = "РђРєРєР°СѓРЅС‚ - РќР°СЃС‚СЂРѕР№РєРё";
 $usid = $_SESSION["user_id"];
 $db->Query("SELECT * FROM db_users_a WHERE id = '$usid'");
 $user_data = $db->FetchArray();
 ?>
 <div class="s-bk-lf">
-	<div class="acc-title">Настройки</div>
+	<div class="acc-title">РќР°СЃС‚СЂРѕР№РєРё</div>
 </div>
 <div class="silver-bk">
 <div class="clr"></div>	
-<center><b>Смена пароля</b></center>
+<center><b>РЎРјРµРЅР° РїР°СЂРѕР»СЏ</b></center>
 <BR />
 <?PHP
 	if(isset($_POST["old"])){
@@ -19,32 +19,32 @@ $user_data = $db->FetchArray();
 				if($new !== false){
 					if( strtolower($new) == strtolower($_POST["re_new"])){
 						$db->Query("UPDATE db_users_a SET pass = '$new' WHERE id = '$usid'");
-						echo "<center><font color = 'green'><b>Новый пароль успешно установлен</b></font></center><BR />";
-					}else echo "<center><font color = 'red'><b>Пароль и повтор пароля не совпадают</b></font></center><BR />";
-				}else echo "<center><font color = 'red'><b>Новый пароль имеет неверный формат</b></font></center><BR />";
-			}else echo "<center><font color = 'red'><b>Старый паполь заполнен неверно</b></font></center><BR />";
+						echo "<center><font color = 'green'><b>РќРѕРІС‹Р№ РїР°СЂРѕР»СЊ СѓСЃРїРµС€РЅРѕ СѓСЃС‚Р°РЅРѕРІР»РµРЅ</b></font></center><BR />";
+					}else echo "<center><font color = 'red'><b>РџР°СЂРѕР»СЊ Рё РїРѕРІС‚РѕСЂ РїР°СЂРѕР»СЏ РЅРµ СЃРѕРІРїР°РґР°СЋС‚</b></font></center><BR />";
+				}else echo "<center><font color = 'red'><b>РќРѕРІС‹Р№ РїР°СЂРѕР»СЊ РёРјРµРµС‚ РЅРµРІРµСЂРЅС‹Р№ С„РѕСЂРјР°С‚</b></font></center><BR />";
+			}else echo "<center><font color = 'red'><b>РЎС‚Р°СЂС‹Р№ РїР°РїРѕР»СЊ Р·Р°РїРѕР»РЅРµРЅ РЅРµРІРµСЂРЅРѕ</b></font></center><BR />";
 	}
 ?>
 <form action="" method="post">
 <table width="330" border="0" align="center">
   <tr>
-    <td><b>Старый пароль:</b></td>
+    <td><b>РЎС‚Р°СЂС‹Р№ РїР°СЂРѕР»СЊ:</b></td>
     <td align="center"><input type="password" name="old" /></td>
   </tr>
   <tr>
-    <td><b>Новый пароль:</b></td>
+    <td><b>РќРѕРІС‹Р№ РїР°СЂРѕР»СЊ:</b></td>
     <td align="center"><input type="password" name="new" /></td>
   </tr>
   <tr>
-    <td><b>Повтор пароля:</b></td>
+    <td><b>РџРѕРІС‚РѕСЂ РїР°СЂРѕР»СЏ:</b></td>
     <td align="center"><input type="password" name="re_new" /></td>
   </tr>
   <tr>
-    <td align="center" colspan="2"><BR /><input type="submit" value="Сменить пароль" /></td>
+    <td align="center" colspan="2"><BR /><input type="submit" value="РЎРјРµРЅРёС‚СЊ РїР°СЂРѕР»СЊ" /></td>
   </tr>
 </table>
 </form>
 <BR />
-Поле Пароль должно иметь от 6 до 20 символов (только англ. символы)
+РџРѕР»Рµ РџР°СЂРѕР»СЊ РґРѕР»Р¶РЅРѕ РёРјРµС‚СЊ РѕС‚ 6 РґРѕ 20 СЃРёРјРІРѕР»РѕРІ (С‚РѕР»СЊРєРѕ Р°РЅРіР». СЃРёРјРІРѕР»С‹)
 <div class="clr"></div>		
 </div>
