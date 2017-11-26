@@ -8,7 +8,7 @@ if(isset($_POST["auth"])){
 			$data = $db->FetchArray();
 			if(strtolower($data["pass"]) == strtolower($password)){
 				if($data["banned"] == 0){
-					# Считаем рефералов
+					# РЎС‡РёС‚Р°РµРј СЂРµС„РµСЂР°Р»РѕРІ
 					$db->Query("SELECT COUNT(*) FROM db_users_a WHERE referer_id = '".$data["id"]."'");
 					$refs = $db->FetchRow();
 					$db->Query("UPDATE db_users_a SET referals = '$refs', date_login = '".time()."', ip = INET_ATON('".$func->UserIP."') WHERE id = '".$data["id"]."'");
@@ -17,25 +17,25 @@ if(isset($_POST["auth"])){
 					$_SESSION["referer_id"] = $data["referer_id"];
 					if($data['id'] == 1) $_SESSION['admin'] = TRUE;
 					Header("Location: /account");	
-				}else echo "<center><font color = 'red'><b>Аккаунт заблокирован</b></font></center><BR />";
-			}else echo "<center><font color = 'red'><b>Email и/или Пароль указан неверно</b></font></center><BR />";
-		}else echo "<center><font color = 'red'><b>Указанный Email не зарегистрирован в системе</b></font></center><BR />";
-	}else echo "<center><font color = 'red'><b>Email или пароль указан неверно</b></font></center><BR />";
+				}else echo "<center><font color = 'red'><b>РђРєРєР°СѓРЅС‚ Р·Р°Р±Р»РѕРєРёСЂРѕРІР°РЅ</b></font></center><BR />";
+			}else echo "<center><font color = 'red'><b>Email Рё/РёР»Рё РџР°СЂРѕР»СЊ СѓРєР°Р·Р°РЅ РЅРµРІРµСЂРЅРѕ</b></font></center><BR />";
+		}else echo "<center><font color = 'red'><b>РЈРєР°Р·Р°РЅРЅС‹Р№ Email РЅРµ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅ РІ СЃРёСЃС‚РµРјРµ</b></font></center><BR />";
+	}else echo "<center><font color = 'red'><b>Email РёР»Рё РїР°СЂРѕР»СЊ СѓРєР°Р·Р°РЅ РЅРµРІРµСЂРЅРѕ</b></font></center><BR />";
 }
 ?>
 <div class="autoriz">
 	<form action="" method="post">
-	<div class="h-title">Вход в аккаунт</div>	
+	<div class="h-title">Р’С…РѕРґ РІ Р°РєРєР°СѓРЅС‚</div>	
 	<table width="200" border="0" align="center">
 	  <tr>
 		<td colspan="2">Email:<BR /><input name="email" type="text" size="23" maxlength="35" class="lg"/></td>
 	  </tr>
 	  <tr>
-		<td colspan="2">Пароль [<a href="/recovery" class="rs-ps">Забыли пароль?</a>]:<BR /><input name="password" type="password" size="23" maxlength="35" class="ps"/></td>
+		<td colspan="2">РџР°СЂРѕР»СЊ [<a href="/recovery" class="rs-ps">Р—Р°Р±С‹Р»Рё РїР°СЂРѕР»СЊ?</a>]:<BR /><input name="password" type="password" size="23" maxlength="35" class="ps"/></td>
 	  </tr>
 	  <tr height="5">
-		<td align="center" valign="top"><input type="submit" name="auth" value="Войти" class="btn_in"/></form></td>
-		<td align="center" valign="top"><form action="/signup" method="post"><input type="submit" value="Регистрация" class="btn_reg"/></form></td>
+		<td align="center" valign="top"><input type="submit" name="auth" value="Р’РѕР№С‚Рё" class="btn_in"/></form></td>
+		<td align="center" valign="top"><form action="/signup" method="post"><input type="submit" value="Р РµРіРёСЃС‚СЂР°С†РёСЏ" class="btn_reg"/></form></td>
 	  </tr>
 	</table>
 </div>

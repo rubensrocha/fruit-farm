@@ -1,5 +1,5 @@
 <?PHP 
-# Òóò âñòàâëÿåì â êóêè ID referera
+# â€œÑƒÑ‚ Ð²ÑÑ‚Ð°Ð²Ð»Â¤ÐµÐ¼ Ð² ÐºÑƒÐºÐ¸ ID referera
 if(isset($_GET["i"])){
 	$_rid = (intval($_GET["i"]) > 0) ? intval($_GET["i"]) : 1; 
 	setcookie("i",$_rid,time()+2592000);

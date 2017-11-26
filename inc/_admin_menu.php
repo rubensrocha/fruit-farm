@@ -1,15 +1,15 @@
-<div class="acc-title">Админка</div>
-<div class="field-gr"><a href="/admin/stats">Статистика</a></div>
-<div class="field-gr"><a href="/admin/story_buy">История покупок</a></div>
-<div class="field-gr"><a href="/admin/story_swap">История обменов</a></div>
-<div class="field-gr"><a href="/admin/story_insert">История пополнений</a></div>
-<div class="field-gr"><a href="/admin/story_sell">Продажи на рынке</a></div>
-<div class="field-gr"><a href="/admin/news">Новости</a></div>
-<div class="field-gr"><a href="/admin/about">О ферме</a></div>
-<div class="field-gr"><a href="/admin/rules">Правила</a></div>
-<div class="field-gr"><a href="/admin/contacts">Контакты</a></div>
-<div class="field-gr"><a href="/admin/users">Список пользователей</a></div>
-<div class="field-gr"><a href="/admin/sender">Массовая рассылка</a></div>
-<div class="field-gr"><a href="/admin/payments">Список выплат</a></div>
-<div class="field-gr"><a href="/admin/config">Настройки</a></div>
-<div class="field-rd"><a href="/account/exit">Выход из профиля</a></div>
+<div class="acc-title">РђРґРјРёРЅРєР°</div>
+<div class="field-gr"><a href="/admin/stats">РЎС‚Р°С‚РёСЃС‚РёРєР°</a></div>
+<div class="field-gr"><a href="/admin/story_buy">РСЃС‚РѕСЂРёСЏ РїРѕРєСѓРїРѕРє</a></div>
+<div class="field-gr"><a href="/admin/story_swap">РСЃС‚РѕСЂРёСЏ РѕР±РјРµРЅРѕРІ</a></div>
+<div class="field-gr"><a href="/admin/story_insert">РСЃС‚РѕСЂРёСЏ РїРѕРїРѕР»РЅРµРЅРёР№</a></div>
+<div class="field-gr"><a href="/admin/story_sell">РџСЂРѕРґР°Р¶Рё РЅР° СЂС‹РЅРєРµ</a></div>
+<div class="field-gr"><a href="/admin/news">РќРѕРІРѕСЃС‚Рё</a></div>
+<div class="field-gr"><a href="/admin/about">Рћ С„РµСЂРјРµ</a></div>
+<div class="field-gr"><a href="/admin/rules">РџСЂР°РІРёР»Р°</a></div>
+<div class="field-gr"><a href="/admin/contacts">РљРѕРЅС‚Р°РєС‚С‹</a></div>
+<div class="field-gr"><a href="/admin/users">РЎРїРёСЃРѕРє РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№</a></div>
+<div class="field-gr"><a href="/admin/sender">РњР°СЃСЃРѕРІР°СЏ СЂР°СЃСЃС‹Р»РєР°</a></div>
+<div class="field-gr"><a href="/admin/payments">РЎРїРёСЃРѕРє РІС‹РїР»Р°С‚</a></div>
+<div class="field-gr"><a href="/admin/config">РќР°СЃС‚СЂРѕР№РєРё</a></div>
+<div class="field-rd"><a href="/account/exit">Р’С‹С…РѕРґ РёР· РїСЂРѕС„РёР»СЏ</a></div>
