@@ -3,17 +3,17 @@
 @ini_set('display_errors', true);
 @ini_set('html_errors', false);
 @ini_set('error_reporting', E_ALL ^ E_NOTICE);
-# Ïîäìàòûâàåì êëàññû
+# ÐŸÐ¾Ð´Ð¼Ð°Ñ‚Ñ‹Ð²Ð°ÐµÐ¼ ÐºÐ»Ð°ÑÑÑ‹
 function __autoload($name){ include("classes/_class.".$name.".php");}
-# Êëàññ êîíôèãà 
+# ÐšÐ»Ð°ÑÑ ÐºÐ¾Ð½Ñ„Ð¸Ð³Ð° 
 $config = new config;
 $type = "sender";//strval($_GET["type"]);
-# Ôóíêöèè
+# Ð¤ÑƒÐ½ÐºÑ†Ð¸Ð¸
 $func = new func;
-# Áàçà äàííûõ
+# Ð‘Ð°Ð·Ð° Ð´Ð°Ð½Ð½Ñ‹Ñ…
 $db = new db($config->HostDB, $config->UserDB, $config->PassDB, $config->BaseDB);
 switch($type){
-	case "sender": include("cron_job/_sender.php"); break; // Îòïðàâêà ïîëüçîâàòåëÿì
+	case "sender": include("cron_job/_sender.php"); break; // ÐžÑ‚Ð¿Ñ€Ð°Ð²ÐºÐ° Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑÐ¼
 	default: die("Type not exist"); break;
 }
 ?>

@@ -1,22 +1,22 @@
 <?PHP
 ##################################################
-# Автоматическое пополнение через Payeer		 #
-# для скриптов Фруктовая Ферма с сохранением     #
-# Автор: Администратор PSWeb.ru                  #
-# Сайт: psweb.ru                                 #
+# РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ РїРѕРїРѕР»РЅРµРЅРёРµ С‡РµСЂРµР· Payeer		 #
+# РґР»СЏ СЃРєСЂРёРїС‚РѕРІ Р¤СЂСѓРєС‚РѕРІР°СЏ Р¤РµСЂРјР° СЃ СЃРѕС…СЂР°РЅРµРЅРёРµРј     #
+# РђРІС‚РѕСЂ: РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ PSWeb.ru                  #
+# РЎР°Р№С‚: psweb.ru                                 #
 # email: i@psweb.ru                              #
 ##################################################
 
-//Проверка IP сервера оповещений Payeer
+//РџСЂРѕРІРµСЂРєР° IP СЃРµСЂРІРµСЂР° РѕРїРѕРІРµС‰РµРЅРёР№ Payeer
 if (!in_array($_SERVER['REMOTE_ADDR'], array('185.71.65.92', '185.71.65.189', '149.202.17.210'))) die('ERROR IP');
 if (isset($_POST['m_operation_id']) && isset($_POST['m_sign']))
 {
-# Автоподгрузка классов
+# РђРІС‚РѕРїРѕРґРіСЂСѓР·РєР° РєР»Р°СЃСЃРѕРІ
 	function __autoload($name){ include('classes/_class.'.$name.'.php');}
-# Класс конфига 
+# РљР»Р°СЃСЃ РєРѕРЅС„РёРіР° 
 	$config = new config;
 	$m_key = $config->secretW;
-# Формируем массив для генерации подписи
+# Р¤РѕСЂРјРёСЂСѓРµРј РјР°СЃСЃРёРІ РґР»СЏ РіРµРЅРµСЂР°С†РёРё РїРѕРґРїРёСЃРё
 	$arHash = array(
 	$_POST['m_operation_id'],
 	$_POST['m_operation_ps'],
@@ -29,65 +29,65 @@ if (isset($_POST['m_operation_id']) && isset($_POST['m_sign']))
 	$_POST['m_desc'],
 	$_POST['m_status']
 	);
-# Если были переданы дополнительные параметры, то добавляем их вмассив
+# Р•СЃР»Рё Р±С‹Р»Рё РїРµСЂРµРґР°РЅС‹ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹, С‚Рѕ РґРѕР±Р°РІР»СЏРµРј РёС… РІРјР°СЃСЃРёРІ
 	if (isset($_POST['m_params']))
 	{
 	$arHash[] = $_POST['m_params'];
 	}
-# Добавляем в массив секретный ключ
+# Р”РѕР±Р°РІР»СЏРµРј РІ РјР°СЃСЃРёРІ СЃРµРєСЂРµС‚РЅС‹Р№ РєР»СЋС‡
 	$arHash[] = $m_key;
-# Формируем подпись
+# Р¤РѕСЂРјРёСЂСѓРµРј РїРѕРґРїРёСЃСЊ
 	$sign_hash = strtoupper(hash('sha256', implode(':', $arHash)));
-# Если подписи совпадают и статус платежа “Выполнен”
+# Р•СЃР»Рё РїРѕРґРїРёСЃРё СЃРѕРІРїР°РґР°СЋС‚ Рё СЃС‚Р°С‚СѓСЃ РїР»Р°С‚РµР¶Р° вЂњР’С‹РїРѕР»РЅРµРЅвЂќ
 	if ($_POST['m_sign'] == $sign_hash && $_POST['m_status'] == 'success')
 	{
-	# База данных
+	# Р‘Р°Р·Р° РґР°РЅРЅС‹С…
 		$db = new db($config->HostDB, $config->UserDB, $config->PassDB, $config->BaseDB);
-	# Функции
+	# Р¤СѓРЅРєС†РёРё
 		$func = new func;
-	# Информация о платеже из базы
+	# РРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїР»Р°С‚РµР¶Рµ РёР· Р±Р°Р·С‹
 		$db->Query("SELECT * FROM db_payeer_insert WHERE id = ".$_POST['m_orderid']) or die($_POST['m_orderid'].'|error');
-	# Если в базе нет такого платежа, выдаем "Ошибка"
+	# Р•СЃР»Рё РІ Р±Р°Р·Рµ РЅРµС‚ С‚Р°РєРѕРіРѕ РїР»Р°С‚РµР¶Р°, РІС‹РґР°РµРј "РћС€РёР±РєР°"
 		if($db->NumRows() == 0){ exit($_POST['m_orderid'].'|error');}
-	# Массив информации о платеже	
+	# РњР°СЃСЃРёРІ РёРЅС„РѕСЂРјР°С†РёРё Рѕ РїР»Р°С‚РµР¶Рµ	
 		$payeer_row = $db->FetchArray();
-	# Если статус платежа 1 ('Выполнено'), возвращаем 'Выполненно'
+	# Р•СЃР»Рё СЃС‚Р°С‚СѓСЃ РїР»Р°С‚РµР¶Р° 1 ('Р’С‹РїРѕР»РЅРµРЅРѕ'), РІРѕР·РІСЂР°С‰Р°РµРј 'Р’С‹РїРѕР»РЅРµРЅРЅРѕ'
 		if($payeer_row['status'] == 1){ exit($_POST['m_orderid'].'|success');}
-	# Если сумма платежа в оповещении не равна сумме в базе
+	# Р•СЃР»Рё СЃСѓРјРјР° РїР»Р°С‚РµР¶Р° РІ РѕРїРѕРІРµС‰РµРЅРёРё РЅРµ СЂР°РІРЅР° СЃСѓРјРјРµ РІ Р±Р°Р·Рµ
 		if($payeer_row['sum'] != $_POST['m_amount']){ exit($_POST['m_orderid'].'|error');}
-	# Сумма платежа		
+	# РЎСѓРјРјР° РїР»Р°С‚РµР¶Р°		
 		$amount = $payeer_row['sum'];
-	# ID пользователя
+	# ID РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 		$user_id = $payeer_row['user_id']; 
-	# Настройки из базы
+	# РќР°СЃС‚СЂРѕР№РєРё РёР· Р±Р°Р·С‹
 		$db->Query("SELECT * FROM db_config WHERE id = '1' LIMIT 1");
 		$config_site = $db->FetchArray();
-	# Информация о пользователе и реферере
+	# РРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїРѕР»СЊР·РѕРІР°С‚РµР»Рµ Рё СЂРµС„РµСЂРµСЂРµ
 		$db->Query("SELECT user, referer_id FROM db_users_a WHERE id = '".$user_id."' LIMIT 1");
 		$user_data = $db->FetchArray();
 		$user_name = $user_data['user'];
 		$refid = $user_data['referer_id'];
-	# Зачисляем баланс
+	# Р—Р°С‡РёСЃР»СЏРµРј Р±Р°Р»Р°РЅСЃ
 		$serebro = sprintf("%.4f", floatval($config_site['ser_per_wmr'] * $amount) );
 		$db->Query("SELECT insert_sum FROM db_users_b WHERE id = '".$user_id."' LIMIT 1");
 		$insert_sum = $db->FetchRow();
-	# Бонус при первом пополнении
+	# Р‘РѕРЅСѓСЃ РїСЂРё РїРµСЂРІРѕРј РїРѕРїРѕР»РЅРµРЅРёРё
 		$serebro = intval($insert_sum == 0) ? ($serebro + ($serebro * 0.55) ) : $serebro;
-	# Дерево/фрукт при пополнении на определенную сумму
+	# Р”РµСЂРµРІРѕ/С„СЂСѓРєС‚ РїСЂРё РїРѕРїРѕР»РЅРµРЅРёРё РЅР° РѕРїСЂРµРґРµР»РµРЅРЅСѓСЋ СЃСѓРјРјСѓ
 		$add_tree = ( $amount >= 500) ? 2 : 0;
-	# Отчисления рефералу
+	# РћС‚С‡РёСЃР»РµРЅРёСЏ СЂРµС„РµСЂР°Р»Сѓ
 		$to_referer = ($serebro * 0.10);
-	# Зачисляем пользователю
+	# Р—Р°С‡РёСЃР»СЏРµРј РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
 		$db->Query("UPDATE db_users_b SET money_b = money_b + '$serebro', e_t = e_t + '$add_tree', to_referer = to_referer + '$to_referer', last_sbor = '".time()."', insert_sum = insert_sum + '$amount' WHERE id = '$user_id'") or die ($_POST['m_orderid'].'|error');
 		$db->Query("UPDATE db_payeer_insert SET status = '1' WHERE id = '".$_POST['m_orderid']."'") or die(mysql_error());
-	# Зачисляем средства рефереру и дерево
+	# Р—Р°С‡РёСЃР»СЏРµРј СЃСЂРµРґСЃС‚РІР° СЂРµС„РµСЂРµСЂСѓ Рё РґРµСЂРµРІРѕ
 		$add_tree_referer = ($insert_sum <= 0.01) ? ", a_t = a_t + 1" : "";
 		$db->Query("UPDATE db_users_b SET money_b = money_b + $to_referer, from_referals = from_referals + '$to_referer' $add_tree_referer WHERE id = '$refid'") or die(mysql_error());
-	# Статистика пополнений
+	# РЎС‚Р°С‚РёСЃС‚РёРєР° РїРѕРїРѕР»РЅРµРЅРёР№
 		$da = time();
 		$dd = $da + 60*60*24*15;
 		$db->Query("INSERT INTO db_insert_money (user, user_id, money, serebro, date_add, date_del) VALUES ('$user_name','$user_id','$amount','$serebro','$da','$dd')") or die(mysql_error());
-	# Обновление статистики сайта
+	# РћР±РЅРѕРІР»РµРЅРёРµ СЃС‚Р°С‚РёСЃС‚РёРєРё СЃР°Р№С‚Р°
 		$db->Query("UPDATE db_stats SET all_insert = all_insert + '$amount' WHERE id = '1'") or die(mysql_error());
 		exit($_POST['m_orderid'].'|success');
 	}

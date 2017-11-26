@@ -1,65 +1,65 @@
 <?PHP
-# Ñ÷åò÷èê
+# Ð¡Ñ‡ÐµÑ‚Ñ‡Ð¸Ðº
 function TimerSet(){
 	list($seconds, $microSeconds) = explode(' ', microtime());
 	return $seconds + (float) $microSeconds;
 }
 $_timer_a = TimerSet();
-# Ñòàðò ñåññèè
+# Ð¡Ñ‚Ð°Ñ€Ñ‚ ÑÐµÑÑÐ¸Ð¸
 @session_start();
-# Ñòàðò áóôåðà
+# Ð¡Ñ‚Ð°Ñ€Ñ‚ Ð±ÑƒÑ„ÐµÑ€Ð°
 @ob_start();
 # Default
 $_OPTIMIZATION = array();
-$_OPTIMIZATION["title"] = "Ôðóêòîâàÿ ôåðìà";
-$_OPTIMIZATION["description"] = "Ôðóêòîâàÿ ôåðìà";
-$_OPTIMIZATION["keywords"] = "Çàðàáîòîê íà ðàñòåíèÿõ, âëîæåíèÿ, çàðàáîòàòü, ôåðìà, äåíåæíàÿ ôåðìà, çàðàáîòàòü íà ôåðìå";
-# Êîíñòàíòà äëÿ Include
+$_OPTIMIZATION["title"] = "Ð¤Ñ€ÑƒÐºÑ‚Ð¾Ð²Ð°Ñ Ñ„ÐµÑ€Ð¼Ð°";
+$_OPTIMIZATION["description"] = "Ð¤Ñ€ÑƒÐºÑ‚Ð¾Ð²Ð°Ñ Ñ„ÐµÑ€Ð¼Ð°";
+$_OPTIMIZATION["keywords"] = "Ð—Ð°Ñ€Ð°Ð±Ð¾Ñ‚Ð¾Ðº Ð½Ð° Ñ€Ð°ÑÑ‚ÐµÐ½Ð¸ÑÑ…, Ð²Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ, Ð·Ð°Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ñ‚ÑŒ, Ñ„ÐµÑ€Ð¼Ð°, Ð´ÐµÐ½ÐµÐ¶Ð½Ð°Ñ Ñ„ÐµÑ€Ð¼Ð°, Ð·Ð°Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ñ‚ÑŒ Ð½Ð° Ñ„ÐµÑ€Ð¼Ðµ";
+# ÐšÐ¾Ð½ÑÑ‚Ð°Ð½Ñ‚Ð° Ð´Ð»Ñ Include
 define('CONST_PSWeb', true);
-# Àâòîïîäãðóçêà êëàññîâ
+# ÐÐ²Ñ‚Ð¾Ð¿Ð¾Ð´Ð³Ñ€ÑƒÐ·ÐºÐ° ÐºÐ»Ð°ÑÑÐ¾Ð²
 function __autoload($name){ include("classes/_class.".$name.".php");}
-# Êëàññ êîíôèãà 
+# ÐšÐ»Ð°ÑÑ ÐºÐ¾Ð½Ñ„Ð¸Ð³Ð° 
 $config = new config;
-# Ôóíêöèè
+# Ð¤ÑƒÐ½ÐºÑ†Ð¸Ð¸
 $func = new func;
-# Óñòàíîâêà REFERER
+# Ð£ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° REFERER
 include("inc/_set_referer.php");
-# Áàçà äàííûõ
+# Ð‘Ð°Ð·Ð° Ð´Ð°Ð½Ð½Ñ‹Ñ…
 $db = new db($config->HostDB, $config->UserDB, $config->PassDB, $config->BaseDB);
-# Øàïêà
+# Ð¨Ð°Ð¿ÐºÐ°
 @include("inc/_header.php");
 	if(isset($_GET["menu"])){
 		$menu = strval($_GET["menu"]);
 		switch($menu){
-			case "404": include("pages/_404.php"); break; // Ñòðàíèöà îøèáêè
-			case "rules": include("pages/_rules.php"); break; // Ïðàâèëà ïðîåêòà
-			case "about": include("pages/_about.php"); break; // Î ïðîåêòå
-			case "contacts": include("pages/_contacts.php"); break; // Êîíòàêòû
-			case "news": include("pages/_news.php"); break; // Íîâîñòè
-			case "signup": include("pages/_signup.php"); break; // Ðåãèñòðàöèÿ
-			case "recovery": include("pages/_recovery.php"); break; // Âîññòàíîâëåíèå ïàðîëÿ
-			case "payments": include("pages/_payments.php"); break; // Âûïëàòû
-			case "users": include("pages/_users.php"); break; // Ïîëüçîâàòåëè
-			case "account": include("pages/_account.php"); break; // Àêêàóíò
-			case "admin": include("pages/_admin.php"); break; // Àäìèíêà
-			case "success": include("pages/_success.php"); break; // Óñïåøíàÿ îïëàòà
-			case "fail": include("pages/_fail.php"); break; // Íåóñïåøíàÿ îïëàòà
-			# Ñòðàíèöà îøèáêè
+			case "404": include("pages/_404.php"); break; // Ð¡Ñ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° Ð¾ÑˆÐ¸Ð±ÐºÐ¸
+			case "rules": include("pages/_rules.php"); break; // ÐŸÑ€Ð°Ð²Ð¸Ð»Ð° Ð¿Ñ€Ð¾ÐµÐºÑ‚Ð°
+			case "about": include("pages/_about.php"); break; // Ðž Ð¿Ñ€Ð¾ÐµÐºÑ‚Ðµ
+			case "contacts": include("pages/_contacts.php"); break; // ÐšÐ¾Ð½Ñ‚Ð°ÐºÑ‚Ñ‹
+			case "news": include("pages/_news.php"); break; // ÐÐ¾Ð²Ð¾ÑÑ‚Ð¸
+			case "signup": include("pages/_signup.php"); break; // Ð ÐµÐ³Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ
+			case "recovery": include("pages/_recovery.php"); break; // Ð’Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ Ð¿Ð°Ñ€Ð¾Ð»Ñ
+			case "payments": include("pages/_payments.php"); break; // Ð’Ñ‹Ð¿Ð»Ð°Ñ‚Ñ‹
+			case "users": include("pages/_users.php"); break; // ÐŸÐ¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ð¸
+			case "account": include("pages/_account.php"); break; // ÐÐºÐºÐ°ÑƒÐ½Ñ‚
+			case "admin": include("pages/_admin.php"); break; // ÐÐ´Ð¼Ð¸Ð½ÐºÐ°
+			case "success": include("pages/_success.php"); break; // Ð£ÑÐ¿ÐµÑˆÐ½Ð°Ñ Ð¾Ð¿Ð»Ð°Ñ‚Ð°
+			case "fail": include("pages/_fail.php"); break; // ÐÐµÑƒÑÐ¿ÐµÑˆÐ½Ð°Ñ Ð¾Ð¿Ð»Ð°Ñ‚Ð°
+			# Ð¡Ñ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° Ð¾ÑˆÐ¸Ð±ÐºÐ¸
 			default: @include("pages/_404.php"); break;
 		}
 	}else @include("pages/_index.php");
-# Ïîäâàë
+# ÐŸÐ¾Ð´Ð²Ð°Ð»
 @include("inc/_footer.php");
-# Çàíîñèì êîíòåíò â ïåðåìåííóþ
+# Ð—Ð°Ð½Ð¾ÑÐ¸Ð¼ ÐºÐ¾Ð½Ñ‚ÐµÐ½Ñ‚ Ð² Ð¿ÐµÑ€ÐµÐ¼ÐµÐ½Ð½ÑƒÑŽ
 $content = ob_get_contents();
-# Î÷èùàåì áóôåð
+# ÐžÑ‡Ð¸Ñ‰Ð°ÐµÐ¼ Ð±ÑƒÑ„ÐµÑ€
 ob_end_clean();
-	# Çàìåíÿåì äàííûå
+	# Ð—Ð°Ð¼ÐµÐ½ÑÐµÐ¼ Ð´Ð°Ð½Ð½Ñ‹Ðµ
 	$content = str_replace("{!TITLE!}",$_OPTIMIZATION["title"],$content);
 	$content = str_replace('{!DESCRIPTION!}',$_OPTIMIZATION["description"],$content);
 	$content = str_replace('{!KEYWORDS!}',$_OPTIMIZATION["keywords"],$content);
 	$content = str_replace('{!GEN_PAGE!}', sprintf("%.5f", (TimerSet() - $_timer_a)) ,$content);
-	# Âûâîä áàëàíñà
+	# Ð’Ñ‹Ð²Ð¾Ð´ Ð±Ð°Ð»Ð°Ð½ÑÐ°
 	if(isset($_SESSION["user_id"])){
 		$user_id = $_SESSION["user_id"];
 		$db->Query("SELECT money_b, money_p FROM db_users_b WHERE id = '$user_id'");
@@ -67,6 +67,6 @@ ob_end_clean();
 		$content = str_replace('{!BALANCE_B!}', sprintf("%.2f", $balance["money_b"]) ,$content);
 		$content = str_replace('{!BALANCE_P!}', sprintf("%.2f", $balance["money_p"]) ,$content);
 	}
-// Âûâîäèì êîíòåíò
+// Ð’Ñ‹Ð²Ð¾Ð´Ð¸Ð¼ ÐºÐ¾Ð½Ñ‚ÐµÐ½Ñ‚
 echo $content;
 ?>
