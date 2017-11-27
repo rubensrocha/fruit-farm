@@ -1,15 +1,15 @@
 <div class="s-bk-lf">
-	<div class="acc-title">‘руктовый склад</div>
+	<div class="acc-title">Фруктовый склад</div>
 </div>
-<div class="silver-bk">—обирайте на фруктовом складе ваши плоды посаженые на фруктовой ферме. ¬аша ферма дает урожай 
-каждые 10 минут. ѕлоды посто¤нно накапливаетс¤, не об¤зательно собирать каждые 10 мин. достаточно
-собрать их раз в мес¤ц.<br />  ак вам удобнее.
+<div class="silver-bk">Собирайте на фруктовом складе ваши плоды посаженые на фруктовой ферме. Ваша ферма дает урожай 
+каждые 10 минут. Плоды постоянно накапливается, не обязательно собирать каждые 10 мин. достаточно
+собрать их раз в месяц.<br /> Как вам удобнее.
 <BR />
 <BR />
 <?PHP
-$_OPTIMIZATION["title"] = "јккаунт - —клад";
-$_OPTIMIZATION["description"] = "‘руктовый склад";
-$_OPTIMIZATION["keywords"] = "јккаунт, ‘руктовый склад, пользователь";
+$_OPTIMIZATION["title"] = "Аккаунт - Склад";
+$_OPTIMIZATION["description"] = "Фруктовый склад";
+$_OPTIMIZATION["keywords"] = "Аккаунт, Фруктовый склад, пользователь";
 $usid = $_SESSION["user_id"];
 $db->Query("SELECT * FROM db_users_b WHERE id = '$usid' LIMIT 1");
 $user_data = $db->FetchArray();
@@ -35,35 +35,35 @@ $sonfig_site = $db->FetchArray();
 			all_time_e = all_time_e + '$pean_s',
 			last_sbor = '".time()."' 
 			WHERE id = '$usid' LIMIT 1");
-			echo "<center><font color = 'green'><b>¬ы собрали урожай</b></font></center><BR />";
+			echo "<center><font color = 'green'><b>Вы собрали урожай</b></font></center><BR />";
 			$db->Query("SELECT * FROM db_users_b WHERE id = '$usid' LIMIT 1");
 			$user_data = $db->FetchArray();
-		}else echo "<center><font color = 'red'><b>”рожай можно собирать не чаще 1го раза за 10 минут</b></font></center><BR />";
+		}else echo "<center><font color = 'red'><b>Урожай можно собирать не чаще 1го раза за 10 минут</b></font></center><BR />";
 	}
 ?>
 <form action="" method="post">
 	<div class="clr"></div>	
 	<div class="sm-line">
-		<img src="/img/fruit/lime-small.jpg" />¬аших <?=$user_data["a_t"]; ?> саженцев уродили: <font color="#000"> <?=$func->SumCalc($sonfig_site["a_in_h"], $user_data["a_t"], $user_data["last_sbor"]);?> плодов</font>
+		<img src="/img/fruit/lime-small.jpg" />Ваших <?=$user_data["a_t"]; ?> саженцев уродили: <font color="#000"> <?=$func->SumCalc($sonfig_site["a_in_h"], $user_data["a_t"], $user_data["last_sbor"]);?> плодов</font>
 	</div>
 	<div class="sm-line">
-		<img src="/img/fruit/cherry-small.jpg" />¬аших <?=$user_data["b_t"]; ?> саженцев уродили: <font color="#000"> <?=$func->SumCalc($sonfig_site["b_in_h"], $user_data["b_t"], $user_data["last_sbor"]);?> плодов</font>
+		<img src="/img/fruit/cherry-small.jpg" />Ваших <?=$user_data["b_t"]; ?> саженцев уродили: <font color="#000"> <?=$func->SumCalc($sonfig_site["b_in_h"], $user_data["b_t"], $user_data["last_sbor"]);?> плодов</font>
 	</div>
 	<div class="sm-line">
-		<img src="/img/fruit/kiwi-small.jpg" />¬аших <?=$user_data["c_t"]; ?> саженцев уродили: <font color="#000"> <?=$func->SumCalc($sonfig_site["c_in_h"], $user_data["c_t"], $user_data["last_sbor"]);?> плодов</font>
+		<img src="/img/fruit/kiwi-small.jpg" />Ваших <?=$user_data["c_t"]; ?> саженцев уродили: <font color="#000"> <?=$func->SumCalc($sonfig_site["c_in_h"], $user_data["c_t"], $user_data["last_sbor"]);?> плодов</font>
 	</div>
 	<div class="sm-line">
-		<img src="/img/fruit/strawberries-small.jpg" />¬аших <?=$user_data["d_t"]; ?> саженцев уродили: <font color="#000"> <?=$func->SumCalc($sonfig_site["d_in_h"], $user_data["d_t"], $user_data["last_sbor"]);?> плодов</font>
+		<img src="/img/fruit/strawberries-small.jpg" />Ваших <?=$user_data["d_t"]; ?> саженцев уродили: <font color="#000"> <?=$func->SumCalc($sonfig_site["d_in_h"], $user_data["d_t"], $user_data["last_sbor"]);?> плодов</font>
 	</div>
 	<div class="sm-line">
-		<img src="/img/fruit/orange-small.jpg" />¬аших <?=$user_data["e_t"]; ?> саженцев уродили: <font color="#000"> <?=$func->SumCalc($sonfig_site["e_in_h"], $user_data["e_t"], $user_data["last_sbor"]);?> плодов</font>
+		<img src="/img/fruit/orange-small.jpg" />Ваших <?=$user_data["e_t"]; ?> саженцев уродили: <font color="#000"> <?=$func->SumCalc($sonfig_site["e_in_h"], $user_data["e_t"], $user_data["last_sbor"]);?> плодов</font>
 	</div>
 	<div class="clr"></div>
-	<center><input type="submit" name="sbor" value="—обрать все" style="height:30px;"/></center>
+	<center><input type="submit" name="sbor" value="Собрать все" style="height:30px;"/></center>
 </form>                
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td colspan="5" align="center" style="padding:5px;"><b>” вас имеетс¤ на складе:</b></td>
+    <td colspan="5" align="center" style="padding:5px;"><b>У вас имеется на складе:</b></td>
     </tr>
   <tr>
     <td align="center" width="20%"><div class="sm-line-nt"><img src="/img/fruit/lime-small.jpg" /></div></td>
