@@ -11,7 +11,13 @@ Modified version of Fruit-Farm Script.
     <li>Enable/disable Bonus</li>
     <li>More configuration options on Admin</li>
     <li>Secure Admin with PIN</li>
+    <li>Multi-language system</li>
 </ul>
+
+# Tasks
+[x] Multi-language <br>
+[] Integrate Admin Material Theme <br>
+[] Integrate GUMP validation on fields <br>
 
 # Resources
 <ul>
