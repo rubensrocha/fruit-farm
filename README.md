@@ -1,11 +1,16 @@
 # Fruit-Farm
-Modified version from Fruit-Farm Script.
+Modified version of Fruit-Farm Script.
 
 #### Objectives:
 <ul>
-    <li>Try to prevent SQL Injections</li>
-    <li>Change theme to another</li>
+    <li>Bether data validation to prevent SQL Injections</li>
+    <li>Integrate a Bootstrap Template as default theme</li>
     <li>Integrate all plugins available</li>
+    <li>SEO friendly url's on Admin</li>
+    <li>Enable/disable payment methods</li>
+    <li>Enable/disable Bonus</li>
+    <li>More configuration options on Admin</li>
+    <li>Secure Admin with PIN</li>
 </ul>
 
 # Resources
