@@ -15,7 +15,7 @@ Modified version of Fruit-Farm Script.
 
 # Resources
 <ul>
-    <li><a href="https://github.com/Elvinas/Simple-PHP-Language-Class" target="_blank">Simple-PHP-Language-Class</a></li>
-    <li><a href="https://github.com/Wixel/GUMP" target="_blank">GUMP</a></li>
-    <li><a href="https://bootstrapious.com/p/admin-template" target="_blank">Admin Material Theme - Bootstrap 4</a></li>
+    <li>[Simple-PHP-Language-Class](https://github.com/Elvinas/Simple-PHP-Language-Class)</li>
+    <li>[GUMP](https://github.com/Wixel/GUMP)</li>
+    <li>[Admin Material Theme - Bootstrap 4](https://bootstrapious.com/p/admin-template)</li>
 </ul>
