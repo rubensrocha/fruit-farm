@@ -16,6 +16,7 @@ Modified version of Fruit-Farm Script.
 
 # Tasks
 [x] Multi-language <br>
+[x] Secure Passwords with reset password link <br>
 [] Integrate Admin Material Theme <br>
 [] Integrate GUMP validation on fields <br>
 
