@@ -12,6 +12,7 @@ Modified version of Fruit-Farm Script.
     <li>More configuration options on Admin</li>
     <li>Secure Admin with PIN</li>
     <li>Multi-language system</li>
+    <li>Admin area with separated user and login</li>
 </ul>
 
 # Tasks
