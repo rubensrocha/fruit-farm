@@ -18,8 +18,8 @@ Modified version of Fruit-Farm Script.
 # Tasks
 [x] Multi-language <br>
 [x] Secure Passwords with reset password link <br>
-[] Integrate Admin Material Theme <br>
-[] Integrate GUMP validation on fields <br>
+[ ] Integrate Admin Material Theme <br>
+[ ] Integrate GUMP validation on fields <br>
 
 # Theme Integration
 [x] Index <br>
@@ -31,7 +31,7 @@ Modified version of Fruit-Farm Script.
 [x] News <br>
 [x] Recovery <br>
 [x] Stat <br>
-[] 404 <br>
+[ ] 404 <br>
 
 [x] Account <br>
 -- [x] Bonus <br>
