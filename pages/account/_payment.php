@@ -39,7 +39,7 @@ $minPay = $sonfig_site['min_pay'];
 					$db->Query("SELECT COUNT(*) FROM db_payment WHERE user_id = '$usid' AND (status = '0' OR status = '1')");
 					if($db->FetchRow() == 0){		
 						### Делаем выплату ###	
-						$payeer = new rfs_payeer($config->AccountNumber, $config->apiId, $config->apiKey);
+						$payeer = new cPayeer($config->AccountNumber, $config->apiId, $config->apiKey);
 						if ($payeer->isAuth())
 						{
 							$arBalance = $payeer->getBalance();

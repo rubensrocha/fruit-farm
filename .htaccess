@@ -1,34 +1,37 @@
 DirectoryIndex index.php
 RewriteEngine On
 
-# Основной домен
+# РћСЃРЅРѕРІРЅРѕР№ РґРѕРјРµРЅ
 RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
 RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
-# Главная
+# Р“Р»Р°РІРЅР°СЏ
 RewriteRule ^index.html$ index.php [L]
-# Правила
+# РџСЂР°РІРёР»Р°
 RewriteRule ^rules(/?)+$ index.php?menu=rules [L]
-# Контакты
+# РљРѕРЅС‚Р°РєС‚С‹
 RewriteRule ^contacts(/?)+$ index.php?menu=contacts [L]
-# Новости
+# РќРѕРІРѕСЃС‚Рё
 RewriteRule ^news(/?)+$ index.php?menu=news [L]
-# О нас
+# Рћ РЅР°СЃ
 RewriteRule ^about(/?)+$ index.php?menu=about [L]
-# Регистрация
+
+RewriteRule ^stat(/?)+$ index.php?menu=stat [L]
+# Р РµРіРёСЃС‚СЂР°С†РёСЏ
 RewriteRule ^signup(/?)+$ index.php?menu=signup [L]
-# Восстановление пароля
+# Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїР°СЂРѕР»СЏ
 RewriteRule ^recovery(/?)+$ index.php?menu=recovery [L]
-# Последние выплаты
+RewriteRule ^recovery/([a-zA-Z0-9_-]+)(/?)+$ index.php?menu=recovery&hash=$1 [L]
+# РџРѕСЃР»РµРґРЅРёРµ РІС‹РїР»Р°С‚С‹
 RewriteRule ^payments(/?)+$ index.php?menu=payments [L]
-# Пользователи
+# РџРѕР»СЊР·РѕРІР°С‚РµР»Рё
 RewriteRule ^users/([0-9]+)(/?)+$ index.php?menu=users&page=$1 [L]
 RewriteRule ^users(/?)+$ index.php?menu=users [L]
-#Оплата
+#РћРїР»Р°С‚Р°
 RewriteRule ^payment/success(/?)+$ index.php?menu=success [L]
 RewriteRule ^payment/fail(/?)+$ index.php?menu=fail [L]
 
-# Аккаунт
+# РђРєРєР°СѓРЅС‚
 RewriteRule ^account(/?)+$ index.php?menu=account [L]
 RewriteRule ^account/farm(/?)+$ index.php?menu=account&sel=farm [L]
 RewriteRule ^account/store(/?)+$ index.php?menu=account&sel=store [L]
@@ -43,7 +46,7 @@ RewriteRule ^account/payment(/?)+$ index.php?menu=account&sel=payment [L]
 RewriteRule ^account/config(/?)+$ index.php?menu=account&sel=config [L]
 RewriteRule ^account/exit(/?)+$ index.php?menu=account&sel=exit [L]
 
-#Админка
+#РђРґРјРёРЅРєР°
 RewriteRule ^admin(/?)+$ index.php?menu=admin [L]
 RewriteRule ^admin/stats(/?)+$ index.php?menu=admin&sel=stats [L]
 RewriteRule ^admin/story_buy(/?)+$ index.php?menu=admin&sel=story_buy [L]

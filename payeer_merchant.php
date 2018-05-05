@@ -14,7 +14,7 @@ if (isset($_POST['m_operation_id']) && isset($_POST['m_sign']))
 # Автоподгрузка классов
 	function __autoload($name){ include('classes/_class.'.$name.'.php');}
 # Класс конфига 
-	$config = new config;
+	$config = new Config;
 	$m_key = $config->secretW;
 # Формируем массив для генерации подписи
 	$arHash = array(
@@ -42,9 +42,9 @@ if (isset($_POST['m_operation_id']) && isset($_POST['m_sign']))
 	if ($_POST['m_sign'] == $sign_hash && $_POST['m_status'] == 'success')
 	{
 	# База данных
-		$db = new db($config->HostDB, $config->UserDB, $config->PassDB, $config->BaseDB);
+		$db = new Db($config->HostDB, $config->UserDB, $config->PassDB, $config->BaseDB);
 	# Функции
-		$func = new func;
+		$func = new Func;
 	# Информация о платеже из базы
 		$db->Query("SELECT * FROM db_payeer_insert WHERE id = ".$_POST['m_orderid']) or die($_POST['m_orderid'].'|error');
 	# Если в базе нет такого платежа, выдаем "Ошибка"

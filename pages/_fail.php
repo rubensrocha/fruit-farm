@@ -1,14 +1,12 @@
 <?PHP
-$_OPTIMIZATION["title"] = "Пополнение баланса";
+$_OPTIMIZATION["title"] = $lang['fail']['title'];
 ?>
-<div class="s-bk-lf">
-	<div class="acc-title">Заказ выплаты</div>
-</div>
-<div class="silver-bk">
-<center>
-<img src="/img/xpti.png" height="50">
-</center>
-<center>
-<font color="red" height="60"><b>Пополнение баланса было отменено !</b></font>
-</center>
-</div>
+<section class="no-padding-bottom">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="alert alert-danger"><?PHP echo $lang['fail']['text']; ?></div>
+            </div>
+        </div>
+    </div>
+</section>

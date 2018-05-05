@@ -1,7 +1,5 @@
 <?PHP
-$_OPTIMIZATION["title"] = "Аккаунт";
-$_OPTIMIZATION["description"] = "Аккаунт пользователя";
-$_OPTIMIZATION["keywords"] = "Аккаунт, личный кабинет, пользователь";
+$_OPTIMIZATION["title"] = $lang['menu_top']['account'];
 # Блокировка сессии
 if(!isset($_SESSION["user_id"])){ Header("Location: /"); return; }
 if(isset($_GET["sel"])){	

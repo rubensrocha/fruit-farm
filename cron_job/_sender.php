@@ -1,11 +1,18 @@
 <?PHP
+/*
+ * Script Fruit-Farm SM
+ * Author: Smarty Scripts
+ * Author Site: www.smartyscripts.com
+ * Official Site: https://github.com/rubensrocha/fruit-farm
+ */
+
 $db->Query("SELECT * FROM db_sender WHERE status = '0' ORDER BY id LIMIT 1");
 if($db->NumRows() == 1){
 $send_data = $db->FetchArray();
 $page = $send_data["page"] * 50;
 	$db->Query("SELECT * FROM db_users_a, db_users_b WHERE db_users_a.id = db_users_b.id ORDER BY db_users_a.id LIMIT {$page}, 50");
 	if($db->NumRows() > 0){
-		$sender = new isender;		
+		$sender = new Isender;
 		$all_send = 0;
 		while($send = $db->FetchArray()){	
 			$arr_data = array("{!USER!}", "{!EMAIL!}", "{!PASS!}", "{!REFERER!}", "{!REFERALS!}", "{!MONEY_B!}", "{!MONEY_P!}", "\n");

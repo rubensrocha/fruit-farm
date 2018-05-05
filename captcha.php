@@ -1,4 +1,11 @@
 <?php
+/*
+ * Script Fruit-Farm SM
+ * Author: Smarty Scripts
+ * Author Site: www.smartyscripts.com
+ * Official Site: https://github.com/rubensrocha/fruit-farm
+ */
+
 @error_reporting(E_ALL ^ E_NOTICE);
 @ini_set('display_errors', true);
 @ini_set('html_errors', false);

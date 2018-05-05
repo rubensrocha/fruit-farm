@@ -1,31 +1,27 @@
 <?PHP
-$_OPTIMIZATION["title"] = "Новости";
-$_OPTIMIZATION["description"] = "Новости проекта";
-$_OPTIMIZATION["keywords"] = "Новости нашего проекта";
+$_OPTIMIZATION["title"] = $lang['news']['title'];
 ?>
-<div class="s-bk-lf">
-	<div class="acc-title">Новости</div>
-</div>
-<div class="silver-bk"><div class="clr"></div>	
-<?PHP
-$db->Query("SELECT * FROM db_news ORDER BY id DESC");
-if($db->NumRows() > 0){
-	while($news = $db->FetchArray()){
-	?>       
-	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-		<tr>
-			<td align="left"><h3><?=$news["title"]; ?></h3></td>
-			<td align="right"><strong><?=date("d.m.Y",$news["date_add"]); ?></strong></td>
-		</tr>
-		<tr>
-			<td colspan="2"><?=$news["news"]; ?></td>
-		</tr>
-	</table> 
-	<BR />
-	<?PHP
-	}
-}else echo "<center>Новостей нет :(</center>";
-
-?>
-</div>
-<div class="clr"></div>	
+<section class="no-padding-bottom">
+    <?PHP
+    $db->Query("SELECT * FROM db_news ORDER BY id DESC LIMIT 10");
+    if($db->NumRows() > 0){
+        while($news = $db->FetchArray()){
+    ?>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3><?php echo $news["title"]; ?></h3>
+                </div>
+                    <div class="card-body">
+                        <?php echo html_entity_decode($news["news"]); ?>
+                    </div>
+                    <div class="card-footer">
+                        <i class="fa fa-calendar"></i> <?php echo date("d.m.Y",$news["date_add"]); ?>
+                    </div>
+                </div>
+            </div>
+    <?PHP
+        }
+    }else echo "<div class='text-center'>{$lang['news']['noNews']}</div>";
+    ?>
+</section>

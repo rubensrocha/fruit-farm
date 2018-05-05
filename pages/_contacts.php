@@ -1,16 +1,16 @@
 <?PHP
-$_OPTIMIZATION["title"] = "Контакты";
-$_OPTIMIZATION["description"] = "Связь с администрацией";
-$_OPTIMIZATION["keywords"] = "Связь с администрацией проекта";
+$_OPTIMIZATION["title"] = $lang['contact']['title'];
 ?>
-<div class="s-bk-lf">
-	<div class="acc-title">Контакты</div>
-</div>
-<div class="silver-bk"><div class="clr"></div>	
-<?PHP
-$db->Query("SELECT contacts FROM db_conabrul WHERE id = '1'");
-$xt = $db->FetchRow();
-echo $xt;
-?>
-</div>
-<div class="clr"></div>	
+<section class="no-padding-bottom">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <?PHP
+                $db->Query("SELECT contacts FROM db_conabrul WHERE id = '1'");
+                $xt = $db->FetchRow();
+                echo html_entity_decode($xt);
+                ?>
+            </div>
+        </div>
+    </div>
+</section>

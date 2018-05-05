@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- База данных: `psweb_ff`
@@ -28,13 +28,13 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `db_bonus_list` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(10) CHARACTER SET utf8 NOT NULL,
+  `user` varchar(10) CHARACTER SET utf8mb4 NOT NULL,
   `user_id` int(11) NOT NULL DEFAULT '0',
   `sum` double NOT NULL DEFAULT '0',
   `date_add` int(11) NOT NULL DEFAULT '0',
   `date_del` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `db_conabrul` (
   `about` text NOT NULL,
   `contacts` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=2 ;
 
 --
 -- Дамп данных таблицы `db_conabrul`
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `db_config` (
   `amount_d_t` int(11) NOT NULL DEFAULT '0',
   `amount_e_t` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=2 ;
 
 --
 -- Дамп данных таблицы `db_config`
@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `db_insert_money` (
   `date_add` int(11) NOT NULL DEFAULT '0',
   `date_del` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `db_lottery` (
   `user` varchar(10) NOT NULL,
   `date_add` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `db_lottery_winners` (
   `bank` float NOT NULL DEFAULT '0',
   `date_add` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -156,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `db_news` (
   `news` text NOT NULL,
   `date_add` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `db_news`
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `db_payeer_insert` (
   `status` int(11) NOT NULL DEFAULT '0',
   `description` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -208,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `db_payment` (
   `date_add` int(11) NOT NULL DEFAULT '0',
   `date_del` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -220,18 +220,12 @@ CREATE TABLE IF NOT EXISTS `db_recovery` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(50) NOT NULL,
   `ip` int(10) unsigned NOT NULL DEFAULT '0',
+  `hash` varchar(191) NOT NULL,
   `date_add` int(11) NOT NULL DEFAULT '0',
   `date_del` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 AUTO_INCREMENT=4 ;
-
---
--- Дамп данных таблицы `db_recovery`
---
-
-INSERT INTO `db_recovery` (`id`, `email`, `ip`, `date_add`, `date_del`) VALUES
-(3, 'bax.edik@yandex.ru', 1509523661, 1510918999, 1510919899);
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -248,7 +242,7 @@ CREATE TABLE IF NOT EXISTS `db_regkey` (
   `date_del` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -270,14 +264,14 @@ CREATE TABLE IF NOT EXISTS `db_sell_items` (
   `date_add` int(11) NOT NULL DEFAULT '0',
   `date_del` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=3 ;
 
 --
 -- Дамп данных таблицы `db_sell_items`
 --
 
 INSERT INTO `db_sell_items` (`id`, `user`, `user_id`, `a_s`, `b_s`, `c_s`, `d_s`, `e_s`, `amount`, `all_sell`, `date_add`, `date_del`) VALUES
-(2, 'Admin', 1, 143409, 143338, 214971, 286604, 358237, 114655.9, 1146559, 1511084878, 1512380878);
+(2, 'admin', 1, 143409, 143338, 214971, 286604, 358237, 114655.9, 1146559, 1511084878, 1512380878);
 
 -- --------------------------------------------------------
 
@@ -294,7 +288,7 @@ CREATE TABLE IF NOT EXISTS `db_sender` (
   `status` int(1) NOT NULL DEFAULT '0',
   `date_add` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=2 ;
 
 --
 -- Дамп данных таблицы `db_sender`
@@ -316,7 +310,7 @@ CREATE TABLE IF NOT EXISTS `db_stats` (
   `all_insert` double NOT NULL DEFAULT '0',
   `donations` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=2 ;
 
 --
 -- Дамп данных таблицы `db_stats`
@@ -340,19 +334,19 @@ CREATE TABLE IF NOT EXISTS `db_stats_btree` (
   `date_add` int(11) NOT NULL DEFAULT '0',
   `date_del` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `db_stats_btree`
 --
 
 INSERT INTO `db_stats_btree` (`id`, `user_id`, `user`, `tree_name`, `amount`, `date_add`, `date_del`) VALUES
-(1, 1, 'Admin', 'Лайм', 1001, 1510826203, 1512122203),
-(2, 1, 'Admin', 'Лайм', 1001, 1510826278, 1512122278),
-(3, 1, 'Admin', 'Вишня', 2001, 1510826290, 1512122290),
-(4, 1, 'Admin', 'Апельсин', 5001, 1510826294, 1512122294),
-(5, 1, 'Admin', 'Киви', 4001, 1510826298, 1512122298),
-(6, 1, 'Admin', 'Клубника', 3001, 1510826300, 1512122300);
+(1, 1, 'admin', 'Лайм', 1001, 1510826203, 1512122203),
+(2, 1, 'admin', 'Лайм', 1001, 1510826278, 1512122278),
+(3, 1, 'admin', 'Вишня', 2001, 1510826290, 1512122290),
+(4, 1, 'admin', 'Апельсин', 5001, 1510826294, 1512122294),
+(5, 1, 'admin', 'Киви', 4001, 1510826298, 1512122298),
+(6, 1, 'admin', 'Клубника', 3001, 1510826300, 1512122300);
 
 -- --------------------------------------------------------
 
@@ -369,14 +363,14 @@ CREATE TABLE IF NOT EXISTS `db_swap_ser` (
   `date_add` int(11) NOT NULL DEFAULT '0',
   `date_del` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `db_swap_ser`
 --
 
 INSERT INTO `db_swap_ser` (`id`, `user_id`, `user`, `amount_b`, `amount_p`, `date_add`, `date_del`) VALUES
-(3, 1, 'Admin', 1500, 1000, 1510898628, 1512194628);
+(3, 1, 'admin', 1500, 1000, 1510898628, 1512194628);
 
 -- --------------------------------------------------------
 
@@ -388,7 +382,7 @@ CREATE TABLE IF NOT EXISTS `db_users_a` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user` varchar(10) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `pass` varchar(20) NOT NULL,
+  `pass` varchar(191) NOT NULL,
   `referer` varchar(10) NOT NULL,
   `referer_id` int(11) NOT NULL DEFAULT '0',
   `referals` int(11) NOT NULL DEFAULT '0',
@@ -399,19 +393,19 @@ CREATE TABLE IF NOT EXISTS `db_users_a` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 AUTO_INCREMENT=9 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=9 ;
 
 --
 -- Дамп данных таблицы `db_users_a`
 --
 
 INSERT INTO `db_users_a` (`id`, `user`, `email`, `pass`, `referer`, `referer_id`, `referals`, `date_reg`, `date_login`, `ip`, `banned`) VALUES
-(1, 'Admin', 'admin@admin.ru', 'admin', 'Admin', 1, 6, 1367313062, 1511084291, 1509523661, 0),
-(2, 'aleksey', 'leha.vodanov@mail.ru', 'aleksey', 'Admin', 1, 0, 1440868538, 1440868651, 1832711990, 0),
-(3, 'baxedik', 'bax.edik@yandex.ru', '000000', 'Admin', 1, 0, 1510901125, 1510904750, 1509523661, 0),
-(4, 'lexa2015', 'bax@yandex.ru', '000000', 'Admin', 1, 0, 1510901171, 0, 1509523661, 0),
-(7, 'pligin', 'pligin103@gmail.com', 'a12344321', 'Admin', 1, 0, 1510915285, 0, 2956760126, 0),
-(8, 'lexa', 'edik@yandex.ru', '000000', 'Admin', 1, 0, 1510919054, 0, 1509523661, 0);
+(1, 'admin', 'admin@admin.ru', '3d109c9f18e20b3f295cc5f236a5ed74', 'Admin', 1, 6, 1367313062, 1511084291, 1509523661, 0),
+(2, 'testuser1', 'testuser1@admin.ru', '3d109c9f18e20b3f295cc5f236a5ed74', 'Admin', 1, 0, 1440868538, 1440868651, 1832711990, 0),
+(3, 'testuser2', 'testuser2@admin.ru', '3d109c9f18e20b3f295cc5f236a5ed74', 'Admin', 1, 0, 1510901125, 1510904750, 1509523661, 0),
+(4, 'testuser3', 'testuser3@admin.ru', '3d109c9f18e20b3f295cc5f236a5ed74', 'Admin', 1, 0, 1510901171, 0, 1509523661, 0),
+(7, 'testuser4', 'testuser4@admin.com', '3d109c9f18e20b3f295cc5f236a5ed74', 'Admin', 1, 0, 1510915285, 0, 2956760126, 0),
+(8, 'testuser5', 'testuser5@admin.ru', '3d109c9f18e20b3f295cc5f236a5ed74', 'Admin', 1, 0, 1510919054, 0, 1509523661, 0);
 
 -- --------------------------------------------------------
 
@@ -446,19 +440,19 @@ CREATE TABLE IF NOT EXISTS `db_users_b` (
   `insert_sum` double NOT NULL DEFAULT '0',
   `kredit` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Дамп данных таблицы `db_users_b`
 --
 
 INSERT INTO `db_users_b` (`id`, `user`, `money_b`, `money_p`, `a_t`, `b_t`, `c_t`, `d_t`, `e_t`, `a_b`, `b_b`, `c_b`, `d_b`, `e_b`, `all_time_a`, `all_time_b`, `all_time_c`, `all_time_d`, `all_time_e`, `last_sbor`, `from_referals`, `to_referer`, `payment_sum`, `insert_sum`, `kredit`) VALUES
-(1, 'Admin', 1045736.25, 1556289.25, 2, 1, 1, 1, 1, 0, 0, 0, 0, 0, 143850, 143779, 215632, 287485, 359339, 1511084875, 0, 0, 0, 0, 0),
-(2, 'aleksey', 2000, 1000, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1440868538, 0, 0, 0, 0, 0),
-(3, 'baxedik', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1510901125, 0, 0, 0, 0, 0),
-(4, 'lexa2015', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1510901171, 0, 0, 0, 0, 0),
-(8, 'lexa', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1510919054, 0, 0, 0, 0, 0),
-(7, 'pligin', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1510915285, 0, 0, 0, 0, 0);
+(1, 'admin', 1045736.25, 1556289.25, 2, 1, 1, 1, 1, 0, 0, 0, 0, 0, 143850, 143779, 215632, 287485, 359339, 1511084875, 0, 0, 0, 0, 0),
+(2, 'testuser1', 2000, 1000, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1440868538, 0, 0, 0, 0, 0),
+(3, 'testuser2', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1510901125, 0, 0, 0, 0, 0),
+(4, 'testuser3', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1510901171, 0, 0, 0, 0, 0),
+(8, 'testuser4', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1510919054, 0, 0, 0, 0, 0),
+(7, 'testuser5', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1510915285, 0, 0, 0, 0, 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

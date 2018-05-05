@@ -1,7 +1,6 @@
 ///////////////////////////////////////// Регистрация //////////////////////////////
 function ResetCaptcha(vitem){
 	
-	
 	vitem.innerHTML = '<img src="/captcha.php?rnd='+ Math.random() +'" border="0"/>';
 	
 }

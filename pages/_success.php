@@ -1,14 +1,12 @@
 <?PHP
-$_OPTIMIZATION["title"] = "Пополнение баланса";
+$_OPTIMIZATION["title"] = $lang['success']['title'];
 ?>
-<div class="s-bk-lf">
-	<div class="acc-title">Заказ выплаты</div>
-</div>
-<div class="silver-bk">
-<center>
-<img src="/img/vpti.png" height="50">
-</center>
-<center>
-<font color="green" height="60"><b>Баланс успешно пополнен !</b></font>
-</center>
-</div>
+<section class="no-padding-bottom">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="alert alert-success"><?PHP echo $lang['success']['text']; ?></div>
+            </div>
+        </div>
+    </div>
+</section>

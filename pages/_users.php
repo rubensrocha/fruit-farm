@@ -35,7 +35,7 @@
 	$all_pages = $db->FetchRow();
 	if($all_pages > 100){
 		$sort_b = (isset($_GET["sort"])) ? intval($_GET["sort"]) : 0;
-		$nav = new navigator;
+		$nav = new Navigator;
 		$page = (isset($_GET["page"]) AND intval($_GET["page"]) < 1000 AND intval($_GET["page"]) >= 1) ? (intval($_GET["page"])) : 1;
 		echo "<BR /><center>".$nav->Navigation(10, $page, ceil($all_pages / 100), "/users/"), "</center>";
 	}
