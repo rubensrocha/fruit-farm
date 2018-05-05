@@ -38,26 +38,26 @@ Modified version of Fruit-Farm Script.
 -- [x] Config <br>
 -- [x] Referals <br>
 -- [x] User Account <br>
--- [] Farm <br>
--- [] Insert <br>
--- [] Payment <br>
--- [] Store <br>
--- [] Swap <br>
+-- [ ] Farm <br>
+-- [ ] Insert <br>
+-- [ ] Payment <br>
+-- [ ] Store <br>
+-- [ ] Swap <br>
 
-[] Admin <br>
--- [] About <br>
--- [] Config <br>
--- [] Contact <br>
--- [] News <br>
--- [] Payments <br>
--- [] Rules <br>
--- [] Sender <br>
--- [] Stats <br>
--- [] Story Buy <br>
--- [] Story Insert <br>
--- [] Story Sell <br>
--- [] Story Swap <br>
--- [] Users <br>
+[ ] Admin <br>
+-- [ ] About <br>
+-- [ ] Config <br>
+-- [ ] Contact <br>
+-- [ ] News <br>
+-- [ ] Payments <br>
+-- [ ] Rules <br>
+-- [ ] Sender <br>
+-- [ ] Stats <br>
+-- [ ] Story Buy <br>
+-- [ ] Story Insert <br>
+-- [ ] Story Sell <br>
+-- [ ] Story Swap <br>
+-- [ ] Users <br>
 
 # Resources
 <ul>
