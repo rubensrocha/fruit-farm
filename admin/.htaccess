@@ -1,0 +1,33 @@
+DirectoryIndex index.php
+RewriteEngine On
+
+# Основной домен
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+#RewriteRule ^admin$ index.php?menu=stats [L]
+RewriteRule index.php?menu=index [L]
+RewriteRule ^stats(/?)+$ index.php?menu=stats [L]
+RewriteRule ^story_buy(/?)+$ index.php?menu=story_buy [L]
+RewriteRule ^story_swap(/?)+$ index.php?menu=story_swap [L]
+RewriteRule ^story_insert(/?)+$ index.php?menu=story_insert [L]
+RewriteRule ^story_insert/day(/?)+$ index.php?menu=story_insert&day [L]
+RewriteRule ^story_insert/month(/?)+$ index.php?menu=story_insert&month [L]
+RewriteRule ^story_sell(/?)+$ index.php?menu=story_sell [L]
+RewriteRule ^news(/?)+$ index.php?menu=news [L]
+RewriteRule ^news/add(/?)+$ index.php?menu=news&add [L]
+RewriteRule ^news/edit/([0-9]+)(/?)+$ index.php?menu=news&edit=$1 [L]
+RewriteRule ^about(/?)+$ index.php?menu=about [L]
+RewriteRule ^rules(/?)+$ index.php?menu=rules [L]
+RewriteRule ^contacts(/?)+$ index.php?menu=contacts [L]
+RewriteRule ^users(/?)+$ index.php?menu=users [L]
+RewriteRule ^users/edit/([0-9]+)(/?)+$ index.php?menu=users&edit=$1 [L]
+RewriteRule ^users/sort/([0-9]+)(/?)+$ index.php?menu=users&sort=$1 [L]
+RewriteRule ^sender(/?)+$ index.php?menu=sender [L]
+RewriteRule ^sender/add(/?)+$ index.php?menu=sender&add [L]
+RewriteRule ^payments(/?)+$ index.php?menu=payments [L]
+RewriteRule ^payments/balance(/?)+$ index.php?menu=payments&balance [L]
+RewriteRule ^payments/list_day(/?)+$ index.php?menu=payments&list_day [L]
+RewriteRule ^payments/last_31(/?)+$ index.php?menu=payments&last_31[L]
+RewriteRule ^config(/?)+$ index.php?menu=config [L]
+RewriteRule ^exit(/?)+$ index.php?menu=exit [L]

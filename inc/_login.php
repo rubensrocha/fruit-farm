@@ -21,7 +21,6 @@ if(isset($_POST["auth"])){
                         $_SESSION["user_id"] = $data["id"];
                         $_SESSION["user"] = $data["user"];
                         $_SESSION["referer_id"] = $data["referer_id"];
-                        if($data['id'] == 1) $_SESSION['admin'] = TRUE;
                         Header("Location: /account");
                     }else $showError = $lang['error_messages']['accountBanned'];
                 }else $showError = $lang['error_messages']['wrongLogin'];

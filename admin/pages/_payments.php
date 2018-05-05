@@ -228,7 +228,7 @@ if($db->NumRows() > 0){
 	
 	?>
 	<tr class="htt">
-	<td align="center"><a href="/?menu=admin4ik&sel=users&edit=<?=$data["user_id"]; ?>" class="stn"><?=$data["user"]; ?></a></td>
+	<td align="center"><a href="/?menu=admin4ik&sel=users&edit=<?=$data[" class="stn"><?=$data["user"]; ?></a></td>
     <td align="center"><?=$data["serebro"]; ?></td>
     
 	

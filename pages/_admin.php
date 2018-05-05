@@ -4,7 +4,7 @@ $_OPTIMIZATION["description"] = "Аккаунт пользователя";
 $_OPTIMIZATION["keywords"] = "Аккаунт, личный кабинет, пользователь";
 $not_counters = true;
 # Блокировка сессии
-if(!isset($_SESSION["admin"])){ include("pages/_account.php"); return; }
+if(!isset($_SESSION["admin"])){ include("pages/_login.php"); return; }
 if(isset($_GET["sel"])){
 	$smenu = strval($_GET["sel"]);
 	switch($smenu){

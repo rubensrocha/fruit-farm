@@ -94,7 +94,6 @@ $sumzar = ($prof_data['payment_sum']*100)/$prof_data['insert_sum'];
                                                 $_SESSION["user_id"] = $data["id"];
                                                 $_SESSION["user"] = $data["user"];
                                                 $_SESSION["referer_id"] = $data["referer_id"];
-                                                if($data['id'] == 1) $_SESSION['admin'] = TRUE;
                                                 Header("Location: /account");
                                             }else $showError = $lang['error_messages']['accountBanned'];
                                         }else $showError = $lang['error_messages']['wrongLogin'];
@@ -133,7 +132,7 @@ $sumzar = ($prof_data['payment_sum']*100)/$prof_data['insert_sum'];
             </div>
         </div>
         <!-- /loginModal-->
-        <?php } echo $_SERVER['https'];?>
+        <?php } ?>
         <div class="content-inner">
             <div class="page-header">
                 <h1>{!TITLE!}</h1>

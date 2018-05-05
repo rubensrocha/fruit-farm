@@ -337,6 +337,16 @@ class Func
         }
     }
 
+    public function urlAdmin($target=null){
+        if($_SERVER['HTTPS'] == "on"){ $protocol = 'https://';} else { $protocol = 'http://';}
+        $base = $protocol.$_SERVER['HTTP_HOST'].'/admin';
+        if($target){
+            echo $base.'/'.$target;
+        }else{
+            echo $base;
+        }
+    }
+
     public function priceFormat($value)
     {
         $config = new Config;
