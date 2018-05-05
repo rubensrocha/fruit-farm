@@ -1,6 +1,9 @@
 # Fruit-Farm
 Modified version of Fruit-Farm Script.
 
+### Warning <br>
+Files of the project will be updated when i finish template integration.
+
 #### Objectives:
 <ul>
     <li>Bether data validation to prevent SQL Injections</li>
@@ -22,7 +25,7 @@ Modified version of Fruit-Farm Script.
 [ ] Integrate GUMP validation on fields <br>
 
 # Theme Integration
-[x] Index <br>
+[ ] Index <br>
 [x] About <br>
 [x] Rules <br>
 [x] Signup <br>
