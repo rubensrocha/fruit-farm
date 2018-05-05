@@ -28,8 +28,11 @@
             <div class=""><?php echo $lang['menu_left']['p_balance'];?>: <span class="pull-right">{!BALANCE_B!} <i class="fa fa-money"></i></div>
             <div class=""><?php echo $lang['menu_left']['w_balance'];?>: <span class="pull-right">{!BALANCE_P!} <i class="fa fa-money"></i></div>
         </div>
-        <br>
-        <div class="btn-group-vertical btn-block">
+    </div>
+</div>
+<div class="row" style="margin-top: 5px">
+    <div class="col-sm-10 offset-1">
+        <div class="text-center left-menu-buttons">
             <a href="<?php $func->url('account/insert');?>" class="btn btn-success btn-sm" data-toggle="tooltip" title="<?php echo $lang['btn']['deposit'];?>"><i class="fa fa-plus-circle"></i></a>
             <a href="<?php $func->url('account/payment');?>" class="btn btn-danger btn-sm" data-toggle="tooltip" title="<?php echo $lang['btn']['withdraw'];?>"><i class="fa fa-minus-circle"></i></a>
             <a href="<?php $func->url('account/swap');?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="<?php echo $lang['btn']['exchange'];?>"><i class="fa fa-refresh"></i></a>
