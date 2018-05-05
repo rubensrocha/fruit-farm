@@ -21,6 +21,44 @@ Modified version of Fruit-Farm Script.
 [] Integrate Admin Material Theme <br>
 [] Integrate GUMP validation on fields <br>
 
+# Theme Integration
+[x] Index <br>
+[x] About <br>
+[x] Rules <br>
+[x] Signup <br>
+[x] Success <br>
+[x] Fail <br>
+[x] News <br>
+[x] Recovery <br>
+[x] Stat <br>
+[] 404 <br>
+
+[x] Account <br>
+-- [x] Bonus <br>
+-- [x] Config <br>
+-- [x] Referals <br>
+-- [x] User Account <br>
+-- [] Farm <br>
+-- [] Insert <br>
+-- [] Payment <br>
+-- [] Store <br>
+-- [] Swap <br>
+
+[] Admin <br>
+-- [] About <br>
+-- [] Config <br>
+-- [] Contact <br>
+-- [] News <br>
+-- [] Payments <br>
+-- [] Rules <br>
+-- [] Sender <br>
+-- [] Stats <br>
+-- [] Story Buy <br>
+-- [] Story Insert <br>
+-- [] Story Sell <br>
+-- [] Story Swap <br>
+-- [] Users <br>
+
 # Resources
 <ul>
     <li><a href="https://github.com/Elvinas/Simple-PHP-Language-Class" target="_blank">Simple-PHP-Language-Class</a></li>
