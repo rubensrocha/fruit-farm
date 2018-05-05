@@ -1,0 +1,22 @@
+/* your styles go here */
+.btn-circ {
+    width: 100%;
+    height: 25px;
+    text-align: center;
+    padding: 2px 0;
+    font-size: 13px;
+    line-height: 1.428571429;
+    border-radius: 5px;
+}
+.progress{
+    height: 6px;
+}
+nav.side-navbar a.btn{
+    color: #FFF;
+}
+.grow:hover
+{
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+}

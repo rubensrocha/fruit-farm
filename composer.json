@@ -1,0 +1,16 @@
+{
+    "require": {
+        "wixel/gump": "^1.5"
+    },
+    "autoload": {
+        "files": [
+            "classes/_class.config.php",
+            "classes/_class.db.php",
+            "classes/_class.func.php",
+            "classes/_class.isender.php",
+            "classes/_class.language.php",
+            "classes/_class.navigator.php",
+            "classes/_class.cPayeer.php"
+        ]
+    }
+}
