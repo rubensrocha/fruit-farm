@@ -4,6 +4,8 @@ Modified version of Fruit-Farm Script.
 ### Warning <br>
 Files of the project will be updated when i finish template integration.
 
+Code contributions (pull request) will be accepted only after the first release version.
+
 #### Objectives:
 <ul>
     <li>Bether data validation to prevent SQL Injections</li>
