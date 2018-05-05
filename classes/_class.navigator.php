@@ -26,6 +26,8 @@ class Navigator
     \*======================================================================*/
     function Navigation($max, $page, $AllPages, $strURI)
     {
+        $open_tag = '<ul class="pagination">';
+        $close_tag = '</ul>';
         $strReturn = "";
         $left = false;
         $right = false;
@@ -33,9 +35,9 @@ class Navigator
         $page = (intval($page) > 0) ? intval($page) : 1;
         if($AllPages <= $max) {
             for($i = 1; $i <= $AllPages; $i++){
-                if($i == $page) {
-                    $strReturn .= "[$page] ";
-                }else { $strReturn .= "<a href=\"{$strURI}{$i}\" class='stn'>{$i}</a> ";
+                if($i == $page) { // Active page
+                    $strReturn .= "<li class=\"page-item active\"><span class=\"page-link\">{$page}</span></li>";
+                }else { $strReturn .= "<li class=\"page-item\"><a href=\"{$strURI}{$i}\" class='page-link'>{$i}</a></li> ";
                 }
             }
         }else{
@@ -43,35 +45,38 @@ class Navigator
                 if($i == $page OR ($i == $page-1) OR ($i == $page-2)  OR ($i == $page-3) OR ($i == $page-4) OR ($i == $page+1)  
                     OR ($i == $page+2)  OR ($i == $page+3) OR ($i == $page+4)
                 ) {
-                    if($i == $page) {
-                        $strReturn .= "[$page] ";
+                    if($i == $page) { // Active Page
+                        $strReturn .= "<li class=\"page-item active\"><span class=\"page-link\">{$page}</span></li> ";
                     }else{
-                        $strReturn .= "<a href=\"{$strURI}{$i}\" class='stn'>{$i}</a> ";
+                        $strReturn .= "<li class=\"page-item\"><a href=\"{$strURI}{$i}\" class='page-link'>{$i}</a></li> ";
                     }
                 }else{
                     if($i > $page) {
                         if(!$right) { 
                             if($page <= $AllPages-6) {
-                                $strReturn .= " ... <a href=\"{$strURI}{$AllPages}\" class='stn'>{$AllPages}</a> "; $right = true;
+                                $strReturn .= " ... <a href=\"{$strURI}{$AllPages}\" class='page-link'>{$AllPages}</a></li> "; $right = true;
                             }else{
-                                $strReturn .= " <a href=\"{$strURI}{$AllPages}\" class='stn'>{$AllPages}</a> "; $right = true;
+                                $strReturn .= " <li class=\"page-item\"><a href=\"{$strURI}{$AllPages}\" class='page-link'>{$AllPages}</a></li> "; $right = true;
                             }
                         }
                     }else{
                         if(!$left) {
                             if($page > 6) {
-                                $strReturn .= " <a href=\"{$strURI}1\" class='stn'>1</a> ... "; $left = true;
+                                $strReturn .= " <li class=\"page-item\"><a href=\"{$strURI}1\" class='page-link'>1</a></li> ... "; $left = true;
                             }else{
-                                $strReturn .= " <a href=\"{$strURI}1\" class='stn'>1</a> "; $left = true;
+                                $strReturn .= " <li class=\"page-item\"><a href=\"{$strURI}1\" class='page-link'>1</a></li> "; $left = true;
                             }
                         }
                     }
                 }
             }
         }
-        $left_str = ($page > 1) ? "<a href=\"{$strURI}".($page-1)."\" class='stn'>&laquo;</a> " : "&laquo; ";
-        $right_str = ($page < $AllPages) ? " <a href=\"{$strURI}".($page+1)."\" class='stn'>&raquo;</a>" : " &raquo;";
-        return $left_str.$strReturn.$right_str;
+        $left_str = ($page > 1) ? "<li class=\"page-item\"><a href=\"{$strURI}".($page-1)."\" class='page-link'>&laquo;</a> " : "<li class=\"page-item disabled\"><span class=\"page-link\">&laquo;</span>";
+        $left_str .= "</li>";
+
+        $right_str = ($page < $AllPages) ? " <li class=\"page-item\"><a href=\"{$strURI}".($page+1)."\" class='page-link'>&raquo;</a>" : " <li class=\"page-item disabled\"><span class=\"page-link\">&raquo;</span>";
+        $right_str .= "</li>";
+        return $open_tag.$left_str.$strReturn.$right_str.$close_tag;
     }
 }
 

@@ -1,6 +1,6 @@
 <?PHP
 $_OPTIMIZATION["title"] = $lang['acc_settings']['title'];
-$usid = $_SESSION["user_id"];
+$usid = (int)$_SESSION["user_id"];
 $db->Query("SELECT * FROM db_users_a WHERE id = '$usid'");
 $user_data = $db->FetchArray();
 

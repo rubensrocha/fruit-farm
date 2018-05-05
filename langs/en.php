@@ -8,6 +8,8 @@ $lang = [
       'news' => 'News',
       'contact' => 'Contact',
       'account' => 'My Account',
+      'payments' => 'Payments',
+      'exit' => 'Logout',
     ],
 
     'menu_left' => [
@@ -56,6 +58,7 @@ $lang = [
         'requestReset' => 'Your email or IP has already been sent a password in the last 15 minutes',
         'oldpassword' => 'Old password is incorrect',
         'bonusCollected' => 'You have already received a bonus in the last 24 hours.',
+        'noresults' => 'No results to show',
         'XXXXXXXXX' => 'XXXXXXX',
     ],
 
@@ -103,6 +106,9 @@ $lang = [
         'deposits' => 'Deposits',
         'withdraws' => 'Withdraws',
         'referrals' => 'Referrals',
+        'date' => 'Date',
+        'wallet' => 'Wallet',
+        'amount' => 'Amount',
     ],
 
     'news' => [
@@ -186,5 +192,12 @@ $lang = [
         'rule2' => 'The bonus is given to Purchase Balance.',
         'rule3' => 'The bonus amount is generated randomly from %s to %s %s.',
         'leftTime' => 'Please wait: ',
+    ],
+
+    'payments' => [
+        'title' => 'Recent Payouts',
+        'subtitle' => 'Payments from last 48 hours',
+        'count' => 'Payments Total',
+        'total' => 'Amount Total',
     ],
 ];
