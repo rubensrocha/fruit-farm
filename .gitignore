@@ -1,0 +1,6 @@
+.git
+.idea/
+[SOURCES]
+!.gitignore
+composer.phar
+1.IIDEIAS.txt
