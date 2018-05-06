@@ -99,6 +99,7 @@ if(isset($_POST["admin"])){
             <div class="card-body">
                 <form action="" method="post">
                     <?php $func->csrf(); ?>
+                    <h4>Conversions</h4>
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group">

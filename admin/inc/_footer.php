@@ -24,10 +24,12 @@
 <!-- Main File-->
 <script src="<?php $func->url('js/front.js');?>"></script>
 <script src="<?php $func->url('js/functions.js');?>"></script>
+<script src="<?php $func->url('js/nicEdit.js');?>"></script>
 <!-- Custom Scripts -->
 <script type="text/javascript">
     $(document).ready(function() {
         $('[data-toggle="tooltip"]').tooltip();
+        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
     });
 </script>
 </body>

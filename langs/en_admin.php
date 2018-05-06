@@ -12,8 +12,8 @@ $lang = [
 
     'menu_left' => [
         '_home' => 'Home',
-        '_acc' => 'Account',
-        '_game' => 'Gameplay',
+        '_sections' => 'Sections',
+        '_transactions' => 'Transactions',
         '_earn' => 'Earnings',
 
         'login' => 'Login',
@@ -33,12 +33,14 @@ $lang = [
         'oldpassword' => 'Old password is incorrect',
         'bonusCollected' => 'You have already received a bonus in the last 24 hours.',
         'noresults' => 'No results to show',
+        'itemNotFound' => 'Item with such ID not found',
         'XXXXXXXXX' => 'XXXXXXX',
     ],
 
     'success_messages' => [
         'changesSaved' => 'Changes saved with success!',
-        'bonusAdded' => 'A bonus was added to your shopping account in the amount of %s %s',
+        'deleted' => 'Item deleted with success!',
+        'created' => 'Item created with success!',
         'XXXXXXXXX' => 'XXXXXXX',
     ],
 
@@ -49,14 +51,9 @@ $lang = [
         'create' => 'Create',
         'cancel' => 'Cancel',
         'login' => 'Login',
-        'register' => 'Register',
         'forgotL' => 'Reset Password',
         'forgot' => 'Send Reset Link',
-        'deposit' => 'Deposit',
-        'withdraw' => 'Withdraw',
-        'exchange' => 'Exchange',
         'save' => 'Save',
-        'getBonus' => 'Get Bonus',
     ],
 
     'common' => [
@@ -64,8 +61,6 @@ $lang = [
         'password' => 'Password',
         'password_old' => 'Old Password',
         'password_new' => 'New Password',
-        'captcha' => 'Enter Captcha',
-        'captcha_h' => 'Click on image to generate a new captcha',
         'auth' => 'Authorization',
         'users' => 'Users',
         'days' => 'Days',
@@ -83,6 +78,10 @@ $lang = [
         'date' => 'Date',
         'wallet' => 'Wallet',
         'amount' => 'Amount',
+        'name' => 'Name',
+        'title' => 'Title',
+        'content' => 'Content',
+        'actions' => 'Actions',
     ],
 
     'login' => [
@@ -118,5 +117,26 @@ $lang = [
         'xxxxxxx' => 'xxxxxxx',
         'xxxxxxx' => 'xxxxxxx',
         'xxxxxxx' => 'xxxxxxx',
+    ],
+
+    'about' => [
+        'title' => 'About Page',
+        'content' => 'Page Content',
+    ],
+
+    'rules' => [
+        'title' => 'Rules Page',
+        'content' => 'Page Content',
+    ],
+
+    'contacts' => [
+        'title' => 'Contacts Page',
+        'content' => 'Page Content',
+    ],
+
+    'news' => [
+        'title' => 'News',
+        'list' => 'List News',
+        'titleError' => 'The title can not be less than 3 characters',
     ],
 ];
