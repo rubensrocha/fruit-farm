@@ -1,4 +1,12 @@
-<?PHP
+
+<section class="no-padding-bottom">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4><?php echo $lang['settings']['title']; ?></h4>
+            </div>
+            <div class="card-body">
+                <?PHP
 $db->Query("SELECT * FROM db_config WHERE id = '1'");
 $data_c = $db->FetchArray();
 
@@ -24,32 +32,31 @@ if(isset($_POST["admin"])){
 	$admin_lang = $_POST["defaultLang"];
 	# Проверка на ошибки
 	$errors = true;
-	if($min_pay < 0){
-		$errors = false; echo "<center><font color = 'red'><b>Минимальная сумма выплаты не может быть меньше 0</b></font></center><BR />"; 
+	if($min_pay < 1){
+		$errors = false; $showError = $lang['settings']['error_paymentMin'];
 	}
 	if($percent_swap < 1 OR $percent_swap > 99){
-		$errors = false; echo "<center><font color = 'red'><b>Прибавляемый процент при обмене должен быть от 1 до 99</b></font></center><BR />"; 
+		$errors = false; $showError = $lang['settings']['error_percentExt'];
 	}
-	
-	if($percent_sell < 1 OR $percent_sell > 99){
-		$errors = false; echo "<center><font color = 'red'><b>% серебра на вывод при продаже должен быть от 1 до 99</b></font></center><BR />"; 
+
+    if($percent_sell < 1 OR $percent_sell > 99){
+		$errors = false; $showError = $lang['settings']['error_percentOut'];
 	}
-	
-	if($items_per_coin < 1 OR $items_per_coin > 50000){
-		$errors = false; echo "<center><font color = 'red'><b>Сколько фруктов = 1 серебра, должно быть от 1 до 50000</b></font></center><BR />"; 
+
+    if($items_per_coin < 1 OR $items_per_coin > 50000){
+		$errors = false; $showError = $lang['settings']['error_minfruits'];
 	}
-	
-	if($tomat_in_h < 6 OR $straw_in_h < 6 OR $pump_in_h < 6 OR $peas_in_h < 6 OR $pean_in_h < 6){
-		$errors = false; echo "<center><font color = 'red'><b>Неверная настройка урожайности деревьев в час! Минимум 6</b></font></center><BR />"; 
+
+    if($tomat_in_h < 6 OR $straw_in_h < 6 OR $pump_in_h < 6 OR $peas_in_h < 6 OR $pean_in_h < 6){
+		$errors = false; $showError = $lang['settings']['error_productionMin'];
 	}
-	
-	
-	if($amount_tomat_t < 1 OR $amount_straw_t < 1 OR $amount_pump_t < 1 OR $amount_peas_t < 1 OR $amount_pean_t < 1){
-		$errors = false; echo "<center><font color = 'red'><b>Минимальная стоимость дерева не должна быть менее 1го серебра</b></font></center><BR />"; 
+
+    if($amount_tomat_t < 1 OR $amount_straw_t < 1 OR $amount_pump_t < 1 OR $amount_peas_t < 1 OR $amount_pean_t < 1){
+		$errors = false; $showError = $lang['settings']['error_itemprice'];
 	}
 	
 	# Обновление
-	if($errors){
+    if($errors){
 	
 		$db->Query("UPDATE db_config SET 
 		ser_per_wmr = '$ser_per_wmr',
@@ -72,22 +79,22 @@ if(isset($_POST["admin"])){
 		default_lang = '$admin_lang'
 		
 		WHERE id = '1'");
-		
-		echo "<center><font color = 'green'><b>Сохранено</b></font></center><BR />";
+
+        $showSuccess = $lang['success_messages']['changesSaved'];
 		$db->Query("SELECT * FROM db_config WHERE id = '1'");
 		$data_c = $db->FetchArray();
 	}
-	
 }
 
 ?>
-<section class="no-padding-bottom">
-    <div class="col-lg-12">
-        <div class="card">
-            <div class="card-header">
-                <h4><?php echo $lang['settings']['title']; ?></h4>
-            </div>
-            <div class="card-body">
+                <?php
+                if($showError){
+                    echo "<div class='alert alert-danger'>{$showError}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
+                }
+                if($showSuccess){
+                    echo "<div class='alert alert-success'>{$showSuccess}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
+                }
+                ?>
                 <form action="" method="post">
                     <?php $func->csrf(); ?>
                     <h4>Conversions</h4>
@@ -95,19 +102,19 @@ if(isset($_POST["admin"])){
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label>Cost 1 RUB (Silver)</label>
-                                <input class="form-control" type="text" name="ser_per_wmr" value="<?=$data_c["ser_per_wmr"]; ?>">
+                                <input class="form-control" type="number" min="1" step="1" name="ser_per_wmr" value="<?=$data_c["ser_per_wmr"]; ?>">
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label>Cost 1 USD (Silver)</label>
-                                <input class="form-control" type="text" name="ser_per_wmz" value="<?=$data_c["ser_per_wmz"]; ?>">
+                                <input class="form-control" type="number" min="1" step="1" name="ser_per_wmz" value="<?=$data_c["ser_per_wmz"]; ?>">
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label>Cost 1 EUR (Silver)</label>
-                                <input class="form-control" type="text" name="ser_per_wme" value="<?=$data_c["ser_per_wme"]; ?>">
+                                <input class="form-control" type="number" min="1" step="1" name="ser_per_wme" value="<?=$data_c["ser_per_wme"]; ?>">
                             </div>
                         </div>
                     </div>
@@ -116,25 +123,25 @@ if(isset($_POST["admin"])){
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label>Minimum payment amount (Silver)</label>
-                                <input class="form-control" type="text" name="min_pay" value="<?=$data_c["min_pay"]; ?>">
+                                <input class="form-control" type="number" min="1" step="1" name="min_pay" value="<?=$data_c["min_pay"]; ?>">
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label>Add % when exchanging (1 to 99)</label>
-                                <input class="form-control" type="text" name="percent_swap" value="<?=$data_c["percent_swap"]; ?>">
+                                <input class="form-control" type="number" min="1" step="1" name="percent_swap" value="<?=$data_c["percent_swap"]; ?>">
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label>% of silver per withdrawal on sale (from 1 to 99):</label>
-                                <input class="form-control" type="text" name="percent_sell" value="<?=$data_c["percent_sell"]; ?>" />
+                                <input class="form-control" type="number" min="1" step="1" name="percent_sell" value="<?=$data_c["percent_sell"]; ?>" />
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label>How many fruits = 1 silver:</label>
-                                <input class="form-control" type="text" name="items_per_coin" value="<?=$data_c["items_per_coin"]; ?>" />
+                                <input class="form-control" type="number" min="1" step="1" name="items_per_coin" value="<?=$data_c["items_per_coin"]; ?>" />
                             </div>
                         </div>
                     </div>
