@@ -41,6 +41,7 @@ $lang = [
         'changesSaved' => 'Changes saved with success!',
         'deleted' => 'Item deleted with success!',
         'created' => 'Item created with success!',
+        'cleaned' => 'Data cleaned with success!',
         'XXXXXXXXX' => 'XXXXXXX',
     ],
 
@@ -54,6 +55,7 @@ $lang = [
         'forgotL' => 'Reset Password',
         'forgot' => 'Send Reset Link',
         'save' => 'Save',
+        'clear' => 'Clear',
     ],
 
     'common' => [
@@ -76,12 +78,20 @@ $lang = [
         'withdraws' => 'Withdraws',
         'referrals' => 'Referrals',
         'date' => 'Date',
+        'qtd' => 'Sum',
+        'count' => 'Count',
         'wallet' => 'Wallet',
         'amount' => 'Amount',
         'name' => 'Name',
         'title' => 'Title',
         'content' => 'Content',
         'actions' => 'Actions',
+        'sold' => 'Sold',
+        'gived' => 'Give',
+        'received' => 'Received',
+        'itemName' => 'Item',
+        'price' => 'Price',
+        'confirmdelete' => 'Are you sure want to delete this item? This action can not be undone.',
     ],
 
     'login' => [
@@ -138,5 +148,46 @@ $lang = [
         'title' => 'News',
         'list' => 'List News',
         'titleError' => 'The title can not be less than 3 characters',
+    ],
+
+    'payouts' => [
+        'title' => 'Whitdraw History',
+        '_paid' => 'Paid',
+        '_balance' => 'Balance on Payeer',
+        '_daily' => 'Daily',
+        '_month' => 'Last 30 Days',
+        'payments' => 'Payments',
+        'legend_graph1' => 'Payment History (Amount)',
+        'footer_graph1' => 'Last 30 Days',
+        'legend_graph2' => 'Payment History (Amount)',
+        'footer_graph2' => 'Last 30 Days',
+        'legend_graph3' => 'Payment History (Amount)',
+        'footer_graph3' => 'Last 30 Days',
+    ],
+
+    'story_insert' => [
+        'title' => 'Deposit History',
+        '_list' => 'Deposits',
+        '_daily' => 'Daily',
+        '_month' => 'Last 30 Days',
+        'deposits' => 'Deposits',
+        'legend_graph1' => 'Deposit History (Amount)',
+        'footer_graph1' => 'Last 30 Days',
+        'legend_graph2' => 'Deposit History (Amount)',
+        'footer_graph2' => 'Last 30 Days',
+        'legend_graph3' => 'Deposit History (Amount)',
+        'footer_graph3' => 'Last 30 Days',
+    ],
+
+    'story_sell' => [
+        'title' => 'Sales of Coins',
+    ],
+
+    'story_swap' => [
+        'title' => 'Exchange History',
+    ],
+
+    'story_buy' => [
+        'title' => 'Purchase History',
     ],
 ];

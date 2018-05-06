@@ -103,7 +103,7 @@
                                 <td><?php echo $data["id"]; ?></td>
                                 <td><?php echo $data["title"]; ?></td>
                                 <td>
-                                    <form action="" method="post">
+                                    <form action="" method="post" onSubmit="return confirm('<?php echo $lang['common']['confirmdelete'];?>')">
                                         <input type="hidden" name="del" value="<?php echo $data["id"]; ?>" />
                                         <a href="/admin/news/edit/<?php echo $data["id"]; ?>" class="btn btn-sm btn-info" data-toggle="tooltip" title="<?php echo $lang['btn']['edit'];?>"><i class="fa fa-edit"></i></a>
                                         <button type="submit" class="btn btn-sm btn-danger" data-toggle="tooltip" title="<?php echo $lang['btn']['delete'];?>"><i class="fa fa-trash"></i></button>

@@ -40,11 +40,11 @@ class Config
     public $VAL = 'Руб.'; // Currency Symbol
     
     // PAYEER
-    public $AccountNumber = 'P111111'; // Payeer Account ID
-    public $apiId = '11111111'; // Payeer API ID
-    public $apiKey = '11111111'; // Payeer API Key
-    public $shopID = '11111111'; // Payeer Shop ID
-    public $secretW = '11111111'; // Payeer Secret Key
+    public $AccountNumber = ''; // Payeer Account ID
+    public $apiId = ''; // Payeer API ID
+    public $apiKey = ''; // Payeer API Key
+    public $shopID = ''; // Payeer Shop ID
+    public $secretW = ''; // Payeer Secret Key
 
     // Settings for payment of a loan
     public $kredit_shopID = 'ShopID';

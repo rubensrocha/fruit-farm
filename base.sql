@@ -104,6 +104,7 @@ CREATE TABLE IF NOT EXISTS `db_config` (
   `amount_c_t` int(11) NOT NULL DEFAULT '0',
   `amount_d_t` int(11) NOT NULL DEFAULT '0',
   `amount_e_t` int(11) NOT NULL DEFAULT '0',
+  `default_lang` varchar(11) NOT NULL DEFAULT 'en',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=2 ;
 

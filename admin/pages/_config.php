@@ -4,9 +4,7 @@ $data_c = $db->FetchArray();
 
 # Обновление
 if(isset($_POST["admin"])){
-	$admin = $func->IsLogin($_POST["admin"]);
-	$pass = $func->IsLogin($_POST["pass"]);
-	$ser_per_wmr = intval($_POST["ser_per_wmr"]);
+    $ser_per_wmr = intval($_POST["ser_per_wmr"]);
 	$ser_per_wmz = intval($_POST["ser_per_wmz"]);
 	$ser_per_wme = intval($_POST["ser_per_wme"]);
 	$min_pay = intval($_POST["min_pay"]);
@@ -23,14 +21,9 @@ if(isset($_POST["admin"])){
 	$amount_pump_t = intval($_POST["amount_c_t"]);
 	$amount_peas_t = intval($_POST["amount_d_t"]);
 	$amount_pean_t = intval($_POST["amount_e_t"]);
+	$admin_lang = $_POST["defaultLang"];
 	# Проверка на ошибки
 	$errors = true;
-	if($admin === false){
-		$errors = false; echo "<center><font color = 'red'><b>Логин администратора имеет неверный формат</b></font></center><BR />"; 
-	}
-	if($pass === false){
-		$errors = false; echo "<center><font color = 'red'><b>Пароль администратора имеет неверный формат</b></font></center><BR />"; 
-	}
 	if($min_pay < 0){
 		$errors = false; echo "<center><font color = 'red'><b>Минимальная сумма выплаты не может быть меньше 0</b></font></center><BR />"; 
 	}
@@ -59,9 +52,6 @@ if(isset($_POST["admin"])){
 	if($errors){
 	
 		$db->Query("UPDATE db_config SET 
-		
-		admin = '$admin',
-		pass = '$pass',
 		ser_per_wmr = '$ser_per_wmr',
 		ser_per_wmz = '$ser_per_wmz',
 		ser_per_wme = '$ser_per_wme',
@@ -78,7 +68,8 @@ if(isset($_POST["admin"])){
 		amount_b_t = '$amount_straw_t',
 		amount_c_t = '$amount_pump_t',
 		amount_d_t = '$amount_peas_t',
-		amount_e_t = '$amount_pean_t'
+		amount_e_t = '$amount_pean_t',
+		default_lang = '$admin_lang'
 		
 		WHERE id = '1'");
 		
@@ -241,12 +232,12 @@ if(isset($_POST["admin"])){
                         <select name="defaultLang" class="form-control">
                             <option value=""></option>
                             <?php foreach($config->languages as $k => $v){ ?>
-                                <option value="<?php $k;?>" <?php echo $defaultSettings['default_lang']==$k? 'selected': ''?>><?php echo $v;?></option>
+                                <option value="<?php echo $k;?>" <?php echo $defaultSettings['default_lang']==$k? 'selected': ''?>><?php echo $v;?></option>
                             <?php } ?>
                         </select>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" name="admin" class="btn btn-primary">Save</button>
                 </form>
             </div>
         </div>
