@@ -17,8 +17,28 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `psweb_ff`
+-- Структура таблицы `db_users_a`
 --
+
+CREATE TABLE IF NOT EXISTS `db_admins` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(100) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `pass` varchar(191) NOT NULL,
+  `date_reg` int(11) NOT NULL DEFAULT '0',
+  `date_login` int(11) NOT NULL DEFAULT '0',
+  `ip` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`),
+  KEY `ip` (`ip`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=9 ;
+
+--
+-- Дамп данных таблицы `db_users_a`
+--
+
+INSERT INTO `db_admins` (`id`, `user`, `email`, `pass`, `date_reg`, `date_login`, `ip`) VALUES
+  (1, 'admin', 'admin@admin.ru', '3d109c9f18e20b3f295cc5f236a5ed74', 1367313062, 1511084291, 1509523661);
 
 -- --------------------------------------------------------
 
