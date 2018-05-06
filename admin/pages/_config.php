@@ -1,7 +1,3 @@
-<div class="s-bk-lf">
-	<div class="acc-title">Настройки</div>
-</div>
-<div class="silver-bk"><div class="clr"></div>	
 <?PHP
 $db->Query("SELECT * FROM db_config WHERE id = '1'");
 $data_c = $db->FetchArray();
@@ -94,103 +90,112 @@ if(isset($_POST["admin"])){
 }
 
 ?>
-<form action="" method="post">
-<table width="100%" border="0">
-  <tr>
-    <td><b>Логин администратора:</b></td>
-	<td width="150" align="center"><input type="text" name="admin" value="<?=$data_c["admin"]; ?>" /></td>
-  </tr>
-  <tr>
-    <td bgcolor="#EFEFEF"><b>Пароль администратора:</b></td>
-	<td width="150" align="center"><input type="password" name="pass" value="<?=$data_c["pass"]; ?>" /></td>
-  </tr>
-  
-  <tr>
-    <td><b>Стоимость 1 RUB (Серебром):</b></td>
-	<td width="150" align="center"><input type="text" name="ser_per_wmr" value="<?=$data_c["ser_per_wmr"]; ?>" /></td>
-  </tr>
-  
-  <tr bgcolor="#EFEFEF">
-    <td><b>Стоимость 1 USD (Серебром):</b></td>
-	<td width="150" align="center"><input type="text" name="ser_per_wmz" value="<?=$data_c["ser_per_wmz"]; ?>" /></td>
-  </tr>
-  
-  <tr>
-    <td><b>Стоимость 1 EUR (Серебром):</b></td>
-	<td width="150" align="center"><input type="text" name="ser_per_wme" value="<?=$data_c["ser_per_wme"]; ?>" /></td>
-  </tr>
-  <tr>
-    <td><b>Минимальная сумма выплаты (Серебром):</b></td>
-	<td width="150" align="center"><input type="text" name="min_pay" value="<?=$data_c["min_pay"]; ?>" /></td>
-  </tr>
-  <tr bgcolor="#EFEFEF">
-    <td><b>Прибавлять % при обмене (От 1 до 99):</b></td>
-	<td width="150" align="center"><input type="text" name="percent_swap" value="<?=$data_c["percent_swap"]; ?>" /></td>
-  </tr>
-  
-  <tr>
-    <td><b>% серебра на вывод при продаже (от 1 до 99):</b><BR /></td>
-	<td width="150" align="center"><input type="text" name="percent_sell" value="<?=$data_c["percent_sell"]; ?>" /></td>
-  </tr>
-  
-  <tr bgcolor="#EFEFEF">
-    <td><b>Сколько фруктов = 1 серебра:</b></td>
-	<td width="150" align="center"><input type="text" name="items_per_coin" value="<?=$data_c["items_per_coin"]; ?>" /></td>
-  </tr>
-  
-  <tr>
-    <td><b>Плодородность в час (Лайм) (мин 6):</b></td>
-	<td width="150" align="center"><input type="text" name="a_in_h" value="<?=$data_c["a_in_h"]; ?>" /></td>
-  </tr>
-  
-  <tr bgcolor="#EFEFEF">
-    <td><b>Плодородность в час (Вишня) (мин 6):</b></td>
-	<td width="150" align="center"><input type="text" name="b_in_h" value="<?=$data_c["b_in_h"]; ?>" /></td>
-  </tr>
-  
-  <tr>
-    <td><b>Плодородность в час (Клубника) (мин 6):</b></td>
-	<td width="150" align="center"><input type="text" name="c_in_h" value="<?=$data_c["c_in_h"]; ?>" /></td>
-  </tr>
-  
-  <tr bgcolor="#EFEFEF">
-    <td><b>Плодородность в час (Киви) (мин 6):</b></td>
-	<td width="150" align="center"><input type="text" name="d_in_h" value="<?=$data_c["d_in_h"]; ?>" /></td>
-  </tr>
-  
-  <tr>
-    <td><b>Плодородность в час (Апельсин) (мин 6):</b></td>
-	<td width="150" align="center"><input type="text" name="e_in_h" value="<?=$data_c["e_in_h"]; ?>" /></td>
-  </tr>
-  
-  
-  <tr bgcolor="#EFEFEF">
-    <td><b>Стоимость дерева серебро (Лайм):</b></td>
-	<td width="150" align="center"><input type="text" name="amount_a_t" value="<?=$data_c["amount_a_t"]; ?>" /></td>
-  </tr>
-  
-  <tr>
-    <td><b>Стоимость дерева серебро (Вишня):</b></td>
-	<td width="150" align="center"><input type="text" name="amount_b_t" value="<?=$data_c["amount_b_t"]; ?>" /></td>
-  </tr>
-  
-  <tr bgcolor="#EFEFEF">
-    <td><b>Стоимость дерева серебро (Клубника):</b></td>
-	<td width="150" align="center"><input type="text" name="amount_c_t" value="<?=$data_c["amount_c_t"]; ?>" /></td>
-  </tr>
-  
-  <tr>
-    <td><b>Стоимость дерева серебро (Киви):</b></td>
-	<td width="150" align="center"><input type="text" name="amount_d_t" value="<?=$data_c["amount_d_t"]; ?>" /></td>
-  </tr>
-  
-  <tr bgcolor="#EFEFEF">
-    <td><b>Стоимость дерева серебро (Апельсин):</b></td>
-	<td width="150" align="center"><input type="text" name="amount_e_t" value="<?=$data_c["amount_e_t"]; ?>" /></td>
-  </tr>
-  
-  <tr> <td colspan="2" align="center"><input type="submit" value="Сохранить" /></td> </tr>
-</table>
-</form>
-</div>
-<div class="clr"></div>	
+<section class="no-padding-bottom">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4><?php echo $lang['settings']['title']; ?></h4>
+            </div>
+            <div class="card-body">
+                <form action="" method="post">
+                    <table width="100%" border="0">
+                        <tr>
+                            <td><b>Логин администратора:</b></td>
+                            <td width="150" align="center"><input type="text" name="admin" value="<?=$data_c["admin"]; ?>" /></td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#EFEFEF"><b>Пароль администратора:</b></td>
+                            <td width="150" align="center"><input type="password" name="pass" value="<?=$data_c["pass"]; ?>" /></td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Стоимость 1 RUB (Серебром):</b></td>
+                            <td width="150" align="center"><input type="text" name="ser_per_wmr" value="<?=$data_c["ser_per_wmr"]; ?>" /></td>
+                        </tr>
+
+                        <tr bgcolor="#EFEFEF">
+                            <td><b>Стоимость 1 USD (Серебром):</b></td>
+                            <td width="150" align="center"><input type="text" name="ser_per_wmz" value="<?=$data_c["ser_per_wmz"]; ?>" /></td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Стоимость 1 EUR (Серебром):</b></td>
+                            <td width="150" align="center"><input type="text" name="ser_per_wme" value="<?=$data_c["ser_per_wme"]; ?>" /></td>
+                        </tr>
+                        <tr>
+                            <td><b>Минимальная сумма выплаты (Серебром):</b></td>
+                            <td width="150" align="center"><input type="text" name="min_pay" value="<?=$data_c["min_pay"]; ?>" /></td>
+                        </tr>
+                        <tr bgcolor="#EFEFEF">
+                            <td><b>Прибавлять % при обмене (От 1 до 99):</b></td>
+                            <td width="150" align="center"><input type="text" name="percent_swap" value="<?=$data_c["percent_swap"]; ?>" /></td>
+                        </tr>
+
+                        <tr>
+                            <td><b>% серебра на вывод при продаже (от 1 до 99):</b><BR /></td>
+                            <td width="150" align="center"><input type="text" name="percent_sell" value="<?=$data_c["percent_sell"]; ?>" /></td>
+                        </tr>
+
+                        <tr bgcolor="#EFEFEF">
+                            <td><b>Сколько фруктов = 1 серебра:</b></td>
+                            <td width="150" align="center"><input type="text" name="items_per_coin" value="<?=$data_c["items_per_coin"]; ?>" /></td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Плодородность в час (Лайм) (мин 6):</b></td>
+                            <td width="150" align="center"><input type="text" name="a_in_h" value="<?=$data_c["a_in_h"]; ?>" /></td>
+                        </tr>
+
+                        <tr bgcolor="#EFEFEF">
+                            <td><b>Плодородность в час (Вишня) (мин 6):</b></td>
+                            <td width="150" align="center"><input type="text" name="b_in_h" value="<?=$data_c["b_in_h"]; ?>" /></td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Плодородность в час (Клубника) (мин 6):</b></td>
+                            <td width="150" align="center"><input type="text" name="c_in_h" value="<?=$data_c["c_in_h"]; ?>" /></td>
+                        </tr>
+
+                        <tr bgcolor="#EFEFEF">
+                            <td><b>Плодородность в час (Киви) (мин 6):</b></td>
+                            <td width="150" align="center"><input type="text" name="d_in_h" value="<?=$data_c["d_in_h"]; ?>" /></td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Плодородность в час (Апельсин) (мин 6):</b></td>
+                            <td width="150" align="center"><input type="text" name="e_in_h" value="<?=$data_c["e_in_h"]; ?>" /></td>
+                        </tr>
+
+
+                        <tr bgcolor="#EFEFEF">
+                            <td><b>Стоимость дерева серебро (Лайм):</b></td>
+                            <td width="150" align="center"><input type="text" name="amount_a_t" value="<?=$data_c["amount_a_t"]; ?>" /></td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Стоимость дерева серебро (Вишня):</b></td>
+                            <td width="150" align="center"><input type="text" name="amount_b_t" value="<?=$data_c["amount_b_t"]; ?>" /></td>
+                        </tr>
+
+                        <tr bgcolor="#EFEFEF">
+                            <td><b>Стоимость дерева серебро (Клубника):</b></td>
+                            <td width="150" align="center"><input type="text" name="amount_c_t" value="<?=$data_c["amount_c_t"]; ?>" /></td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Стоимость дерева серебро (Киви):</b></td>
+                            <td width="150" align="center"><input type="text" name="amount_d_t" value="<?=$data_c["amount_d_t"]; ?>" /></td>
+                        </tr>
+
+                        <tr bgcolor="#EFEFEF">
+                            <td><b>Стоимость дерева серебро (Апельсин):</b></td>
+                            <td width="150" align="center"><input type="text" name="amount_e_t" value="<?=$data_c["amount_e_t"]; ?>" /></td>
+                        </tr>
+
+                        <tr> <td colspan="2" align="center"><input type="submit" value="Сохранить" /></td> </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
