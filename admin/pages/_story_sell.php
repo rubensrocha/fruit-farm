@@ -18,8 +18,8 @@
                     <thead class="text-center">
                         <th># ID</th>
                         <th><?php echo $lang['common']['username']; ?></th>
-                        <th><?php echo $lang['common']['sold']; ?></th>
-                        <th><?php echo $lang['common']['received']; ?></th>
+                        <th><?php echo $lang['common']['sold']; ?> <small>(<?php echo $config->settings['product']; ?>)</small></th>
+                        <th><?php echo $lang['common']['received']; ?> <small>(<?php echo $config->settings['coins']; ?>)</small></th>
                         <th><?php echo $lang['common']['date']; ?></th>
                     </thead>
                 <?PHP

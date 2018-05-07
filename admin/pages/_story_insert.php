@@ -170,7 +170,7 @@
                     <th># ID</th>
                     <th><?php echo $lang['common']['username']; ?></th>
                     <th><?php echo $lang['common']['amount']; ?></th>
-                    <th>Silver</th>
+                    <th><?php echo $config->settings['coins']; ?></th>
                     <th><?php echo $lang['common']['date']; ?></th>
                   </thead>
                 <?PHP

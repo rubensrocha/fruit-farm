@@ -30,7 +30,7 @@ class Config
      *  key => value
      */
     public $currency = [
-        'symbol' => 'Py6',
+        'symbol' => 'RUB',
         'symbol_position' => 'right',
         'decimals' => '4',
         'dec_point' => '.',
@@ -56,9 +56,26 @@ class Config
      *  key => value
      */
     public $settings = [
-        'sitename' => 'FF Script',
-        'description' => 'Fruit Farm SM Script',
-        'keywords' => 'Earnings on plants, attachments, earn, farm, cash farm, make money on the farm',
+        'sitename' => 'FF Script', // Site name
+        'description' => 'Fruit Farm SM Script', // Site description
+        'keywords' => 'Earnings on plants, attachments, earn, farm, cash farm, make money on the farm', // Site keywords
+        'coins' => 'SM Coins', // Name of the custom coin
+        'product' => 'Kilometers', // Name of what is produced by the items (fruits, fuel, kilometers, eggs, etc)
+    ];
+
+    /*
+     * Item Names
+     * @array
+     *  key => value
+     *  Name of the items Eg.: Fuit names(lime, kiwi, etc), Car Names(camaro, mustang, etc)
+     */
+    public $items = [
+        'item1' => 'Level 1', // Item name 1
+        'item2' => 'Level 2', // Item name 2
+        'item3' => 'Level 3', // Item name 3
+        'item4' => 'Level 4', // Item name 4
+        'item5' => 'Level 5', // Item name 5
+        'item6' => 'Level 6', // Item name 6
     ];
 
     /**

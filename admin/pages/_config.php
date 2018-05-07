@@ -97,145 +97,147 @@ if(isset($_POST["admin"])){
                 ?>
                 <form action="" method="post">
                     <?php $func->csrf(); ?>
-                    <h4>Conversions</h4>
+                    <h4><?php echo $lang['settings']['_conversions']; ?></h4>
                     <div class="row">
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
                             <div class="form-group">
-                                <label>Cost 1 RUB (Silver)</label>
+                                <label><?php echo $lang['common']['cost']; ?> 1 RUB (<?php echo $config->settings['coins']; ?>)</label>
                                 <input class="form-control" type="number" min="1" step="1" name="ser_per_wmr" value="<?=$data_c["ser_per_wmr"]; ?>">
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
                             <div class="form-group">
-                                <label>Cost 1 USD (Silver)</label>
+                                <label><?php echo $lang['common']['cost']; ?> 1 USD (<?php echo $config->settings['coins']; ?>)</label>
                                 <input class="form-control" type="number" min="1" step="1" name="ser_per_wmz" value="<?=$data_c["ser_per_wmz"]; ?>">
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
                             <div class="form-group">
-                                <label>Cost 1 EUR (Silver)</label>
+                                <label><?php echo $lang['common']['cost']; ?> 1 EUR (<?php echo $config->settings['coins']; ?>)</label>
                                 <input class="form-control" type="number" min="1" step="1" name="ser_per_wme" value="<?=$data_c["ser_per_wme"]; ?>">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label><?php echo $config->settings['product']; ?> = 1 <?php echo $config->settings['coins']; ?>:</label>
+                                <input class="form-control" type="number" min="1" step="1" name="items_per_coin" value="<?=$data_c["items_per_coin"]; ?>" />
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <div class="form-group">
-                                <label>Minimum payment amount (Silver)</label>
+                                <label><?php echo $lang['settings']['min_payout']; ?> (<?php echo $config->settings['coins']; ?>) (<?php echo $lang['common']['min']; ?> 1)</label>
                                 <input class="form-control" type="number" min="1" step="1" name="min_pay" value="<?=$data_c["min_pay"]; ?>">
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <div class="form-group">
-                                <label>Add % when exchanging (1 to 99)</label>
+                                <label><?php echo $lang['settings']['swapBonus']; ?> (1 - 99)</label>
                                 <input class="form-control" type="number" min="1" step="1" name="percent_swap" value="<?=$data_c["percent_swap"]; ?>">
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <div class="form-group">
-                                <label>% of silver per withdrawal on sale (from 1 to 99):</label>
+                                <label><?php echo $lang['settings']['sellPercent']; ?> (1 - 99):</label>
                                 <input class="form-control" type="number" min="1" step="1" name="percent_sell" value="<?=$data_c["percent_sell"]; ?>" />
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="form-group">
-                                <label>How many fruits = 1 silver:</label>
-                                <input class="form-control" type="number" min="1" step="1" name="items_per_coin" value="<?=$data_c["items_per_coin"]; ?>" />
                             </div>
                         </div>
                     </div>
                     <hr />
 
-                    <h4>Fertility per hour <small>(min 6)</small></h4>
+                    <h4><?php echo $lang['settings']['_productions']; ?> <small>(<?php echo $lang['common']['min']; ?> 1 / <?php echo $lang['common']['perHour']; ?>)</small></h4>
                     <div class="row">
                         <div class="col-sm-2">
                             <div class="form-group">
-                                <label>Lyme</label>
+                                <label><?php echo $config->items['item1']; ?></label>
                                 <input class="form-control" type="number" min="1" step="1" name="a_in_h" value="<?=$data_c["a_in_h"]; ?>" />
                             </div>
                         </div>
 
                         <div class="col-sm-2">
                             <div class="form-group">
-                                <label>Cherry</label>
+                                <label><?php echo $config->items['item2']; ?></label>
                                 <input class="form-control" type="number" min="1" step="1" name="b_in_h" value="<?=$data_c["b_in_h"]; ?>" />
                             </div>
                         </div>
 
                         <div class="col-sm-2">
                             <div class="form-group">
-                                <label>Strawberry</label>
+                                <label><?php echo $config->items['item3']; ?></label>
                                 <input class="form-control" type="number" min="1" step="1" name="c_in_h" value="<?=$data_c["c_in_h"]; ?>" />
                             </div>
                         </div>
 
                         <div class="col-sm-2">
                             <div class="form-group">
-                                <label>Kiwi</label>
+                                <label><?php echo $config->items['item4']; ?></label>
                                 <input class="form-control" type="number" min="1" step="1" name="d_in_h" value="<?=$data_c["d_in_h"]; ?>" />
                             </div>
                         </div>
 
                         <div class="col-sm-2">
                             <div class="form-group">
-                                <label>Orange</label>
+                                <label><?php echo $config->items['item5']; ?></label>
                                 <input class="form-control" type="number" min="1" step="1" name="e_in_h" value="<?=$data_c["e_in_h"]; ?>" />
                             </div>
                         </div>
 
                         <div class="col-sm-2">
                             <div class="form-group">
-                                <label>ITEM 6:</label>
+                                <label><?php echo $config->items['item6']; ?></label>
                                 <input class="form-control" type="number" min="1" step="1" name="f_in_h" value="<?=$data_c["f_in_h"]; ?>" />
                             </div>
                         </div>
                     </div>
                     <hr />
 
-                    <h4>The cost of wood is silver</h4>
+                    <h4><?php echo $lang['settings']['_itemprices']; ?> <small>(<?php echo $lang['common']['min']; ?> 1)</small></h4>
 
                     <div class="row">
                         <div class="col-sm-2">
                             <div class="form-group">
-                                <label>Lime</label>
+                                <label><?php echo $config->items['item1']; ?></label>
                                 <input class="form-control" type="number" min="1" step="1" name="amount_a_t" value="<?=$data_c["amount_a_t"]; ?>" />
                             </div>
                         </div>
                         <div class="col-sm-2">
                             <div class="form-group">
-                                <label>Cherry</label>
+                                <label><?php echo $config->items['item2']; ?></label>
                                 <input class="form-control" type="number" min="1" step="1" name="amount_b_t" value="<?=$data_c["amount_b_t"]; ?>" />
                             </div>
                         </div>
                         <div class="col-sm-2">
                             <div class="form-group">
-                                <label>Strawberry</label>
+                                <label><?php echo $config->items['item3']; ?></label>
                                 <input class="form-control" type="number" min="1" step="1" name="amount_c_t" value="<?=$data_c["amount_c_t"]; ?>" />
                             </div>
                         </div>
                         <div class="col-sm-2">
                             <div class="form-group">
-                                <label>Kiwi</label>
+                                <label><?php echo $config->items['item4']; ?></label>
                                 <input class="form-control" type="number" min="1" step="1" name="amount_d_t" value="<?=$data_c["amount_d_t"]; ?>" />
                             </div>
                         </div>
                         <div class="col-sm-2">
                             <div class="form-group">
-                                <label>Orange</label>
+                                <label><?php echo $config->items['item5']; ?></label>
                                 <input class="form-control" type="number" min="1" step="1" name="amount_e_t" value="<?=$data_c["amount_e_t"]; ?>" />
                             </div>
                         </div>
                         <div class="col-sm-2">
                             <div class="form-group">
-                                <label>ITEM 6</label>
+                                <label><?php echo $config->items['item6']; ?></label>
                                 <input class="form-control" type="number" min="1" step="1" name="amount_f_t" value="<?=$data_c["amount_f_t"]; ?>" />
                             </div>
                         </div>
                     </div>
+                    <hr />
 
+                    <h4><?php echo $lang['settings']['_general']; ?></h4>
                     <div class="form-group">
-                        <label>Language</label>
+                        <label><?php echo $lang['settings']['adminLang']; ?></label>
                         <select name="defaultLang" class="form-control">
                             <option value=""></option>
                             <?php foreach($config->languages as $k => $v){ ?>
@@ -244,7 +246,7 @@ if(isset($_POST["admin"])){
                         </select>
                     </div>
 
-                    <button type="submit" name="admin" class="btn btn-primary">Save</button>
+                    <button type="submit" name="admin" class="btn btn-primary"><?php echo $lang['btn']['save']; ?></button>
                 </form>
             </div>
         </div>

@@ -208,7 +208,7 @@
     <table class="table table-striped">
         <thead class="text-center">
             <th><?php echo $lang['common']['username'];?></th>
-            <th>Silver</th>
+            <th><?php echo $config->settings['coins']; ?></th>
             <th><?php echo $lang['common']['amount'];?></th>
             <th><?php echo $lang['common']['wallet'];?></th>
             <th><?php echo $lang['common']['date'];?></th>

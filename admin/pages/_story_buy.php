@@ -19,7 +19,7 @@
                             <th># ID</th>
                             <th><?php echo $lang['common']['username']; ?></th>
                             <th><?php echo $lang['common']['itemName']; ?></th>
-                            <th><?php echo $lang['common']['price']; ?></th>
+                            <th><?php echo $config->settings['coins']; ?></th>
                             <th><?php echo $lang['common']['date']; ?></th>
                         </thead>
                 <?PHP

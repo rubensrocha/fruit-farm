@@ -91,6 +91,9 @@ $lang = [
         'received' => 'Received',
         'itemName' => 'Item',
         'price' => 'Price',
+        'min' => 'Min.',
+        'cost' => 'Cost',
+        'perHour' => 'Per Hour',
         'confirmdelete' => 'Are you sure want to delete this item? This action can not be undone.',
     ],
 
@@ -108,7 +111,14 @@ $lang = [
 
     'settings' => [
         'title' => 'Settings',
-        'xxxxxxx' => 'xxxxxxx',
+        '_conversions' => 'Conversions',
+        '_productions' => 'Productions',
+        '_itemprices' => 'Item Prices',
+        '_general' => 'General',
+        'min_payout' => 'Min. Payment',
+        'swapBonus' => 'Bonus Percent on Exchange',
+        'sellPercent' => 'Percent to Withdraw on Sale',
+        'adminLang' => 'Admin Language',
         'error_paymentMin' => 'The minimum payment amount can not be less than 0',
         'error_percentExt' => 'The percentage to be exchanged must be from 1 to 99',
         'error_percentOut' => '% of silver on the output at the sale should be from 1 to 99',
