@@ -49,19 +49,19 @@ Code contributions (pull request) will be accepted only after the first release 
 -- [ ] Store <br>
 -- [ ] Swap <br>
 
-[ ] Admin <br>
--- [ ] About <br>
--- [ ] Config <br>
--- [ ] Contact <br>
--- [ ] News <br>
--- [ ] Payments <br>
--- [ ] Rules <br>
+[x] Admin <br>
+-- [x] About <br>
+-- [x] Config <br>
+-- [x] Contact <br>
+-- [x] News <br>
+-- [x] Payments <br>
+-- [x] Rules <br>
 -- [ ] Sender <br>
 -- [ ] Stats <br>
--- [ ] Story Buy <br>
--- [ ] Story Insert <br>
--- [ ] Story Sell <br>
--- [ ] Story Swap <br>
+-- [x] Story Buy <br>
+-- [x] Story Insert <br>
+-- [x] Story Sell <br>
+-- [x] Story Swap <br>
 -- [ ] Users <br>
 
 # Resources
