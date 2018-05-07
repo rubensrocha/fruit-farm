@@ -1,6 +1,7 @@
 .git
 .idea/
-[SOURCES]
+[SOURCES]/
 !.gitignore
 composer.phar
-1.IIDEIAS.txt
+composer.lock
+1.IDEIAS.txt
