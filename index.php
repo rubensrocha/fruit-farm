@@ -51,7 +51,6 @@ require_once 'langs/' . $langs->getCurrentLang() . '.php';
 			case "payments": include("pages/_payments.php"); break; // Payments
 			case "users": include("pages/_users.php"); break; // Users
 			case "account": include("pages/_account.php"); break; // Account
-			case "admin": include("pages/_admin.php"); break; // Administration
 			case "success": include("pages/_success.php"); break; // Success Payment
 			case "fail": include("pages/_fail.php"); break; // Fail Payment
 			case "stat": include("pages/_stat.php"); break; // Project Statistics

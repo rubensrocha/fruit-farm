@@ -37,7 +37,6 @@ if(isset($_GET["menu"])){
     $smenu = strval($_GET["menu"]);
     switch($smenu){
         case "404": include("pages/_404.php"); break; // Страница ошибки
-        case "stats": include("pages/_stats.php"); break; // Статистика
         case "story_buy": include("pages/_story_buy.php"); break; // История покупок деревьев
         case "story_swap": include("pages/_story_swap.php"); break; // История обмена в обменнике
         case "story_insert": include("pages/_story_insert.php"); break; // История пополнений баланса
