@@ -1,4 +1,4 @@
-# Fruit-Farm
+# Fruit-Farm SM Version
 Modified version of Fruit-Farm Script.
 
 ### Warning <br>
@@ -65,6 +65,7 @@ Code contributions (pull request) will be accepted only after the first release 
 
 # Resources
 <ul>
+    <li><a href="https://github.com/iPSWeb/fruit-farm" target="_blank">Fruit-Farm Source</a></li>
     <li><a href="https://github.com/Elvinas/Simple-PHP-Language-Class" target="_blank">Simple-PHP-Language-Class</a></li>
     <li><a href="https://github.com/Wixel/GUMP" target="_blank">GUMP</a></li>
     <li><a href="https://bootstrapious.com/p/admin-template" target="_blank">Admin Material Theme - Bootstrap 4</a></li>
