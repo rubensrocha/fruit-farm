@@ -94,7 +94,7 @@ $site_stats = $db->FetchArray();
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-flex align-items-center">
-                    <h3 class="h4">Recent Payouts</h3>
+                    <h3 class="h4"><?php echo $lang['payments']['title'];?></h3>
                 </div>
                 <div class="card-body">
                     <?PHP
