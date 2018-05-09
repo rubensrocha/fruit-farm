@@ -10,7 +10,6 @@ if(isset($_GET["sel"])){
 		case "store": include("pages/account/_store.php"); break; // Склад
 		case "market": include("pages/account/_market.php"); break; // Рынок
 		case "bonus": include("pages/account/_bonus.php"); break; // Ежедневный бонус
-		case "lottery": include("pages/account/_lottery.php"); break; // Лотерея
 		case "swap": include("pages/account/_swap.php"); break; // Обменный пункт
 		case "referals": include("pages/account/_referals.php"); break; // Рефералы
 		case "insert": include("pages/account/_insert.php"); break; // Пополнение баланса

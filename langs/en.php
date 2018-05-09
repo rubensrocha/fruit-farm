@@ -41,6 +41,7 @@ $lang = [
 
         'farm' => 'Store',
         'store' => 'Collect Profit',
+        'market' => 'Trading Market',
     ],
 
     'error_messages' => [
@@ -208,5 +209,14 @@ $lang = [
         'subtitle' => 'Payments from last 48 hours',
         'count' => 'Payments Total',
         'total' => 'Amount Total',
+    ],
+
+    'store' => [
+        'title' => 'Store',
+        'subtitle' => 'Payments from last 48 hours',
+        'count' => 'Payments Total',
+        'total' => 'Amount Total',
+        'success' => '%s collected with success',
+        'error' => 'You can not collected no more than 1 times in 10 minutesl',
     ],
 ];

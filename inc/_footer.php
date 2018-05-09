@@ -81,6 +81,36 @@
                 });
             },1000);
             <?php } ?>
+            <?PHP if($_SESSION["user"] && $_SERVER['REQUEST_URI']=='/account/store') { ?>
+            //Instant counter production
+            var now1=<?php echo $item1;?>;
+            var vel1=<?php echo $veloc1;?>;
+            var now2=<?php echo $item2;?>;
+            var vel2=<?php echo $veloc2;?>;
+            var now3=<?php echo $item3;?>;
+            var vel3=<?php echo $veloc3;?>;
+            var now4=<?php echo $item4;?>;
+            var vel4=<?php echo $veloc4;?>;
+            var now5=<?php echo $item5;?>;
+            var vel5=<?php echo $veloc5;?>;
+            var now6=<?php echo $item6;?>;
+            var vel6=<?php echo $veloc6;?>;
+            setInterval(function() {
+                    now1=now1+vel1;
+                    now2=now2+vel2;
+                    now3=now3+vel3;
+                    now4=now4+vel4;
+                    now5=now5+vel5;
+                    now6=now6+vel6;
+                    $("#counter1").text(now1.toFixed(2));
+                    $("#counter2").text(now2.toFixed(2));
+                    $("#counter3").text(now3.toFixed(2));
+                    $("#counter4").text(now4.toFixed(2));
+                    $("#counter5").text(now5.toFixed(2));
+                    $("#counter6").text(now6.toFixed(2));
+                }, 1000);
+            //End instant counter production
+            <?php } ?>
         });
     </script>
 </body>

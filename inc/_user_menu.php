@@ -53,6 +53,7 @@
 <ul class="list-unstyled">
     <li <?php $func->activeMenu('account','farm');?>> <a href="<?php $func->url('account/farm');?>"><i class="fa fa-shopping-cart"></i><?php echo $lang['menu_left']['farm'];?></a></li>
     <li <?php $func->activeMenu('account','store');?>> <a href="<?php $func->url('account/store');?>"><i class="fa fa-briefcase"></i><?php echo $lang['menu_left']['store'];?></a></li>
+    <li <?php $func->activeMenu('account','market');?>> <a href="<?php $func->url('account/market');?>"><i class="fa fa-bank"></i><?php echo $lang['menu_left']['market'];?></a></li>
 </ul>
 
 <span class="heading"><?php echo $lang['menu_left']['_earn'];?></span>

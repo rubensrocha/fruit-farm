@@ -25,3 +25,8 @@ nav.side-navbar a.btn{
     margin-right: 0;
     padding: 0 5px;
 }
+
+.item-thumb {
+    width: 100px;
+    height: 100px;
+}
