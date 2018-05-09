@@ -98,6 +98,7 @@ $lang = [
         'cost' => 'Cost',
         'yes' => 'Yes',
         'no' => 'No',
+        'total' => 'Total',
         'perHour' => 'Per Hour',
         'totalCollected' => 'Total Collected',
         'confirmdelete' => 'Are you sure want to delete this item? This action can not be undone.',
@@ -222,5 +223,14 @@ $lang = [
         'balancePlus' => 'Added %s to user balance!',
         'banned' => 'This user was banned with success!',
         'unbanned' => 'This user was unbanned with success!',
+    ],
+
+    'dashboard' => [
+        'title' => 'Dashboard',
+        'total_users' => 'Registered Users',
+        'bought' => 'Bought',
+        'warehouses' => 'In Warehouses',
+        'collected' => 'Total Collected',
+        'profit' => 'Total Profit',
     ],
 ];

@@ -55,13 +55,13 @@ Code contributions (pull request) will be accepted only after the first release 
 -- [x] News <br>
 -- [x] Payments <br>
 -- [x] Rules <br>
--- [ ] Sender <br>
--- [ ] Stats <br>
+-- [x] Sender <br>
+-- [x] Index/Stats <br>
 -- [x] Story Buy <br>
 -- [x] Story Insert <br>
 -- [x] Story Sell <br>
 -- [x] Story Swap <br>
--- [ ] Users <br>
+-- [x] Users <br>
 
 # Resources
 <ul>
