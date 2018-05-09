@@ -70,6 +70,8 @@ class Config
      *  Name of the items Eg.: Fuit names(lime, kiwi, etc), Car Names(camaro, mustang, etc)
      */
     public $items = [
+        'name' => 'Car', // Items name (singular) (cars, fruits, coins, chickens, birds, etc)
+        'names' => 'Cars', // Items name (plural) (cars, fruits, coins, chickens, birds, etc)
         'item1' => 'Level 1', // Item name 1
         'item2' => 'Level 2', // Item name 2
         'item3' => 'Level 3', // Item name 3

@@ -34,7 +34,6 @@ $lang = [
         'bonusCollected' => 'You have already received a bonus in the last 24 hours.',
         'noresults' => 'No results to show',
         'itemNotFound' => 'Item with such ID not found',
-        'XXXXXXXXX' => 'XXXXXXX',
     ],
 
     'success_messages' => [
@@ -42,7 +41,6 @@ $lang = [
         'deleted' => 'Item deleted with success!',
         'created' => 'Item created with success!',
         'cleaned' => 'Data cleaned with success!',
-        'XXXXXXXXX' => 'XXXXXXX',
     ],
 
     'btn' => [
@@ -51,11 +49,15 @@ $lang = [
         'delete' => 'Delete',
         'create' => 'Create',
         'cancel' => 'Cancel',
+        'update' => 'Update',
         'login' => 'Login',
         'forgotL' => 'Reset Password',
         'forgot' => 'Send Reset Link',
         'save' => 'Save',
         'clear' => 'Clear',
+        'search' => 'Search',
+        'ban' => 'Ban',
+        'unban' => 'Unban',
     ],
 
     'common' => [
@@ -86,6 +88,7 @@ $lang = [
         'title' => 'Title',
         'content' => 'Content',
         'actions' => 'Actions',
+        'status' => 'Status',
         'sold' => 'Sold',
         'gived' => 'Give',
         'received' => 'Received',
@@ -93,7 +96,10 @@ $lang = [
         'price' => 'Price',
         'min' => 'Min.',
         'cost' => 'Cost',
+        'yes' => 'Yes',
+        'no' => 'No',
         'perHour' => 'Per Hour',
+        'totalCollected' => 'Total Collected',
         'confirmdelete' => 'Are you sure want to delete this item? This action can not be undone.',
     ],
 
@@ -187,5 +193,34 @@ $lang = [
 
     'story_buy' => [
         'title' => 'Purchase History',
+    ],
+
+    'sendermail' => [
+        'title' => 'Mass Mailing',
+        'list' => 'Mailing List',
+        'add' => 'Add Newsletter',
+        'sended' => 'Submitted',
+        'status_send' => 'Sending',
+        'status_ok' => 'Complete',
+        'markers' => 'Markers for Replacement',
+        'created' => 'Newsletter is queued for execution',
+        'error_minContent' => 'Message must be longer than 10 characters',
+        'error_minTitle' => 'The title must be greater than 3 characters',
+    ],
+
+    'users' => [
+        'title' => 'Manage Users',
+        'ref_earns' => 'Earn from Referrals',
+        'ref_pays' => 'Brought a referrer',
+        'lastLogin' => 'Last Login',
+        'lastIP' => 'Last IP',
+        'bannedStatus' => 'Banned',
+        'addTo' => 'Add to Balance',
+        'removeFrom' => 'Remove from Balance',
+        'itemAdded' => 'Item added with success!',
+        'balanceMinus' => 'Removed %s from user balance!',
+        'balancePlus' => 'Added %s to user balance!',
+        'banned' => 'This user was banned with success!',
+        'unbanned' => 'This user was unbanned with success!',
     ],
 ];

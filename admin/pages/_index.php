@@ -31,89 +31,89 @@
                 ");
                 $data_stats = $db->FetchArray();
                 ?>
-                <table width="450" border="0" align="center">
-                    <tr class="htt">
+                <table class="table table-striped">
+                    <tr>
                         <td><b>Registered Users:</b></td>
                         <td width="100" align="center"><?=$data_stats["all_users"]; ?> чел.</td>
                     </tr>
                     <tr> <td colspan="2" align="center"><b>- - - - -</b></td> </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>Silver on accounts (for purchases):</b></td>
                         <td width="100" align="center"><?=sprintf("%.0f",$data_stats["money_b"]); ?></td>
                     </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>Silver on accounts (On withdrawal):</b></td>
                         <td width="100" align="center"><?=sprintf("%.0f",$data_stats["money_p"]); ?></td>
                     </tr>
                     <tr> <td colspan="2" align="center"><b>- - - - -</b></td> </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>Bought trees (Lime):</b></td>
                         <td width="100" align="center"><?=intval($data_stats["a_t"]); ?> шт.</td>
                     </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>Bought trees (Cherry):</b></td>
                         <td width="100" align="center"><?=intval($data_stats["b_t"]); ?> шт.</td>
                     </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>Bought trees (Strawberry):</b></td>
                         <td width="100" align="center"><?=intval($data_stats["c_t"]); ?> шт.</td>
                     </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>Bought trees (Kiwi):</b></td>
                         <td width="100" align="center"><?=intval($data_stats["d_t"]); ?> шт.</td>
                     </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>Bought trees (Orange):</b></td>
                         <td width="100" align="center"><?=intval($data_stats["e_t"]); ?> шт.</td>
                     </tr>
                     <tr> <td colspan="2" align="center"><b>- - - - -</b></td> </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>In warehouses (Lime):</b></td>
                         <td width="100" align="center"><?=intval($data_stats["a_b"]); ?> шт.</td>
                     </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>In warehouses (Cherry):</b></td>
                         <td width="100" align="center"><?=intval($data_stats["b_b"]); ?> шт.</td>
                     </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>In warehouses (Strawberry):</b></td>
                         <td width="100" align="center"><?=intval($data_stats["c_b"]); ?> шт.</td>
                     </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>In warehouses (Kiwi):</b></td>
                         <td width="100" align="center"><?=intval($data_stats["d_b"]); ?> шт.</td>
                     </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>In warehouses (Orange):</b></td>
                         <td width="100" align="center"><?=intval($data_stats["e_b"]); ?> шт.</td>
                     </tr>
                     <tr> <td colspan="2" align="center"><b>- - - - -</b></td> </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>Collected for all time (Lime):</b></td>
                         <td width="100" align="center"><?=intval($data_stats["all_time_a"]); ?> шт.</td>
                     </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>Collected for all time (Cherry):</b></td>
                         <td width="100" align="center"><?=intval($data_stats["all_time_b"]); ?> шт.</td>
                     </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>Collected for all time (Strawberry):</b></td>
                         <td width="100" align="center"><?=intval($data_stats["all_time_c"]); ?> шт.</td>
                     </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>Collected for all time (Kiwi):</b></td>
                         <td width="100" align="center"><?=intval($data_stats["all_time_d"]); ?> шт.</td>
                     </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>Collected for all time (Orange):</b></td>
                         <td width="100" align="center"><?=intval($data_stats["all_time_e"]); ?> шт.</td>
                     </tr>
                     <tr> <td colspan="2" align="center"><b>- - - - -</b></td> </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>User input:</b></td>
                         <td width="100" align="center"><?=sprintf("%.2f",$data_stats["insert_sum"]); ?> <?=$config->VAL; ?></td>
                     </tr>
-                    <tr class="htt">
+                    <tr>
                         <td><b>Paid to users:</b></td>
                         <td width="100" align="center"><?=sprintf("%.2f",$data_stats["payment_sum"]); ?> <?=$config->VAL; ?></td>
                     </tr>
