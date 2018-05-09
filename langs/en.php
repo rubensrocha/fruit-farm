@@ -109,6 +109,15 @@ $lang = [
         'date' => 'Date',
         'wallet' => 'Wallet',
         'amount' => 'Amount',
+        'status' => 'Status',
+        'status_paid' => 'Paid',
+    ],
+
+    'home' => [
+        'title' => 'Welcome',
+        'total_users' => 'Total Users',
+        'working_time' => 'Working Time',
+        'total_paid' => 'Total Paid',
     ],
 
     'news' => [

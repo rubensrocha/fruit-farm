@@ -25,7 +25,7 @@ Code contributions (pull request) will be accepted only after the first release 
 [ ] Integrate GUMP validation on fields <br>
 
 # Theme Integration
-[ ] Index <br>
+[x] Index <br>
 [x] About <br>
 [x] Rules <br>
 [x] Signup <br>
