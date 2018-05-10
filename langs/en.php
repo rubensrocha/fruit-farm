@@ -85,6 +85,7 @@ $lang = [
         'save' => 'Save',
         'getBonus' => 'Get Bonus',
         'buyNow' => 'Buy Now',
+        'sellAll' => 'Sell All',
     ],
 
     'common' => [
@@ -230,5 +231,12 @@ $lang = [
         'perHour' => 'Per Hour',
         'perMonth' => 'Per Month',
         'warehouse' => 'Your Warehouse',
+    ],
+
+    'market' => [
+        'title' => 'Trading Shop',
+        'text' => 'A retail store will allow you to sell all your %s, which can be exchanged for real money. The %s gained from the sale is distributed between two balances (Balance and Purchase Balance) in the proportion of %s%% to the Purchase Balance and %s%% to the Balance.',
+        'error' => 'You have nothing to sell',
+        'sold' => 'You sold %s %s, for the amount of %s %s',
     ],
 ];

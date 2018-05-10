@@ -41,12 +41,12 @@ Code contributions (pull request) will be accepted only after the first release 
 -- [x] Config <br>
 -- [x] Referals <br>
 -- [x] User Account <br>
--- [ ] Farm <br>
+-- [x] Farm <br>
 -- [ ] Insert <br>
 -- [ ] Payment <br>
--- [ ] Store <br>
--- [ ] Swap <br>
--- [ ] Market <br>
+-- [x] Store <br>
+-- [x] Swap <br>
+-- [x] Market <br>
 
 [x] Admin <br>
 -- [x] About <br>
