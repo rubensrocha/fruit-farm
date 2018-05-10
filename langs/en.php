@@ -85,6 +85,7 @@ $lang = [
         'save' => 'Save',
         'getBonus' => 'Get Bonus',
         'buyNow' => 'Buy Now',
+        'payNow' => 'Pay Now',
         'sellAll' => 'Sell All',
     ],
 
@@ -115,6 +116,7 @@ $lang = [
         'status' => 'Status',
         'status_paid' => 'Paid',
         'min' => 'Min.',
+        'conversionRate' => 'Conversion Rate',
     ],
 
     'home' => [
@@ -244,6 +246,17 @@ $lang = [
     'swap' => [
         'title' => 'Exchange',
         'text' => 'In the exchange office you can exchange from Balance to Purchase Balance. When exchanging you get a %s%% bonus on your Purchase Balance.',
+        'alert' => 'Exchange is possible only in one direction',
+        'give' => 'You give',
+        'receive' => 'You receive',
+        'success' => 'Balance exchanged with success!',
+        'errorBalance' => 'There is not enough funds to exchange!',
+        'errorMin' => 'The minimum amount for the exchange is',
+    ],
+
+    'insert' => [
+        'title' => 'Deposit',
+        'text' => 'Payment and transfer of silver to the balance is made automatically. After replenishment you will be credited with %s.',
         'alert' => 'Exchange is possible only in one direction',
         'give' => 'You give',
         'receive' => 'You receive',

@@ -111,6 +111,15 @@
                 }, 1000);
             //End instant counter production
             <?php } ?>
+            <?PHP if($_SESSION["user"] && $_SERVER['REQUEST_URI']=='/account/insert') { ?>
+            //Start Deposit
+            $('#psevdo').on('input',function(){
+                var value = $(this).val();
+                var rate = <?php echo $sonfig_site["ser_per_wmr"];?>;
+                $('#res_sum').html( (value * rate).toFixed(0) );
+            });
+            //End Deposit
+            <?php } ?>
         });
     </script>
 </body>

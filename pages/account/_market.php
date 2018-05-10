@@ -13,7 +13,7 @@ $b_convert = $sonfig_site["percent_sell"];
         <div class="card articles">
             <div class="card-body">
                 <p><?php echo sprintf($lang['market']['text'],$config->settings['product'],$config->settings['coins'],$p_convert,$b_convert);?></p>
-                <p>Conversion Rate: <span class="text-danger"><?=$sonfig_site["items_per_coin"]; ?> kilometers = 1 silver.</span></p>
+                <p><?php echo $lang['common']['conversionRate'];?>: <span class="text-danger"><?=$sonfig_site["items_per_coin"]; ?> <?php echo $config->settings['product'];?> = 1 <?php echo $config->settings['coins'];?>.</span></p>
                 <?PHP
                 # Продажа
                 if(isset($_POST["sell"])){
