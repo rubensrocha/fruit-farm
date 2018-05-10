@@ -114,6 +114,7 @@ $lang = [
         'amount' => 'Amount',
         'status' => 'Status',
         'status_paid' => 'Paid',
+        'min' => 'Min.',
     ],
 
     'home' => [
@@ -238,5 +239,16 @@ $lang = [
         'text' => 'A retail store will allow you to sell all your %s, which can be exchanged for real money. The %s gained from the sale is distributed between two balances (Balance and Purchase Balance) in the proportion of %s%% to the Purchase Balance and %s%% to the Balance.',
         'error' => 'You have nothing to sell',
         'sold' => 'You sold %s %s, for the amount of %s %s',
+    ],
+
+    'swap' => [
+        'title' => 'Exchange',
+        'text' => 'In the exchange office you can exchange from Balance to Purchase Balance. When exchanging you get a %s%% bonus on your Purchase Balance.',
+        'alert' => 'Exchange is possible only in one direction',
+        'give' => 'You give',
+        'receive' => 'You receive',
+        'success' => 'Balance exchanged with success!',
+        'errorBalance' => 'There is not enough funds to exchange!',
+        'errorMin' => 'The minimum amount for the exchange is',
     ],
 ];

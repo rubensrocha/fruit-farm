@@ -45,7 +45,6 @@
 <ul class="list-unstyled" >
     <li <?php $func->activeMenu('account');?>> <a href="<?php $func->url('account');?>"><i class="fa fa-user"></i><?php echo $lang['menu_left']['account'];?></a></li>
     <li <?php $func->activeMenu('account','referals');?>> <a href="<?php $func->url('account/referals');?>"><i class="fa fa-users"></i><?php echo $lang['menu_left']['referrals'];?></a></li>
-    <li <?php $func->activeMenu('account','im');?>> <a href="<?php $func->url('account/im');?>"><i class="fa fa-envelope"></i><?php echo $lang['menu_left']['messages'];?> <span class="pull-right"></span></a></li>
     <li <?php $func->activeMenu('account','config');?>> <a href="<?php $func->url('account/config');?>"><i class="fa fa-cog"></i><?php echo $lang['menu_left']['config'];?> <span class="pull-right"></span></a></li>
 </ul>
 
@@ -58,6 +57,5 @@
 
 <span class="heading"><?php echo $lang['menu_left']['_earn'];?></span>
 <ul class="list-unstyled" >
-    <li <?php $func->activeMenu('account','game');?>> <a href="<?php $func->url('account/game');?>"> <i class="fa fa-gamepad"></i><?php echo $lang['menu_left']['games'];?> </a></li>
     <li <?php $func->activeMenu('account','bonus');?>> <a href="<?php $func->url('account/bonus');?>"> <i class="fa fa-gift"></i><?php echo $lang['menu_left']['bonus'];?> </a></li>
 </ul>
