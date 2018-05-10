@@ -84,6 +84,7 @@ $lang = [
         'exchange' => 'Exchange',
         'save' => 'Save',
         'getBonus' => 'Get Bonus',
+        'buyNow' => 'Buy Now',
     ],
 
     'common' => [
@@ -212,11 +213,22 @@ $lang = [
     ],
 
     'store' => [
-        'title' => 'Store',
+        'title' => 'Warehouse',
         'subtitle' => 'Payments from last 48 hours',
         'count' => 'Payments Total',
         'total' => 'Amount Total',
         'success' => '%s collected with success',
         'error' => 'You can not collected no more than 1 times in 10 minutesl',
+    ],
+
+    'farm' => [
+        'title' => 'Car Shop',
+        'text' => 'In this store you can buy new cars. Each car brings kilometers that can then be sold on the market and exchanged for real money. Each car gives a different number of kilometers, the more expensive it cost, more kilometers it generate. You can buy any number of them, the cars have not expiration date, it will always generate kilometers in your account.',
+        'alert' => 'Before buy, you should collect your %s in the warehouse!',
+        'purchased' => '%s purchased with success!',
+        'noEnoughCoins' => 'There is not enough %s to buy this item!',
+        'perHour' => 'Per Hour',
+        'perMonth' => 'Per Month',
+        'warehouse' => 'Your Warehouse',
     ],
 ];

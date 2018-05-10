@@ -19,16 +19,18 @@ if(isset($_POST["admin"])){
 	$percent_swap = intval($_POST["percent_swap"]);
 	$percent_sell = intval($_POST["percent_sell"]);
 	$items_per_coin = intval($_POST["items_per_coin"]);
-	$tomat_in_h = intval($_POST["a_in_h"]);
-	$straw_in_h = intval($_POST["b_in_h"]);
-	$pump_in_h = intval($_POST["c_in_h"]);
-	$peas_in_h = intval($_POST["d_in_h"]);
-	$pean_in_h = intval($_POST["e_in_h"]);
-	$amount_tomat_t = intval($_POST["amount_a_t"]);
-	$amount_straw_t = intval($_POST["amount_b_t"]);
-	$amount_pump_t = intval($_POST["amount_c_t"]);
-	$amount_peas_t = intval($_POST["amount_d_t"]);
-	$amount_pean_t = intval($_POST["amount_e_t"]);
+	$production_item1 = intval($_POST["a_in_h"]);
+	$production_item2 = intval($_POST["b_in_h"]);
+	$production_item3 = intval($_POST["c_in_h"]);
+	$production_item4 = intval($_POST["d_in_h"]);
+	$production_item5 = intval($_POST["e_in_h"]);
+	$production_item6 = intval($_POST["f_in_h"]);
+	$cost_item1 = intval($_POST["amount_a_t"]);
+	$cost_item2 = intval($_POST["amount_b_t"]);
+	$cost_item3 = intval($_POST["amount_c_t"]);
+	$cost_item4 = intval($_POST["amount_d_t"]);
+	$cost_item5 = intval($_POST["amount_e_t"]);
+    $cost_item6 = intval($_POST["amount_f_t"]);
 	$admin_lang = $_POST["defaultLang"];
 	# Проверка на ошибки
 	$errors = true;
@@ -47,11 +49,11 @@ if(isset($_POST["admin"])){
 		$errors = false; $showError = $lang['settings']['error_minfruits'];
 	}
 
-    if($tomat_in_h < 6 OR $straw_in_h < 6 OR $pump_in_h < 6 OR $peas_in_h < 6 OR $pean_in_h < 6){
+    if($production_item1 < 6 OR $production_item2 < 6 OR $production_item3 < 6 OR $production_item4 < 6 OR $production_item5 < 6 OR $production_item6 < 6){
 		$errors = false; $showError = $lang['settings']['error_productionMin'];
 	}
 
-    if($amount_tomat_t < 1 OR $amount_straw_t < 1 OR $amount_pump_t < 1 OR $amount_peas_t < 1 OR $amount_pean_t < 1){
+    if($cost_item1 < 1 OR $cost_item2 < 1 OR $cost_item3 < 1 OR $cost_item4 < 1 OR $cost_item5 < 1 OR $cost_item6 < 1){
 		$errors = false; $showError = $lang['settings']['error_itemprice'];
 	}
 	
@@ -66,16 +68,18 @@ if(isset($_POST["admin"])){
 		percent_swap = '$percent_swap',
 		percent_sell = '$percent_sell',
 		items_per_coin = '$items_per_coin',
-		a_in_h = '$tomat_in_h',
-		b_in_h = '$straw_in_h',
-		c_in_h = '$pump_in_h',
-		d_in_h = '$peas_in_h',
-		e_in_h = '$pean_in_h',
-		amount_a_t = '$amount_tomat_t',
-		amount_b_t = '$amount_straw_t',
-		amount_c_t = '$amount_pump_t',
-		amount_d_t = '$amount_peas_t',
-		amount_e_t = '$amount_pean_t',
+		a_in_h = '$production_item1',
+		b_in_h = '$production_item2',
+		c_in_h = '$production_item3',
+		d_in_h = '$production_item4',
+		e_in_h = '$production_item5',
+		f_in_h = '$production_item6',
+		amount_a_t = '$cost_item1',
+		amount_b_t = '$cost_item2',
+		amount_c_t = '$cost_item3',
+		amount_d_t = '$cost_item4',
+		amount_e_t = '$cost_item5',
+		amount_f_t = '$cost_item6',
 		default_lang = '$admin_lang'
 		
 		WHERE id = '1'");
