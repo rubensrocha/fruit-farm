@@ -99,11 +99,13 @@ CREATE TABLE IF NOT EXISTS `db_config` (
   `c_in_h` int(11) NOT NULL DEFAULT '0',
   `d_in_h` int(11) NOT NULL DEFAULT '0',
   `e_in_h` int(11) NOT NULL DEFAULT '0',
+  `f_in_h` int(11) NOT NULL DEFAULT '0',
   `amount_a_t` int(11) NOT NULL DEFAULT '0',
   `amount_b_t` int(11) NOT NULL DEFAULT '0',
   `amount_c_t` int(11) NOT NULL DEFAULT '0',
   `amount_d_t` int(11) NOT NULL DEFAULT '0',
   `amount_e_t` int(11) NOT NULL DEFAULT '0',
+  `amount_f_t` int(11) NOT NULL DEFAULT '0',
   `default_lang` varchar(11) NOT NULL DEFAULT 'en',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=2 ;
@@ -112,8 +114,8 @@ CREATE TABLE IF NOT EXISTS `db_config` (
 -- Дамп данных таблицы `db_config`
 --
 
-INSERT INTO `db_config` (`id`, `admin`, `pass`, `min_pay`, `ser_per_wmr`, `ser_per_wmz`, `ser_per_wme`, `percent_swap`, `percent_sell`, `items_per_coin`, `a_in_h`, `b_in_h`, `c_in_h`, `d_in_h`, `e_in_h`, `amount_a_t`, `amount_b_t`, `amount_c_t`, `amount_d_t`, `amount_e_t`) VALUES
-(1, 'admin', 'admin', 100, 100, 3300, 4200, 50, 50, 10, 1001, 2001, 3001, 4001, 5001, 1001, 2001, 3001, 4001, 5001);
+INSERT INTO `db_config` (`id`, `admin`, `pass`, `min_pay`, `ser_per_wmr`, `ser_per_wmz`, `ser_per_wme`, `percent_swap`, `percent_sell`, `items_per_coin`, `a_in_h`, `b_in_h`, `c_in_h`, `d_in_h`, `e_in_h`, `f_in_h`,`amount_a_t`, `amount_b_t`, `amount_c_t`, `amount_d_t`, `amount_e_t`, `amount_f_t`) VALUES
+(1, 'admin', 'admin', 100, 100, 3300, 4200, 50, 50, 10, 120, 240, 360, 480, 600, 1000, 10, 30, 50, 100, 500, 1000);
 
 -- --------------------------------------------------------
 
@@ -280,6 +282,7 @@ CREATE TABLE IF NOT EXISTS `db_sell_items` (
   `c_s` int(11) NOT NULL DEFAULT '0',
   `d_s` int(11) NOT NULL DEFAULT '0',
   `e_s` int(11) NOT NULL DEFAULT '0',
+  `f_s` int(11) NOT NULL DEFAULT '0',
   `amount` double NOT NULL DEFAULT '0',
   `all_sell` int(11) NOT NULL DEFAULT '0',
   `date_add` int(11) NOT NULL DEFAULT '0',
@@ -291,8 +294,8 @@ CREATE TABLE IF NOT EXISTS `db_sell_items` (
 -- Дамп данных таблицы `db_sell_items`
 --
 
-INSERT INTO `db_sell_items` (`id`, `user`, `user_id`, `a_s`, `b_s`, `c_s`, `d_s`, `e_s`, `amount`, `all_sell`, `date_add`, `date_del`) VALUES
-(2, 'admin', 1, 143409, 143338, 214971, 286604, 358237, 114655.9, 1146559, 1511084878, 1512380878);
+INSERT INTO `db_sell_items` (`id`, `user`, `user_id`, `a_s`, `b_s`, `c_s`, `d_s`, `e_s`, `f_s`, `amount`, `all_sell`, `date_add`, `date_del`) VALUES
+(2, 'admin', 1, 143409, 143338, 214971, 286604, 358237, 359732, 114655.9, 1146559, 1511084878, 1512380878);
 
 -- --------------------------------------------------------
 
@@ -444,16 +447,19 @@ CREATE TABLE IF NOT EXISTS `db_users_b` (
   `c_t` int(11) NOT NULL DEFAULT '0',
   `d_t` int(11) NOT NULL DEFAULT '0',
   `e_t` int(11) NOT NULL DEFAULT '0',
+  `f_t` int(11) NOT NULL DEFAULT '0',
   `a_b` int(11) NOT NULL DEFAULT '0',
   `b_b` int(11) NOT NULL DEFAULT '0',
   `c_b` int(11) NOT NULL DEFAULT '0',
   `d_b` int(11) NOT NULL DEFAULT '0',
   `e_b` int(11) NOT NULL DEFAULT '0',
+  `f_b` int(11) NOT NULL DEFAULT '0',
   `all_time_a` int(11) NOT NULL DEFAULT '0',
   `all_time_b` int(11) NOT NULL DEFAULT '0',
   `all_time_c` int(11) NOT NULL DEFAULT '0',
   `all_time_d` int(11) NOT NULL DEFAULT '0',
   `all_time_e` int(11) NOT NULL DEFAULT '0',
+  `all_time_f` int(11) NOT NULL DEFAULT '0',
   `last_sbor` int(11) NOT NULL DEFAULT '0',
   `from_referals` double NOT NULL DEFAULT '0',
   `to_referer` double NOT NULL DEFAULT '0',
@@ -467,13 +473,13 @@ CREATE TABLE IF NOT EXISTS `db_users_b` (
 -- Дамп данных таблицы `db_users_b`
 --
 
-INSERT INTO `db_users_b` (`id`, `user`, `money_b`, `money_p`, `a_t`, `b_t`, `c_t`, `d_t`, `e_t`, `a_b`, `b_b`, `c_b`, `d_b`, `e_b`, `all_time_a`, `all_time_b`, `all_time_c`, `all_time_d`, `all_time_e`, `last_sbor`, `from_referals`, `to_referer`, `payment_sum`, `insert_sum`, `kredit`) VALUES
-(1, 'admin', 1045736.25, 1556289.25, 2, 1, 1, 1, 1, 0, 0, 0, 0, 0, 143850, 143779, 215632, 287485, 359339, 1511084875, 0, 0, 0, 0, 0),
-(2, 'testuser1', 2000, 1000, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1440868538, 0, 0, 0, 0, 0),
-(3, 'testuser2', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1510901125, 0, 0, 0, 0, 0),
-(4, 'testuser3', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1510901171, 0, 0, 0, 0, 0),
-(8, 'testuser4', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1510919054, 0, 0, 0, 0, 0),
-(7, 'testuser5', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1510915285, 0, 0, 0, 0, 0);
+INSERT INTO `db_users_b` (`id`, `user`, `money_b`, `money_p`, `a_t`, `b_t`, `c_t`, `d_t`, `e_t`, `f_t`, `a_b`, `b_b`, `c_b`, `d_b`, `e_b`, `f_b`, `all_time_a`, `all_time_b`, `all_time_c`, `all_time_d`, `all_time_e`, `all_time_f`, `last_sbor`, `from_referals`, `to_referer`, `payment_sum`, `insert_sum`, `kredit`) VALUES
+(1, 'admin', 1045736.25, 1556289.25, 2, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 143850, 143779, 215632, 287485, 359339, 1511084875, 0, 0, 0, 0, 0),
+(2, 'testuser1', 2000, 1000, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1440868538, 0, 0, 0, 0, 0, 0),
+(3, 'testuser2', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1510901125, 0, 0, 0, 0, 0, 0),
+(4, 'testuser3', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1510901171, 0, 0, 0, 0, 0, 0),
+(8, 'testuser4', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1510919054, 0, 0, 0, 0, 0, 0),
+(7, 'testuser5', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1510915285, 0, 0, 0, 0, 0, 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
