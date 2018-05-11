@@ -60,13 +60,11 @@ $lang = [
         'oldpassword' => 'Old password is incorrect',
         'bonusCollected' => 'You have already received a bonus in the last 24 hours.',
         'noresults' => 'No results to show',
-        'XXXXXXXXX' => 'XXXXXXX',
     ],
 
     'success_messages' => [
         'changesSaved' => 'Changes saved with success!',
         'bonusAdded' => 'A bonus was added to your shopping account in the amount of %s %s',
-        'XXXXXXXXX' => 'XXXXXXX',
     ],
 
     'btn' => [
@@ -197,7 +195,7 @@ $lang = [
         'title' => 'Account Settings',
         '_password' => 'Change Password',
         'old_password' => 'Enter actual password to confirm the changes',
-        'updated' => 'Chan',
+        'updated' => 'Data updated with success!',
     ],
 
     'bonus_daily' => [
@@ -218,11 +216,9 @@ $lang = [
 
     'store' => [
         'title' => 'Warehouse',
-        'subtitle' => 'Payments from last 48 hours',
-        'count' => 'Payments Total',
-        'total' => 'Amount Total',
+        'subtitle' => 'Collect profit in the warehouse. Your profit yields every 10 minutes. The profit constantly accumulates, it is not necessary to collect every 10 min., you can collect them once a month. As you prefer.',
         'success' => '%s collected with success',
-        'error' => 'You can not collected no more than 1 times in 10 minutesl',
+        'error' => 'You can not collected no more than 1 times in 10 minutes!',
     ],
 
     'farm' => [
@@ -258,7 +254,7 @@ $lang = [
         'title' => 'Deposit',
         'text' => 'Payment and transfer of silver to the balance is made automatically. After replenishment you will be credited with %s.',
         'receive' => 'You receive',
-        'errorMin' => 'The minimum amount for the exchange is',
+        'errorMin' => 'The minimum amount for the deposit is',
     ],
 
     'payment' => [

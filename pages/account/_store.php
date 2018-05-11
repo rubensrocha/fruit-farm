@@ -2,7 +2,7 @@
 <div class="col-lg-12">
     <div class="card articles">
         <div class="card-body">
-            <p>Collect fruit in the fruit store planted on a fruit farm. Your farm yields every 10 minutes. The fruit constantly accumulates, it is not necessary to collect every 10 min. to collect them once a month. As you prefer.</p>
+            <p><?php echo $lang['store']['subtitle']; ?></p>
             <?PHP
             $_OPTIMIZATION["title"] = $lang['store']['title'];
             $usid = $_SESSION["user_id"];

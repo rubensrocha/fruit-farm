@@ -45,19 +45,19 @@ $stats_data = $db->FetchArray();
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $lang['statistics']['deposits']; ?></h5>
-                                    <p class="card-text"><?php echo sprintf("%.2f",$stats_data["all_insert"]); ?> <?php echo $config->VAL;?></p>
+                                    <p class="card-text"><?php echo sprintf("%.2f",$stats_data["all_insert"]); ?> <?php echo $config->currency['symbol'];?></p>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $lang['statistics']['reserve']; ?></h5>
-                                    <p class="card-text"><?php echo sprintf("%.2f",$stats_data["all_insert"]-$stats_data["all_payment"]); ?> <?php echo $config->VAL;?></p>
+                                    <p class="card-text"><?php echo sprintf("%.2f",$stats_data["all_insert"]-$stats_data["all_payment"]); ?> <?php echo $config->currency['symbol'];?></p>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $lang['statistics']['withdraws']; ?></h5>
-                                    <p class="card-text"><?php echo sprintf("%.2f",$stats_data["all_payment"]); ?> <?php echo $config->VAL;?></p>
+                                    <p class="card-text"><?php echo sprintf("%.2f",$stats_data["all_payment"]); ?> <?php echo $config->currency['symbol'];?></p>
                                 </div>
                             </div>
                         </div>
