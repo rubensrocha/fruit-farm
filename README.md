@@ -3,6 +3,7 @@ Fruit-Farm SM Version is modified version of russian Fruit-Farm Script.
 
 ## Table of contents
 * [Objectives](#objectives)
+* [Requirements](#requirements)
 * [Install](#install)
 * [Tasks](#tasks)
 * [Resources](#resources)
@@ -21,9 +22,16 @@ Fruit-Farm SM Version is modified version of russian Fruit-Farm Script.
     <li>Install wizard</li>
 </ul>
 
+## Requirements
+* Apache 2.4
+* Mysql 5
+* PHP 7
+
+Tested on Xampp 3.2.2
+
 ## Install
 * Open classes/_config.php and edit all database and settings fields
-* Import db.sql on youy phpMyAdmin
+* Import db.sql on your phpMyAdmin
 * Upload all files and folders to your hosting
 
 Default admin username/password: admin / 123456
