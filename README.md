@@ -2,10 +2,10 @@
 Fruit-Farm SM Version is modified version of russian Fruit-Farm Script.
 
 ## Table of contents
-* [Objectives](#Objectives)
-* [Install](#Install)
-* [Tasks](#Tasks)
-* [Resources](#Resources)
+* [Objectives](#objectives)
+* [Install](#install)
+* [Tasks](#tasks)
+* [Resources](#resources)
 
 ## Objectives:
 <ul>
