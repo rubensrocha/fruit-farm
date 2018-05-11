@@ -257,11 +257,23 @@ $lang = [
     'insert' => [
         'title' => 'Deposit',
         'text' => 'Payment and transfer of silver to the balance is made automatically. After replenishment you will be credited with %s.',
-        'alert' => 'Exchange is possible only in one direction',
+        'receive' => 'You receive',
+        'errorMin' => 'The minimum amount for the exchange is',
+    ],
+
+    'payment' => [
+        'title' => 'Withdraw',
         'give' => 'You give',
         'receive' => 'You receive',
-        'success' => 'Balance exchanged with success!',
-        'errorBalance' => 'There is not enough funds to exchange!',
-        'errorMin' => 'The minimum amount for the exchange is',
+        'latests' => 'Last 10 Payments',
+        'success' => 'Your withdrawal request has been paid with success!',
+        'errorUnkdown' => 'Internal error - report it to the administrator!',
+        'error629' => 'ERROR 629. Inform the administrator about it!',
+        'error630' => 'Error 630. Failed to pay! try later',
+        'error631' => 'Error 631. Failed to pay! try later',
+        'errorWait' => 'You have unprocessed applications. Wait for them to complete.',
+        'errorMax' => 'You specified more than there is in your account',
+        'errorMin' => 'The minimum amount for payment is %s %s!',
+        'errorWallet' => 'Wallet is incorrect! Try again!',
     ],
 ];

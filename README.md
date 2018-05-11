@@ -21,7 +21,7 @@ Code contributions (pull request) will be accepted only after the first release 
 # Tasks
 [x] Multi-language <br>
 [x] Secure Passwords with reset password link <br>
-[ ] Integrate Admin Material Theme <br>
+[x] Integrate Admin Material Theme <br>
 [ ] Integrate GUMP validation on fields <br>
 
 # Theme Integration
@@ -42,8 +42,8 @@ Code contributions (pull request) will be accepted only after the first release 
 -- [x] Referals <br>
 -- [x] User Account <br>
 -- [x] Farm <br>
--- [ ] Insert <br>
--- [ ] Payment <br>
+-- [x] Insert <br>
+-- [x] Payment <br>
 -- [x] Store <br>
 -- [x] Swap <br>
 -- [x] Market <br>
