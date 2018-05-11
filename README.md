@@ -1,10 +1,13 @@
 # Fruit-Farm SM Version
-Modified version of Fruit-Farm Script.
+Fruit-Farm SM Version is modified version of russian Fruit-Farm Script.
 
-### Warning <br>
-Code contributions (pull request) will be accepted only after the first release version.
+## Table of contents
+* [Objectives](#Objectives)
+* [Install](#Install)
+* [Tasks](#Tasks)
+* [Resources](#Resources)
 
-#### Objectives:
+## Objectives:
 <ul>
     <li>Bether data validation to prevent SQL Injections</li>
     <li>Integrate a Bootstrap Template as default theme</li>
@@ -13,57 +16,30 @@ Code contributions (pull request) will be accepted only after the first release 
     <li>Enable/disable payment methods</li>
     <li>Enable/disable Bonus</li>
     <li>More configuration options on Admin</li>
-    <li>Secure Admin with PIN</li>
     <li>Multi-language system</li>
     <li>Admin area with separated user and login</li>
+    <li>Install wizard</li>
 </ul>
 
-# Tasks
+## Install
+* Open classes/_config.php and edit all database and settings fields
+* Import db.sql on youy phpMyAdmin
+* Upload all files and folders to your hosting
+
+Default admin username/password: admin / 123456
+
+## Tasks
 [x] Multi-language <br>
 [x] Secure Passwords with reset password link <br>
 [x] Integrate Admin Material Theme <br>
+[x] SEO friendly url's on Admin <br>
+[x] More configuration options on Admin <br>
+[x] Multi-language system <br>
+[x] Admin area with separated user and login <br>
+[ ] Install wizard <br>
 [ ] Integrate GUMP validation on fields <br>
 
-# Theme Integration
-[x] Index <br>
-[x] About <br>
-[x] Rules <br>
-[x] Signup <br>
-[x] Success <br>
-[x] Fail <br>
-[x] News <br>
-[x] Recovery <br>
-[x] Stat <br>
-[ ] 404 <br>
-
-[x] Account <br>
--- [x] Bonus <br>
--- [x] Config <br>
--- [x] Referals <br>
--- [x] User Account <br>
--- [x] Farm <br>
--- [x] Insert <br>
--- [x] Payment <br>
--- [x] Store <br>
--- [x] Swap <br>
--- [x] Market <br>
-
-[x] Admin <br>
--- [x] About <br>
--- [x] Config <br>
--- [x] Contact <br>
--- [x] News <br>
--- [x] Payments <br>
--- [x] Rules <br>
--- [x] Sender <br>
--- [x] Index/Stats <br>
--- [x] Story Buy <br>
--- [x] Story Insert <br>
--- [x] Story Sell <br>
--- [x] Story Swap <br>
--- [x] Users <br>
-
-# Resources
+## Resources
 <ul>
     <li><a href="https://github.com/iPSWeb/fruit-farm" target="_blank">Fruit-Farm Source</a></li>
     <li><a href="https://github.com/Elvinas/Simple-PHP-Language-Class" target="_blank">Simple-PHP-Language-Class</a></li>
