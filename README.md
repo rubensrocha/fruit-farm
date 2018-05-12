@@ -6,6 +6,7 @@ Fruit-Farm SM Version is modified version of russian Fruit-Farm Script.
 * [Requirements](#requirements)
 * [Install](#install)
 * [Tasks](#tasks)
+* [Donate](#donate)
 * [Resources](#resources)
 
 ## Objectives:
@@ -46,6 +47,11 @@ Default admin username/password: admin / 123456
 [x] Admin area with separated user and login <br>
 [ ] Install wizard <br>
 [ ] Integrate GUMP validation on fields <br>
+
+## Donate
+If you want contribute with this project, you can buy this project through Bitify on link below. You can buy for 1 USD, or any other value you want.
+
+https://bitify.com/auctions/web-development/fruit-farm-sm-version-hyip-money-game-script-1145150/
 
 ## Resources
 <ul>
