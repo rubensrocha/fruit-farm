@@ -25,8 +25,8 @@ Fruit-Farm SM Version is modified version of russian Fruit-Farm Script.
 
 ## Requirements
 * Apache 2.4
-* Mysql 5
-* PHP 7
+* Mysql 5.4
+* PHP 5.4 or higher (tested on 5.6 and 7.2)
 
 Tested on Xampp 3.2.2
 
