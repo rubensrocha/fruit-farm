@@ -29,13 +29,13 @@ class Config
      * @array
      *  key => value
      */
-    public $currency = [
+    public $currency = array(
         'symbol' => 'RUB',
         'symbol_position' => 'right',
         'decimals' => '4',
         'dec_point' => '.',
-        'thousand_point' => '',
-    ];
+        'thousand_point' => ''
+    );
 
     public $VAL = 'Руб.'; // Currency Symbol
     
@@ -55,13 +55,13 @@ class Config
      * @array
      *  key => value
      */
-    public $settings = [
+    public $settings = array(
         'sitename' => 'FF Script', // Site name
         'description' => 'Fruit Farm SM Script', // Site description
         'keywords' => 'Earnings on plants, attachments, earn, farm, cash farm, make money on the farm', // Site keywords
         'coins' => 'SM Coins', // Name of the custom coin
         'product' => 'Kilometers', // Name of what is produced by the items (fruits, fuel, kilometers, eggs, etc)
-    ];
+    )
 
     /*
      * Item Names
@@ -69,7 +69,7 @@ class Config
      *  key => value
      *  Name of the items Eg.: Fuit names(lime, kiwi, etc), Car Names(camaro, mustang, etc)
      */
-    public $items = [
+    public $items = array(
         'name' => 'Car', // Items name (singular) (cars, fruits, coins, chickens, birds, etc)
         'names' => 'Cars', // Items name (plural) (cars, fruits, coins, chickens, birds, etc)
         'item1' => 'Level 1', // Item name 1
@@ -77,18 +77,18 @@ class Config
         'item3' => 'Level 3', // Item name 3
         'item4' => 'Level 4', // Item name 4
         'item5' => 'Level 5', // Item name 5
-        'item6' => 'Level 6', // Item name 6
-    ];
+        'item6' => 'Level 6' // Item name 6
+    );
 
     /**
      * Languages availables
      * @array
      * code => Name
     */
-    public $languages = [
+    public $languages = array(
         'en' => 'English',
         'pt' => 'Português',
-        'ru' => 'Pусский',
-    ];
+        'ru' => 'Pусский'
+    );
 }
 ?>

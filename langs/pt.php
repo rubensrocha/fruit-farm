@@ -8,7 +8,7 @@ $lang = [
       'news' => 'Notícias',
         'contact' => 'Contato',
         'account' => 'Minha Conta',
-        'payments' => 'PAgamentos',
+        'payments' => 'Pagamentos',
         'exit' => 'Sair',
     ],
 
