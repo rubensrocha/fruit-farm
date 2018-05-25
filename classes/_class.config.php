@@ -60,8 +60,8 @@ class Config
         'description' => 'Fruit Farm SM Script', // Site description
         'keywords' => 'Earnings on plants, attachments, earn, farm, cash farm, make money on the farm', // Site keywords
         'coins' => 'SM Coins', // Name of the custom coin
-        'product' => 'Kilometers', // Name of what is produced by the items (fruits, fuel, kilometers, eggs, etc)
-    )
+        'product' => 'Kilometers' // Name of what is produced by the items (fruits, fuel, kilometers, eggs, etc)
+    );
 
     /*
      * Item Names
