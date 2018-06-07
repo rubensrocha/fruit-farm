@@ -100,7 +100,7 @@ $lang = [
         'username' => 'Username',
         'copyright' => 'All rights reserved.',
         'referrer' => 'Inveted by',
-        'p_balance' => 'Puchase Balance',
+        'p_balance' => 'Purchase Balance',
         'w_balance' => 'Withdraw Balance',
         'ref_earnings' => 'Earning from Referrals',
         'paid' => 'Total Paid',
@@ -122,6 +122,15 @@ $lang = [
         'total_users' => 'Total Users',
         'working_time' => 'Working Time',
         'total_paid' => 'Total Paid',
+        'first_label' => 'Welcome! We suggest you play our exciting game to raise your budget!',
+        'second_label' => 'We have no restrictions on payment. Earned and won money can be immediately displayed on your wallet',
+        'how_to_start' => 'How to start playing?',
+        'buy_and_earn' => 'Buy cars and earn a stable income!',
+        'aff_programm' => 'Affiliate Program',
+        '1_level_aff_programm' => '1-level affiliate program up to 15% on withdrawal!',
+        'games' => 'Games',
+        'play_get_paid' => 'Play our exciting games and get paid!',
+        'register_button' => 'Register and get a bonus!'
     ],
 
     'news' => [
