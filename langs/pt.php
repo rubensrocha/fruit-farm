@@ -212,6 +212,8 @@ $lang = [
         'rule2' => 'O bônus é depositado em seu Saldo de Compras.',
         'rule3' => 'Você recebeu um bônus randômico no valor de %s no %s %s.',
         'leftTime' => 'Por favor aguarde: ',
+        'last_20' => 'Last 20 Bonus',
+        'no_rec' => 'No records',
     ],
 
     'payments' => [
@@ -226,6 +228,8 @@ $lang = [
         'subtitle' => 'Colete lucro no armazém. Seu lucro rende a cada 10 minutos. O lucro acumula-se constantemente, não é necessário coletar a cada 10 minutos, você pode coletá-los uma vez por mês. Como preferir.',
         'success' => '%s coletados com sucesso!',
         'error' => 'Você não pode coletar o lucro mais que 1 vez a cada 10 minutos!',
+        'stock' => 'You have in stock',
+        'quantity' => 'Quantity',
     ],
 
     'farm' => [

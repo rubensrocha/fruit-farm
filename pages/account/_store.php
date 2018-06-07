@@ -61,42 +61,42 @@
                 <div class="image"><img src="/img/fruit/1.png" class="img-fluid rounded-circle"></div>
                 <div class="text">
                     <h3 class="h5"><?php echo $config->settings['product'];?> <span id="counter1"><?php echo $item1;?></span></h3>
-                    <small><b>Quantity:</b> <?=$user_data["a_t"]; ?> <?php echo $config->items['names'];?></small>
+                    <small><b><?= $lang['store']['quantity'] ?>:</b> <?=$user_data["a_t"]; ?> <?php echo $config->items['names'];?></small>
                 </div>
             </div>
             <div class="item d-flex align-items-center">
                 <div class="image"><img src="/img/fruit/2.png" class="img-fluid rounded-circle"></div>
                 <div class="text">
                     <h3 class="h5"><?php echo $config->settings['product'];?> <span id="counter2"><?php echo $item2;?></span></h3>
-                    <small><b>Quantity:</b> <?=$user_data["b_t"]; ?> <?php echo $config->items['names'];?></small>
+                    <small><b><?= $lang['store']['quantity'] ?>:</b> <?=$user_data["b_t"]; ?> <?php echo $config->items['names'];?></small>
                 </div>
             </div>
             <div class="item d-flex align-items-center">
                 <div class="image"><img src="/img/fruit/3.png" class="img-fluid rounded-circle"></div>
                 <div class="text">
                     <h3 class="h5"><?php echo $config->settings['product'];?> <span id="counter3"><?php echo $item3;?></span></h3>
-                    <small><b>Quantity:</b> <?=$user_data["c_t"]; ?> <?php echo $config->items['names'];?></small>
+                    <small><b><?= $lang['store']['quantity'] ?>:</b> <?=$user_data["c_t"]; ?> <?php echo $config->items['names'];?></small>
                 </div>
             </div>
             <div class="item d-flex align-items-center">
                 <div class="image"><img src="/img/fruit/4.png" class="img-fluid rounded-circle"></div>
                 <div class="text">
                     <h3 class="h5"><?php echo $config->settings['product'];?> <span id="counter4"><?php echo $item4;?></span></h3>
-                    <small><b>Quantity:</b> <?=$user_data["d_t"]; ?> <?php echo $config->items['names'];?></small>
+                    <small><b><?= $lang['store']['quantity'] ?>:</b> <?=$user_data["d_t"]; ?> <?php echo $config->items['names'];?></small>
                 </div>
             </div>
             <div class="item d-flex align-items-center">
                 <div class="image"><img src="/img/fruit/5.png" class="img-fluid rounded-circle"></div>
                 <div class="text">
                     <h3 class="h5"><?php echo $config->settings['product'];?> <span id="counter5"><?php echo $item5;?></span></h3>
-                    <small><b>Quantity:</b> <?=$user_data["e_t"]; ?> <?php echo $config->items['names'];?></small>
+                    <small><b><?= $lang['store']['quantity'] ?>:</b> <?=$user_data["e_t"]; ?> <?php echo $config->items['names'];?></small>
                 </div>
             </div>
             <div class="item d-flex align-items-center">
                 <div class="image"><img src="/img/fruit/6.png" class="img-fluid rounded-circle"></div>
                 <div class="text">
                     <h3 class="h5"><?php echo $config->settings['product'];?> <span id="counter6"><?php echo $item6;?></span></h3>
-                    <small><b>Quantity:</b> <?=$user_data["f_t"]; ?> <?php echo $config->items['names'];?></small>
+                    <small><b><?= $lang['store']['quantity'] ?>:</b> <?=$user_data["f_t"]; ?> <?php echo $config->items['names'];?></small>
                 </div>
             </div>
             <form action="" method="post" class="text-center">
@@ -110,7 +110,7 @@
     <div class="col-lg-12">
         <div class="card articles">
             <div class="card-body">
-                <h4 class="text-center">You have in stock</h4>
+                <h4 class="text-center"><?= $lang['store']['stock'] ?></h4>
                 <br>
                 <div class="row text-center">
                     <div class="col-sm-2">

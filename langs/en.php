@@ -214,6 +214,8 @@ $lang = [
         'rule2' => 'The bonus is given to Purchase Balance.',
         'rule3' => 'The bonus amount is generated randomly from %s to %s %s.',
         'leftTime' => 'Please wait: ',
+        'last_20' => 'Last 20 Bonus',
+        'no_rec' => 'No records',
     ],
 
     'payments' => [
@@ -228,6 +230,8 @@ $lang = [
         'subtitle' => 'Collect profit in the warehouse. Your profit yields every 10 minutes. The profit constantly accumulates, it is not necessary to collect every 10 min., you can collect them once a month. As you prefer.',
         'success' => '%s collected with success',
         'error' => 'You can not collected no more than 1 times in 10 minutes!',
+        'stock' => 'You have in stock',
+        'quantity' => 'Quantity',
     ],
 
     'farm' => [

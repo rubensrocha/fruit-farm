@@ -1,7 +1,7 @@
 <?php
 
 $lang = [
-    'langSelect' => 'Языки',
+    'langSelect' => 'Язык',
 
     'menu_top' => [
         'home' => 'Главная',
@@ -13,8 +13,8 @@ $lang = [
     ],
 
     'menu_left' => [
-        '_home' => 'Главная',
-        '_acc' => 'Аккаутн',
+        '_home' => 'Главная страница',
+        '_acc' => 'Аккаунт',
         '_game' => 'Игра',
         '_earn' => 'Заработок',
 
@@ -46,8 +46,8 @@ $lang = [
 
     'error_messages' => [
         'accountBanned' => 'Аккаунт заблокирован',
-        'wrongLogin' => 'Электронная почта и / или пароль - неправильны',
-        'notfoundAccount' => 'Эта электронная почта не зарегестрирована в системе',
+        'wrongLogin' => 'Электронная почта и/или пароль - неправильны',
+        'notfoundAccount' => 'Эта электронная почта не зарегистрирована в системе',
         'captcha' => 'Captcha неправильна, попробуйте снова.',
         'usernameInUse' => 'Указанный логин уже используется',
         'passwordMatch' => 'Пароль и повторный пароль не совпадают',
@@ -60,13 +60,11 @@ $lang = [
         'oldpassword' => 'Старый пароль неверен',
         'bonusCollected' => 'Вы уже получали бонус за эти 24 часа',
         'noresults' => 'Список пуст',
-        'XXXXXXXXX' => 'XXXXXXX',
     ],
 
     'success_messages' => [
         'changesSaved' => 'Изменения успешно сохранены',
         'bonusAdded' => 'Бонус был добавлен в количестве %s %s',
-        'XXXXXXXXX' => 'XXXXXXX',
     ],
 
     'btn' => [
@@ -94,7 +92,7 @@ $lang = [
         'password' => 'Пароль',
         'password_old' => 'Старый пароль',
         'password_new' => 'Новый пароль',
-        'captcha' => 'Ввести Captcha',
+        'captcha' => 'Ввести сaptcha',
         'captcha_h' => 'Нажмите на картинку, чтобы создать новую captcha',
         'auth' => 'Авторизация',
         'users' => 'Пользователи',
@@ -112,7 +110,7 @@ $lang = [
         'referrals' => 'Рефералы',
         'date' => 'Дата',
         'wallet' => 'Кошелёк',
-        'amount' => 'Колличество',
+        'amount' => 'Количество',
         'status' => 'Статус',
         'status_paid' => 'Выплачено',
         'min' => 'Минимум',
@@ -173,19 +171,19 @@ $lang = [
     ],
 
     'recovery' => [
-        'title' => 'Password Recovery',
-        'requestSended' => 'Reset link was sent to Email',
-        'resetSuccess' => 'Your password was changed with success, you can login into your account now.',
+        'title' => 'Восстановление пароля',
+        'requestSended' => 'Ссылка восстановления отправлена к вам на почту',
+        'resetSuccess' => 'Ваш пароль успешно сменён, вы можете зайти в свой аккаунт',
     ],
 
     'fail' => [
-        'title' => 'Deposit Failed',
-        'text' => 'Your deposit can not be confirmed. If the problem persists, contact the administrator immediately.',
+        'title' => 'Неудачное пополнение',
+        'text' => 'Мы не можем подтвердить ваше пополнение. Если проблема повториться, свяжитесь с администратором.',
     ],
 
     'success' => [
-        'title' => 'Deposit Confirmed',
-        'text' => 'Your deposit was confirmed with success. The amount deposited already available on your account.',
+        'title' => 'Пополнение подтверждено',
+        'text' => 'Вы успешно пополнили счет. Сумма уже доступна на вашем аккаунте.',
     ],
 
     'account' => [
@@ -196,17 +194,17 @@ $lang = [
     ],
 
     'referrals' => [
-        'title' => 'My Referrals',
-        'refs_total' => 'Total of Referrals',
-        'ref_revenue' => 'Revenue From Referral',
-        'noreferrals' => 'You do not have any referral yet',
+        'title' => 'Мои рефералы',
+        'refs_total' => 'Всего рефералов',
+        'ref_revenue' => 'Доход от реферала',
+        'noreferrals' => 'У вас еще нет рефералов',
     ],
 
     'acc_settings' => [
         'title' => 'Настройки аккаунта',
         '_password' => 'Сменить пароль',
         'old_password' => 'Введите текущий пароль для смены',
-        'updated' => 'Chan',
+        'updated' => 'Данные успешно изменены',
     ],
 
     'bonus_daily' => [
@@ -216,58 +214,62 @@ $lang = [
         'rule2' => 'Бонус выдается на баланс покупки.',
         'rule3' => 'Количество бонусов случайно генерируется от %s до %s %s.',
         'leftTime' => 'Пожалуйста подождите: ',
+        'last_20' => 'Последние 20 выплат',
+        'no_rec' => 'Нет записей',
     ],
 
     'payments' => [
         'title' => 'Последние выплаты',
         'subtitle' => 'Выплаты за последние 48 часов',
-        'count' => 'Payments Total',
-        'total' => 'Amount Total',
+        'count' => 'Всего выплачено',
+        'total' => 'Общая сумма',
     ],
 
     'store' => [
-        'title' => 'Warehouse',
-        'subtitle' => 'Payments from last 48 hours',
-        'count' => 'Payments Total',
-        'total' => 'Amount Total',
-        'success' => '%s collected with success',
-        'error' => 'You can not collected no more than 1 times in 10 minutesl',
+        'title' => 'Склад',
+        'subtitle' => 'Выплаты за последние 48 часов',
+        'count' => 'Всего выплачено',
+        'total' => 'Общая сумма',
+        'success' => '%s успешно собрано',
+        'error' => 'Вы не можете собрать не более 1 раза за 10 минут',
+        'stock' => 'У вас на складе',
+        'quantity' => 'Количество',
     ],
 
     'farm' => [
-        'title' => 'Car Shop',
-        'text' => 'In this store you can buy new cars. Each car brings kilometers that can then be sold on the market and exchanged for real money. Each car gives a different number of kilometers, the more expensive it cost, more kilometers it generate. You can buy any number of them, the cars have not expiration date, it will always generate kilometers in your account.',
-        'alert' => 'Before buy, you should collect your %s in the warehouse!',
-        'purchased' => '%s purchased with success!',
-        'noEnoughCoins' => 'There is not enough %s to buy this item!',
-        'perHour' => 'Per Hour',
-        'perMonth' => 'Per Month',
-        'warehouse' => 'Your Warehouse',
+        'title' => 'Магазин',
+        'text' => 'В магазине вы можете купить %s. Каждая %s приносит %s, которые затем могут быть проданы на рынке и обменены на реальные деньги. Каждая %s дает разное количество %s, более дорогие, больше %s она генерирует. Вы можете купить любое их количество, %s не имеют срока годности, он всегда будет генерировать %s в вашем аккаунте.',
+        'alert' => 'Перед покупкой вы должны собрать свои %s на складе!',
+        'purchased' => '%s успешно куплено!',
+        'noEnoughCoins' => 'Недостаточно средств %s чтобы купить это предмет',
+        'perHour' => 'В час',
+        'perMonth' => 'За месяц',
+        'warehouse' => 'На складе',
     ],
 
     'market' => [
-        'title' => 'Trading Shop',
-        'text' => 'A retail store will allow you to sell all your %s, which can be exchanged for real money. The %s gained from the sale is distributed between two balances (Balance and Purchase Balance) in the proportion of %s%% to the Purchase Balance and %s%% to the Balance.',
-        'error' => 'You have nothing to sell',
-        'sold' => 'You sold %s %s, for the amount of %s %s',
+        'title' => 'Торговый магазин',
+        'text' => 'Торговый магазин позволит вам продать все ваши %s, которые можно обменять на реальные деньги. Полученые %s от продажи распределяется между двумя балансами (баланс для вывода и баланс покупки) в пропорции %s%% на баланс покупок и %s%% на баланс для вывода.',
+        'error' => 'У вас нечего продать',
+        'sold' => 'Вы продали %s %s, на сумму %s %s',
     ],
 
     'swap' => [
-        'title' => 'Exchange',
-        'text' => 'In the exchange office you can exchange from Balance to Purchase Balance. When exchanging you get a %s%% bonus on your Purchase Balance.',
-        'alert' => 'Exchange is possible only in one direction',
-        'give' => 'You give',
-        'receive' => 'You receive',
-        'success' => 'Balance exchanged with success!',
-        'errorBalance' => 'There is not enough funds to exchange!',
-        'errorMin' => 'The minimum amount for the exchange is',
+        'title' => 'Обмен',
+        'text' => 'В обменном пункте вы можете обменять баланс для вывода на баланс покупки. Когда вы обмениваете вы получите %s%% бонус на баланс покупок.',
+        'alert' => 'Обмен возможен только в одном направлении',
+        'give' => 'Вы отдаете',
+        'receive' => 'Вы получаете',
+        'success' => 'Обмен совершён успешно.',
+        'errorBalance' => 'Недостаточно средств для обмена',
+        'errorMin' => 'Минимум для обмена: ',
     ],
 
     'insert' => [
-        'title' => 'Deposit',
-        'text' => 'Payment and transfer of silver to the balance is made automatically. After replenishment you will be credited with %s.',
-        'receive' => 'You receive',
-        'errorMin' => 'The minimum amount for the exchange is',
+        'title' => 'Пополнение',
+        'text' => 'Оплата и перевод серебра на баланс производится автоматически. После пополнения вам будет приписано %s.',
+        'receive' => 'Вы получите',
+        'errorMin' => 'Минимум для пополнения: ',
     ],
 
     'payment' => [
@@ -275,14 +277,14 @@ $lang = [
         'give' => 'Вы отдаете',
         'receive' => 'Вы получаете',
         'latests' => 'Последние 10 выплат',
-        'success' => 'Your withdrawal request has been paid with success!',
-        'errorUnkdown' => 'Internal error - report it to the administrator!',
-        'error629' => 'ERROR 629. Inform the administrator about it!',
-        'error630' => 'Error 630. Failed to pay! try later',
-        'error631' => 'Error 631. Failed to pay! try later',
-        'errorWait' => 'You have unprocessed applications. Wait for them to complete.',
-        'errorMax' => 'You specified more than there is in your account',
-        'errorMin' => 'The minimum amount for payment is %s %s!',
-        'errorWallet' => 'Wallet is incorrect! Try again!',
+        'success' => 'Ваш запрос на снятие средств успешно выполнен!',
+        'errorUnknown' => 'Внутренняя ошибка - сообщите об этом администратору!',
+        'error629' => 'Ошибка 629. Сообщите об этом администратору!',
+        'error630' => 'Ошибка 630. Не получилось заплатить. Попробуйте позже!',
+        'error631' => 'Ошибка 631. Не получилось заплатить. Попробуйте позже!',
+        'errorWait' => 'У вас есть необработанные выплаты. Ждите их завершения.',
+        'errorMax' => 'Вы указали больше, чем есть в своем аккаунте',
+        'errorMin' => 'Минимальная сумма для вывода: %s %s!',
+        'errorWallet' => 'Неправильный кошелёк, попробуйте снова.',
     ],
 ];

@@ -86,7 +86,7 @@ if(isset($_SESSION["user_id"])){ Header("Location: /account"); return; }
                     <div class="form-group">
                         <label class="form-control-label"><?php echo $lang['common']['username'];?></label>
                         <input name="login" type="text" minlength="4" maxlength="20" value="<?=(isset($_POST["login"])) ? $_POST["login"] : false; ?>" class="form-control">
-                        <small class="form-text text-muted">The username field must have from 4 to 20 alpha numeric characters (only English characters).</small>
+                        <small class="form-text text-muted"><?php echo $lang['register']['username_h'];?></small>
                     </div>
                     <div class="form-group">
                         <label class="form-control-label"><?php echo $lang['common']['email'];?></label>
