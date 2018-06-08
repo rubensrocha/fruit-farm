@@ -8,13 +8,13 @@ $db->Query("SELECT * FROM db_config WHERE id = '1' LIMIT 1");
 $sonfig_site = $db->FetchArray();
 $status_array = array( 0 => "Checked", 1 => "Выплачивается", 2 => "Canceled", 3 => "Paid");
 # Минималка серебром!
-$minPay = $sonfig_site['min_pay']; 
+$minPay = $sonfig_site['min_pay'];
 ?>
 <section class="no-padding-bottom">
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <p>Payments are made automatically and only on the payment system <a href="https://payeer.com/" target="_blank">Payeer</a>. The percentage of withdrawal is 0%.</p>
+                <p><?= $lang['payment']['description_1'] ?> <a href="https://payeer.com/" target="_blank">Payeer</a>. <?= $lang['payment']['description_2'] ?></p>
                 <?PHP
                     function ViewPurse($purse){
                         if( substr($purse,0,1) != "P" ) return false;
