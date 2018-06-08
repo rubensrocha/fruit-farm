@@ -196,6 +196,7 @@ $lang = [
         'refs_total' => 'Total de Referidos',
         'ref_revenue' => 'Ganhos de Referidos',
         'noreferrals' => 'Você ainda não tem referidos',
+        'description' => 'Invite your friends and acquaintances to the game, you will receive 10 percents of each recharge invited by you person. The income is not limited. Even a few guests canbring you more than 100,000 %s. Below is a link to attract and the number of people invited by you.'
     ],
 
     'acc_settings' => [
