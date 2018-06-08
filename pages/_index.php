@@ -19,7 +19,7 @@ $site_stats = $db->FetchArray();
                             </div>
                             <div class="media-body">
                                 <h3 class="media-heading text-info" style="margin: 10px 0;"><?= $lang['home']['how_to_start'] ?></h3>
-                                <?= $lang['home']['buy_and_earn'] ?>
+                                <?= sprintf($lang['home']['buy_and_earn'], $config->items['names'] )?>
                             </div>
                         </div>
 

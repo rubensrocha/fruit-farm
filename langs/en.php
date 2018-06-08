@@ -126,7 +126,7 @@ $lang = [
         'first_label' => 'Welcome! We suggest you play our exciting game to raise your budget!',
         'second_label' => 'We have no restrictions on payment. Earned and won money can be immediately displayed on your wallet',
         'how_to_start' => 'How to start playing?',
-        'buy_and_earn' => 'Buy cars and earn a stable income!',
+        'buy_and_earn' => 'Buy %s and earn a stable income!',
         'aff_programm' => 'Affiliate Program',
         '1_level_aff_programm' => '1-level affiliate program up to 15% on withdrawal!',
         'games' => 'Games',
@@ -237,8 +237,8 @@ $lang = [
     ],
 
     'farm' => [
-        'title' => 'Car Shop',
-        'text' => 'In this store you can buy new cars. Each car brings kilometers that can then be sold on the market and exchanged for real money. Each car gives a different number of kilometers, the more expensive it cost, more kilometers it generate. You can buy any number of them, the cars have not expiration date, it will always generate kilometers in your account.',
+        'title' => '%s Shop',
+        'text' => 'In this store you can buy new %s. Each %s brings %s that can then be sold on the market and exchanged for real money. Each %s gives a different number of %s, the more expensive it cost, more %s it generate. You can buy any number of them, the %s have not expiration date, it will always generate %s in your account.',
         'alert' => 'Before buy, you should collect your %s in the warehouse!',
         'purchased' => '%s purchased with success!',
         'noEnoughCoins' => 'There is not enough %s to buy this item!',
