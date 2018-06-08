@@ -60,6 +60,7 @@ $lang = [
         'oldpassword' => 'Старый пароль неверен',
         'bonusCollected' => 'Вы уже получали бонус за эти 24 часа',
         'noresults' => 'Список пуст',
+        'error404' => 'Страница не найдена',
     ],
 
     'success_messages' => [

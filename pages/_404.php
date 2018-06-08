@@ -5,7 +5,7 @@ $_OPTIMIZATION["title"] = 'Error 404';
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <p>Page Not Found</p>
+                <p><?= $lang['error_messages']['error404'] ?></p>
             </div>
         </div>
     </div>

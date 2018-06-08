@@ -60,6 +60,7 @@ $lang = [
         'oldpassword' => 'Old password is incorrect',
         'bonusCollected' => 'You have already received a bonus in the last 24 hours.',
         'noresults' => 'No results to show',
+        'error404' => 'Page Not Found',
     ],
 
     'success_messages' => [
