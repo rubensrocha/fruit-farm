@@ -25,7 +25,7 @@ class Func
         $this->UserCode = $this->IpCode();
         $this->UserAgent = $this->UserAgent();
     }
-    
+
     /*======================================================================*\
     Function:    __destruct
     Output:        Нет
@@ -33,36 +33,36 @@ class Func
     \*======================================================================*/
     public function __destruct()
     {
-    
+
     }
-    
-    
+
+
     /*======================================================================*\
     Function:    IsMail
     Output:        True / False
-    Input:        Email 
+    Input:        Email
     Descriiption: Проверяет правильность ввода email адреса
     \*======================================================================*//*
     public function IsMail($mail){
     if(is_array($mail) && empty($mail) && strlen($mail) > 255 && strpos($mail,'@') > 64) return false;
-    return ( ! preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $mail)) ? false : strtolower($mail);    
+    return ( ! preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $mail)) ? false : strtolower($mail);
     }*/
-    
+
     /*======================================================================*\
     Function:    IsPassword
     Output:        True / False
-    Input:        Строка пароля, Маска, Длина ("10, 25") && ("10") 
+    Input:        Строка пароля, Маска, Длина ("10, 25") && ("10")
     Descriiption: Проверяет правильность ввода пароля
     \*======================================================================*//*
     public function IsPassword($password, $mask = "^[a-zA-Z0-9]", $len = "{4,20}"){
     return (is_array($password)) ? false : (ereg("{$mask}{$len}$", $password)) ? $password : false;
-    
+
     }*/
-    
+
     /*======================================================================*\
     Function:    IsLogin
     Output:        True / False
-    Input:        Строка логина, Маска, Длина ("10, 25") && ("10") 
+    Input:        Строка логина, Маска, Длина ("10, 25") && ("10")
     Descriiption: Проверяет правильность ввода логина
     \*======================================================================*//*
     public function IsLogin($login, $mask = "^[a-zA-Z0-9]", $len = "{4,10}"){
@@ -95,8 +95,8 @@ class Func
                         if ($client_ip != $found_ip) {
                             $client_ip = $found_ip;
                             break;
-                        }    
-                    }    
+                        }
+                    }
                 }
                 $this->UserIP = $client_ip;
                 return $client_ip;
@@ -105,7 +105,7 @@ class Func
         }else { return $this->UserIP;
         }
     }
-    
+
     /*======================================================================*\
     Function:    SellItems
     Descriiption: Выводит сумму и остаток
@@ -116,42 +116,42 @@ class Func
         }
         return sprintf("%.2f", ($all_items / $for_one_coin));
     }
-    
+
     /*======================================================================*\
     Function:    IpToLong
     Descriiption: Преобразует IP в целочисленное
     \*======================================================================*/
     public function IpToInt($ip)
-    { 
-    
-        $ip = ip2long($ip); 
-        ($ip < 0) ? $ip+=4294967296 : true; 
-        return $ip; 
+    {
+
+        $ip = ip2long($ip);
+        ($ip < 0) ? $ip+=4294967296 : true;
+        return $ip;
     }
-    
+
     /*======================================================================*\
     Function:    IpToLong
     Descriiption: Преобразует целочисленное в IP
     \*======================================================================*/
     public function IntToIP($int)
-    { 
-        return long2ip($int);  
+    {
+        return long2ip($int);
     }
-    
+
     /*======================================================================*\
     Function:    IsWM
     Output:        True / False
-    Input:        Реквизит, TYPE: 0 - WMID, 1 - WMR, 2 - WMZ, 3 - WME, 4 - WMU 
+    Input:        Реквизит, TYPE: 0 - WMID, 1 - WMR, 2 - WMZ, 3 - WME, 4 - WMU
     Descriiption: Проверяет правильность ввода пароля
     \*======================================================================*/
     public function IsWM($data, $type = 0)
     {
-        
+
         $FirstChar = array( 1 => "R",
           2 => "Z",
           3 => "E",
           4 => "U");
-        
+
         if(strlen($data) < 12 && strlen($data) > 12 && $type < 0 && $type > count($FirstChar)) { return false;
         }
         if($type == 0) { return (is_array($data)) ? false : ( ereg("^[0-9]{12}$", $data) ? $data : false );
@@ -164,7 +164,7 @@ class Func
     /*======================================================================*\
     Function:    IpCode
     Output:        String, Example 255025502550255
-    Input:        - 
+    Input:        -
     Descriiption: Возвращает IP с замененными знаками "." на "0"
     \*======================================================================*/
     public function IpCode()
@@ -172,20 +172,20 @@ class Func
         $arr_mask = explode(".", $this->GetUserIp());
         return $arr_mask[0].".".$arr_mask[1].".".$arr_mask[2].".0";
     }
-    
+
     /*======================================================================*\
     Function:    GetTime
     Descriiption: Возвращаер дату
     \*======================================================================*/
     public function GetTime($tis = 0, $unix = true, $template = "d.m.Y H:i:s")
     {
-        
+
         if($tis == 0) {
             return ($unix) ? time() : date($template, time());
         }else { return date($template, $unix);
         }
     }
-    
+
     /*======================================================================*\
     Function:    UserAgent
     Descriiption: Возвращает браузер пользователя
@@ -194,7 +194,7 @@ class Func
     {
         return $this->TextClean($_SERVER['HTTP_USER_AGENT']);
     }
-    
+
     /*======================================================================*\
     Function:    TextClean
     Descriiption: Очистка текста
@@ -205,7 +205,7 @@ class Func
         $array_replace = array("&#96;", "&lt;", "&gt;", "&circ;", "&quot;", "&tilde;", "");
         return str_replace($array_find, $array_replace, $text);
     }
-    
+
     /*======================================================================*\
     Function:    ShowError
     Descriiption: Выводит список ошибок строкой
@@ -222,7 +222,7 @@ class Func
         }else { return "Unknown error :(";
         }
     }
-    
+
     /*======================================================================*\
     Function:    ComissionWm
     Descriiption: Возвращает комиссию WM
@@ -233,7 +233,7 @@ class Func
         $b = ceil(ceil($sum * str_replace("%", "", $com_payysys) * 100) / 10000*100) / 100;
         return $a+$b;
     }
-    
+
     /*======================================================================*\
     Function:    md5Password
     Descriiption: Возвращает md5_пароля
@@ -242,7 +242,7 @@ class Func
     {
         $pass = strtolower($pass);
         return md5("shark_md5"."-".$pass);
-        
+
     }
 
     public function randomPassword() {
@@ -255,7 +255,7 @@ class Func
         }
         return implode($pass); //turn the array into a string
     }
-    
+
     /*======================================================================*\
     Function:    ControlCode
     Descriiption: Возвращает контрольное число
@@ -264,7 +264,7 @@ class Func
     {
         return ($time > 0) ? date("Ymd", $time) : date("Ymd");
     }
-    
+
     /*======================================================================*\
     Function:    SumCalc
     Descriiption: Возвращает сумму овощей
