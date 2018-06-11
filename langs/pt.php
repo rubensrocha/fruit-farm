@@ -60,6 +60,7 @@ $lang = [
         'oldpassword' => 'Senha antiga incorreta',
         'bonusCollected' => 'Você já recebeu bônus nas últimas 24 horas.',
         'noresults' => 'Nenhum resultado para mostrar',
+        'error404' => 'Page Not Found',
     ],
 
     'success_messages' => [
@@ -120,6 +121,15 @@ $lang = [
         'total_users' => 'Total de Usuários',
         'working_time' => 'Dias Online',
         'total_paid' => 'Total Pago',
+        'first_label' => 'Welcome! We suggest you play our exciting game to raise your budget!',
+        'second_label' => 'We have no restrictions on payment. Earned and won money can be immediately displayed on your wallet',
+        'how_to_start' => 'How to start playing?',
+        'buy_and_earn' => 'Buy %s and earn a stable income!',
+        'aff_programm' => 'Affiliate Program',
+        '1_level_aff_programm' => '1-level affiliate program up to 15% on withdrawal!',
+        'games' => 'Games',
+        'play_get_paid' => 'Play our exciting games and get paid!',
+        'register_button' => 'Register and get a bonus!'
     ],
 
     'news' => [
@@ -187,6 +197,7 @@ $lang = [
         'refs_total' => 'Total de Referidos',
         'ref_revenue' => 'Ganhos de Referidos',
         'noreferrals' => 'Você ainda não tem referidos',
+        'description' => 'Invite your friends and acquaintances to the game, you will receive 10 percents of each recharge invited by you person. The income is not limited. Even a few guests canbring you more than 100,000 %s. Below is a link to attract and the number of people invited by you.'
     ],
 
     'acc_settings' => [
@@ -203,6 +214,8 @@ $lang = [
         'rule2' => 'O bônus é depositado em seu Saldo de Compras.',
         'rule3' => 'Você recebeu um bônus randômico no valor de %s no %s %s.',
         'leftTime' => 'Por favor aguarde: ',
+        'last_20' => 'Last 20 Bonus',
+        'no_rec' => 'No records',
     ],
 
     'payments' => [
@@ -217,11 +230,13 @@ $lang = [
         'subtitle' => 'Colete lucro no armazém. Seu lucro rende a cada 10 minutos. O lucro acumula-se constantemente, não é necessário coletar a cada 10 minutos, você pode coletá-los uma vez por mês. Como preferir.',
         'success' => '%s coletados com sucesso!',
         'error' => 'Você não pode coletar o lucro mais que 1 vez a cada 10 minutos!',
+        'stock' => 'You have in stock',
+        'quantity' => 'Quantity',
     ],
 
     'farm' => [
-        'title' => 'Loja de Carros',
-        'text' => 'Nesta loja você pode comprar carros novos. Cada carro traz quilômetros que podem ser vendidos no mercado e trocados por dinheiro real. Cada carro dá um número diferente de quilômetros, quanto mais caro ele custa, mais quilômetros ele gera. Você pode comprar qualquer número deles, os carros não têm data de validade, ele sempre irá gerar quilômetros em sua conta.',
+        'title' => 'Loja de %s',
+        'text' => 'In this store you can buy new %s. Each %s brings %s that can then be sold on the market and exchanged for real money. Each %s gives a different number of %s, the more expensive it cost, more %s it generate. You can buy any number of them, the %s have not expiration date, it will always generate %s in your account.',
         'alert' => 'Antes de comprar, você deve coletar seus% s no depósito!',
         'purchased' => '%s comprado com sucesso!',
         'noEnoughCoins' => 'Não há %s suficiente para comprar este item!',
@@ -258,6 +273,8 @@ $lang = [
     'payment' => [
         'title' => 'Sacar',
         'give' => 'Você dá',
+        'description_1' => 'Payments are made automatically and only on the payment system',
+        'description_2' => 'The percentage of withdrawal is 0%.',
         'receive' => 'Você recebe',
         'latests' => 'Últimos 10 Saques',
         'success' => 'Sua solicitação de saque foi paga com sucesso!',

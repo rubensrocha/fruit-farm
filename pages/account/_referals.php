@@ -8,10 +8,8 @@ $refs = $db->FetchRow();
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                Invite your friends and acquaintances to the game, you will receive 10% of each recharge
-                invited by you person. The income is not limited. Even a few guests can
-                bring you more than 100,000 silver.
-                Below is a link to attract and the number of people invited by you.<br /><br />
+                <?php echo sprintf($lang['referrals']['description'], $config->settings['coins'])?>
+                <br /><br />
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1"><i class="fa fa-link"></i></span>
@@ -30,8 +28,8 @@ $refs = $db->FetchRow();
                     </thead>
                     <?PHP
                     $all_money = 0;
-                    $db->Query("SELECT db_users_a.user, db_users_a.date_reg, db_users_b.to_referer FROM db_users_a, db_users_b 
-  WHERE db_users_a.id = db_users_b.id AND db_users_a.referer_id = '$user_id' ORDER BY to_referer DESC");
+                    $db->Query("SELECT db_users_a.user, db_users_a.date_reg, db_users_b.to_referer FROM db_users_a, db_users_b
+                        WHERE db_users_a.id = db_users_b.id AND db_users_a.referer_id = '$user_id' ORDER BY to_referer DESC");
                     if($db->NumRows() > 0){
                         while($ref = $db->FetchArray()){
                     ?>

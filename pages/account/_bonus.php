@@ -57,13 +57,13 @@ $bonus_max = 1;
                     echo "<div class='alert alert-danger text-center'>{$lang['error_messages']['bonusCollected']} <br><i class='fa fa-clock-o'></i> {$lang['bonus_daily']['leftTime']}<span class='countdown'>{$diff->format('%h:%I:%S')}</span></div>";
                     echo "";
                 } ?>
-                <h2 class="text-center">Last 20 Bonus</h2>
+                <h2 class="text-center"><?= $lang['bonus_daily']['last_20'] ?></h2>
                 <table class="table table-striped">
                     <thead class="text-center">
                         <th>ID</th>
-                        <th>Username</th>
-                        <th>Amount</th>
-                        <th>Date</th>
+                        <th><?= $lang['common']['username'] ?></th>
+                        <th><?= $lang['common']['amount'] ?></th>
+                        <th><?= $lang['common']['date'] ?></th>
                     </thead>
                     <?PHP
                     $db->Query("SELECT * FROM db_bonus_list ORDER BY id DESC LIMIT 20");
@@ -78,7 +78,7 @@ $bonus_max = 1;
                             </tr>
                             <?PHP
                         }
-                    }else echo '<tr><td class="text-center" colspan="4">No records</td></tr>';
+                    }else echo '<tr><td class="text-center" colspan="4">'. $lang['bonus_daily']['no_rec'] .'</td></tr>';
                 ?>
                 </table>
             </div>

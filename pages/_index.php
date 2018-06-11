@@ -7,8 +7,8 @@ $site_stats = $db->FetchArray();
     <div class="col-lg-12 text-center">
         <div class="card">
             <div class="card-body">
-                <label class="form-control-label">Welcome! We suggest you play our exciting game to raise your budget!</label><br>
-                <label class="form-control-label">We have no restrictions on payment. Earned and won money can be immediately displayed on your wallet <span class="text-info">PAYEER</span>.</label><br>
+                <label class="form-control-label"><?= $lang['home']['first_label'] ?></label><br>
+                <label class="form-control-label"><?= $lang['home']['second_label'] ?> <span class="text-info">PAYEER</span>.</label><br>
                 <div class="row">
                     <div class="col-md-4"><img class="pull-right" src="/img/logo.png" style="width: 230px;margin-top: 15px;">
                     </div>
@@ -18,8 +18,8 @@ $site_stats = $db->FetchArray();
                                 <span class="grow"><img class="media-object" src="/img/game.png" alt="1" style="width: 70px;margin-top: 15px;margin-left: 15px;"></span>
                             </div>
                             <div class="media-body">
-                                <h3 class="media-heading text-info" style="margin: 10px 0;">How to start playing?</h3>
-                                Buy cars and earn a stable income!
+                                <h3 class="media-heading text-info" style="margin: 10px 0;"><?= $lang['home']['how_to_start'] ?></h3>
+                                <?= sprintf($lang['home']['buy_and_earn'], $config->items['names'] )?>
                             </div>
                         </div>
 
@@ -28,8 +28,8 @@ $site_stats = $db->FetchArray();
                                 <span class="grow"><img class="media-object" src="/img/aff.png" alt="2" style="width: 70px;margin-top: 15px;margin-left: 15px;"></span>
                             </div>
                             <div class="media-body">
-                                <h3 class="media-heading text-info" style="margin: 10px 0;">Affiliate Program</h3>
-                                1-level affiliate program up to 15% on withdrawal!
+                                <h3 class="media-heading text-info" style="margin: 10px 0;"><?= $lang['home']['aff_programm'] ?></h3>
+                                <?= $lang['home']['1_level_aff_programm'] ?>
                             </div>
                         </div>
 
@@ -38,8 +38,8 @@ $site_stats = $db->FetchArray();
                                 <span class="grow"><img class="media-object" src="/img/favicon.ico" alt="3" style="width: 70px;margin-top: 15px;margin-left: 15px;"></span>
                             </div>
                             <div class="media-body">
-                                <h3 class="media-heading text-info" style="margin: 10px 0;">Games</h3>
-                                Play our exciting games and get paid!
+                                <h3 class="media-heading text-info" style="margin: 10px 0;"><?= $lang['home']['games'] ?></h3>
+                                <?= $lang['home']['play_get_paid'] ?>
                             </div>
                         </div>
 
@@ -47,7 +47,7 @@ $site_stats = $db->FetchArray();
                 </div>
                 <?PHP if(!$_SESSION["user"]) { ?>
                 <br>
-                <a href="<?php $func->url('signup');?>" class="btn btn-primary">Register and get a bonus!</a>
+                <a href="<?php $func->url('signup');?>" class="btn btn-primary"><?= $lang['home']['register_button'] ?></a>
                 <?PHP } ?>
             </div>
         </div>

@@ -60,6 +60,7 @@ $lang = [
         'oldpassword' => 'Old password is incorrect',
         'bonusCollected' => 'You have already received a bonus in the last 24 hours.',
         'noresults' => 'No results to show',
+        'error404' => 'Page Not Found',
     ],
 
     'success_messages' => [
@@ -100,7 +101,7 @@ $lang = [
         'username' => 'Username',
         'copyright' => 'All rights reserved.',
         'referrer' => 'Inveted by',
-        'p_balance' => 'Puchase Balance',
+        'p_balance' => 'Purchase Balance',
         'w_balance' => 'Withdraw Balance',
         'ref_earnings' => 'Earning from Referrals',
         'paid' => 'Total Paid',
@@ -122,6 +123,15 @@ $lang = [
         'total_users' => 'Total Users',
         'working_time' => 'Working Time',
         'total_paid' => 'Total Paid',
+        'first_label' => 'Welcome! We suggest you play our exciting game to raise your budget!',
+        'second_label' => 'We have no restrictions on payment. Earned and won money can be immediately displayed on your wallet',
+        'how_to_start' => 'How to start playing?',
+        'buy_and_earn' => 'Buy %s and earn a stable income!',
+        'aff_programm' => 'Affiliate Program',
+        '1_level_aff_programm' => '1-level affiliate program up to 15% on withdrawal!',
+        'games' => 'Games',
+        'play_get_paid' => 'Play our exciting games and get paid!',
+        'register_button' => 'Register and get a bonus!'
     ],
 
     'news' => [
@@ -189,6 +199,7 @@ $lang = [
         'refs_total' => 'Total of Referrals',
         'ref_revenue' => 'Revenue From Referral',
         'noreferrals' => 'You do not have any referral yet',
+        'description' => 'Invite your friends and acquaintances to the game, you will receive 10 percents of each recharge invited by you person. The income is not limited. Even a few guests canbring you more than 100,000 %s. Below is a link to attract and the number of people invited by you.'
     ],
 
     'acc_settings' => [
@@ -205,6 +216,8 @@ $lang = [
         'rule2' => 'The bonus is given to Purchase Balance.',
         'rule3' => 'The bonus amount is generated randomly from %s to %s %s.',
         'leftTime' => 'Please wait: ',
+        'last_20' => 'Last 20 Bonus',
+        'no_rec' => 'No records',
     ],
 
     'payments' => [
@@ -219,11 +232,13 @@ $lang = [
         'subtitle' => 'Collect profit in the warehouse. Your profit yields every 10 minutes. The profit constantly accumulates, it is not necessary to collect every 10 min., you can collect them once a month. As you prefer.',
         'success' => '%s collected with success',
         'error' => 'You can not collected no more than 1 times in 10 minutes!',
+        'stock' => 'You have in stock',
+        'quantity' => 'Quantity',
     ],
 
     'farm' => [
-        'title' => 'Car Shop',
-        'text' => 'In this store you can buy new cars. Each car brings kilometers that can then be sold on the market and exchanged for real money. Each car gives a different number of kilometers, the more expensive it cost, more kilometers it generate. You can buy any number of them, the cars have not expiration date, it will always generate kilometers in your account.',
+        'title' => '%s Shop',
+        'text' => 'In this store you can buy new %s. Each %s brings %s that can then be sold on the market and exchanged for real money. Each %s gives a different number of %s, the more expensive it cost, more %s it generate. You can buy any number of them, the %s have not expiration date, it will always generate %s in your account.',
         'alert' => 'Before buy, you should collect your %s in the warehouse!',
         'purchased' => '%s purchased with success!',
         'noEnoughCoins' => 'There is not enough %s to buy this item!',
@@ -260,6 +275,8 @@ $lang = [
     'payment' => [
         'title' => 'Withdraw',
         'give' => 'You give',
+        'description_1' => 'Payments are made automatically and only on the payment system',
+        'description_2' => 'The percentage of withdrawal is 0%.',
         'receive' => 'You receive',
         'latests' => 'Last 10 Payments',
         'success' => 'Your withdrawal request has been paid with success!',

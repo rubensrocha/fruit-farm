@@ -1,11 +1,17 @@
+<?php
+$name = $config->items['name'];
+$names = $config->items['names'];
+$product = $config->settings['product'];
+?>
+
 <section class="no-padding-bottom">
     <div class="col-lg-12">
         <div class="card articles">
             <div class="card-body">
-	            <p><?php echo $lang['farm']['text'];?></p>
+	            <p><?php echo sprintf($lang['farm']['text'],$names,$name,$product,$name,$product,$product,$name,$product)?></p>
                 <div class="text-danger text-bold"><?php echo sprintf($lang['farm']['alert'],$config->settings['coins']);?></div>
                 <?PHP
-                $_OPTIMIZATION["title"] = $lang['farm']['title'];
+                $_OPTIMIZATION["title"] = sprintf($lang['farm']['title'],$name);
                 $usid = $_SESSION["user_id"];
                 $refid = $_SESSION["referer_id"];
                 $usname = $_SESSION["user"];

@@ -113,11 +113,11 @@ $sumzar = ($prof_data['payment_sum']*100)/$prof_data['insert_sum'];
                             <?php $func->csrf(); ?>
                             <div class="form-group">
                                 <label><?php echo $lang['common']['email'];?></label>
-                                <input name="email" type="email" placeholder="Email" class="form-control">
+                                <input name="email" type="email" placeholder="<?php echo $lang['common']['email'];?>" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label><?php echo $lang['common']['password'];?></label>
-                                <input name="password" type="password" placeholder="Password" class="form-control">
+                                <input name="password" type="password" placeholder="<?php echo $lang['common']['password'];?>" class="form-control">
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary"><?php echo $lang['btn']['login'];?></button>
