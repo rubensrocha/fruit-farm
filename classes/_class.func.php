@@ -1,4 +1,4 @@
-<?PHP
+<?php
 /*
  * Script Fruit-Farm SM
  * Author: Smarty Scripts
@@ -8,7 +8,6 @@
 
 class Func
 {
-
     public $UserIP = "Undefined"; // IP пользователя
     public $UserCode = "Undefined"; // Код от IP
     public $TableID = -1; // ID таблицы
@@ -33,7 +32,6 @@ class Func
     \*======================================================================*/
     public function __destruct()
     {
-
     }
 
 
@@ -76,15 +74,14 @@ class Func
     \*======================================================================*/
     public function GetUserIp()
     {
-        if($this->UserIP == "Undefined") {
-            if(isset($_SERVER['HTTP_X_FORWARDED_FOR']) AND !empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-                $client_ip = ( !empty($_SERVER['REMOTE_ADDR']) ) ? $_SERVER['REMOTE_ADDR'] : ( ( !empty($_ENV['REMOTE_ADDR']) ) ? $_ENV['REMOTE_ADDR'] : "unknown" );
+        if ($this->UserIP == "Undefined") {
+            if (isset($_SERVER['HTTP_X_FORWARDED_FOR']) and !empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+                $client_ip = (!empty($_SERVER['REMOTE_ADDR'])) ? $_SERVER['REMOTE_ADDR'] : ((!empty($_ENV['REMOTE_ADDR'])) ? $_ENV['REMOTE_ADDR'] : "unknown");
                 $entries = preg_split('[, ]', $_SERVER['HTTP_X_FORWARDED_FOR']);
                 reset($entries);
-                while (list(, $entry) = each($entries))
-                {
+                while (list(, $entry) = each($entries)) {
                     $entry = trim($entry);
-                    if (preg_match("/^([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)/", $entry, $ip_list) ) {
+                    if (preg_match("/^([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)/", $entry, $ip_list)) {
                         $private_ip = array(
                         '/^0\./',
                         '/^127\.0\.0\.1/',
@@ -100,9 +97,11 @@ class Func
                 }
                 $this->UserIP = $client_ip;
                 return $client_ip;
-            }else { return ( !empty($_SERVER['REMOTE_ADDR']) ) ? $_SERVER['REMOTE_ADDR'] : ( ( !empty($_ENV['REMOTE_ADDR']) ) ? $_ENV['REMOTE_ADDR'] : "unknown");
+            } else {
+                return (!empty($_SERVER['REMOTE_ADDR'])) ? $_SERVER['REMOTE_ADDR'] : ((!empty($_ENV['REMOTE_ADDR'])) ? $_ENV['REMOTE_ADDR'] : "unknown");
             }
-        }else { return $this->UserIP;
+        } else {
+            return $this->UserIP;
         }
     }
 
@@ -112,7 +111,8 @@ class Func
     \*======================================================================*/
     public function SellItems($all_items, $for_one_coin)
     {
-        if($all_items <= 0 OR $for_one_coin <= 0) { return 0;
+        if ($all_items <= 0 or $for_one_coin <= 0) {
+            return 0;
         }
         return sprintf("%.2f", ($all_items / $for_one_coin));
     }
@@ -123,7 +123,6 @@ class Func
     \*======================================================================*/
     public function IpToInt($ip)
     {
-
         $ip = ip2long($ip);
         ($ip < 0) ? $ip+=4294967296 : true;
         return $ip;
@@ -146,17 +145,19 @@ class Func
     \*======================================================================*/
     public function IsWM($data, $type = 0)
     {
-
         $FirstChar = array( 1 => "R",
           2 => "Z",
           3 => "E",
           4 => "U");
 
-        if(strlen($data) < 12 && strlen($data) > 12 && $type < 0 && $type > count($FirstChar)) { return false;
+        if (strlen($data) < 12 && strlen($data) > 12 && $type < 0 && $type > count($FirstChar)) {
+            return false;
         }
-        if($type == 0) { return (is_array($data)) ? false : ( ereg("^[0-9]{12}$", $data) ? $data : false );
+        if ($type == 0) {
+            return (is_array($data)) ? false : (ereg("^[0-9]{12}$", $data) ? $data : false);
         }
-        if(substr(strtoupper($data), 0, 1) != $FirstChar[$type] or !ereg("^[0-9]{12}", substr($data, 1)) ) { return false;
+        if (substr(strtoupper($data), 0, 1) != $FirstChar[$type] or !ereg("^[0-9]{12}", substr($data, 1))) {
+            return false;
         }
         return $data;
     }
@@ -179,10 +180,10 @@ class Func
     \*======================================================================*/
     public function GetTime($tis = 0, $unix = true, $template = "d.m.Y H:i:s")
     {
-
-        if($tis == 0) {
+        if ($tis == 0) {
             return ($unix) ? time() : date($template, time());
-        }else { return date($template, $unix);
+        } else {
+            return date($template, $unix);
         }
     }
 
@@ -212,14 +213,15 @@ class Func
     \*======================================================================*/
     public function ShowError($errorArray = array(), $title = "Correct the following errors")
     {
-        if(count($errorArray) > 0) {
+        if (count($errorArray) > 0) {
             $string_a = "<div class='Error'><div class='ErrorTitle'>".$title."</div><ul>";
-            foreach($errorArray as $number => $value){
+            foreach ($errorArray as $number => $value) {
                 $string_a .= "<li>".($number+1)." - ".$value."</li>";
             }
             $string_a .= "</ul></div><BR />";
             return $string_a;
-        }else { return "Unknown error :(";
+        } else {
+            return "Unknown error :(";
         }
     }
 
@@ -242,10 +244,10 @@ class Func
     {
         $pass = strtolower($pass);
         return md5("shark_md5"."-".$pass);
-
     }
 
-    public function randomPassword() {
+    public function randomPassword()
+    {
         $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
         $pass = array(); //remember to declare $pass as an array
         $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
@@ -271,14 +273,16 @@ class Func
     \*======================================================================*/
     public function SumCalc($per_h, $sum_tree, $last_sbor)
     {
-        if($last_sbor > 0) {
-            if($sum_tree > 0 AND $per_h > 0) {
+        if ($last_sbor > 0) {
+            if ($sum_tree > 0 and $per_h > 0) {
                 $last_sbor = ($last_sbor < time()) ? (time() - $last_sbor) : 0;
                 $per_sec = $per_h / 3600;
                 return round(($per_sec * $sum_tree) * $last_sbor);
-            }else { return 0;
+            } else {
+                return 0;
             }
-        }else { return 0;
+        } else {
+            return 0;
         }
     }
 
@@ -287,7 +291,8 @@ class Func
     */
     public function csrf()
     {
-        if(@!$_SESSION) { session_start();
+        if (@!$_SESSION) {
+            session_start();
         }
         $_SESSION['csrf'] = crc32(time()) . md5(time()) . strtoupper(sha1(time())) . strtoupper(md5(time())) . sha1(time());
         echo('<input type="hidden" name="@secury" value="'.$_SESSION['csrf'].'">');
@@ -298,10 +303,11 @@ class Func
      */
     public function csrfVerify()
     {
-        if(@!$_SESSION) { session_start();
+        if (@!$_SESSION) {
+            session_start();
         }
         $value = filter_input(INPUT_POST, '@secury', FILTER_SANITIZE_STRING);
-        if($value == @$_SESSION['csrf']) {
+        if ($value == @$_SESSION['csrf']) {
             unset($_SESSION['csrf']);
             return 'true';
         } else {
@@ -310,39 +316,53 @@ class Func
         }
     }
 
-    public function activeMenu($page,$subpage=null,$class='active')
+    public function activeMenu($page, $subpage=null, $class='active')
     {
-        if($page){
+        if ($page) {
             $url = $_GET['menu'];
-            if($_GET['sel']){ $sub = $_GET['sel']; } else{ $sub = null;}
-            if($subpage){
-                if($url == $page && $sub == $subpage){
+            if ($_GET['sel']) {
+                $sub = $_GET['sel'];
+            } else {
+                $sub = null;
+            }
+            if ($subpage) {
+                if ($url == $page && $sub == $subpage) {
                     echo 'class="'.$class.'"';
                 }
-            }else{
-                if($url == $page && $sub == null){
+            } else {
+                if ($url == $page && $sub == null) {
                     echo 'class="'.$class.'"';
                 }
             }
         }
     }
 
-    public function url($target=null){
-        if($_SERVER['HTTPS'] == "on"){ $protocol = 'https://';} else { $protocol = 'http://';}
+    public function url($target=null)
+    {
+        if ($_SERVER['HTTPS'] == "on") {
+            $protocol = 'https://';
+        } else {
+            $protocol = 'http://';
+        }
         $base = $protocol.$_SERVER['HTTP_HOST'];
-        if($target){
+        if ($target) {
             echo $base.'/'.$target;
-        }else{
+        } else {
             echo $base;
         }
     }
 
-    public function urlAdmin($target=null){
-        if($_SERVER['HTTPS'] == "on"){ $protocol = 'https://';} else { $protocol = 'http://';}
+    public function urlAdmin($target=null)
+    {
+        if ($_SERVER['HTTPS'] == "on") {
+            $protocol = 'https://';
+        } else {
+            $protocol = 'http://';
+        }
         $base = $protocol.$_SERVER['HTTP_HOST'].'/admin';
-        if($target){
+        if ($target) {
             echo $base.'/'.$target;
-        }else{
+        } else {
             echo $base;
         }
     }
@@ -355,9 +375,9 @@ class Func
         $decimals = $config->currency['decimals'];
         $dec_point = $config->currency['dec_point'];
         $thousand_point = $config->currency['thousand_point'];
-        if($place=='left'){
+        if ($place=='left') {
             return $code.' '.number_format($value, $decimals, $dec_point, $thousand_point);
-        }else{
+        } else {
             return number_format($value, $decimals, $dec_point, $thousand_point).' '.$code;
         }
     }
@@ -372,5 +392,3 @@ class Func
         return number_format($value, $decimals, $dec_point, $thousand_point);
     }
 }
-
-?>

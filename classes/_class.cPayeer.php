@@ -20,34 +20,32 @@ class cPayeer
 
         $response = $this->getResponse($arr);
 
-        if ($response['auth_error'] == '0')
-        {
+        if ($response['auth_error'] == '0') {
             $this->auth = $arr;
         }
     }
 
     public function isAuth()
     {
-        if (!empty($this->auth)) return true;
+        if (!empty($this->auth)) {
+            return true;
+        }
         return false;
     }
 
     private function getResponse($arPost)
     {
-        if (!function_exists('curl_init'))
-        {
+        if (!function_exists('curl_init')) {
             die('curl library not installed');
             return false;
         }
 
-        if ($this->isAuth())
-        {
+        if ($this->isAuth()) {
             $arPost = array_merge($arPost, $this->auth);
         }
 
         $data = array();
-        foreach ($arPost as $k => $v)
-        {
+        foreach ($arPost as $k => $v) {
             $data[] = urlencode($k) . '=' . urlencode($v);
         }
         $data[] = 'language=' . $this->language;
@@ -74,8 +72,7 @@ class cPayeer
 
         $content = json_decode($content, true);
 
-        if (isset($content['errors']) && !empty($content['errors']))
-        {
+        if (isset($content['errors']) && !empty($content['errors'])) {
             $this->errors = $content['errors'];
         }
 
@@ -100,8 +97,7 @@ class cPayeer
 
         $response = $this->getResponse($arPost);
 
-        if (empty($response['errors']))
-        {
+        if (empty($response['errors'])) {
             $this->output = $arr;
             return true;
         }
@@ -116,8 +112,7 @@ class cPayeer
 
         $response = $this->getResponse($arPost);
 
-        if (empty($response['errors']))
-        {
+        if (empty($response['errors'])) {
             return $response['historyId'];
         }
 
@@ -182,8 +177,7 @@ class cPayeer
 
         $response = $this->getResponse($arPost);
 
-        if (empty($response['errors']))
-        {
+        if (empty($response['errors'])) {
             return true;
         }
 
@@ -207,16 +201,16 @@ class cPayeer
         $arPost['form'] = json_encode($arPost['form']);
         $arPost['ps'] = json_encode($arPost['ps']);
 
-        if (empty($arPost['ip'])) $arPost['ip'] = $_SERVER['REMOTE_ADDR'];
+        if (empty($arPost['ip'])) {
+            $arPost['ip'] = $_SERVER['REMOTE_ADDR'];
+        }
 
         $response = $this->getResponse($arPost);
 
-        if (empty($response['errors']))
-        {
+        if (empty($response['errors'])) {
             return $response;
         }
 
         return false;
     }
 }
-?>
