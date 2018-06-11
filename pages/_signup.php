@@ -27,7 +27,7 @@ if(isset($_SESSION["user_id"])){ Header("Location: /account"); return; }
                         $login = $_POST["login"];
                         $password = $_POST["password"];
                         $securePass = $func->md5Password($_POST["password"]);
-                        $repass  = $func->md5Password($_POST["repass"]);
+                        $repass  = $_POST["repass"];
 
                         if(isset($_SESSION["captcha"]) AND strtolower($_SESSION["captcha"]) == strtolower($_POST["captcha"])){
                             unset($_SESSION["captcha"]);
@@ -90,7 +90,7 @@ if(isset($_SESSION["user_id"])){ Header("Location: /account"); return; }
                     </div>
                     <div class="form-group">
                         <label class="form-control-label"><?php echo $lang['common']['email'];?></label>
-                        <input type="email" value="<?=(isset($_POST["email"])) ? $_POST["email"] : false; ?>" class="form-control">
+                        <input type="email" name="email" value="<?=(isset($_POST["email"])) ? $_POST["email"] : false; ?>" class="form-control">
                     </div>
                     <div class="form-group">
                         <label class="form-control-label"><?php echo $lang['common']['password'];?></label>
