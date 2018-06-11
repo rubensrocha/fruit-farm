@@ -391,4 +391,15 @@ class Func
 
         return number_format($value, $decimals, $dec_point, $thousand_point);
     }
+
+    public function validatePurse($purse)
+    {
+        if (substr($purse, 0, 1) != "P") {
+            return false;
+        }
+        if (!preg_match("/^[0-9]{7,8}$/", substr($purse, 1))) {
+            return false;
+        }
+        return $purse;
+    }
 }
