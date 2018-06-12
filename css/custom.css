@@ -33,3 +33,7 @@ nav.side-navbar a.btn {
   width: 100px;
   height: 100px;
 }
+
+.captcha {
+  cursor: pointer;
+}

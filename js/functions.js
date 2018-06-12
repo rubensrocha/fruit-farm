@@ -4,7 +4,7 @@ var valuta = 'RUB';
 
 function ResetCaptcha(vitem) {
 
-  vitem.innerHTML = '<img src="/captcha.php?rnd=' + Math.random() + '" border="0"/>';
+  vitem.innerHTML = '<img class="captcha" src="/captcha.php?rnd=' + Math.random() + '" border="0"/>';
 }
 
 function GetSumPer() {
@@ -50,7 +50,7 @@ function PaymentSum() {
     : xt;
 
   var min_pay = parseFloat(document.getElementById(xt).value);
-    
+
   document.getElementById("res_sum").value = (sum / ser).toFixed(2);
   // document.getElementById("res_min").innerHTML = (min_pay * ser).toFixed(2);
 }
