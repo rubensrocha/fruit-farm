@@ -90,7 +90,7 @@
                                 <!-- This should be submit button but I replaced it with <a> for demo purposes-->
                             </form>
                             <br>
-                            <a href="#" class="forgot-pass"><?php echo $lang['btn']['forgotL'];?></a>
+                            <!-- <a href="#" class="forgot-pass"><?php echo $lang['btn']['forgotL'];?></a> -->
                         </div>
                     </div>
                 </div>
