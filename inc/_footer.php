@@ -1,3 +1,11 @@
+                <?php
+                    if($showError){
+                        echo "<div class='alert alert-danger notification'>{$showError}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
+                    }
+                    if($showSuccess){
+                        echo "<div class='alert alert-success notification'>{$showSuccess}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
+                    }
+                ?>
                 <!-- Page Footer-->
                 <footer class="main-footer">
                     <div class="container-fluid">
