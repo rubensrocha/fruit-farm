@@ -54,14 +54,6 @@ if(isset($_GET['hash'])){
         <div class="col-lg-6 offset-3">
             <div class="card">
                 <div class="card-body">
-                    <?php
-                    if($showError){
-                        echo "<div class='alert alert-danger'>{$showError}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
-                    }
-                    if($showSuccess){
-                        echo "<div class='alert alert-success'>{$showSuccess}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
-                    }
-                    ?>
                     <form action="" method="post">
                         <?php $func->csrf(); ?>
                         <div class="form-group">
@@ -137,14 +129,6 @@ if(isset($_GET['hash'])){
     <div class="col-lg-6 offset-3">
         <div class="card">
             <div class="card-body">
-                <?php
-                if($showError){
-                    echo "<div class='alert alert-danger'>{$showError}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
-                }
-                if($showSuccess){
-                    echo "<div class='alert alert-success'>{$showSuccess}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
-                }
-                ?>
                 <form action="" method="post">
                     <?php $func->csrf(); ?>
                     <div class="form-group">

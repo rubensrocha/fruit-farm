@@ -34,6 +34,17 @@ nav.side-navbar a.btn {
   height: 100px;
 }
 
+.notification {
+  position: absolute;
+  z-index: 999;
+  right: 0;
+  top: 0;
+}
+
+.notification button {
+  padding-left: 13px;
+}
+
 .captcha {
   cursor: pointer;
 }

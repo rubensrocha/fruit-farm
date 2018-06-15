@@ -1,36 +1,10 @@
-<?PHP
+<?php
 $_OPTIMIZATION["title"] = $lang['acc_settings']['title'];
 $usid = (int)$_SESSION["user_id"];
 $db->Query("SELECT * FROM db_users_a WHERE id = '$usid'");
 $user_data = $db->FetchArray();
 
 $csrfCheck = $func->csrfVerify();
-if(isset($_POST["old"]) and $csrfCheck == TRUE){
-    $validate = GUMP::is_valid($_POST, array(
-        'old' => 'required|max_len,20|min_len,4|alpha_numeric',
-        'new' => 'required|max_len,20|min_len,4|alpha_numeric',
-        're_new' => 'required|max_len,20|min_len,4|alpha_numeric',
-    ));
-
-    if($validate === true) {
-        $old           = $_POST["old"];
-        $new           = $_POST["new"];
-        $repass        = $_POST["re_new"];
-        $old_secure    = $func->md5Password($_POST["old"]);
-        $new_secure    = $func->md5Password($_POST["new"]);
-        $renew_secure  = $func->md5Password($_POST["re_new"]);
-            if($old_secure !== false AND $old_secure == $user_data["pass"]){
-                if($new_secure !== false){
-                    if( $new_secure == $renew_secure){
-                        $db->Query("UPDATE db_users_a SET pass = '$new_secure' WHERE id = '$usid'");
-                        $showSuccess = $lang['success_messages']['changesSaved'];
-                    }else $showError = $lang['error_messages']['passwordMatch'];
-                }else $showError = $lang['error_messages']['emptyPassword'];
-            }else $showError = $lang['error_messages']['oldpassword'];
-    }else {
-        $showError = $lang['error_messages']['invalidData'];
-    }
-}
 ?>
 <section class="no-padding-bottom">
     <div class="col-lg-8 offset-2">
@@ -40,12 +14,43 @@ if(isset($_POST["old"]) and $csrfCheck == TRUE){
             </div>
             <div class="card-body">
                 <?php
-                if($showError){
-                    echo "<div class='alert alert-danger'>{$showError}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
-                }
-                if($showSuccess){
-                    echo "<div class='alert alert-success'>{$showSuccess}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
-                }
+                    if (isset($_POST["old"]) and $csrfCheck == true) {
+                        $validate = GUMP::is_valid($_POST, array(
+                            'old' => 'required|max_len,20|min_len,4|alpha_numeric',
+                            'new' => 'required|max_len,20|min_len,4|alpha_numeric',
+                            're_new' => 'required|max_len,20|min_len,4|alpha_numeric',
+                        ));
+
+                        if ($validate === true) {
+                            $old           = $_POST["old"];
+                            $new           = $_POST["new"];
+                            $repass        = $_POST["re_new"];
+                            $old_secure    = $func->md5Password($_POST["old"]);
+                            $new_secure    = $func->md5Password($_POST["new"]);
+                            $renew_secure  = $func->md5Password($_POST["re_new"]);
+                            if ($old_secure !== false and $old_secure == $user_data["pass"]) {
+                                if ($new_secure !== false) {
+                                    if ($new_secure == $renew_secure) {
+                                        $db->Query("UPDATE db_users_a SET pass = '$new_secure' WHERE id = '$usid'");
+                                        $success_message = $lang['success_messages']['changesSaved'];
+                                        echo "<div class='alert alert-success'>{$success_message}</div>";
+                                    } else {
+                                        $error_message = $lang['error_messages']['passwordMatch'];
+                                        echo "<div class='alert alert-danger'>{$error_message}</div>";
+                                    }
+                                } else {
+                                    $error_message = $lang['error_messages']['emptyPassword'];
+                                    echo "<div class='alert alert-danger'>{$error_message}</div>";
+                                }
+                            } else {
+                                $error_message = $lang['error_messages']['oldpassword'];
+                                echo "<div class='alert alert-danger'>{$error_message}</div>";
+                            }
+                        } else {
+                            $error_message = $lang['error_messages']['invalidData'];
+                            echo "<div class='alert alert-danger'>{$error_message}</div>";
+                        }
+                    }
                 ?>
                 <form action="" method="post">
                     <?php $func->csrf(); ?>

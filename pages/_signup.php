@@ -77,10 +77,6 @@ if(isset($_SESSION["user_id"])){ Header("Location: /account"); return; }
                     }
                 }
                 ?>
-                <?php
-                if($showError){
-                    echo "<div class='alert alert-danger'>{$showError}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
-                }?>
                 <form action="" method="post">
                     <?php $func->csrf(); ?>
                     <div class="form-group">

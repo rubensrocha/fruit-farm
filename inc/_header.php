@@ -107,12 +107,7 @@ $sumzar = ($prof_data['payment_sum']*100)/$prof_data['insert_sum'];
                             }else{
                                 $showError = $lang['error_messages']['invalidData'];
                             }
-
                         }
-                        if($showError){
-                            echo "<div class='alert alert-danger'>{$showError}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
-                        }
-
                         ?>
                         <form action="" method="post">
                             <?php $func->csrf(); ?>
