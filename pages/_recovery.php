@@ -71,7 +71,7 @@ if(isset($_GET['hash'])){
                             <small class="form-text text-muted"><?php echo $lang['register']['passConfirm_h'];?></small>
                         </div>
                         <div class="form-group">
-                            <span onclick="ResetCaptcha(this);"><img src="/captcha.php?rnd=<?=rand(1,10000); ?>" /></span>
+                            <span onclick="ResetCaptcha(this);"><img class="captcha" src="/captcha.php?rnd=<?=rand(1,10000); ?>" /></span>
                             <small class="form-text text-muted"><?php echo $lang['common']['captcha_h'];?></small>
                         </div>
                         <div class="form-group">
@@ -136,7 +136,7 @@ if(isset($_GET['hash'])){
                         <input type="email" name="email" value="<?=(isset($_POST["email"])) ? $_POST["email"] : false; ?>" class="form-control">
                     </div>
                     <div class="form-group">
-                        <span onclick="ResetCaptcha(this);"><img src="/captcha.php?rnd=<?=rand(1,10000); ?>" /></span>
+                        <span onclick="ResetCaptcha(this);"><img class="captcha" src="/captcha.php?rnd=<?=rand(1,10000); ?>" /></span>
                         <small class="form-text text-muted"><?php echo $lang['common']['captcha_h'];?></small>
                     </div>
                     <div class="form-group">

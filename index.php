@@ -5,12 +5,7 @@
  * Author Site: www.smartyscripts.com
  * Official Site: https://github.com/rubensrocha/fruit-farm
  */
-# Counter
-function TimerSet(){
-	list($seconds, $microSeconds) = explode(' ', microtime());
-	return $seconds + (float) $microSeconds;
-}
-$_timer_a = TimerSet();
+
 # Start Session
 @session_start();
 # Buffer Start
@@ -30,7 +25,9 @@ define('CONST_FF_SM', true);
 # Load Func Class
 $func = new Func;
 # Set Referral Cookie
-include("inc/_set_referer.php");
+$func->setReferer();
+# Counter
+$_timer_a = $func->setTimer();
 # Database
 $db = new Db($config->HostDB, $config->UserDB, $config->PassDB, $config->BaseDB);
 #Lang
@@ -68,7 +65,7 @@ ob_end_clean();
 	$content = str_replace("{!TITLE!}",$_OPTIMIZATION["title"],$content);
 	$content = str_replace('{!DESCRIPTION!}',$_OPTIMIZATION["description"],$content);
 	$content = str_replace('{!KEYWORDS!}',$_OPTIMIZATION["keywords"],$content);
-	$content = str_replace('{!GEN_PAGE!}', sprintf("%.5f", (TimerSet() - $_timer_a)) ,$content);
+	$content = str_replace('{!GEN_PAGE!}', sprintf("%.5f", ($func->setTimer() - $_timer_a)) ,$content);
 	# Balance sheet
 	if(isset($_SESSION["user_id"])){
 		$user_id = $_SESSION["user_id"];

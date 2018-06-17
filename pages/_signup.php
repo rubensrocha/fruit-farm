@@ -102,7 +102,7 @@ if(isset($_SESSION["user_id"])){ Header("Location: /account"); return; }
                         <input name="rules" type="checkbox" value="1" class="checkbox-template" />&nbsp;&nbsp; <a href="/rules" target="_blank"><?php echo $lang['register']['acceptRules'];?></a>
                     </div>
                     <div class="form-group">
-                        <span onclick="ResetCaptcha(this);"><img src="/captcha.php?rnd=<?=rand(1,10000); ?>" /></span>
+                        <span onclick="ResetCaptcha(this);"><img class="captcha" src="/captcha.php?rnd=<?=rand(1,10000); ?>" /></span>
                         <small class="form-text text-muted"><?php echo $lang['common']['captcha_h'];?></small>
                     </div>
                     <div class="form-group">
