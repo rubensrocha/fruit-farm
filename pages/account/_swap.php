@@ -46,3 +46,4 @@ $minValue = 100;
         </div>
     </div>
 </section>
+<script language="javascript">GetSumPer();</script>

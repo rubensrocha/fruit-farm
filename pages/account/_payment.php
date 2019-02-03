@@ -16,14 +16,9 @@ $minPay = $sonfig_site['min_pay'];
             <div class="card-body">
                 <p><?= $lang['payment']['description_1'] ?> <a href="https://payeer.com/" target="_blank">Payeer</a>. <?= $lang['payment']['description_2'] ?></p>
                 <?PHP
-                    function ViewPurse($purse){
-                        if( substr($purse,0,1) != "P" ) return false;
-                        if( !preg_match("/^[0-9]{7,8}$/", substr($purse,1)) ) return false;
-                        return $purse;
-                    }
                     # Заносим выплату
                     if(isset($_POST["purse"])){
-                        $purse = ViewPurse($_POST["purse"]);
+                        $purse = $func->validatePurse($_POST["purse"]);
                         $sum = intval($_POST["sum"]);
                         $val = "RUB";
                         if($purse !== false){

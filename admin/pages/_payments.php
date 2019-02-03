@@ -217,7 +217,7 @@
             while($data = $db->FetchArray()){
         ?>
             <tr class="text-center">
-                <td><a href="/?menu=admin4ik&sel=users&edit=<?php echo $data["user"];?>"><?php echo $data["user"]; ?></a></td>
+                <td><a href="/admin/users/edit/<?php echo $data["id"];?>"><?php echo $data["user"]; ?></a></td>
                 <td><?php echo $data["serebro"]; ?></td>
                 <td><span class="<?php echo ($data["sum"] >= 100) ? 'text-red text-bold' : ''; ?>"><?php echo $func->priceFormat($data["sum"]);?></span></td>
                 <td><?php echo $data["purse"]; ?></td>

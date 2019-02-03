@@ -1,3 +1,11 @@
+                <?php
+                    if($showError){
+                        echo "<div class='alert alert-danger notification'>{$showError}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
+                    }
+                    if($showSuccess){
+                        echo "<div class='alert alert-success notification'>{$showSuccess}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
+                    }
+                ?>
                 <!-- Page Footer-->
                 <footer class="main-footer">
                     <div class="container-fluid">
@@ -15,7 +23,6 @@
         </div><!-- page-content -->
     </div><!-- page -->
     <!-- JavaScript files-->
-    <script src="<?php $func->url('vendor/jquery/jquery.min.js');?>"></script>
     <script src="<?php $func->url('vendor/popper.js/umd/popper.min.js');?>"></script>
     <script src="<?php $func->url('vendor/bootstrap/js/bootstrap.min.js');?>"></script>
     <script src="<?php $func->url('vendor/jquery.cookie/jquery.cookie.js');?>"></script>
@@ -23,7 +30,6 @@
     <script src="<?php $func->url('vendor/jquery-validation/jquery.validate.min.js');?>"></script>
     <!-- Main File-->
     <script src="<?php $func->url('js/front.js');?>"></script>
-    <script src="<?php $func->url('js/functions.js');?>"></script>
     <!-- Custom Scripts -->
     <script type="text/javascript">
         $(document).ready(function() {

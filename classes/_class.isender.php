@@ -8,23 +8,22 @@
 
 class Isender
 {
-    
-    var $Hosts = "";
-    
+    public $Hosts = "";
+
     /*======================================================================*\
     Function:    __construct
     Descriiption: Конструктор класса
     \*======================================================================*/
-    function __construct()
+    public function __construct()
     {
         $this->Hosts = str_replace("www.", "", $_SERVER['HTTP_HOST']);
     }
-    
+
     /*======================================================================*\
     Function:    SendRegKey
     Descriiption: Отправляет регистрационный ключ
     \*======================================================================*/
-    function SendRegKey($mail, $key)
+    public function SendRegKey($mail, $key)
     {
         $text = "Your email has been requested a link to register with the system \"".$this->Hosts."\"<BR />";
         $text.= "If you did not request a link, simply ignore this message. <BR /><BR />";
@@ -33,12 +32,12 @@ class Isender
         $subject = "Registration in the system \"".$this->Hosts."\"";
         return $this->SendMail($mail, $subject, $text);
     }
-    
+
     /*======================================================================*\
     Function:    RecoveryPassword
     Descriiption: Восстановление пароля
     \*======================================================================*/
-    function RecoveryPassword($user, $hash, $mail)
+    public function RecoveryPassword($user, $hash, $mail)
     {
         $text = "Hello {$user}.<BR /><BR />";
         $text.= "You are receiving this email because we received a password reset request for your account.<BR /><BR />";
@@ -47,12 +46,12 @@ class Isender
         $subject = "Reset Password in the system {$this->Hosts}";
         return $this->SendMail($mail, $subject, $text);
     }
-    
+
     /*======================================================================*\
     Function:    SendAfterReg
     Descriiption: Отправляет данные после регистрации
     \*======================================================================*/
-    function SendAfterReg($user, $mail, $pass)
+    public function SendAfterReg($user, $mail, $pass)
     {
         $text = "Thank you for registering with the system in the system \"".$this->Hosts."\"<BR />";
         $text.= "Your login details: <BR />";
@@ -62,12 +61,12 @@ class Isender
         $subject = "Completion of registration in the system \"".$this->Hosts."\"";
         return $this->SendMail($mail, $subject, $text);
     }
-    
+
     /*======================================================================*\
     Function:    SetNewPassword
     Descriiption: Отправляет данные после смены пароля
     \*======================================================================*/
-    function SetNewPassword($user, $pass, $mail)
+    public function SetNewPassword($user, $pass, $mail)
     {
         $text = "Your password has been changed in your account settings<BR />";
         $text.= "Your new data to enter the user's personal area: <BR />";
@@ -77,13 +76,13 @@ class Isender
         $subject = "Changing the password in the system \"".$this->Hosts."\"";
         return $this->SendMail($mail, $subject, $text);
     }
-    
-    
+
+
     /*======================================================================*\
     Function:    Headers
     Descriiption: Создание заголовков письма
     \*======================================================================*/
-    function Headers()
+    public function Headers()
     {
         $headers = "MIME-Version: 1.0\r\n";
         $headers.= "Content-type: text/html; charset=UTF-8\r\n";
@@ -96,11 +95,10 @@ class Isender
     Function:    SendMail
     Descriiption: Отправитель
     \*======================================================================*/
-    function SendMail($recipient, $subject, $message)
+    public function SendMail($recipient, $subject, $message)
     {
         $message .= "<BR />----------------------------------------------------
 		<BR />This is an automated message, please do not reply to it!";
         return (mail($recipient, $subject, $message, $this->Headers())) ? true : false;
     }
 }
-?>

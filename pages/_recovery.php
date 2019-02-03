@@ -54,14 +54,6 @@ if(isset($_GET['hash'])){
         <div class="col-lg-6 offset-3">
             <div class="card">
                 <div class="card-body">
-                    <?php
-                    if($showError){
-                        echo "<div class='alert alert-danger'>{$showError}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
-                    }
-                    if($showSuccess){
-                        echo "<div class='alert alert-success'>{$showSuccess}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
-                    }
-                    ?>
                     <form action="" method="post">
                         <?php $func->csrf(); ?>
                         <div class="form-group">
@@ -79,7 +71,7 @@ if(isset($_GET['hash'])){
                             <small class="form-text text-muted"><?php echo $lang['register']['passConfirm_h'];?></small>
                         </div>
                         <div class="form-group">
-                            <span onclick="ResetCaptcha(this);"><img src="/captcha.php?rnd=<?=rand(1,10000); ?>" /></span>
+                            <span onclick="ResetCaptcha(this);"><img class="captcha" src="/captcha.php?rnd=<?=rand(1,10000); ?>" /></span>
                             <small class="form-text text-muted"><?php echo $lang['common']['captcha_h'];?></small>
                         </div>
                         <div class="form-group">
@@ -137,14 +129,6 @@ if(isset($_GET['hash'])){
     <div class="col-lg-6 offset-3">
         <div class="card">
             <div class="card-body">
-                <?php
-                if($showError){
-                    echo "<div class='alert alert-danger'>{$showError}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
-                }
-                if($showSuccess){
-                    echo "<div class='alert alert-success'>{$showSuccess}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
-                }
-                ?>
                 <form action="" method="post">
                     <?php $func->csrf(); ?>
                     <div class="form-group">
@@ -152,7 +136,7 @@ if(isset($_GET['hash'])){
                         <input type="email" name="email" value="<?=(isset($_POST["email"])) ? $_POST["email"] : false; ?>" class="form-control">
                     </div>
                     <div class="form-group">
-                        <span onclick="ResetCaptcha(this);"><img src="/captcha.php?rnd=<?=rand(1,10000); ?>" /></span>
+                        <span onclick="ResetCaptcha(this);"><img class="captcha" src="/captcha.php?rnd=<?=rand(1,10000); ?>" /></span>
                         <small class="form-text text-muted"><?php echo $lang['common']['captcha_h'];?></small>
                     </div>
                     <div class="form-group">

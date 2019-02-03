@@ -34,6 +34,11 @@ $sumzar = ($prof_data['payment_sum']*100)/$prof_data['insert_sum'];
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
+    <!-- This scripts must be there, because swap and payment page are using jquery and functions from functions file  -->
+    <script src="<?php $func->url('vendor/jquery/jquery.min.js');?>"></script>
+    <script src="<?php $func->url('js/functions.js');?>"></script>
+
 </head>
 <body>
 <div class="page home-page">
@@ -102,12 +107,7 @@ $sumzar = ($prof_data['payment_sum']*100)/$prof_data['insert_sum'];
                             }else{
                                 $showError = $lang['error_messages']['invalidData'];
                             }
-
                         }
-                        if($showError){
-                            echo "<div class='alert alert-danger'>{$showError}<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span> </button></div>";
-                        }
-
                         ?>
                         <form action="" method="post">
                             <?php $func->csrf(); ?>
