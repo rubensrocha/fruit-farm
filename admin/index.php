@@ -49,6 +49,7 @@ if(isset($_GET["menu"])){
         case "sender": include("pages/_sender.php"); break; // Рассылка пользователям
         case "payments": include("pages/_payments.php"); break; // Список выплат
         case "config": include("pages/_config.php"); break; // Настройки
+        case "adminpassword": include("pages/_adminpassword.php"); break; // Настройки
         case "exit": @session_destroy(); Header("Location: /"); return; break; // Настройки
         # Страница ошибки
         default: @include("pages/_404.php"); break;

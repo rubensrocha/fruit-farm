@@ -17,6 +17,11 @@ $refs = $db->FetchRow();
                     <input readonly class="form-control" value="<?php $func->url('?i='.$user_id);?>" onclick="$(this).select();" />
                 </div>
                 <br>
+                <div class="text-center">
+                    <img src="<?php $func->url('img/promo/banner.png');?>" class="img-thumbnail">
+                    <textarea class="form-control" onclick="$(this).select();"><a href="<?php $func->url('?i='.$user_id);?>"><img src="<?php $func->url('img/promo/banner.png');?>"></a></textarea>
+                </div>
+                <br>
                 <h4 class="text-center"><?php echo $lang['referrals']['refs_total'];?>: <?php echo $refs; ?></h4>
                 <br>
 

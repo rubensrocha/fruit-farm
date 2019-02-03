@@ -16,6 +16,7 @@ $lang = [
         'users' => 'Ver Usuários',
         'sender' => 'Campanhas de Email',
         'settings' => 'Configurações',
+        'adminpass' => 'Acesso Admin',
 
         '_transactions' => 'Transações',
         'purchases' => 'Histórico de Compras',
@@ -145,6 +146,17 @@ $lang = [
         'error_minfruits' => 'Quantos itens = 1 moeda, deve ser de 1 a 50.000',
         'error_productionMin' => 'Ajuste incorreto do rendimento do item por hora! Mínimo 6',
         'error_itemprice' => 'O valor mínimo de um item não deve ser inferior a 1 moeda',
+    ],
+
+    'adminpass' => [
+        'title' => 'Acesso a Administração',
+        'username' => 'Alterar Usuário Admin',
+        'password' => 'Nova Senha do Admin',
+        'password_confirmation' => 'Confirme a Nova Senha',
+        'password_old' => 'Senha Atual',
+        'error_emptyfields' => 'Você deixou campos obrigatórios vazios!',
+        'error_oldpass' => 'Senha atual incorreta!',
+        'error_newpassmatch' => 'As senhas não combinam!',
     ],
 
     'about' => [

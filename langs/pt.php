@@ -197,7 +197,7 @@ $lang = [
         'refs_total' => 'Total de Referidos',
         'ref_revenue' => 'Ganhos de Referidos',
         'noreferrals' => 'Você ainda não tem referidos',
-        'description' => 'Invite your friends and acquaintances to the game, you will receive 10 percents of each recharge invited by you person. The income is not limited. Even a few guests canbring you more than 100,000 %s. Below is a link to attract and the number of people invited by you.'
+        'description' => 'Convide seus amigos e conhecidos para o jogo, você receberá 10 por cento de cada recarga convidado por você. A renda não é limitada. Até mesmo alguns convidados podem oferecer mais de 100.000 %s. Abaixo está um link para atrair e o número de pessoas convidadas por você.'
     ],
 
     'acc_settings' => [
@@ -236,8 +236,8 @@ $lang = [
 
     'farm' => [
         'title' => 'Loja de %s',
-        'text' => 'In this store you can buy new %s. Each %s brings %s that can then be sold on the market and exchanged for real money. Each %s gives a different number of %s, the more expensive it cost, more %s it generate. You can buy any number of them, the %s have not expiration date, it will always generate %s in your account.',
-        'alert' => 'Antes de comprar, você deve coletar seus% s no depósito!',
+        'text' => 'Nesta loja você pode comprar novos% s. Cada %s traz %s que pode ser vendido no mercado e trocado por dinheiro real. Cada %s fornece um número diferente de %s, quanto mais caro, mais %s é gerado. Você pode comprar qualquer número deles, o %s não tem data de validade, ele sempre irá gerar %s na sua conta.',
+        'alert' => 'Antes de comprar, você deve coletar seus %s no depósito!',
         'purchased' => '%s comprado com sucesso!',
         'noEnoughCoins' => 'Não há %s suficiente para comprar este item!',
         'perHour' => 'Por Hora',

@@ -16,6 +16,7 @@ $lang = [
         'users' => 'View Users',
         'sender' => 'Mass Mailing',
         'settings' => 'Settings',
+        'adminpass' => 'Доступ администратора',
 
         '_transactions' => 'Transactions',
         'purchases' => 'Purchase History',
@@ -145,6 +146,17 @@ $lang = [
         'error_minfruits' => 'How many fruits = 1 silver, should be from 1 to 50,000',
         'error_productionMin' => 'Incorrect adjustment of the yield of trees per hour! Minimum 6',
         'error_itemprice' => 'The minimum value of a tree should not be less than 1 silver',
+    ],
+
+    'adminpass' => [
+        'title' => 'Администрация доступа',
+        'username' => 'Изменить имя администратора',
+        'password' => 'Изменить пароль администратора',
+        'password_confirmation' => 'Подтвердите Пароль',
+        'password_old' => 'Фактический пароль',
+        'error_emptyfields' => 'Вам необходимо заполнить все поля!',
+        'error_oldpass' => 'Неверный текущий пароль!',
+        'error_newpassmatch' => 'Пароли не совпадают!',
     ],
 
     'about' => [

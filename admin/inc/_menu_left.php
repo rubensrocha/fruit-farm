@@ -17,6 +17,7 @@
         <li <?php $func->activeMenu('users');?>><a href="<?php $func->urlAdmin('users');?>"><i class="fa fa-users"></i> <?php echo $lang['menu_left']['users'];?></a></li>
         <li <?php $func->activeMenu('sender');?>><a href="<?php $func->urlAdmin('sender');?>"><i class="fa fa-send"></i> <?php echo $lang['menu_left']['sender'];?></a></li>
         <li <?php $func->activeMenu('config');?>><a href="<?php $func->urlAdmin('config');?>"><i class="fa fa-cogs"></i> <?php echo $lang['menu_left']['settings'];?></a></li>
+        <li <?php $func->activeMenu('adminpassword');?>><a href="<?php $func->urlAdmin('adminpassword');?>"><i class="fa fa-user-secret"></i> <?php echo $lang['menu_left']['adminpass'];?></a></li>
     </ul>
 
     <span class="heading"><?php echo $lang['menu_left']['_transactions'];?></span>
